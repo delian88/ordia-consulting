@@ -1,7 +1,16 @@
 
 import React from 'react';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onNavigate: (href: string) => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    onNavigate(href);
+  };
+
   return (
     <footer className="bg-[#001242] text-slate-400 py-16 border-t border-white/5">
       <div className="container mx-auto px-6">
@@ -25,10 +34,10 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-6">Quick Links</h4>
             <ul className="space-y-4 text-sm">
-              <li><a href="#home" className="hover:text-[#8a7eb5] transition-colors">Home</a></li>
-              <li><a href="#about" className="hover:text-[#8a7eb5] transition-colors">About Us</a></li>
-              <li><a href="#services" className="hover:text-[#8a7eb5] transition-colors">Services</a></li>
-              <li><a href="#contact" className="hover:text-[#8a7eb5] transition-colors">Contact</a></li>
+              <li><a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="hover:text-[#8a7eb5] transition-colors">Home</a></li>
+              <li><a href="#about" onClick={(e) => handleLinkClick(e, '#about')} className="hover:text-[#8a7eb5] transition-colors">About Us</a></li>
+              <li><a href="#services" onClick={(e) => handleLinkClick(e, '#services')} className="hover:text-[#8a7eb5] transition-colors">Services</a></li>
+              <li><a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')} className="hover:text-[#8a7eb5] transition-colors">Contact</a></li>
             </ul>
           </div>
 

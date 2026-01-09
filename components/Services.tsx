@@ -143,8 +143,11 @@ interface ServicesProps {
 
 export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
   return (
-    <section id="services" className="py-32 bg-slate-50 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/30 rounded-full blur-[100px] -mr-48 -mt-48"></div>
+    <section id="services" className="py-32 bg-gradient-to-b from-white via-[#f4f7ff] to-white relative overflow-hidden">
+      {/* Decorative Blueprint elements */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#001242 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#8a7eb5]/5 rounded-full blur-[120px] -mr-64 -mt-64"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#001242]/5 rounded-full blur-[120px] -ml-64 -mb-64"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 reveal">
@@ -170,9 +173,9 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
             <div 
               key={service.id} 
               onClick={() => onSelectService(service)}
-              className="reveal bg-white p-10 rounded-[2.5rem] shadow-[0_4px_30px_rgba(0,0,0,0.03)] border border-slate-100/50 group hover:shadow-2xl hover:shadow-[#8a7eb5]/10 transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+              className="reveal bg-white/70 backdrop-blur-sm p-10 rounded-[2.5rem] shadow-[0_4px_30px_rgba(0,18,66,0.02)] border border-[#8a7eb5]/10 group hover:shadow-2xl hover:shadow-[#8a7eb5]/10 transition-all duration-500 hover:-translate-y-2 cursor-pointer"
             >
-              <div className="w-14 h-14 bg-slate-50 text-[#001242] rounded-2xl flex items-center justify-center mb-10 transition-all duration-500 group-hover:bg-[#8a7eb5] group-hover:text-white group-hover:rotate-6">
+              <div className="w-14 h-14 bg-[#f8f9ff] text-[#001242] rounded-2xl flex items-center justify-center mb-10 transition-all duration-500 group-hover:bg-[#8a7eb5] group-hover:text-white group-hover:rotate-6 border border-slate-100 shadow-sm">
                 <div className="w-7 h-7">{service.icon}</div>
               </div>
               <h3 className="text-2xl font-serif font-bold text-[#001242] mb-4 leading-tight">{service.title}</h3>

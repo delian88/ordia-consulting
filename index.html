@@ -13,7 +13,7 @@
         :root {
             --brand-navy: #001242;
             --brand-lavender: #8a7eb5;
-            --brand-blue: #001242; /* Primary action color */
+            --brand-blue: #001242;
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -40,7 +40,6 @@
                 radial-gradient(at 0% 100%, rgba(138, 126, 181, 0.1) 0, transparent 50%);
         }
         
-        /* Smooth Entrance Animations */
         .reveal {
             opacity: 0;
             transform: translateY(20px);
@@ -99,6 +98,14 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #001242;
         }
+
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fade-in 0.8s ease-out forwards;
+        }
     </style>
     <script type="importmap">
     {
@@ -113,5 +120,6 @@
 </head>
 <body class="bg-white text-slate-900 selection:bg-[#8a7eb5] selection:text-white">
     <div id="root"></div>
+    <script type="module" src="index.tsx"></script>
 </body>
 </html>

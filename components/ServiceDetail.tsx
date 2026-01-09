@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Service } from '../types';
 
 interface ServiceDetailProps {
@@ -8,12 +8,30 @@ interface ServiceDetailProps {
 }
 
 export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, onBack }) => {
+  const [showSticky, setShowSticky] = useState(false);
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    const handleScroll = () => {
+      setShowSticky(window.scrollY > 400);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [service]);
 
+  const handleContactClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    onBack();
+    setTimeout(() => {
+      const contactEl = document.getElementById('contact');
+      if (contactEl) contactEl.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
+
   return (
-    <div className="min-h-screen bg-white pt-32 pb-20 animate-fade-in">
+    <div className="min-h-screen bg-white pt-32 pb-20 animate-fade-in relative">
       <div className="container mx-auto px-6">
         <button 
           onClick={onBack}
@@ -62,7 +80,11 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, onBack })
                   <p className="text-slate-400 mb-10 max-w-lg">
                     Schedule a professional consultation with our Baltimore-based team to discuss your specific requirements and strategic goals.
                   </p>
-                  <a href="#contact" onClick={onBack} className="inline-block px-10 py-5 bg-[#8a7eb5] text-white rounded-full font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-[#001242] transition-all">
+                  <a 
+                    href="#contact" 
+                    onClick={handleContactClick} 
+                    className="inline-block px-10 py-5 bg-[#8a7eb5] text-white rounded-full font-bold uppercase tracking-widest text-xs hover:bg-white hover:text-[#001242] transition-all"
+                  >
                     Consult our Experts
                   </a>
                 </div>
@@ -99,6 +121,26 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, onBack })
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Sticky Call-to-Action */}
+      <div 
+        className={`fixed bottom-8 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
+          showSticky ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-20 opacity-0 scale-90'
+        }`}
+      >
+        <button 
+          onClick={handleContactClick}
+          className="flex items-center space-x-4 bg-[#001242] text-white px-8 py-4 rounded-full shadow-2xl border border-white/10 group active:scale-95 transition-transform"
+        >
+          <div className="flex flex-col items-start text-left">
+            <span className="text-[9px] font-bold uppercase tracking-widest text-[#8a7eb5]">Get Started</span>
+            <span className="text-sm font-bold">Book a Consultation</span>
+          </div>
+          <div className="w-10 h-10 bg-[#8a7eb5] rounded-full flex items-center justify-center transition-transform group-hover:translate-x-1">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+          </div>
+        </button>
       </div>
     </div>
   );

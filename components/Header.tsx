@@ -8,7 +8,11 @@ const navItems = [
   { label: 'Contact', href: '#contact' },
 ];
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  onNavigate: (href: string) => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -20,15 +24,10 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Force scroll to top and reset view when clicking logo or home
-  const handleLogoClick = () => {
-    window.location.href = '#home';
-    if (window.location.hash === '#home') {
-       window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    // If you were on a detail page, the App state needs to handle resetting selectedService.
-    // In this simple setup, App will reset if we reload or if we add a reset trigger.
-    // For now, simple href is fine as App component will re-render if state changes.
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    onNavigate(href);
+    setMobileMenuOpen(false);
   };
 
   return (
@@ -47,8 +46,10 @@ export const Header: React.FC = () => {
             ? 'glass shadow-[0_8px_32px_rgba(0,0,0,0.08)] border border-slate-200/50' 
             : 'bg-transparent border-transparent'
         }`}>
-          <div className="flex items-center space-x-3 group cursor-pointer" onClick={handleLogoClick}>
-            {/* SVG Logo Reconstruction matching user image */}
+          <div 
+            className="flex items-center space-x-3 group cursor-pointer" 
+            onClick={() => onNavigate('#home')}
+          >
             <div className="relative w-12 h-12 flex items-center justify-center">
               <svg viewBox="0 0 100 100" className="w-full h-full">
                 <circle cx="35" cy="45" r="30" fill="#8a7eb5" opacity="0.8" />
@@ -74,6 +75,7 @@ export const Header: React.FC = () => {
               <a 
                 key={item.label}
                 href={item.href}
+                onClick={(e) => handleLinkClick(e, item.href)}
                 className={`text-[10px] font-bold uppercase tracking-widest link-underline transition-colors ${
                   isScrolled ? 'text-slate-600 hover:text-[#8a7eb5]' : 'text-slate-200 hover:text-[#8a7eb5]'
                 }`}
@@ -82,7 +84,8 @@ export const Header: React.FC = () => {
               </a>
             ))}
             <a 
-              href="#contact" 
+              href="#contact"
+              onClick={(e) => handleLinkClick(e, '#contact')}
               className={`px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${
                 isScrolled 
                   ? 'bg-[#001242] text-white hover:bg-[#8a7eb5] shadow-lg shadow-slate-900/10' 
@@ -116,16 +119,16 @@ export const Header: React.FC = () => {
             <a 
               key={item.label}
               href={item.href}
+              onClick={(e) => handleLinkClick(e, item.href)}
               className="text-2xl font-serif font-bold text-slate-900"
-              onClick={() => setMobileMenuOpen(false)}
             >
               {item.label}
             </a>
           ))}
           <a 
             href="#contact" 
+            onClick={(e) => handleLinkClick(e, '#contact')}
             className="bg-[#001242] text-white px-8 py-4 rounded-full font-bold"
-            onClick={() => setMobileMenuOpen(false)}
           >
             Book Now
           </a>

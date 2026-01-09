@@ -31,24 +31,39 @@ const App: React.FC = () => {
     revealElements.forEach(el => observer.observe(el));
 
     return () => observer.disconnect();
-  }, [selectedService]); // Re-observe when view changes
+  }, [selectedService]);
 
   const handleSelectService = (service: Service) => {
     setSelectedService(service);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleBackToHome = () => {
-    setSelectedService(null);
+  const handleNavigate = (href: string) => {
+    // If we are on a detail page, we need to go back to landing first
+    if (selectedService) {
+      setSelectedService(null);
+    }
+
+    // Small timeout to allow the landing sections to mount before scrolling
+    setTimeout(() => {
+      const id = href.startsWith('#') ? href.substring(1) : href;
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      } else if (href === '#home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }, 10);
   };
 
   return (
     <div className="relative bg-white selection:bg-[#8a7eb5]/30 selection:text-[#001242]">
-      <Header />
+      <Header onNavigate={handleNavigate} />
       <main>
         {selectedService ? (
           <ServiceDetail 
             service={selectedService} 
-            onBack={handleBackToHome} 
+            onBack={() => setSelectedService(null)} 
           />
         ) : (
           <>
@@ -59,7 +74,7 @@ const App: React.FC = () => {
           </>
         )}
       </main>
-      <Footer />
+      <Footer onNavigate={handleNavigate} />
       <ConsultantChat />
     </div>
   );
