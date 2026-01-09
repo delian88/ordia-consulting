@@ -1,14 +1,52 @@
 
 import React, { useEffect, useState } from 'react';
-import { Service } from '../types';
+import { Service, ServiceFeature } from '../types';
 
 interface ServiceDetailProps {
   service: Service;
   onBack: () => void;
 }
 
+const AccordionItem: React.FC<{ 
+  feature: ServiceFeature; 
+  isOpen: boolean; 
+  onClick: () => void;
+  index: number;
+}> = ({ feature, isOpen, onClick, index }) => {
+  return (
+    <div className={`border-b border-slate-100 last:border-none transition-all duration-300 ${isOpen ? 'bg-[#f8f9ff]/50 rounded-2xl' : ''}`}>
+      <button 
+        onClick={onClick}
+        className="w-full flex items-center justify-between p-6 text-left focus:outline-none group"
+      >
+        <div className="flex items-center space-x-4">
+          <span className={`text-xs font-bold font-serif transition-colors ${isOpen ? 'text-[#8a7eb5]' : 'text-slate-300'}`}>
+            0{index + 1}
+          </span>
+          <span className={`text-lg font-bold transition-colors ${isOpen ? 'text-[#001242]' : 'text-slate-600 group-hover:text-[#001242]'}`}>
+            {feature.title}
+          </span>
+        </div>
+        <div className={`w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center transition-all ${isOpen ? 'bg-[#001242] border-[#001242] text-white rotate-180' : 'group-hover:border-[#8a7eb5] group-hover:text-[#8a7eb5]'}`}>
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+      </button>
+      <div 
+        className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'}`}
+      >
+        <div className="px-16 pb-8 text-slate-500 leading-relaxed text-sm">
+          {feature.detail}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, onBack }) => {
   const [showSticky, setShowSticky] = useState(false);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -58,20 +96,52 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, onBack })
               {service.fullDescription}
             </p>
 
-            <div className="space-y-12">
+            <div className="space-y-16">
               <div>
-                <h3 className="text-2xl font-serif font-bold text-[#001242] mb-8 border-b border-slate-100 pb-4">Key Focus Areas</h3>
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="flex items-center justify-between mb-8 border-b border-slate-100 pb-4">
+                  <h3 className="text-2xl font-serif font-bold text-[#001242]">Key Focus Areas</h3>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-[#8a7eb5]">Click to expand</span>
+                </div>
+                <div className="space-y-2">
                   {service.features.map((feature, i) => (
-                    <div key={i} className="flex items-start space-x-4 p-6 rounded-2xl bg-slate-50 border border-slate-100 group hover:border-[#8a7eb5] transition-all">
-                      <div className="w-6 h-6 rounded-full bg-[#8a7eb5]/10 flex items-center justify-center text-[#8a7eb5] mt-1 shrink-0">
-                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
-                      </div>
-                      <span className="font-bold text-slate-700">{feature}</span>
-                    </div>
+                    <AccordionItem 
+                      key={i} 
+                      index={i}
+                      feature={feature} 
+                      isOpen={openIndex === i} 
+                      onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                    />
                   ))}
                 </div>
               </div>
+
+              {/* Testimonials Section */}
+              {service.testimonials && service.testimonials.length > 0 && (
+                <div className="reveal active">
+                  <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-[#8a7eb5] mb-8">What Our Clients Say</h3>
+                  <div className="space-y-8">
+                    {service.testimonials.map((testimonial, i) => (
+                      <div key={i} className="relative p-10 bg-[#f8f9ff] rounded-[2.5rem] border border-slate-100">
+                        <div className="absolute top-8 left-8 text-6xl font-serif text-[#8a7eb5]/10 pointer-events-none">“</div>
+                        <div className="relative z-10">
+                          <p className="text-xl font-serif italic text-[#001242] mb-8 leading-relaxed">
+                            {testimonial.quote}
+                          </p>
+                          <div className="flex items-center space-x-4">
+                            <div className="w-10 h-10 bg-[#001242] rounded-full flex items-center justify-center text-white font-bold text-xs">
+                              {testimonial.author.charAt(0)}
+                            </div>
+                            <div>
+                              <p className="text-xs font-bold uppercase tracking-widest text-[#001242]">{testimonial.author}</p>
+                              <p className="text-[10px] font-bold text-[#8a7eb5] uppercase tracking-widest">{testimonial.role}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               <div className="p-10 bg-[#001242] rounded-[3rem] text-white relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-[#8a7eb5]/10 rounded-full blur-[80px] -mr-32 -mt-32 transition-transform duration-1000 group-hover:scale-125"></div>
