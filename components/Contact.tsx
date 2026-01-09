@@ -1,7 +1,86 @@
 
-import React from 'react';
+import React, { useState } from 'react';
+
+interface FormState {
+  name: string;
+  email: string;
+  service: string;
+  message: string;
+}
+
+interface FormErrors {
+  name?: string;
+  email?: string;
+  service?: string;
+  message?: string;
+}
 
 export const Contact: React.FC = () => {
+  const [formData, setFormData] = useState<FormState>({
+    name: '',
+    email: '',
+    service: 'Tax Services',
+    message: ''
+  });
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const validate = (): boolean => {
+    const newErrors: FormErrors = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'Full name is required';
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email address is required';
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = 'Please provide some details about your requirements';
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'Message must be at least 10 characters long';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(false);
+
+    if (validate()) {
+      setIsSubmitting(true);
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      setIsSubmitting(false);
+      setSubmitted(true);
+      setFormData({
+        name: '',
+        email: '',
+        service: 'Tax Services',
+        message: ''
+      });
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setSubmitted(false), 5000);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    // Clear error when user starts typing
+    if (errors[name as keyof FormErrors]) {
+      setErrors(prev => ({ ...prev, [name]: undefined }));
+    }
+  };
+
   return (
     <section id="contact" className="py-32 bg-[#001242] relative overflow-hidden">
       {/* Decorative Blur */}
@@ -50,28 +129,50 @@ export const Contact: React.FC = () => {
 
             <div className="lg:col-span-7 reveal-right">
               <div className="dark-glass p-10 lg:p-16 rounded-[3rem] shadow-2xl relative">
-                <form className="space-y-8">
+                {submitted && (
+                  <div className="mb-8 p-6 bg-green-500/10 border border-green-500/20 rounded-2xl animate-fade-in">
+                    <div className="flex items-center space-x-3 text-green-400">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                      <p className="font-bold">Thank you! Your inquiry has been sent successfully.</p>
+                    </div>
+                  </div>
+                )}
+
+                <form className="space-y-8" onSubmit={handleSubmit}>
                   <div className="grid md:grid-cols-2 gap-8">
                     <div className="space-y-2">
                       <label className="text-[10px] uppercase tracking-widest font-bold text-slate-500 ml-1">Legal Name</label>
                       <input 
-                        type="text" 
-                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder-slate-600 focus:bg-white/10 focus:border-[#8a7eb5] outline-none transition-all"
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        className={`w-full bg-white/5 border ${errors.name ? 'border-red-500/50' : 'border-white/10'} rounded-2xl px-6 py-4 text-white placeholder-slate-600 focus:bg-white/10 focus:border-[#8a7eb5] outline-none transition-all`}
                         placeholder="e.g. Jane Doe"
                       />
+                      {errors.name && <p className="text-red-400 text-[10px] font-bold ml-1 mt-1">{errors.name}</p>}
                     </div>
                     <div className="space-y-2">
                       <label className="text-[10px] uppercase tracking-widest font-bold text-slate-500 ml-1">Email Address</label>
                       <input 
                         type="email" 
-                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder-slate-600 focus:bg-white/10 focus:border-[#8a7eb5] outline-none transition-all"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className={`w-full bg-white/5 border ${errors.email ? 'border-red-500/50' : 'border-white/10'} rounded-2xl px-6 py-4 text-white placeholder-slate-600 focus:bg-white/10 focus:border-[#8a7eb5] outline-none transition-all`}
                         placeholder="jane@example.com"
                       />
+                      {errors.email && <p className="text-red-400 text-[10px] font-bold ml-1 mt-1">{errors.email}</p>}
                     </div>
                   </div>
                   <div className="space-y-2">
                     <label className="text-[10px] uppercase tracking-widest font-bold text-slate-500 ml-1">Service Interest</label>
-                    <select className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:bg-white/10 focus:border-[#8a7eb5] outline-none transition-all appearance-none cursor-pointer">
+                    <select 
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                      className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:bg-white/10 focus:border-[#8a7eb5] outline-none transition-all appearance-none cursor-pointer"
+                    >
                       <option className="bg-[#001242]">Tax Services</option>
                       <option className="bg-[#001242]">Accounting & Bookkeeping</option>
                       <option className="bg-[#001242]">Business Consulting</option>
@@ -82,12 +183,29 @@ export const Contact: React.FC = () => {
                     <label className="text-[10px] uppercase tracking-widest font-bold text-slate-500 ml-1">Consultation Details</label>
                     <textarea 
                       rows={4} 
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white placeholder-slate-600 focus:bg-white/10 focus:border-[#8a7eb5] outline-none transition-all resize-none"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      className={`w-full bg-white/5 border ${errors.message ? 'border-red-500/50' : 'border-white/10'} rounded-2xl px-6 py-4 text-white placeholder-slate-600 focus:bg-white/10 focus:border-[#8a7eb5] outline-none transition-all resize-none`}
                       placeholder="Briefly describe your requirements..."
                     ></textarea>
+                    {errors.message && <p className="text-red-400 text-[10px] font-bold ml-1 mt-1">{errors.message}</p>}
                   </div>
-                  <button className="w-full bg-white text-[#001242] hover:bg-[#8a7eb5] hover:text-white font-bold py-5 rounded-full shadow-2xl transition-all duration-300 transform active:scale-95 uppercase tracking-widest text-xs">
-                    Send Inquiry
+                  <button 
+                    disabled={isSubmitting}
+                    className="w-full bg-white text-[#001242] hover:bg-[#8a7eb5] hover:text-white font-bold py-5 rounded-full shadow-2xl transition-all duration-300 transform active:scale-95 uppercase tracking-widest text-xs flex items-center justify-center space-x-2"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <svg className="animate-spin h-5 w-5 text-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span>Processing...</span>
+                      </>
+                    ) : (
+                      <span>Send Inquiry</span>
+                    )}
                   </button>
                 </form>
               </div>

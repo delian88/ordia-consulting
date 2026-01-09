@@ -5,17 +5,26 @@ export const About: React.FC = () => {
   return (
     <section id="about" className="py-32 bg-white relative overflow-hidden">
       <div className="container mx-auto px-6">
-        {/* Top Section: Story & Image */}
+        {/* Top Section: Story & Branding */}
         <div className="grid lg:grid-cols-12 gap-20 items-center mb-32">
           <div className="lg:col-span-6 relative reveal-left">
-            <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl">
-              <div className="absolute inset-0 bg-[#001242]/10 mix-blend-multiply"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1200" 
-                alt="Ordia Consulting Leadership" 
-                className="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-1000"
-              />
+            <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl bg-gradient-to-br from-[#f8f9ff] to-[#f0f2ff] aspect-[4/5] flex items-center justify-center border border-slate-100 p-12 lg:p-20">
+              <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#001242 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
+              
+              {/* Large Branded Logo */}
+              <div className="w-full h-full max-w-[300px] max-h-[300px] relative">
+                <div className="absolute inset-0 bg-[#8a7eb5]/5 rounded-full blur-3xl animate-pulse"></div>
+                <svg viewBox="0 0 100 100" className="w-full h-full relative z-10 filter drop-shadow-xl transition-transform duration-700 hover:scale-110">
+                  <circle cx="35" cy="45" r="30" fill="#8a7eb5" opacity="0.9" />
+                  <path d="M10 50 Q 40 40 70 20" stroke="white" strokeWidth="4" fill="none" />
+                  <rect x="25" y="55" width="8" height="25" fill="#001242" />
+                  <rect x="40" y="45" width="8" height="35" fill="#001242" />
+                  <rect x="55" y="35" width="8" height="45" fill="#001242" />
+                  <text x="65" y="70" fontSize="40" fontWeight="bold" fill="#001242" fontFamily="sans-serif">CS</text>
+                </svg>
+              </div>
             </div>
+            
             <div className="absolute -bottom-10 -right-10 p-10 glass rounded-[2.5rem] shadow-2xl z-20 hidden md:block border border-white/50 reveal delay-500">
               <div className="flex items-center space-x-6">
                 <div>
