@@ -12,27 +12,25 @@ const App: React.FC = () => {
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
+      rootMargin: "0px 0px -100px 0px"
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
-          // Optionally unobserve after animating
-          // observer.unobserve(entry.target);
         }
       });
     }, observerOptions);
 
-    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .line-reveal');
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
     revealElements.forEach(el => observer.observe(el));
 
     return () => observer.disconnect();
   }, []);
 
   return (
-    <div className="relative selection:bg-blue-100 selection:text-blue-900">
+    <div className="relative bg-white selection:bg-[#8a7eb5]/30 selection:text-[#001242]">
       <Header />
       <main>
         <Hero />
