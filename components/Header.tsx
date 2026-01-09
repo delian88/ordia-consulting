@@ -5,8 +5,6 @@ const navItems = [
   { label: 'Home', href: '#home' },
   { label: 'About Us', href: '#about' },
   { label: 'Services', href: '#services' },
-  { label: 'News', href: '#news' },
-  { label: 'Links', href: '#links' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -39,14 +37,22 @@ export const Header: React.FC = () => {
             : 'bg-transparent border-transparent'
         }`}>
           <div className="flex items-center space-x-3 group cursor-pointer" onClick={() => window.scrollTo(0,0)}>
-            <div className="w-10 h-10 bg-slate-950 rounded-lg flex items-center justify-center transition-transform group-hover:scale-110">
-              <span className="text-white font-serif font-bold text-xl">O</span>
+            {/* SVG Logo Reconstruction matching user image */}
+            <div className="relative w-12 h-12 flex items-center justify-center">
+              <svg viewBox="0 0 100 100" className="w-full h-full">
+                <circle cx="35" cy="45" r="30" fill="#8a7eb5" opacity="0.8" />
+                <path d="M10 50 Q 40 40 70 20" stroke="white" strokeWidth="4" fill="none" />
+                <rect x="25" y="55" width="8" height="25" fill="#001242" />
+                <rect x="40" y="45" width="8" height="35" fill="#001242" />
+                <rect x="55" y="35" width="8" height="45" fill="#001242" />
+                <text x="65" y="70" fontSize="40" fontWeight="bold" fill="#001242" fontFamily="sans-serif">CS</text>
+              </svg>
             </div>
             <div className="flex flex-col">
               <span className={`font-bold text-lg tracking-tight transition-colors ${isScrolled ? 'text-slate-900' : 'text-white'}`}>
                 ORDIA
               </span>
-              <span className={`text-[9px] tracking-[0.2em] font-bold uppercase transition-colors ${isScrolled ? 'text-blue-600' : 'text-blue-300'}`}>
+              <span className={`text-[9px] tracking-[0.2em] font-bold uppercase transition-colors ${isScrolled ? 'text-[#8a7eb5]' : 'text-[#8a7eb5]'}`}>
                 Consulting Services
               </span>
             </div>
@@ -58,7 +64,7 @@ export const Header: React.FC = () => {
                 key={item.label}
                 href={item.href}
                 className={`text-[10px] font-bold uppercase tracking-widest link-underline transition-colors ${
-                  isScrolled ? 'text-slate-600 hover:text-blue-600' : 'text-slate-200 hover:text-white'
+                  isScrolled ? 'text-slate-600 hover:text-[#8a7eb5]' : 'text-slate-200 hover:text-[#8a7eb5]'
                 }`}
               >
                 {item.label}
@@ -68,8 +74,8 @@ export const Header: React.FC = () => {
               href="#contact" 
               className={`px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition-all ${
                 isScrolled 
-                  ? 'bg-slate-900 text-white hover:bg-blue-600 shadow-lg shadow-slate-900/10' 
-                  : 'bg-white text-slate-900 hover:bg-blue-50'
+                  ? 'bg-[#001242] text-white hover:bg-[#8a7eb5] shadow-lg shadow-slate-900/10' 
+                  : 'bg-white text-[#001242] hover:bg-slate-50'
               }`}
             >
               Consultation
@@ -107,7 +113,7 @@ export const Header: React.FC = () => {
           ))}
           <a 
             href="#contact" 
-            className="bg-slate-900 text-white px-8 py-4 rounded-full font-bold"
+            className="bg-[#001242] text-white px-8 py-4 rounded-full font-bold"
             onClick={() => setMobileMenuOpen(false)}
           >
             Book Now
