@@ -53,9 +53,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-xs">
-            © {new Date().getFullYear()} Ordia Consulting Services. All rights reserved.
-          </p>
+          <div className="flex flex-col items-center md:items-start gap-1">
+            <p className="text-xs">
+              © {new Date().getFullYear()} Ordia Consulting Services. All rights reserved.
+            </p>
+            <p className="text-[10px] tracking-widest uppercase text-slate-500 font-medium">
+              Powered by <span className="text-[#8a7eb5]">Azariah Management Group</span>
+            </p>
+          </div>
           <div className="flex space-x-6 text-[10px] uppercase tracking-widest font-bold text-slate-600">
             <span>Professionalism</span>
             <span>•</span>
