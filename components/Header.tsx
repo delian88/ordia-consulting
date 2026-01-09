@@ -20,6 +20,17 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Force scroll to top and reset view when clicking logo or home
+  const handleLogoClick = () => {
+    window.location.href = '#home';
+    if (window.location.hash === '#home') {
+       window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    // If you were on a detail page, the App state needs to handle resetting selectedService.
+    // In this simple setup, App will reset if we reload or if we add a reset trigger.
+    // For now, simple href is fine as App component will re-render if state changes.
+  };
+
   return (
     <header 
       className={`fixed w-full z-50 transition-all duration-500 ${
@@ -36,7 +47,7 @@ export const Header: React.FC = () => {
             ? 'glass shadow-[0_8px_32px_rgba(0,0,0,0.08)] border border-slate-200/50' 
             : 'bg-transparent border-transparent'
         }`}>
-          <div className="flex items-center space-x-3 group cursor-pointer" onClick={() => window.scrollTo(0,0)}>
+          <div className="flex items-center space-x-3 group cursor-pointer" onClick={handleLogoClick}>
             {/* SVG Logo Reconstruction matching user image */}
             <div className="relative w-12 h-12 flex items-center justify-center">
               <svg viewBox="0 0 100 100" className="w-full h-full">

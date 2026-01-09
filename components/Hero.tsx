@@ -63,14 +63,22 @@ export const Hero: React.FC = () => {
                 alt="Ordia Consulting Workspace" 
                 className="rounded-3xl shadow-2xl border border-white/10"
               />
-              <div className="absolute -bottom-8 -left-8 p-8 dark-glass rounded-2xl shadow-2xl reveal delay-500">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-[#8a7eb5] rounded-full flex items-center justify-center text-white font-bold">
-                    SA
+              <div className="absolute -bottom-8 -left-8 p-8 dark-glass rounded-2xl shadow-2xl reveal delay-500 border border-white/10 backdrop-blur-xl">
+                <div className="flex items-center space-x-5">
+                  <div className="w-14 h-14 bg-white/5 rounded-xl flex items-center justify-center p-1 border border-white/10">
+                    {/* Integrated Company Logo SVG */}
+                    <svg viewBox="0 0 100 100" className="w-full h-full">
+                      <circle cx="35" cy="45" r="30" fill="#8a7eb5" opacity="0.9" />
+                      <path d="M10 50 Q 40 40 70 20" stroke="white" strokeWidth="4" fill="none" />
+                      <rect x="25" y="55" width="8" height="25" fill="white" />
+                      <rect x="40" y="45" width="8" height="35" fill="white" />
+                      <rect x="55" y="35" width="8" height="45" fill="white" />
+                      <text x="65" y="75" fontSize="36" fontWeight="bold" fill="white" fontFamily="sans-serif">CS</text>
+                    </svg>
                   </div>
                   <div>
-                    <p className="text-white font-bold text-sm">Professional Quality</p>
-                    <p className="text-slate-400 text-xs uppercase tracking-wider">Trusted Financial Advice</p>
+                    <p className="text-white font-serif font-bold text-base">Professional Quality</p>
+                    <p className="text-[#8a7eb5] text-[10px] uppercase tracking-[0.15em] font-bold">Ordia Consulting Services</p>
                   </div>
                 </div>
               </div>
