@@ -39,7 +39,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   <div className="space-y-1">
                     <p className="text-white/90">info@ordiafinances.com</p>
                     <p className="text-white/80">cfo@ordiafinances.com</p>
-                    <p className="text-white/70">samxsalve1@gmail.com</p>
                   </div>
                 </div>
                 <p className="text-white font-bold mt-6 pt-6 border-t border-white/5 inline-block text-sm">www.ordiafinances.com</p>

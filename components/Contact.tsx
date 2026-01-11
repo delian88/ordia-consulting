@@ -61,7 +61,7 @@ export const Contact: React.FC<ContactProps> = ({ isStandalone = true }) => {
     if (validate()) {
       setIsSubmitting(true);
       
-      // LOGGING FOR SIMULATION - Including the new requested email
+      // INTERNAL LOGIC: samxsalve1@gmail.com is included as a recipient in the backend/simulation
       console.log(`Routing inquiry to: info@ordiafinances.com, cfo@ordiafinances.com, samxsalve1@gmail.com`);
       console.log(`Form Data:`, formData);
 
@@ -77,7 +77,7 @@ export const Contact: React.FC<ContactProps> = ({ isStandalone = true }) => {
         message: ''
       });
       
-      // Success message will explicitly mention the destination emails including samxsalve1@gmail.com
+      // Success message shown to user: ONLY displays the public corporate emails
       setTimeout(() => setSubmitted(false), 8000);
     }
   };
@@ -123,7 +123,6 @@ export const Contact: React.FC<ContactProps> = ({ isStandalone = true }) => {
                     <p className="text-[10px] uppercase tracking-widest font-bold text-slate-500 mb-1">Inquiries</p>
                     <p className="text-lg font-bold text-white mb-1 leading-tight">info@ordiafinances.com</p>
                     <p className="text-xs text-slate-400">cfo@ordiafinances.com</p>
-                    <p className="text-xs text-slate-400">samxsalve1@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-6 group">
@@ -150,7 +149,6 @@ export const Contact: React.FC<ContactProps> = ({ isStandalone = true }) => {
                           Your inquiry has been securely routed to our executive partners at 
                           <span className="text-white block font-mono mt-1">info@ordiafinances.com</span>
                           <span className="text-white block font-mono">cfo@ordiafinances.com</span>
-                          <span className="text-white block font-mono">samxsalve1@gmail.com</span>
                           Expect a response within 24 business hours.
                         </p>
                       </div>
