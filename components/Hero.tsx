@@ -1,96 +1,196 @@
 
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { FullLogo } from './Header';
+
+interface Slide {
+  id: number;
+  image: string;
+  title: string;
+  subtitle: string;
+  tagline: string;
+  overlayType: 'billboard' | 'glass' | 'wall';
+}
+
+const slides: Slide[] = [
+  {
+    id: 1,
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000",
+    title: "Global Financial Strategy",
+    subtitle: "Navigating complexity with 360° precision.",
+    tagline: "Corporate Headquarters",
+    overlayType: 'wall'
+  },
+  {
+    id: 2,
+    image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=2000",
+    title: "Accounting Reimagined",
+    subtitle: "Precision tech for modern business leaders.",
+    tagline: "Executive Suite Branding",
+    overlayType: 'glass'
+  },
+  {
+    id: 3,
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2000",
+    title: "Tax Strategy Excellence",
+    subtitle: "Proactive counsel for the next generation.",
+    tagline: "Metropolitan Digital Signage",
+    overlayType: 'billboard'
+  }
+];
 
 export const Hero: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  const nextSlide = useCallback(() => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setTimeout(() => setIsTransitioning(false), 1000);
+  }, [isTransitioning]);
+
+  const prevSlide = useCallback(() => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setTimeout(() => setIsTransitioning(false), 1000);
+  }, [isTransitioning]);
+
+  useEffect(() => {
+    const timer = setInterval(nextSlide, 7000);
+    return () => clearInterval(timer);
+  }, [nextSlide]);
+
   return (
-    <section id="home" className="relative min-h-[95vh] flex items-center bg-white pt-32 pb-20 overflow-hidden">
-      {/* Refined Plain White & Light Blue palette Mixture */}
-      <div className="absolute top-0 right-0 w-[65vw] h-[65vw] bg-[#f0f7ff]/40 rounded-full blur-[120px] -mr-[25vw] -mt-[25vw] pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-[45vw] h-[45vw] bg-[#eef2ff]/30 rounded-full blur-[100px] -ml-[15vw] -mb-[15vw] pointer-events-none"></div>
-      
-      {/* Subtle Dot Pattern Effect */}
-      <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#001242 0.5px, transparent 0.5px)', backgroundSize: '40px 40px' }}></div>
-
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-12 gap-16 items-center">
-          <div className="lg:col-span-6 reveal active">
-            <div className="inline-flex items-center space-x-3 px-5 py-2 rounded-full bg-white border border-slate-100 shadow-sm text-[#8a7eb5] text-[10px] font-bold uppercase tracking-[0.25em] mb-12">
-              <span className="w-2 h-2 bg-[#8a7eb5] rounded-full animate-pulse"></span>
-              <span>The 360° Approach to Financial Excellence</span>
-            </div>
-            
-            <h1 className="text-6xl lg:text-[5.5rem] font-serif font-bold text-[#001242] mb-10 leading-[1.05]">
-              Accounting & Tax <br />
-              <span className="italic font-normal text-[#8a7eb5]">Beyond Compliance.</span>
-            </h1>
-            
-            <p className="text-slate-500 text-lg lg:text-xl mb-14 max-w-xl leading-relaxed font-light">
-              Ordia Consulting Services provides the proactive, tech-forward advisory business owners need to optimize their wealth and scale with absolute clarity.
-            </p>
-            
-            <div className="flex flex-wrap gap-6 mb-20">
-              <a 
-                href="#contact" 
-                className="px-10 py-5 bg-[#001242] text-white rounded-full font-bold text-xs uppercase tracking-widest transition-all hover:bg-[#8a7eb5] hover:-translate-y-1 shadow-2xl shadow-blue-900/10 active:scale-95"
-              >
-                Inquire Today
-              </a>
-              <a 
-                href="#services" 
-                className="px-10 py-5 bg-white border border-slate-200 text-[#001242] rounded-full font-bold text-xs uppercase tracking-widest transition-all hover:border-[#8a7eb5] hover:text-[#8a7eb5] group"
-              >
-                Our Specialties
-                <svg className="inline-block ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </a>
+    <section id="home" className="relative h-screen w-full overflow-hidden bg-slate-900">
+      {/* Slides Container */}
+      <div className="relative h-full w-full">
+        {slides.map((slide, index) => (
+          <div
+            key={slide.id}
+            className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${
+              index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-110 pointer-events-none'
+            }`}
+          >
+            {/* Background Image */}
+            <div className="absolute inset-0">
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/40 to-transparent"></div>
             </div>
 
-            {/* Credibility Strip */}
-            <div className="flex items-center space-x-10 opacity-60">
-               <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Trusted By Executives In</p>
-               <div className="h-6 w-px bg-slate-200"></div>
-               <span className="text-xs font-bold text-slate-500">Real Estate</span>
-               <span className="text-xs font-bold text-slate-500">Tech SaaS</span>
-               <span className="text-xs font-bold text-slate-500">Healthcare</span>
+            {/* Mock-up Branding Layer */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+               {slide.overlayType === 'billboard' && (
+                 <div className="relative w-full h-full">
+                    {/* Simulated Billboard on the architectural background */}
+                    <div className="absolute top-[20%] right-[10%] w-[400px] h-[500px] bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg transform rotate-2 shadow-2xl flex flex-col items-center justify-center p-8 opacity-90">
+                       <FullLogo className="h-32 mb-6" light />
+                       <div className="h-px w-32 bg-[#8a7eb5] mb-6"></div>
+                       <p className="text-white text-center font-bold uppercase tracking-[0.3em] text-[10px]">Baltimore | Maryland</p>
+                    </div>
+                 </div>
+               )}
+
+               {slide.overlayType === 'glass' && (
+                 <div className="relative w-full h-full">
+                    {/* Glass Branding Effect */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20">
+                       <FullLogo className="h-[40vh] md:h-[60vh]" light />
+                    </div>
+                 </div>
+               )}
+
+               {slide.overlayType === 'wall' && (
+                 <div className="relative w-full h-full">
+                    {/* Wall Mounted Plaque Effect */}
+                    <div className="absolute top-[30%] left-[5%] p-10 bg-slate-900/60 backdrop-blur-xl border-l-4 border-[#8a7eb5] shadow-2xl">
+                       <FullLogo className="h-20" light />
+                    </div>
+                 </div>
+               )}
             </div>
-          </div>
 
-          <div className="lg:col-span-6 relative">
-            <div className="relative z-10 reveal active delay-300">
-              {/* Main Image Layer */}
-              <div className="relative animate-float shadow-3xl">
-                <div className="absolute -inset-10 bg-blue-100/30 rounded-full blur-[80px] -z-10 animate-pulse"></div>
-                <img 
-                  src="https://images.unsplash.com/photo-1573166364524-d9dbfd8bbf83?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Financial Specialist" 
-                  className="rounded-[4rem] shadow-2xl border border-white w-full aspect-[4/5] object-cover"
-                />
-              </div>
-
-              {/* Secondary Layer - Tech Team Focus */}
-              <div className="absolute -bottom-12 -left-12 w-3/5 z-20 animate-float [animation-delay:1.5s]">
-                <img 
-                  src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800" 
-                  alt="Advisory Team Session" 
-                  className="rounded-[3rem] shadow-2xl border-4 border-white aspect-square object-cover"
-                />
-              </div>
-
-              {/* Floating Trust Indicator */}
-              <div className="absolute -top-10 -right-8 p-8 glass rounded-[3rem] shadow-2xl z-30 border border-white animate-float [animation-delay:0.8s]">
-                <div className="flex items-center space-x-5">
-                  <div className="w-14 h-14 bg-gradient-to-tr from-[#001242] to-[#8a7eb5] rounded-2xl flex items-center justify-center text-white shadow-xl">
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                  </div>
-                  <div>
-                    <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-0.5">Firm Grade</p>
-                    <p className="text-lg font-serif font-bold text-[#001242]">A+ Advisory</p>
+            {/* Main Content Overlay */}
+            <div className="container mx-auto px-6 relative h-full flex flex-col justify-center">
+              <div className="max-w-4xl">
+                <div className={`transition-all duration-1000 delay-300 transform ${index === currentSlide ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                  <span className="inline-block text-[#8a7eb5] font-bold uppercase tracking-[0.4em] text-[11px] mb-8 bg-white/5 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+                    {slide.tagline}
+                  </span>
+                  <h1 className="text-6xl md:text-[6.5rem] font-serif font-bold text-white mb-10 leading-[1] drop-shadow-2xl">
+                    {slide.title.split(' ').map((word, i) => (
+                      <React.Fragment key={i}>
+                        {i === 1 ? <span className="italic font-normal text-[#8a7eb5]">{word} </span> : word + ' '}
+                      </React.Fragment>
+                    ))}
+                  </h1>
+                  <p className="text-xl md:text-2xl text-slate-300 mb-14 max-w-2xl font-light leading-relaxed drop-shadow-lg">
+                    {slide.subtitle}
+                  </p>
+                  <div className="flex flex-wrap gap-6">
+                    <a
+                      href="#contact"
+                      className="px-12 py-5 bg-[#8a7eb5] text-white rounded-full font-bold text-xs uppercase tracking-[0.2em] transition-all hover:bg-white hover:text-[#001242] hover:-translate-y-1 shadow-2xl active:scale-95"
+                    >
+                      Establish Partnership
+                    </a>
+                    <a
+                      href="#services"
+                      className="px-12 py-5 bg-white/5 backdrop-blur-md border border-white/20 text-white rounded-full font-bold text-xs uppercase tracking-[0.2em] transition-all hover:bg-white hover:text-[#001242] group"
+                    >
+                      View Expertise
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
+
+      {/* Navigation Controls */}
+      <div className="absolute bottom-12 right-12 flex items-center space-x-6 z-30">
+        <button
+          onClick={prevSlide}
+          className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#8a7eb5] hover:border-[#8a7eb5] transition-all group"
+        >
+          <svg className="w-5 h-5 rotate-180 transition-transform group-active:scale-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </button>
+        <div className="flex space-x-3">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrentSlide(i)}
+              className={`h-1.5 transition-all duration-500 rounded-full ${i === currentSlide ? 'w-10 bg-[#8a7eb5]' : 'w-4 bg-white/30 hover:bg-white/50'}`}
+            />
+          ))}
+        </div>
+        <button
+          onClick={nextSlide}
+          className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#8a7eb5] hover:border-[#8a7eb5] transition-all group"
+        >
+          <svg className="w-5 h-5 transition-transform group-active:scale-90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </button>
+      </div>
+
+      {/* Side Indicator */}
+      <div className="absolute top-1/2 left-8 -translate-y-1/2 hidden lg:flex flex-col space-y-8 z-30">
+        <div className="h-px w-8 bg-white/20"></div>
+        <p className="text-[10px] text-white font-bold uppercase tracking-[0.5em] origin-left -rotate-90 translate-y-20 whitespace-nowrap opacity-40">
+          Professional Advisory Firm
+        </p>
+      </div>
+
+      {/* Progress Bar */}
+      <div className="absolute bottom-0 left-0 h-1 bg-[#8a7eb5] z-40 transition-all duration-[7000ms] ease-linear" style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}></div>
     </section>
   );
 };
