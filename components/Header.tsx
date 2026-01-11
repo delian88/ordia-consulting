@@ -66,7 +66,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
   return (
     <header className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'py-3' : 'py-6'}`}>
       <div className="container mx-auto px-6">
-        <div className={`flex justify-between items-center px-8 py-3 rounded-[2.5rem] transition-all duration-500 ${isScrolled ? 'bg-white/90 backdrop-blur-xl shadow-lg border border-slate-100' : 'bg-transparent'}`}>
+        <div className={`flex justify-between items-center px-8 py-3 rounded-[2.5rem] transition-all duration-500 ${isScrolled ? 'bg-white/90 backdrop-blur-xl shadow-lg border border-slate-100' : 'bg-white/30 backdrop-blur-md'}`}>
           <div 
             className="flex items-center cursor-pointer group"
             onClick={() => onNavigate('#home')}

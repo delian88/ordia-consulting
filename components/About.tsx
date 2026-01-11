@@ -2,9 +2,13 @@
 import React from 'react';
 import { FullLogo } from './Header';
 
-export const About: React.FC = () => {
+interface AboutProps {
+  isStandalone?: boolean;
+}
+
+export const About: React.FC<AboutProps> = ({ isStandalone = true }) => {
   return (
-    <section id="about" className="py-32 bg-white relative overflow-hidden">
+    <section id="about" className={`py-32 ${isStandalone ? 'lg:pt-48 min-h-screen' : 'bg-slate-50/30'} bg-white relative overflow-hidden`}>
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-24 items-center">
           <div className="lg:col-span-6 reveal">

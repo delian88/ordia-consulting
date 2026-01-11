@@ -263,7 +263,7 @@ export const servicesData: Service[] = [
     ],
     icon: (
       <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
       </svg>
     )
   }
@@ -271,11 +271,12 @@ export const servicesData: Service[] = [
 
 interface ServicesProps {
   onSelectService: (service: Service) => void;
+  isStandalone?: boolean;
 }
 
-export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
+export const Services: React.FC<ServicesProps> = ({ onSelectService, isStandalone = true }) => {
   return (
-    <section id="services" className="py-32 bg-white relative overflow-hidden">
+    <section id="services" className={`py-32 ${isStandalone ? 'lg:pt-48 min-h-screen' : 'bg-white'} relative overflow-hidden`}>
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20 reveal">
           <span className="text-[#8a7eb5] font-bold uppercase tracking-[0.25em] text-[10px] mb-4 block">Our 360° Solutions</span>

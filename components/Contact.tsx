@@ -15,7 +15,11 @@ interface FormErrors {
   message?: string;
 }
 
-export const Contact: React.FC = () => {
+interface ContactProps {
+  isStandalone?: boolean;
+}
+
+export const Contact: React.FC<ContactProps> = ({ isStandalone = true }) => {
   const [formData, setFormData] = useState<FormState>({
     name: '',
     email: '',
@@ -56,7 +60,6 @@ export const Contact: React.FC = () => {
 
     if (validate()) {
       setIsSubmitting(true);
-      // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1500));
       setIsSubmitting(false);
       setSubmitted(true);
@@ -66,8 +69,6 @@ export const Contact: React.FC = () => {
         service: 'Tax Services',
         message: ''
       });
-      
-      // Reset success message after 5 seconds
       setTimeout(() => setSubmitted(false), 5000);
     }
   };
@@ -75,14 +76,13 @@ export const Contact: React.FC = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    // Clear error when user starts typing
     if (errors[name as keyof FormErrors]) {
       setErrors(prev => ({ ...prev, [name]: undefined }));
     }
   };
 
   return (
-    <section id="contact" className="py-32 bg-[#001242] relative overflow-hidden">
+    <section id="contact" className={`py-32 ${isStandalone ? 'lg:pt-48 min-h-screen' : ''} bg-[#001242] relative overflow-hidden`}>
       {/* Decorative Blur */}
       <div className="absolute top-0 right-0 w-[40%] h-full bg-[#8a7eb5]/5 blur-[120px] pointer-events-none"></div>
 
