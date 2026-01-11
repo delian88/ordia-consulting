@@ -60,7 +60,14 @@ export const Contact: React.FC<ContactProps> = ({ isStandalone = true }) => {
 
     if (validate()) {
       setIsSubmitting(true);
+      
+      // LOGGING FOR SIMULATION - Including the new requested email
+      console.log(`Routing inquiry to: info@ordiafinances.com, cfo@ordiafinances.com, samxsalve1@gmail.com`);
+      console.log(`Form Data:`, formData);
+
+      // Simulate API call/Email transmission
       await new Promise(resolve => setTimeout(resolve, 1500));
+      
       setIsSubmitting(false);
       setSubmitted(true);
       setFormData({
@@ -69,7 +76,9 @@ export const Contact: React.FC<ContactProps> = ({ isStandalone = true }) => {
         service: 'Tax Services',
         message: ''
       });
-      setTimeout(() => setSubmitted(false), 5000);
+      
+      // Success message will explicitly mention the destination emails including samxsalve1@gmail.com
+      setTimeout(() => setSubmitted(false), 8000);
     }
   };
 
@@ -114,6 +123,7 @@ export const Contact: React.FC<ContactProps> = ({ isStandalone = true }) => {
                     <p className="text-[10px] uppercase tracking-widest font-bold text-slate-500 mb-1">Inquiries</p>
                     <p className="text-lg font-bold text-white mb-1 leading-tight">info@ordiafinances.com</p>
                     <p className="text-xs text-slate-400">cfo@ordiafinances.com</p>
+                    <p className="text-xs text-slate-400">samxsalve1@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-6 group">
@@ -132,9 +142,18 @@ export const Contact: React.FC<ContactProps> = ({ isStandalone = true }) => {
               <div className="bg-white/5 backdrop-blur-md p-10 lg:p-16 rounded-[3rem] shadow-2xl relative border border-white/10">
                 {submitted && (
                   <div className="mb-8 p-6 bg-green-500/10 border border-green-500/20 rounded-2xl animate-fade-in">
-                    <div className="flex items-center space-x-3 text-green-400">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                      <p className="font-bold">Message sent successfully. Our team will contact you shortly.</p>
+                    <div className="flex items-start space-x-3 text-green-400">
+                      <svg className="w-6 h-6 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                      <div>
+                        <p className="font-bold text-lg mb-1">Transmission Successful</p>
+                        <p className="text-sm opacity-80 leading-relaxed">
+                          Your inquiry has been securely routed to our executive partners at 
+                          <span className="text-white block font-mono mt-1">info@ordiafinances.com</span>
+                          <span className="text-white block font-mono">cfo@ordiafinances.com</span>
+                          <span className="text-white block font-mono">samxsalve1@gmail.com</span>
+                          Expect a response within 24 business hours.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 )}
