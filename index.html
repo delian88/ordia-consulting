@@ -13,75 +13,62 @@
         :root {
             --brand-navy: #001242;
             --brand-lavender: #8a7eb5;
-            --brand-blue: #001242;
+            --brand-light-blue: #f0f7ff;
+            --brand-soft-blue: #eef2ff;
         }
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
+            background-color: #ffffff;
+            color: #1e293b;
         }
         h1, h2, h3, .font-serif {
             font-family: 'Playfair Display', serif;
         }
         .glass {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .dark-glass {
-            background: rgba(0, 18, 66, 0.85);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
-        .mesh-gradient {
-            background-color: #001242;
+        .soft-mesh {
+            background-color: #ffffff;
             background-image: 
-                radial-gradient(at 0% 0%, #001242 0, transparent 50%), 
-                radial-gradient(at 100% 0%, rgba(138, 126, 181, 0.2) 0, transparent 50%),
-                radial-gradient(at 0% 100%, rgba(138, 126, 181, 0.1) 0, transparent 50%);
+                radial-gradient(at 0% 0%, #f0f9ff 0, transparent 40%), 
+                radial-gradient(at 100% 100%, #f5f3ff 0, transparent 40%);
         }
         
         .reveal {
             opacity: 0;
-            transform: translateY(20px);
-            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
         }
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-30px);
-            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
-        .reveal-left.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        .reveal-right {
-            opacity: 0;
-            transform: translateX(30px);
-            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .reveal-right.active {
-            opacity: 1;
-            transform: translateX(0);
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
         }
 
-        .link-underline {
+        .link-hover {
             position: relative;
         }
-        .link-underline::after {
+        .link-hover::after {
             content: '';
             position: absolute;
             width: 0;
-            height: 1.5px;
-            bottom: -2px;
+            height: 2px;
+            bottom: -4px;
             left: 0;
-            background-color: currentColor;
+            background-color: #001242;
             transition: width 0.3s ease;
         }
-        .link-underline:hover::after {
+        .link-hover:hover::after {
             width: 100%;
         }
 
@@ -89,22 +76,14 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #f1f5f9;
+            background: #f8fafc;
         }
         ::-webkit-scrollbar-thumb {
-            background: #8a7eb5;
-            border-radius: 10px;
+            background: #cbd5e1;
+            border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #001242;
-        }
-
-        @keyframes fade-in {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .animate-fade-in {
-            animation: fade-in 0.8s ease-out forwards;
+            background: #8a7eb5;
         }
     </style>
     <script type="importmap">
@@ -118,7 +97,7 @@
     }
     </script>
 </head>
-<body class="bg-white text-slate-900 selection:bg-[#8a7eb5] selection:text-white">
+<body>
     <div id="root"></div>
     <script type="module" src="index.tsx"></script>
 </body>

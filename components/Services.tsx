@@ -275,48 +275,35 @@ interface ServicesProps {
 
 export const Services: React.FC<ServicesProps> = ({ onSelectService }) => {
   return (
-    <section id="services" className="py-32 bg-gradient-to-b from-white via-[#f4f7ff] to-white relative overflow-hidden">
-      {/* Decorative Blueprint elements */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#001242 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#8a7eb5]/5 rounded-full blur-[120px] -mr-64 -mt-64"></div>
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#001242]/5 rounded-full blur-[120px] -ml-64 -mb-64"></div>
-      
+    <section id="services" className="py-32 bg-white relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 reveal">
-          <div className="max-w-2xl">
-            <span className="text-[#8a7eb5] font-bold uppercase tracking-[0.2em] text-[10px] mb-4 block">Comprehensive Portfolio</span>
-            <h2 className="text-5xl font-serif font-bold text-[#001242] mb-6">Our Expertise</h2>
-            <p className="text-slate-600 leading-relaxed text-lg">
-              Ordia Consulting Services provides 11 key specialized areas designed to support the financial health and operational growth of your organization.
-            </p>
-          </div>
-          <div className="mt-8 md:mt-0">
-            <a href="#contact" className="group flex items-center space-x-3 text-sm font-bold uppercase tracking-widest text-[#001242]">
-              <span>Get Started</span>
-              <div className="w-12 h-12 border border-[#8a7eb5]/30 rounded-full flex items-center justify-center transition-all group-hover:bg-[#001242] group-hover:text-white group-hover:translate-x-1">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </div>
-            </a>
-          </div>
+        <div className="text-center max-w-3xl mx-auto mb-20 reveal">
+          <span className="text-[#8a7eb5] font-bold uppercase tracking-[0.25em] text-[10px] mb-4 block">Our 360° Solutions</span>
+          <h2 className="text-5xl font-serif font-bold text-[#001242] mb-6">Expertise That Scales.</h2>
+          <p className="text-slate-500 text-lg font-light leading-relaxed">
+            Professional accounting and advisory services designed to empower your business growth at every stage.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {servicesData.map((service) => (
             <div 
               key={service.id} 
               onClick={() => onSelectService(service)}
-              className="reveal bg-white/70 backdrop-blur-sm p-10 rounded-[2.5rem] shadow-[0_4px_30px_rgba(0,18,66,0.02)] border border-[#8a7eb5]/10 group hover:shadow-2xl hover:shadow-[#8a7eb5]/10 transition-all duration-500 hover:-translate-y-2 cursor-pointer"
+              className="reveal bg-white p-12 rounded-[2rem] border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] group hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 hover:-translate-y-2 cursor-pointer relative overflow-hidden"
             >
-              <div className="w-14 h-14 bg-[#f8f9ff] text-[#001242] rounded-2xl flex items-center justify-center mb-10 transition-all duration-500 group-hover:bg-[#8a7eb5] group-hover:text-white group-hover:rotate-6 border border-slate-100 shadow-sm">
-                <div className="w-7 h-7">{service.icon}</div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#f0f7ff]/50 rounded-bl-[4rem] -mr-10 -mt-10 transition-all duration-500 group-hover:scale-125"></div>
+              
+              <div className="w-16 h-16 bg-[#001242] text-white rounded-2xl flex items-center justify-center mb-8 relative z-10 shadow-lg shadow-blue-900/10">
+                <div className="w-8 h-8">{service.icon}</div>
               </div>
-              <h3 className="text-2xl font-serif font-bold text-[#001242] mb-4 leading-tight">{service.title}</h3>
+              <h3 className="text-2xl font-serif font-bold text-[#001242] mb-4 group-hover:text-[#8a7eb5] transition-colors">{service.title}</h3>
               <p className="text-slate-500 text-sm leading-relaxed mb-8">
                 {service.description}
               </p>
-              <div className="pt-6 border-t border-slate-50 flex justify-between items-center">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-[#8a7eb5] group-hover:text-[#001242] transition-colors">View Details</span>
-                <svg className="w-4 h-4 text-[#8a7eb5] opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+              <div className="pt-6 border-t border-slate-50 flex justify-between items-center relative z-10">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-[#8a7eb5]">Read More</span>
+                <svg className="w-5 h-5 text-[#8a7eb5] -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </div>
             </div>
           ))}
