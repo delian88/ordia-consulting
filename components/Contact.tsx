@@ -134,6 +134,27 @@ export const Contact: React.FC<ContactProps> = ({ isStandalone = true }) => {
                     <p className="text-xl font-bold text-white leading-tight">Overton Avenue, <br />Baltimore MD 21236</p>
                   </div>
                 </div>
+                
+                {/* Facebook Social Link */}
+                <div className="pt-10 border-t border-white/5 flex flex-col space-y-4">
+                  <p className="text-[10px] uppercase tracking-widest font-bold text-slate-500 ml-1">Social Discovery</p>
+                  <a 
+                    href="https://www.facebook.com/profile.php?id=61586637290266" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-4 text-white group"
+                  >
+                    <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-[#8a7eb5] transition-all group-hover:bg-[#8a7eb5] group-hover:text-white border border-white/10">
+                      <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                        <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold group-hover:text-[#8a7eb5] transition-colors">Ordia Consulting Services</p>
+                      <p className="text-[10px] text-slate-400 uppercase tracking-widest">Follow our Facebook</p>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
 
