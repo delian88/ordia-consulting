@@ -64,6 +64,8 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, onBack })
     }, 100);
   };
 
+  const currentImage = service.imageUrl || `https://images.unsplash.com/photo-1554224155-169641357599?auto=format&fit=crop&q=80&w=800`;
+
   return (
     <div className="min-h-screen bg-white pt-24 md:pt-32 pb-20 animate-fade-in relative">
       <div className="container mx-auto px-6">
@@ -94,12 +96,6 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, onBack })
 
             <div className="space-y-12 md:space-y-16">
               <div>
-                {service.id !== 'financial-accounting' && (
-                  <div className="flex items-center justify-between mb-6 md:mb-8 border-b border-slate-100 pb-4">
-                    <h3 className="text-xl md:text-2xl font-serif font-bold text-blue-900">Key Focus Areas</h3>
-                    <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-blue-600">Click to expand</span>
-                  </div>
-                )}
                 <div className="space-y-2">
                   {service.features.map((feature, i) => (
                     <AccordionItem key={i} index={i} feature={feature} isOpen={openIndex === i} onClick={() => setOpenIndex(openIndex === i ? null : i)} />
@@ -125,7 +121,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, onBack })
           <div className="lg:col-span-5 relative hidden lg:block">
             <div className="sticky top-32">
               <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100">
-                <img src={`https://images.unsplash.com/photo-1554224155-169641357599?auto=format&fit=crop&q=80&w=800`} alt={service.title} className="w-full aspect-[4/5] object-cover" />
+                <img src={currentImage} alt={service.title} className="w-full aspect-[4/5] object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-transparent to-transparent"></div>
               </div>
             </div>

@@ -3,12 +3,12 @@ import React from 'react';
 import { Service } from '../types';
 
 export const servicesData: Service[] = [
-  // ... (keep original servicesData array content as is, just using component updates below)
   {
     id: "financial-accounting",
     title: "Financial & Accounting",
     description: "Precision financial statement preparation and comprehensive accounting oversight.",
     fullDescription: "Our Financial & Accounting service provides the backbone for your business's fiscal health. We move beyond simple data entry to provide high-level analysis and reporting that helps you understand where every dollar goes and where your growth opportunities lie.",
+    imageUrl: "https://images.unsplash.com/photo-1554224155-169641357599?auto=format&fit=crop&q=80&w=800",
     features: [
       { title: "Balance Sheet Management", detail: "Comprehensive tracking of assets, liabilities, and equity to ensure a clear snapshot of your company's net worth at any given time." },
       { title: "P&L Analysis", detail: "In-depth review of revenue and expenses to identify trends, improve margins, and drive operational efficiency." },
@@ -28,13 +28,16 @@ export const servicesData: Service[] = [
       </svg>
     )
   },
-  // (Remaining data objects same as before, truncated for brevity in change block)
   {
     id: "hr-staffing",
     title: "HR & Staffing",
     description: "Strategic human resource planning and recruitment support to optimize teams.",
     fullDescription: "Your people are your greatest asset. We provide expert HR consulting to help you find, hire, and retain the best talent while ensuring you remain compliant with labor laws.",
-    features: [],
+    imageUrl: "https://images.unsplash.com/photo-1521791136064-7986c2959213?auto=format&fit=crop&q=80&w=800",
+    features: [
+      { title: "Recruitment Strategy", detail: "Building a pipeline of high-quality candidates tailored to your company culture." },
+      { title: "Compliance Audit", detail: "Ensuring all hiring and management practices align with current state and federal labor laws." }
+    ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -46,7 +49,11 @@ export const servicesData: Service[] = [
     title: "Treasury & Risk Support",
     description: "Advanced liquidity management and comprehensive risk mitigation strategies.",
     fullDescription: "In an uncertain economy, managing liquidity and mitigating risk is paramount.",
-    features: [],
+    imageUrl: "https://images.unsplash.com/photo-1550565118-3a14e8d0386f?auto=format&fit=crop&q=80&w=800",
+    features: [
+      { title: "Liquidity Management", detail: "Ensuring you have the cash on hand to meet obligations and seize opportunities." },
+      { title: "Risk Mitigation", detail: "Identifying potential financial threats and implementing safeguards." }
+    ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -58,7 +65,11 @@ export const servicesData: Service[] = [
     title: "Regulatory Reporting",
     description: "Ensuring compliance with state and federal requirements through accurate filings.",
     fullDescription: "Stay ahead of regulatory changes with our specialized reporting service.",
-    features: [],
+    imageUrl: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
+    features: [
+      { title: "SEC & State Filings", detail: "Accurate preparation of all required financial reports for governing bodies." },
+      { title: "Reporting Integrity", detail: "Implementing controls that ensure data accuracy for every submission." }
+    ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -69,8 +80,12 @@ export const servicesData: Service[] = [
     id: "payroll-1099",
     title: "Payroll & 1099 Contracts",
     description: "Seamless payroll administration for employees and independent contractors.",
-    fullDescription: "Take the stress out of pay day.",
-    features: [],
+    fullDescription: "Take the stress out of pay day with automated systems and meticulous oversight.",
+    imageUrl: "https://images.unsplash.com/photo-1454165833767-1330084bc6f9?auto=format&fit=crop&q=80&w=800",
+    features: [
+      { title: "Automated Disbursement", detail: "Scheduled, reliable payments for your entire workforce." },
+      { title: "Tax Withholding", detail: "Precise calculation and filing of all payroll-related taxes." }
+    ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -81,8 +96,12 @@ export const servicesData: Service[] = [
     id: "bookkeeping",
     title: "Bookkeeping Support",
     description: "Meticulous daily record-keeping and bank reconciliations.",
-    fullDescription: "Solid bookkeeping is the foundation of a successful business.",
-    features: [],
+    fullDescription: "Solid bookkeeping is the foundation of a successful business. We keep your ledgers clean.",
+    imageUrl: "https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&q=80&w=800",
+    features: [
+      { title: "Daily Reconciliation", detail: "Matching bank statements to your internal records every day." },
+      { title: "Accounts Payable", detail: "Managing vendor relationships and ensuring timely payments." }
+    ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
@@ -93,8 +112,12 @@ export const servicesData: Service[] = [
     id: "loans-grants",
     title: "Loans, Grants & LOC",
     description: "Advisory on securing capital through commercial loans and lines of credit.",
-    fullDescription: "Growth requires capital.",
-    features: [],
+    fullDescription: "Growth requires capital. We help you find the best terms for your expansion.",
+    imageUrl: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=800",
+    features: [
+      { title: "Capital Sourcing", detail: "Identifying grants and loan programs suited for your industry." },
+      { title: "Application Support", detail: "Preparing professional packages for financial institutions." }
+    ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1" />
@@ -105,8 +128,12 @@ export const servicesData: Service[] = [
     id: "corp-taxes",
     title: "Corp Business Taxes",
     description: "Strategic corporate tax planning designed to minimize liability.",
-    fullDescription: "Navigate the complexity of the corporate tax code.",
-    features: [],
+    fullDescription: "Navigate the complexity of the corporate tax code with strategic planning.",
+    imageUrl: "https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&q=80&w=800",
+    features: [
+      { title: "Tax Minimization", detail: "Utilizing all legal credits and deductions to lower your effective rate." },
+      { title: "Strategic Planning", detail: "Multi-year tax strategies for sustainable wealth preservation." }
+    ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5" />
@@ -117,8 +144,12 @@ export const servicesData: Service[] = [
     id: "audit-assurance",
     title: "Audit & Assurance",
     description: "Independent verification services for financial confidence.",
-    fullDescription: "Transparency builds trust.",
-    features: [],
+    fullDescription: "Transparency builds trust with investors and governing bodies alike.",
+    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    features: [
+      { title: "Verification", detail: "Independent audit of your financial records to confirm accuracy." },
+      { title: "Assurance", detail: "Professional confidence that your systems are reliable and valid." }
+    ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4" />
@@ -129,8 +160,12 @@ export const servicesData: Service[] = [
     id: "start-ups",
     title: "New Business Start-ups",
     description: "Full-cycle consulting from registration to system implementation.",
-    fullDescription: "Launch with confidence.",
-    features: [],
+    fullDescription: "Launch with confidence. We handle the paperwork so you can handle the vision.",
+    imageUrl: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=800",
+    features: [
+      { title: "Entity Formation", detail: "Guidance on choosing the right legal structure for your goals." },
+      { title: "Initial Setup", detail: "Setting up your accounting systems from day one for success." }
+    ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -141,8 +176,12 @@ export const servicesData: Service[] = [
     id: "org-policies",
     title: "Organization Policies",
     description: "Development of robust internal controls and governance.",
-    fullDescription: "Sustainable growth requires strong governance.",
-    features: [],
+    fullDescription: "Sustainable growth requires strong governance and clear operational policies.",
+    imageUrl: "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&q=80&w=800",
+    features: [
+      { title: "Governance Structure", detail: "Designing frameworks for decision making and accountability." },
+      { title: "Policy Manuals", detail: "Clear documentation of internal procedures and standards." }
+    ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5" />
