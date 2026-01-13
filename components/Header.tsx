@@ -13,8 +13,8 @@ interface HeaderProps {
 }
 
 export const FullLogo: React.FC<{ className?: string; light?: boolean }> = ({ className = "h-14", light = false }) => {
-  const primary = light ? "#ffffff" : "#001242";
-  const accent = "#8a7eb5";
+  const primary = light ? "#ffffff" : "#003366";
+  const accent = "#2563eb";
   return (
     <div className={className}>
       <svg viewBox="0 0 520 220" className="h-full w-auto" preserveAspectRatio="xMinYMid meet">
@@ -64,14 +64,14 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
   };
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'py-3' : 'py-6'}`}>
-      <div className="container mx-auto px-6">
-        <div className={`flex justify-between items-center px-8 py-3 rounded-[2.5rem] transition-all duration-500 ${isScrolled ? 'bg-white/90 backdrop-blur-xl shadow-lg border border-slate-100' : 'bg-white/30 backdrop-blur-md'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'py-2 md:py-3' : 'py-4 md:py-6'}`}>
+      <div className="container mx-auto px-4 md:px-6">
+        <div className={`flex justify-between items-center px-4 md:px-8 py-2 md:py-3 rounded-[1.5rem] md:rounded-[2.5rem] transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-xl shadow-lg border border-slate-100' : 'bg-white/30 backdrop-blur-md'}`}>
           <div 
             className="flex items-center cursor-pointer group"
             onClick={() => onNavigate('#home')}
           >
-            <FullLogo className={`transition-all duration-500 ${isScrolled ? 'h-10' : 'h-14'}`} />
+            <FullLogo className={`transition-all duration-500 ${isScrolled ? 'h-8 md:h-10' : 'h-10 md:h-14'}`} />
           </div>
 
           <nav className="hidden lg:flex items-center space-x-10">
@@ -80,7 +80,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleLinkClick(e, item.href)}
-                className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#001242] hover:text-[#8a7eb5] transition-colors link-hover"
+                className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#003366] hover:text-[#2563eb] transition-colors link-hover"
               >
                 {item.label}
               </a>
@@ -88,7 +88,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
             <a 
               href="#contact"
               onClick={(e) => handleLinkClick(e, '#contact')}
-              className="px-8 py-3.5 bg-[#001242] text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#8a7eb5] transition-all shadow-md active:scale-95"
+              className="px-8 py-3.5 bg-[#003366] text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#2563eb] transition-all shadow-md active:scale-95"
             >
               Consult Now
             </a>
@@ -98,29 +98,29 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
             className="lg:hidden w-10 h-10 flex flex-col items-center justify-center space-y-1.5 p-2 bg-slate-50 rounded-xl"
             onClick={() => setMobileMenuOpen(true)}
           >
-            <div className="w-6 h-0.5 bg-[#001242]"></div>
-            <div className="w-6 h-0.5 bg-[#001242]"></div>
-            <div className="w-6 h-0.5 bg-[#001242]"></div>
+            <div className="w-6 h-0.5 bg-[#003366]"></div>
+            <div className="w-6 h-0.5 bg-[#003366]"></div>
+            <div className="w-6 h-0.5 bg-[#003366]"></div>
           </button>
         </div>
       </div>
 
       {mobileMenuOpen && (
-        <div className="fixed inset-0 bg-white z-[100] p-12 flex flex-col items-center justify-center space-y-10 animate-fade-in">
+        <div className="fixed inset-0 bg-white z-[100] p-6 md:p-12 flex flex-col items-center justify-center space-y-10 animate-fade-in">
           <button 
-            className="absolute top-8 right-8 text-[#001242] p-4"
+            className="absolute top-6 right-6 text-[#003366] p-4"
             onClick={() => setMobileMenuOpen(false)}
           >
-            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" /></svg>
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" /></svg>
           </button>
-          <FullLogo className="h-16 mb-10" />
-          <div className="flex flex-col items-center space-y-8">
+          <FullLogo className="h-12 md:h-16 mb-6 md:mb-10" />
+          <div className="flex flex-col items-center space-y-6 md:space-y-8">
             {navItems.map((item) => (
               <a 
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleLinkClick(e, item.href)}
-                className="text-4xl font-serif font-bold text-[#001242] hover:text-[#8a7eb5] transition-colors"
+                className="text-3xl md:text-4xl font-serif font-bold text-[#003366] hover:text-[#2563eb] transition-colors"
               >
                 {item.label}
               </a>
@@ -129,7 +129,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
           <a 
             href="#contact"
             onClick={(e) => handleLinkClick(e, '#contact')}
-            className="px-12 py-5 bg-[#001242] text-white rounded-full font-bold uppercase tracking-widest text-sm shadow-xl"
+            className="px-10 py-4 bg-[#003366] text-white rounded-full font-bold uppercase tracking-widest text-sm shadow-xl"
           >
             Book Consultation
           </a>

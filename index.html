@@ -11,9 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --brand-navy: #001242;
-            --brand-lavender: #8a7eb5;
-            --brand-light-blue: #f0f7ff;
+            --brand-navy: #003366;
+            --brand-accent: #2563eb;
+            --brand-light-blue: #f0f9ff;
             --brand-soft-blue: #eef2ff;
         }
         body {
@@ -21,6 +21,7 @@
             scroll-behavior: smooth;
             background-color: #ffffff;
             color: #1e293b;
+            overflow-x: hidden;
         }
         h1, h2, h3, .font-serif {
             font-family: 'Playfair Display', serif;
@@ -33,16 +34,16 @@
         .soft-mesh {
             background-color: #ffffff;
             background-image: 
-                radial-gradient(at 0% 0%, #f0f9ff 0, transparent 40%), 
-                radial-gradient(at 100% 100%, #f5f3ff 0, transparent 40%);
+                radial-gradient(at 0% 0%, #eff6ff 0, transparent 40%), 
+                radial-gradient(at 100% 100%, #dbeafe 0, transparent 40%);
         }
         
-        .reveal {
+        .reveal, .reveal-left, .reveal-right {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
             transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
         }
-        .reveal.active {
+        .reveal.active, .reveal-left.active, .reveal-right.active {
             opacity: 1;
             transform: translateY(0);
         }
@@ -65,7 +66,7 @@
             height: 2px;
             bottom: -4px;
             left: 0;
-            background-color: #001242;
+            background-color: var(--brand-navy);
             transition: width 0.3s ease;
         }
         .link-hover:hover::after {
@@ -83,7 +84,14 @@
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #8a7eb5;
+            background: var(--brand-accent);
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
         }
     </style>
     <script type="importmap">
