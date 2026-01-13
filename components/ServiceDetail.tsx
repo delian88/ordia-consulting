@@ -64,15 +64,15 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, onBack })
     }, 100);
   };
 
-  const currentImage = service.imageUrl || `https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200`;
-
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     const target = e.target as HTMLImageElement;
-    const fallback = "https://images.unsplash.com/photo-1454165833767-1330084bc6f9?auto=format&fit=crop&q=80&w=1200";
+    const fallback = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200";
     if (target.src !== fallback) {
         target.src = fallback;
     }
   };
+
+  const currentImage = service.imageUrl || "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200";
 
   return (
     <div className="min-h-screen bg-white pt-24 md:pt-32 pb-20 animate-fade-in relative">
@@ -95,7 +95,6 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, onBack })
                 src={currentImage} 
                 alt={service.title} 
                 className="w-full aspect-video object-cover" 
-                crossOrigin="anonymous"
                 referrerPolicy="no-referrer"
                 onError={handleImageError}
               />
@@ -145,7 +144,6 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, onBack })
                   src={currentImage} 
                   alt={service.title} 
                   className="w-full aspect-[4/5] object-cover" 
-                  crossOrigin="anonymous"
                   referrerPolicy="no-referrer"
                   onError={handleImageError}
                 />

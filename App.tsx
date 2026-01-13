@@ -8,6 +8,7 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ConsultantChat } from './components/ConsultantChat';
 import { ServiceDetail } from './components/ServiceDetail';
+import { LoadingScreen } from './components/LoadingScreen';
 import { Service } from './types';
 
 type View = 'home' | 'about' | 'services' | 'contact' | 'service-detail';
@@ -15,9 +16,21 @@ type View = 'home' | 'about' | 'services' | 'contact' | 'service-detail';
 const App: React.FC = () => {
   const [view, setView] = useState<View>('home');
   const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const [isAppLoading, setIsAppLoading] = useState(true);
+
+  useEffect(() => {
+    // Initial loading simulation
+    const timer = setTimeout(() => {
+      setIsAppLoading(false);
+    }, 2500);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     // Re-initialize intersection observer for animations whenever the view changes
+    if (isAppLoading) return;
+
     const observerOptions = {
       threshold: 0.1,
       rootMargin: "0px 0px -50px 0px"
@@ -34,10 +47,8 @@ const App: React.FC = () => {
     const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
     revealElements.forEach(el => observer.observe(el));
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-
     return () => observer.disconnect();
-  }, [view, selectedService]);
+  }, [view, selectedService, isAppLoading]);
 
   const handleSelectService = (service: Service) => {
     setSelectedService(service);
@@ -55,6 +66,7 @@ const App: React.FC = () => {
     const nextView = viewMap[targetView] || 'home';
     setView(nextView);
     setSelectedService(null);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const renderContent = () => {
@@ -88,12 +100,28 @@ const App: React.FC = () => {
 
   return (
     <div className="relative bg-white selection:bg-[#8a7eb5]/30 selection:text-[#001242] flex flex-col min-h-screen">
-      <Header onNavigate={handleNavigate} />
-      <main className="flex-grow animate-fade-in">
-        {renderContent()}
-      </main>
-      <Footer onNavigate={handleNavigate} />
-      <ConsultantChat />
+      {isAppLoading && <LoadingScreen />}
+      
+      {!isAppLoading && (
+        <div className="animate-fade-in">
+          <Header onNavigate={handleNavigate} />
+          <main className="flex-grow">
+            {renderContent()}
+          </main>
+          <Footer onNavigate={handleNavigate} />
+          <ConsultantChat />
+        </div>
+      )}
+
+      <style>{`
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        .animate-fade-in {
+          animation: fadeIn 1.2s ease-out forwards;
+        }
+      `}</style>
     </div>
   );
 };
