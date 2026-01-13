@@ -94,10 +94,12 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, onBack })
 
             <div className="space-y-12 md:space-y-16">
               <div>
-                <div className="flex items-center justify-between mb-6 md:mb-8 border-b border-slate-100 pb-4">
-                  <h3 className="text-xl md:text-2xl font-serif font-bold text-blue-900">Key Focus Areas</h3>
-                  <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-blue-600">Click to expand</span>
-                </div>
+                {service.id !== 'financial-accounting' && (
+                  <div className="flex items-center justify-between mb-6 md:mb-8 border-b border-slate-100 pb-4">
+                    <h3 className="text-xl md:text-2xl font-serif font-bold text-blue-900">Key Focus Areas</h3>
+                    <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-blue-600">Click to expand</span>
+                  </div>
+                )}
                 <div className="space-y-2">
                   {service.features.map((feature, i) => (
                     <AccordionItem key={i} index={i} feature={feature} isOpen={openIndex === i} onClick={() => setOpenIndex(openIndex === i ? null : i)} />
