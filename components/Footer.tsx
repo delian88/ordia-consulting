@@ -61,18 +61,40 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <li><a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')} className="hover:text-blue-400 transition-colors">Contact</a></li>
               </ul>
             </div>
-            {/* ... rest of footer links updated for hover colors ... */}
+            
+            <div className="hidden lg:block">
+              <h4 className="text-white font-bold text-[10px] uppercase tracking-[0.25em] mb-10">Focus Areas</h4>
+              <ul className="space-y-4 text-sm">
+                <li><a href="#" className="hover:text-blue-400 transition-colors">Tax Strategy</a></li>
+                <li><a href="#" className="hover:text-blue-400 transition-colors">Fractional CFO</a></li>
+                <li><a href="#" className="hover:text-blue-400 transition-colors">Audit Support</a></li>
+              </ul>
+            </div>
+
+            <div className="hidden lg:block">
+              <h4 className="text-white font-bold text-[10px] uppercase tracking-[0.25em] mb-10">Resources</h4>
+              <ul className="space-y-4 text-sm">
+                <li><a href="#" className="hover:text-blue-400 transition-colors">Partnerships</a></li>
+                <li><a href="#" className="hover:text-blue-400 transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-blue-400 transition-colors">Terms of Use</a></li>
+              </ul>
+            </div>
           </div>
         </div>
         
         <div className="pt-8 md:pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-10">
-          <p className="text-[9px] uppercase tracking-[0.2em] font-bold text-slate-500 text-center md:text-left">
-            © {new Date().getFullYear()} Ordia Consulting Services (OCS).
-          </p>
+          <div className="flex flex-col items-center md:items-start gap-1">
+            <p className="text-[9px] uppercase tracking-[0.2em] font-bold text-slate-500 text-center md:text-left">
+              © {new Date().getFullYear()} Ordia Consulting Services (OCS).
+            </p>
+            <p className="text-[9px] tracking-[0.2em] uppercase text-slate-600 font-medium">
+              A Strategic Asset of <a href="https://azariahmg.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400 transition-colors font-bold underline decoration-blue-500/30 underline-offset-4">Azariah Management Group</a>
+            </p>
+          </div>
           <div className="flex items-center space-x-6 md:space-x-10 text-[8px] md:text-[9px] uppercase tracking-[0.3em] font-bold text-slate-600">
-            <span className="hover:text-blue-400 cursor-default">Integrity</span>
-            <span className="hover:text-blue-400 cursor-default">Precision</span>
-            <span className="hover:text-blue-400 cursor-default">Impact</span>
+            <span className="hover:text-blue-400 cursor-default transition-colors">Integrity</span>
+            <span className="hover:text-blue-400 cursor-default transition-colors">Precision</span>
+            <span className="hover:text-blue-400 cursor-default transition-colors">Impact</span>
           </div>
         </div>
       </div>
