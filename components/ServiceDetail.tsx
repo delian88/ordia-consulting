@@ -64,7 +64,15 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, onBack })
     }, 100);
   };
 
-  const currentImage = service.imageUrl || `https://images.unsplash.com/photo-1554224155-169641357599?auto=format&fit=crop&q=80&w=800`;
+  const currentImage = service.imageUrl || `https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200`;
+
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.target as HTMLImageElement;
+    const fallback = "https://images.unsplash.com/photo-1454165833767-1330084bc6f9?auto=format&fit=crop&q=80&w=1200";
+    if (target.src !== fallback) {
+        target.src = fallback;
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white pt-24 md:pt-32 pb-20 animate-fade-in relative">
@@ -82,8 +90,15 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, onBack })
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-20">
           <div className="lg:col-span-7">
             {/* Mobile-only Image Banner */}
-            <div className="lg:hidden mb-10 rounded-[2rem] overflow-hidden shadow-xl border border-slate-100">
-              <img src={currentImage} alt={service.title} className="w-full aspect-video object-cover" />
+            <div className="lg:hidden mb-10 rounded-[2rem] overflow-hidden shadow-xl border border-slate-100 bg-slate-100">
+              <img 
+                src={currentImage} 
+                alt={service.title} 
+                className="w-full aspect-video object-cover" 
+                crossOrigin="anonymous"
+                referrerPolicy="no-referrer"
+                onError={handleImageError}
+              />
             </div>
 
             <div className="inline-flex items-center space-x-3 px-4 py-2 rounded-xl bg-slate-50 text-blue-900 mb-6 md:mb-8">
@@ -125,8 +140,15 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, onBack })
 
           <div className="lg:col-span-5 relative hidden lg:block">
             <div className="sticky top-32">
-              <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100">
-                <img src={currentImage} alt={service.title} className="w-full aspect-[4/5] object-cover" />
+              <div className="relative rounded-[3rem] overflow-hidden shadow-2xl border border-slate-100 bg-slate-100">
+                <img 
+                  src={currentImage} 
+                  alt={service.title} 
+                  className="w-full aspect-[4/5] object-cover" 
+                  crossOrigin="anonymous"
+                  referrerPolicy="no-referrer"
+                  onError={handleImageError}
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 via-transparent to-transparent"></div>
               </div>
             </div>

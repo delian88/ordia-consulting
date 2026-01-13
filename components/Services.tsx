@@ -8,7 +8,7 @@ export const servicesData: Service[] = [
     title: "Financial & Accounting",
     description: "Precision financial statement preparation and comprehensive accounting oversight.",
     fullDescription: "Our Financial & Accounting service provides the backbone for your business's fiscal health. We move beyond simple data entry to provide high-level analysis and reporting that helps you understand where every dollar goes and where your growth opportunities lie.",
-    imageUrl: "https://images.unsplash.com/photo-1554224155-169641357599?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop",
     features: [
       { title: "Balance Sheet Management", detail: "Comprehensive tracking of assets, liabilities, and equity to ensure a clear snapshot of your company's net worth at any given time." },
       { title: "P&L Analysis", detail: "In-depth review of revenue and expenses to identify trends, improve margins, and drive operational efficiency." },
@@ -26,7 +26,7 @@ export const servicesData: Service[] = [
     title: "HR & Staffing",
     description: "Strategic human resource planning and recruitment support to optimize teams.",
     fullDescription: "Your people are your greatest asset. We provide expert HR consulting to help you find, hire, and retain the best talent while ensuring you remain compliant with labor laws.",
-    imageUrl: "https://images.unsplash.com/photo-1521791136064-7986c2959213?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1200&auto=format&fit=crop",
     features: [
       { title: "Recruitment Strategy", detail: "Building a pipeline of high-quality candidates tailored to your company culture." },
       { title: "Compliance Audit", detail: "Ensuring all hiring and management practices align with current state and federal labor laws." }
@@ -42,7 +42,7 @@ export const servicesData: Service[] = [
     title: "Treasury & Risk Support",
     description: "Advanced liquidity management and comprehensive risk mitigation strategies.",
     fullDescription: "In an uncertain economy, managing liquidity and mitigating risk is paramount.",
-    imageUrl: "https://images.unsplash.com/photo-1550565118-3a14e8d0386f?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?q=80&w=1200&auto=format&fit=crop",
     features: [
       { title: "Liquidity Management", detail: "Ensuring you have the cash on hand to meet obligations and seize opportunities." },
       { title: "Risk Mitigation", detail: "Identifying potential financial threats and implementing safeguards." }
@@ -58,7 +58,7 @@ export const servicesData: Service[] = [
     title: "Regulatory Reporting",
     description: "Ensuring compliance with state and federal requirements through accurate filings.",
     fullDescription: "Stay ahead of regulatory changes with our specialized reporting service.",
-    imageUrl: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1200&auto=format&fit=crop",
     features: [
       { title: "SEC & State Filings", detail: "Accurate preparation of all required financial reports for governing bodies." },
       { title: "Reporting Integrity", detail: "Implementing controls that ensure data accuracy for every submission." }
@@ -74,7 +74,7 @@ export const servicesData: Service[] = [
     title: "Payroll & 1099 Contracts",
     description: "Seamless payroll administration for employees and independent contractors.",
     fullDescription: "Take the stress out of pay day with automated systems and meticulous oversight.",
-    imageUrl: "https://images.unsplash.com/photo-1454165833767-1330084bc6f9?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "https://images.unsplash.com/photo-1554224155-169641357599?q=80&w=1200&auto=format&fit=crop",
     features: [
       { title: "Automated Disbursement", detail: "Scheduled, reliable payments for your entire workforce." },
       { title: "Tax Withholding", detail: "Precise calculation and filing of all payroll-related taxes." }
@@ -90,7 +90,7 @@ export const servicesData: Service[] = [
     title: "Bookkeeping Support",
     description: "Meticulous daily record-keeping and bank reconciliations.",
     fullDescription: "Solid bookkeeping is the foundation of a successful business. We keep your ledgers clean.",
-    imageUrl: "https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=1200&auto=format&fit=crop",
     features: [
       { title: "Daily Reconciliation", detail: "Matching bank statements to your internal records every day." },
       { title: "Accounts Payable", detail: "Managing vendor relationships and ensuring timely payments." }
@@ -106,7 +106,7 @@ export const servicesData: Service[] = [
     title: "Loans, Grants & LOC",
     description: "Advisory on securing capital through commercial loans and lines of credit.",
     fullDescription: "Growth requires capital. We help you find the best terms for your expansion.",
-    imageUrl: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=1200&auto=format&fit=crop",
     features: [
       { title: "Capital Sourcing", detail: "Identifying grants and loan programs suited for your industry." },
       { title: "Application Support", detail: "Preparing professional packages for financial institutions." }
@@ -122,7 +122,7 @@ export const servicesData: Service[] = [
     title: "Corp Business Taxes",
     description: "Strategic corporate tax planning designed to minimize liability.",
     fullDescription: "Navigate the complexity of the corporate tax code with strategic planning.",
-    imageUrl: "https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?q=80&w=1200&auto=format&fit=crop",
     features: [
       { title: "Tax Minimization", detail: "Utilizing all legal credits and deductions to lower your effective rate." },
       { title: "Strategic Planning", detail: "Multi-year tax strategies for sustainable wealth preservation." }
@@ -138,7 +138,7 @@ export const servicesData: Service[] = [
     title: "Audit & Assurance",
     description: "Independent verification services for financial confidence.",
     fullDescription: "Transparency builds trust with investors and governing bodies alike.",
-    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
     features: [
       { title: "Verification", detail: "Independent audit of your financial records to confirm accuracy." },
       { title: "Assurance", detail: "Professional confidence that your systems are reliable and valid." }
@@ -154,7 +154,7 @@ export const servicesData: Service[] = [
     title: "New Business Start-ups",
     description: "Full-cycle consulting from registration to system implementation.",
     fullDescription: "Launch with confidence. We handle the paperwork so you can handle the vision.",
-    imageUrl: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "https://images.unsplash.com/photo-1522071823991-b5ae72630ad4?q=80&w=1200&auto=format&fit=crop",
     features: [
       { title: "Entity Formation", detail: "Guidance on choosing the right legal structure for your goals." },
       { title: "Initial Setup", detail: "Setting up your accounting systems from day one for success." }
@@ -170,7 +170,7 @@ export const servicesData: Service[] = [
     title: "Organization Policies",
     description: "Development of robust internal controls and governance.",
     fullDescription: "Sustainable growth requires strong governance and clear operational policies.",
-    imageUrl: "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&q=80&w=800",
+    imageUrl: "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?q=80&w=1200&auto=format&fit=crop",
     features: [
       { title: "Governance Structure", detail: "Designing frameworks for decision making and accountability." },
       { title: "Policy Manuals", detail: "Clear documentation of internal procedures and standards." }
@@ -208,11 +208,21 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, isStandalon
               className="reveal bg-white rounded-[2rem] border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] group hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 hover:-translate-y-2 cursor-pointer relative overflow-hidden flex flex-col"
             >
               {/* Card Image Header */}
-              <div className="relative h-56 md:h-64 overflow-hidden">
+              <div className="relative h-56 md:h-64 overflow-hidden bg-slate-100">
                 <img 
                   src={service.imageUrl} 
                   alt={service.title} 
+                  loading="lazy"
+                  crossOrigin="anonymous"
+                  referrerPolicy="no-referrer"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    const fallback = "https://images.unsplash.com/photo-1454165833767-1330084bc6f9?q=80&w=1200&auto=format&fit=crop";
+                    if (target.src !== fallback) {
+                        target.src = fallback;
+                    }
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent"></div>
                 
