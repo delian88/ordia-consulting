@@ -6,6 +6,52 @@ interface FooterProps {
   onNavigate: (href: string) => void;
 }
 
+const WorldAiForceLogo: React.FC<{ className?: string }> = ({ className = "h-8" }) => {
+  return (
+    <div className={`${className} inline-block align-middle`}>
+      <svg viewBox="0 0 100 100" className="h-full w-auto">
+        <defs>
+          <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#0056b3" />
+            <stop offset="50%" stopColor="#4db8ff" />
+            <stop offset="100%" stopColor="#7a5fff" />
+          </linearGradient>
+          <linearGradient id="w-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#2b4c9b" />
+            <stop offset="100%" stopColor="#7a5fff" />
+          </linearGradient>
+        </defs>
+        {/* Outer Ring */}
+        <circle cx="50" cy="50" r="48" fill="none" stroke="#004a8d" strokeWidth="2.5" />
+        <circle cx="50" cy="50" r="45" fill="white" />
+        <circle cx="50" cy="50" r="44" fill="none" stroke="#004a8d" strokeWidth="1" />
+        
+        {/* Inner Gradient Circle */}
+        <circle cx="50" cy="50" r="33" fill="url(#logo-grad)" />
+        <path d="M50 17 A33 33 0 0 1 50 83 Z" fill="rgba(255,255,255,0.15)" />
+        
+        {/* White Center Circle */}
+        <circle cx="50" cy="50" r="13" fill="white" />
+        
+        {/* Text WORLD A.I FORCE */}
+        <path id="top-curve" d="M22,50 a28,28 0 1,1 56,0" fill="none" />
+        <path id="bottom-curve" d="M22,50 a28,28 0 1,0 56,0" fill="none" />
+        <text className="font-serif" fontSize="6.5" fontWeight="900" fill="#2b4c9b" letterSpacing="0.5">
+          <textPath href="#top-curve" startOffset="50%" textAnchor="middle">WORLD A.I</textPath>
+        </text>
+        <text className="font-serif" fontSize="7.5" fontWeight="900" fill="#2b4c9b" letterSpacing="1">
+          <textPath href="#bottom-curve" startOffset="50%" textAnchor="middle" side="right">FORCE</textPath>
+        </text>
+        
+        {/* Stylized W */}
+        <g transform="translate(42, 45) scale(0.16)">
+           <path fill="url(#w-grad)" d="M0 0 L25 60 L50 0 L75 60 L100 0 L85 0 L60 60 L35 0 L15 0 L10 15 L0 0 Z" />
+        </g>
+      </svg>
+    </div>
+  );
+};
+
 export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -87,9 +133,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <p className="text-[9px] uppercase tracking-[0.2em] font-bold text-slate-500 text-center md:text-left">
               © {new Date().getFullYear()} Ordia Consulting Services (OCS).
             </p>
-            <p className="text-[9px] tracking-[0.2em] uppercase text-slate-600 font-medium">
-              Powered by <a href="https://azariahmg.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400 transition-colors font-bold underline decoration-blue-500/30 underline-offset-4">Azariah Management Group</a>, Sealed by <a href="https://worldaiforce.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400 transition-colors font-bold underline decoration-blue-500/30 underline-offset-4">WorldAiForce</a>
-            </p>
+            <div className="flex items-center space-x-2 text-[9px] tracking-[0.2em] uppercase text-slate-600 font-medium">
+              <span>Powered by</span>
+              <a href="https://azariahmg.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400 transition-colors font-bold underline decoration-blue-500/30 underline-offset-4">Azariah Management Group</a>
+              <span className="mx-1">,</span>
+              <span>Sealed by</span>
+              <a href="https://worldaiforce.com/" target="_blank" rel="noopener noreferrer" className="group flex items-center transition-all">
+                <WorldAiForceLogo className="h-8 md:h-10 hover:scale-110 transition-transform" />
+              </a>
+            </div>
           </div>
           <div className="flex items-center space-x-6 md:space-x-10 text-[8px] md:text-[9px] uppercase tracking-[0.3em] font-bold text-slate-600">
             <span className="hover:text-blue-400 cursor-default transition-colors">Integrity</span>
