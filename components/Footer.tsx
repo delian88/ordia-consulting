@@ -88,7 +88,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               © {new Date().getFullYear()} Ordia Consulting Services (OCS).
             </p>
             <p className="text-[9px] tracking-[0.2em] uppercase text-slate-600 font-medium">
-              A Strategic Asset of <a href="https://azariahmg.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400 transition-colors font-bold underline decoration-blue-500/30 underline-offset-4">Azariah Management Group</a>
+              Powered by <a href="https://azariahmg.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400 transition-colors font-bold underline decoration-blue-500/30 underline-offset-4">Azariah Management Group</a>
             </p>
           </div>
           <div className="flex items-center space-x-6 md:space-x-10 text-[8px] md:text-[9px] uppercase tracking-[0.3em] font-bold text-slate-600">
