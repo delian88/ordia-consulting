@@ -71,7 +71,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, onBack })
       <div className="container mx-auto px-6">
         <button 
           onClick={onBack}
-          className="group flex items-center space-x-3 text-xs md:text-sm font-bold uppercase tracking-widest text-blue-600 mb-8 md:12 hover:text-blue-900 transition-colors"
+          className="group flex items-center space-x-3 text-xs md:text-sm font-bold uppercase tracking-widest text-blue-600 mb-8 md:mb-12 hover:text-blue-900 transition-colors"
         >
           <div className="w-8 h-8 md:w-10 md:h-10 border border-blue-500/20 rounded-full flex items-center justify-center transition-all group-hover:bg-blue-900 group-hover:border-blue-900 group-hover:text-white">
             <svg className="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -81,12 +81,17 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, onBack })
 
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-20">
           <div className="lg:col-span-7">
+            {/* Mobile-only Image Banner */}
+            <div className="lg:hidden mb-10 rounded-[2rem] overflow-hidden shadow-xl border border-slate-100">
+              <img src={currentImage} alt={service.title} className="w-full aspect-video object-cover" />
+            </div>
+
             <div className="inline-flex items-center space-x-3 px-4 py-2 rounded-xl bg-slate-50 text-blue-900 mb-6 md:mb-8">
               <div className="w-6 h-6 md:w-8 md:h-8 text-blue-600">{service.icon}</div>
               <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest">Specialized Service</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-blue-900 mb-8 md:10 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold text-blue-900 mb-8 md:mb-10 leading-tight">
               {service.title}
             </h1>
 

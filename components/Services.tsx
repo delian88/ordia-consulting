@@ -15,13 +15,6 @@ export const servicesData: Service[] = [
       { title: "Cash Flow Statements", detail: "Monitoring the movement of funds to ensure your business maintains the liquidity needed for daily operations and strategic investments." },
       { title: "General Ledger Cleanup", detail: "Systematic reconciliation and adjustment of accounts to ensure your historical data is accurate, compliant, and audit-ready." }
     ],
-    testimonials: [
-      {
-        quote: "The level of detail in their reporting completely changed how we view our monthly burn rate.",
-        author: "Marcus Thorne",
-        role: "CEO, TechSphere Solutions"
-      }
-    ],
     icon: (
       <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17v-2m3 2v-4m3 2v-6m-8 13h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 022 2z" />
@@ -212,20 +205,37 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, isStandalon
             <div 
               key={service.id} 
               onClick={() => onSelectService(service)}
-              className="reveal bg-white p-8 md:p-12 rounded-[2rem] border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] group hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 hover:-translate-y-2 cursor-pointer relative overflow-hidden"
+              className="reveal bg-white rounded-[2rem] border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] group hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 hover:-translate-y-2 cursor-pointer relative overflow-hidden flex flex-col"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50/50 rounded-bl-[4rem] -mr-10 -mt-10 transition-all duration-500 group-hover:scale-125"></div>
-              
-              <div className="w-14 h-14 md:w-16 md:h-16 bg-blue-900 text-white rounded-2xl flex items-center justify-center mb-6 md:mb-8 relative z-10 shadow-lg shadow-blue-900/10">
-                <div className="w-7 h-7 md:w-8 md:h-8">{service.icon}</div>
+              {/* Card Image Header */}
+              <div className="relative h-56 md:h-64 overflow-hidden">
+                <img 
+                  src={service.imageUrl} 
+                  alt={service.title} 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent"></div>
+                
+                {/* Floating Icon */}
+                <div className="absolute -bottom-7 left-8 w-14 h-14 bg-blue-900 text-white rounded-2xl flex items-center justify-center shadow-xl border-4 border-white transition-transform duration-500 group-hover:-translate-y-1">
+                  <div className="w-7 h-7">{service.icon}</div>
+                </div>
               </div>
-              <h3 className="text-xl md:text-2xl font-serif font-bold text-blue-900 mb-4 group-hover:text-blue-600 transition-colors">{service.title}</h3>
-              <p className="text-slate-500 text-xs md:text-sm leading-relaxed mb-8">
-                {service.description}
-              </p>
-              <div className="pt-6 border-t border-slate-50 flex justify-between items-center relative z-10">
-                <span className="text-[10px] font-bold uppercase tracking-widest text-blue-600">Read More</span>
-                <svg className="w-5 h-5 text-blue-600 -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+
+              {/* Card Content */}
+              <div className="p-8 pt-12 flex-grow">
+                <h3 className="text-xl md:text-2xl font-serif font-bold text-blue-900 mb-4 group-hover:text-blue-600 transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-slate-500 text-xs md:text-sm leading-relaxed mb-8">
+                  {service.description}
+                </p>
+                <div className="pt-6 border-t border-slate-50 flex justify-between items-center relative z-10">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-blue-600">Read More</span>
+                  <svg className="w-5 h-5 text-blue-600 -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
               </div>
             </div>
           ))}
