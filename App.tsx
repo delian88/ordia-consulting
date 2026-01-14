@@ -4,6 +4,7 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Services } from './components/Services';
 import { About } from './components/About';
+import { Partners } from './components/Partners';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ConsultantChat } from './components/ConsultantChat';
@@ -76,6 +77,7 @@ const App: React.FC = () => {
           <>
             <Hero />
             <About isStandalone={false} />
+            <Partners />
             <Services isStandalone={false} onSelectService={handleSelectService} />
             <Contact isStandalone={false} />
           </>
