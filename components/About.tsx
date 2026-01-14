@@ -7,42 +7,81 @@ interface AboutProps {
 }
 
 export const CPASeal: React.FC<{ className?: string }> = ({ className = "h-32 w-32" }) => {
+  // Generate a precise serrated edge for the seal
+  const points = 80;
+  const innerRadius = 88;
+  const outerRadius = 98;
+  const centerX = 100;
+  const centerY = 100;
+  
+  let d = "";
+  for (let i = 0; i <= points; i++) {
+    const angle = (i * 2 * Math.PI) / points - Math.PI / 2;
+    const r = i % 2 === 0 ? outerRadius : innerRadius;
+    const x = centerX + r * Math.cos(angle);
+    const y = centerY + r * Math.sin(angle);
+    d += (i === 0 ? "M " : "L ") + x + " " + y + " ";
+  }
+  d += "Z";
+
   return (
     <div className={`${className} relative group select-none animate-float`}>
-      <svg viewBox="0 0 200 200" className="w-full h-full filter drop-shadow-lg transition-transform duration-500 group-hover:scale-105">
+      <svg viewBox="0 0 200 200" className="w-full h-full filter drop-shadow-xl transition-all duration-700 group-hover:scale-105">
         <defs>
-          <filter id="emboss">
-            <feOffset dx="-1" dy="-1" />
-            <feGaussianBlur stdDeviation="1" result="blur" />
-            <feComposite in="SourceGraphic" in2="blur" operator="arithmetic" k1="0" k2="1" k3="-1" k4="0" />
+          {/* Advanced Embossing/Engraving Filter */}
+          <filter id="engrave" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="1.5" result="blur" />
+            <feSpecularLighting in="blur" surfaceScale="5" specularConstant="0.8" specularExponent="15" lightingColor="#ffffff" result="specOut">
+              <fePointLight x="-5000" y="-10000" z="20000" />
+            </feSpecularLighting>
+            <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut" />
+            <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litGraphic" />
           </filter>
+          
+          <linearGradient id="sealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#87a691" />
+            <stop offset="100%" stopColor="#638c73" />
+          </linearGradient>
         </defs>
         
-        {/* Serrated Edge Shape (40-point star) */}
-        <path
-          d="M100 0 L108 15 L124 10 L128 26 L145 23 L146 40 L163 40 L160 57 L176 60 L170 76 L185 83 L176 97 L190 108 L178 120 L188 135 L174 144 L180 160 L164 165 L166 182 L150 184 L148 200 L132 198 L126 214 L111 208 L100 220 L89 208 L74 214 L68 198 L52 200 L50 184 L34 182 L36 165 L20 160 L26 144 L12 135 L22 120 L10 108 L24 97 L15 83 L30 76 L24 60 L40 57 L37 40 L54 40 L55 23 L72 26 L76 10 L92 15 Z"
-          fill="#769d84"
-          transform="scale(0.85) translate(18, 18)"
-        />
+        {/* The Serrated Base */}
+        <path d={d} fill="url(#sealGrad)" />
         
-        {/* Inner Circle Border */}
-        <circle cx="100" cy="100" r="72" fill="none" stroke="white" strokeWidth="1" opacity="0.4" />
-        <circle cx="100" cy="100" r="68" fill="none" stroke="white" strokeWidth="0.5" opacity="0.2" />
+        {/* Double Concentric Borders */}
+        <circle cx="100" cy="100" r="82" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" />
+        <circle cx="100" cy="100" r="78" fill="none" stroke="rgba(0,0,0,0.15)" strokeWidth="0.5" />
+        <circle cx="100" cy="100" r="58" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="1.2" />
+        <circle cx="100" cy="100" r="54" fill="none" stroke="rgba(0,0,0,0.1)" strokeWidth="0.5" />
 
-        {/* Circular Text */}
-        <path id="sealCurve" d="M 100, 100 m -60, 0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" fill="none" />
-        <text className="font-serif uppercase tracking-[0.3em]" fontSize="13" fontWeight="700" fill="rgba(255,255,255,0.9)">
-          <textPath href="#sealCurve" startOffset="0%">CERTIFIED PUBLIC</textPath>
-        </text>
-        <path id="sealCurveBottom" d="M 100, 100 m -60, 0 a 60,60 0 1,0 120,0 a 60,60 0 1,0 -120,0" fill="none" />
-        <text className="font-serif uppercase tracking-[0.3em]" fontSize="13" fontWeight="700" fill="rgba(255,255,255,0.9)">
-          <textPath href="#sealCurveBottom" startOffset="50%" textAnchor="middle">ACCOUNTANT</textPath>
+        {/* Top Text: CERTIFIED PUBLIC */}
+        <path id="curveTop" d="M 30,100 A 70,70 0 0,1 170,100" fill="none" />
+        <text className="font-serif uppercase" fontSize="11" fontWeight="800" fill="rgba(255,255,255,0.85)" letterSpacing="0.15em">
+          <textPath href="#curveTop" startOffset="50%" textAnchor="middle">Certified Public</textPath>
         </text>
 
-        {/* Center Text */}
-        <text x="50%" y="54%" dominantBaseline="middle" textAnchor="middle" fontSize="52" fontWeight="900" fill="white" className="font-serif" style={{ filter: 'url(#emboss)' }}>
+        {/* Bottom Text: ACCOUNTANT */}
+        <path id="curveBottom" d="M 30,100 A 70,70 0 0,0 170,100" fill="none" />
+        <text className="font-serif uppercase" fontSize="11" fontWeight="800" fill="rgba(255,255,255,0.85)" letterSpacing="0.2em">
+          <textPath href="#curveBottom" startOffset="50%" textAnchor="middle">Accountant</textPath>
+        </text>
+
+        {/* Center Main Text */}
+        <text 
+          x="50%" 
+          y="54%" 
+          dominantBaseline="middle" 
+          textAnchor="middle" 
+          fontSize="48" 
+          fontWeight="900" 
+          fill="rgba(255,255,255,0.95)" 
+          className="font-serif" 
+          style={{ filter: 'url(#engrave)', letterSpacing: '-0.05em' }}
+        >
           CPA
         </text>
+        
+        {/* Subtle Surface Texture Overlay */}
+        <rect width="200" height="200" fill="url(#sealGrad)" opacity="0.1" style={{ mixBlendMode: 'overlay' }} />
       </svg>
     </div>
   );
