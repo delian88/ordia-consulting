@@ -5,12 +5,14 @@ interface Partner {
   name: string;
   logo: React.ReactNode;
   description: string;
+  href: string;
 }
 
 const partners: Partner[] = [
   {
     name: "Azariah Management Group",
     description: "Operational Excellence & Management",
+    href: "https://azariahmg.com/",
     logo: (
       <div className="flex flex-col items-center">
         <span className="text-xl md:text-2xl font-serif font-black text-blue-900 tracking-tighter">AZARIAH</span>
@@ -21,6 +23,7 @@ const partners: Partner[] = [
   {
     name: "Susan L. Allien CPA PA",
     description: "Expert Tax & Forensic Advisory",
+    href: "https://susanallencpa.com/",
     logo: (
       <div className="flex items-center space-x-3">
         <div className="w-px h-12 bg-blue-900/10"></div>
@@ -38,6 +41,7 @@ const partners: Partner[] = [
   {
     name: "BmK360CPA, PC",
     description: "Advanced CPA & Strategic Accounting",
+    href: "https://bmk360cpa.com/",
     logo: (
       <div className="flex items-center space-x-3">
         <div className="flex flex-col items-end">
@@ -58,6 +62,7 @@ const partners: Partner[] = [
   {
     name: "World A.I Force",
     description: "Technology & AI Integration",
+    href: "https://worldaiforce.com/",
     logo: (
       <div className="flex items-center space-x-2">
         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-lg shadow-lg">W</div>
@@ -117,15 +122,21 @@ export const Partners: React.FC<PartnersProps> = ({ isStandalone = false }) => {
         {isStandalone ? (
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 mt-20 reveal">
             {partners.map((partner, index) => (
-              <div key={index} className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-slate-100 shadow-xl shadow-blue-900/5 group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <a 
+                key={index} 
+                href={partner.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-slate-100 shadow-xl shadow-blue-900/5 group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 block"
+              >
                 <div className="mb-8">{partner.logo}</div>
                 <h4 className="text-xl font-bold text-blue-900 mb-4">{partner.name}</h4>
                 <p className="text-slate-500 text-sm leading-relaxed mb-6">{partner.description}</p>
                 <div className="flex items-center text-blue-600 font-bold text-[10px] uppercase tracking-widest">
-                  <span>Verified Strategic Partner</span>
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  <span>Visit Website</span>
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         ) : (
@@ -138,17 +149,20 @@ export const Partners: React.FC<PartnersProps> = ({ isStandalone = false }) => {
             <div className="flex items-center animate-marquee whitespace-nowrap group">
               <div className="flex items-center py-4">
                 {scrollPartners.map((partner, index) => (
-                  <div 
+                  <a 
                     key={index} 
-                    className="flex flex-col items-center justify-center px-12 md:px-24 bg-transparent transition-all duration-500"
+                    href={partner.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex flex-col items-center justify-center px-12 md:px-24 bg-transparent transition-all duration-500 no-underline"
                   >
                     <div className="mb-4 opacity-60 grayscale group-hover:grayscale-0 hover:opacity-100 transition-all duration-700 transform hover:scale-110">
                       {partner.logo}
                     </div>
                     <p className="text-[9px] font-bold text-blue-600 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-center">
-                      {partner.description}
+                      Visit Website
                     </p>
-                  </div>
+                  </a>
                 ))}
               </div>
             </div>
