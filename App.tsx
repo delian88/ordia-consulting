@@ -12,7 +12,7 @@ import { ServiceDetail } from './components/ServiceDetail';
 import { LoadingScreen } from './components/LoadingScreen';
 import { Service } from './types';
 
-type View = 'home' | 'about' | 'services' | 'contact' | 'service-detail';
+type View = 'home' | 'about' | 'services' | 'partners' | 'contact' | 'service-detail';
 
 const App: React.FC = () => {
   const [view, setView] = useState<View>('home');
@@ -61,6 +61,7 @@ const App: React.FC = () => {
       '#home': 'home',
       '#about': 'about',
       '#services': 'services',
+      '#partners': 'partners',
       '#contact': 'contact'
     };
 
@@ -84,6 +85,8 @@ const App: React.FC = () => {
         );
       case 'about':
         return <About isStandalone={true} />;
+      case 'partners':
+        return <Partners isStandalone={true} />;
       case 'services':
         return <Services isStandalone={true} onSelectService={handleSelectService} />;
       case 'contact':

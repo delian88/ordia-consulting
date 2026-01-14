@@ -19,6 +19,23 @@ const partners: Partner[] = [
     )
   },
   {
+    name: "Susan L. Allien CPA PA",
+    description: "Expert Tax & Forensic Advisory",
+    logo: (
+      <div className="flex items-center space-x-3">
+        <div className="w-px h-12 bg-blue-900/10"></div>
+        <div className="flex flex-col items-start">
+          <span className="text-lg font-serif font-bold text-slate-800 leading-none tracking-tight">Susan L. Allien</span>
+          <div className="flex items-center space-x-2 mt-1">
+            <span className="text-[10px] font-black text-blue-900 uppercase tracking-widest">CPA</span>
+            <div className="w-1 h-1 rounded-full bg-blue-500"></div>
+            <span className="text-[10px] font-black text-blue-900 uppercase tracking-widest">PA</span>
+          </div>
+        </div>
+      </div>
+    )
+  },
+  {
     name: "BmK360CPA, PC",
     description: "Advanced CPA & Strategic Accounting",
     logo: (
@@ -56,9 +73,13 @@ const partners: Partner[] = [
 // Double the partners to create a seamless infinite scroll effect
 const scrollPartners = [...partners, ...partners, ...partners, ...partners];
 
-export const Partners: React.FC = () => {
+interface PartnersProps {
+  isStandalone?: boolean;
+}
+
+export const Partners: React.FC<PartnersProps> = ({ isStandalone = false }) => {
   return (
-    <section className="py-24 bg-slate-50/50 border-y border-slate-100 relative overflow-hidden">
+    <section id="partners" className={`py-24 ${isStandalone ? 'lg:pt-48 min-h-screen' : 'bg-slate-50/50'} border-y border-slate-100 relative overflow-hidden`}>
       {/* Background patterns */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -93,30 +114,46 @@ export const Partners: React.FC = () => {
           </div>
         </div>
 
-        {/* Infinite Scroll Container */}
-        <div className="relative mt-12 overflow-hidden">
-          {/* Fades for smooth edges */}
-          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-slate-50/50 to-transparent z-20 pointer-events-none"></div>
-          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-slate-50/50 to-transparent z-20 pointer-events-none"></div>
-
-          <div className="flex items-center animate-marquee whitespace-nowrap group">
-            <div className="flex items-center py-4">
-              {scrollPartners.map((partner, index) => (
-                <div 
-                  key={index} 
-                  className="flex flex-col items-center justify-center px-12 md:px-24 bg-transparent transition-all duration-500"
-                >
-                  <div className="mb-4 opacity-60 grayscale group-hover:grayscale-0 hover:opacity-100 transition-all duration-700 transform hover:scale-110">
-                    {partner.logo}
-                  </div>
-                  <p className="text-[9px] font-bold text-blue-600 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-center">
-                    {partner.description}
-                  </p>
+        {isStandalone ? (
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 mt-20 reveal">
+            {partners.map((partner, index) => (
+              <div key={index} className="bg-white p-8 md:p-12 rounded-[2.5rem] border border-slate-100 shadow-xl shadow-blue-900/5 group hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div className="mb-8">{partner.logo}</div>
+                <h4 className="text-xl font-bold text-blue-900 mb-4">{partner.name}</h4>
+                <p className="text-slate-500 text-sm leading-relaxed mb-6">{partner.description}</p>
+                <div className="flex items-center text-blue-600 font-bold text-[10px] uppercase tracking-widest">
+                  <span>Verified Strategic Partner</span>
+                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                 </div>
-              ))}
+              </div>
+            ))}
+          </div>
+        ) : (
+          /* Infinite Scroll Container for Home view */
+          <div className="relative mt-12 overflow-hidden">
+            {/* Fades for smooth edges */}
+            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-slate-50/50 to-transparent z-20 pointer-events-none"></div>
+            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-slate-50/50 to-transparent z-20 pointer-events-none"></div>
+
+            <div className="flex items-center animate-marquee whitespace-nowrap group">
+              <div className="flex items-center py-4">
+                {scrollPartners.map((partner, index) => (
+                  <div 
+                    key={index} 
+                    className="flex flex-col items-center justify-center px-12 md:px-24 bg-transparent transition-all duration-500"
+                  >
+                    <div className="mb-4 opacity-60 grayscale group-hover:grayscale-0 hover:opacity-100 transition-all duration-700 transform hover:scale-110">
+                      {partner.logo}
+                    </div>
+                    <p className="text-[9px] font-bold text-blue-600 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-center">
+                      {partner.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
 
       <style>{`
