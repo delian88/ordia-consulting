@@ -68,6 +68,9 @@ const partners: Partner[] = [
   }
 ];
 
+// Double the partners to create a seamless infinite scroll effect
+const scrollPartners = [...partners, ...partners, ...partners];
+
 export const Partners: React.FC = () => {
   return (
     <section className="py-24 bg-slate-50/50 border-y border-slate-100 relative overflow-hidden">
@@ -105,23 +108,46 @@ export const Partners: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
-          {partners.map((partner, index) => (
-            <div 
-              key={index} 
-              className="reveal flex flex-col items-center justify-center p-8 bg-white rounded-3xl border border-transparent hover:border-blue-100 hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-500 group"
-              style={{ transitionDelay: `${index * 100}ms` }}
-            >
-              <div className="mb-6 opacity-40 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-110">
-                {partner.logo}
-              </div>
-              <div className="text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <p className="text-[9px] font-bold text-blue-600 uppercase tracking-widest">{partner.description}</p>
-              </div>
+        {/* Infinite Scroll Container */}
+        <div className="relative mt-12 overflow-hidden">
+          {/* Fades for smooth edges */}
+          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-slate-50/50 to-transparent z-20 pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-slate-50/50 to-transparent z-20 pointer-events-none"></div>
+
+          <div className="flex items-center animate-marquee whitespace-nowrap group">
+            <div className="flex items-center py-4">
+              {scrollPartners.map((partner, index) => (
+                <div 
+                  key={index} 
+                  className="flex flex-col items-center justify-center px-12 md:px-20 bg-transparent transition-all duration-500 group-item"
+                >
+                  <div className="mb-4 opacity-40 grayscale group-hover:grayscale-0 hover:opacity-100 transition-all duration-700 transform hover:scale-110">
+                    {partner.logo}
+                  </div>
+                  <p className="text-[9px] font-bold text-blue-600 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-center">
+                    {partner.description}
+                  </p>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
+
+      <style>{`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-33.33%); }
+        }
+        .animate-marquee {
+          display: flex;
+          width: fit-content;
+          animation: marquee 40s linear infinite;
+        }
+        .animate-marquee:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
     </section>
   );
 };
