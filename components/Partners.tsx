@@ -19,6 +19,26 @@ const partners: Partner[] = [
     )
   },
   {
+    name: "BmK360CPA, PC",
+    description: "Advanced CPA & Strategic Accounting",
+    logo: (
+      <div className="flex items-center space-x-3">
+        <div className="flex flex-col items-end">
+          <span className="text-2xl font-black text-[#5e846e] leading-none tracking-tighter">BMK</span>
+          <span className="text-[8px] font-bold text-slate-400 tracking-[0.2em] uppercase">Professional Corp.</span>
+        </div>
+        <div className="w-px h-10 bg-slate-200"></div>
+        <div className="flex flex-col">
+          <div className="flex items-center space-x-1">
+             <span className="text-lg font-serif italic font-bold text-blue-900">360°</span>
+             <span className="text-xl font-bold text-slate-800">CPA</span>
+          </div>
+          <span className="text-[7px] font-black text-[#5e846e] uppercase tracking-[0.3em] -mt-1">PC Certified</span>
+        </div>
+      </div>
+    )
+  },
+  {
     name: "World A.I Force",
     description: "Technology & AI Integration",
     logo: (
@@ -30,46 +50,11 @@ const partners: Partner[] = [
         </div>
       </div>
     )
-  },
-  {
-    name: "Nexus Capital",
-    description: "Strategic Investment Partners",
-    logo: (
-      <div className="flex items-center space-x-2">
-        <svg className="w-8 h-8 text-slate-400 group-hover:text-blue-600 transition-colors" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-        </svg>
-        <span className="font-bold text-lg tracking-tight text-slate-700">NEXUS</span>
-      </div>
-    )
-  },
-  {
-    name: "Sterling Legal",
-    description: "Corporate Compliance & Counsel",
-    logo: (
-      <div className="flex items-center space-x-1">
-        <div className="w-1 h-8 bg-slate-300"></div>
-        <div className="flex flex-col">
-          <span className="font-serif font-bold text-slate-800 leading-none">STERLING</span>
-          <span className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">Counsel & Law</span>
-        </div>
-      </div>
-    )
-  },
-  {
-    name: "Beacon Enterprise",
-    description: "Global Logistics & Trade",
-    logo: (
-      <div className="flex items-center space-x-2">
-        <div className="w-3 h-3 rounded-full bg-blue-500 animate-pulse"></div>
-        <span className="font-bold text-slate-800 text-lg uppercase tracking-widest">BEACON</span>
-      </div>
-    )
   }
 ];
 
 // Double the partners to create a seamless infinite scroll effect
-const scrollPartners = [...partners, ...partners, ...partners];
+const scrollPartners = [...partners, ...partners, ...partners, ...partners];
 
 export const Partners: React.FC = () => {
   return (
@@ -119,9 +104,9 @@ export const Partners: React.FC = () => {
               {scrollPartners.map((partner, index) => (
                 <div 
                   key={index} 
-                  className="flex flex-col items-center justify-center px-12 md:px-20 bg-transparent transition-all duration-500 group-item"
+                  className="flex flex-col items-center justify-center px-12 md:px-24 bg-transparent transition-all duration-500"
                 >
-                  <div className="mb-4 opacity-40 grayscale group-hover:grayscale-0 hover:opacity-100 transition-all duration-700 transform hover:scale-110">
+                  <div className="mb-4 opacity-60 grayscale group-hover:grayscale-0 hover:opacity-100 transition-all duration-700 transform hover:scale-110">
                     {partner.logo}
                   </div>
                   <p className="text-[9px] font-bold text-blue-600 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-center">
@@ -137,12 +122,12 @@ export const Partners: React.FC = () => {
       <style>{`
         @keyframes marquee {
           0% { transform: translateX(0); }
-          100% { transform: translateX(-33.33%); }
+          100% { transform: translateX(-50%); }
         }
         .animate-marquee {
           display: flex;
           width: fit-content;
-          animation: marquee 40s linear infinite;
+          animation: marquee 30s linear infinite;
         }
         .animate-marquee:hover {
           animation-play-state: paused;
