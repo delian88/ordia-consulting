@@ -71,7 +71,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
             className="flex items-center cursor-pointer group"
             onClick={() => onNavigate('#home')}
           >
-            <FullLogo className={`transition-all duration-500 ${isScrolled ? 'h-8 md:h-10' : 'h-10 md:h-14'}`} />
+            <FullLogo className={`transition-all duration-500 ${isScrolled ? 'h-10 md:h-12' : 'h-12 md:h-18'}`} />
           </div>
 
           <nav className="hidden lg:flex items-center space-x-10">
@@ -113,7 +113,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
           >
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" /></svg>
           </button>
-          <FullLogo className="h-12 md:h-16 mb-6 md:mb-10" />
+          <FullLogo className="h-16 md:h-24 mb-6 md:mb-10" />
           <div className="flex flex-col items-center space-y-6 md:space-y-8">
             {navItems.map((item) => (
               <a 
