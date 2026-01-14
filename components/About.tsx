@@ -6,6 +6,66 @@ interface AboutProps {
   isStandalone?: boolean;
 }
 
+export const CPASeal: React.FC<{ className?: string }> = ({ className = "h-32 w-32" }) => {
+  return (
+    <div className={`${className} relative group select-none animate-float`}>
+      <svg viewBox="0 0 200 200" className="w-full h-full filter drop-shadow-lg transition-transform duration-500 group-hover:scale-105">
+        <defs>
+          <filter id="emboss">
+            <feOffset dx="-1" dy="-1" />
+            <feGaussianBlur stdDeviation="1" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="arithmetic" k1="0" k2="1" k3="-1" k4="0" />
+          </filter>
+        </defs>
+        
+        {/* Serrated Edge Shape (40-point star) */}
+        <path
+          d="M100 0 L108 15 L124 10 L128 26 L145 23 L146 40 L163 40 L160 57 L176 60 L170 76 L185 83 L176 97 L190 108 L178 120 L188 135 L174 144 L180 160 L164 165 L166 182 L150 184 L148 200 L132 198 L126 214 L111 208 L100 220 L89 208 L74 214 L68 198 L52 200 L50 184 L34 182 L36 165 L20 160 L26 144 L12 135 L22 120 L10 108 L24 97 L15 83 L30 76 L24 60 L40 57 L37 40 L54 40 L55 23 L72 26 L76 10 L92 15 Z"
+          fill="#769d84"
+          transform="scale(0.85) translate(18, 18)"
+        />
+        
+        {/* Inner Circle Border */}
+        <circle cx="100" cy="100" r="72" fill="none" stroke="white" strokeWidth="1" opacity="0.4" />
+        <circle cx="100" cy="100" r="68" fill="none" stroke="white" strokeWidth="0.5" opacity="0.2" />
+
+        {/* Circular Text */}
+        <path id="sealCurve" d="M 100, 100 m -60, 0 a 60,60 0 1,1 120,0 a 60,60 0 1,1 -120,0" fill="none" />
+        <text className="font-serif uppercase tracking-[0.3em]" fontSize="13" fontWeight="700" fill="rgba(255,255,255,0.9)">
+          <textPath href="#sealCurve" startOffset="0%">CERTIFIED PUBLIC</textPath>
+        </text>
+        <path id="sealCurveBottom" d="M 100, 100 m -60, 0 a 60,60 0 1,0 120,0 a 60,60 0 1,0 -120,0" fill="none" />
+        <text className="font-serif uppercase tracking-[0.3em]" fontSize="13" fontWeight="700" fill="rgba(255,255,255,0.9)">
+          <textPath href="#sealCurveBottom" startOffset="50%" textAnchor="middle">ACCOUNTANT</textPath>
+        </text>
+
+        {/* Center Text */}
+        <text x="50%" y="54%" dominantBaseline="middle" textAnchor="middle" fontSize="52" fontWeight="900" fill="white" className="font-serif" style={{ filter: 'url(#emboss)' }}>
+          CPA
+        </text>
+      </svg>
+    </div>
+  );
+};
+
+const ProfessionalCertification: React.FC = () => {
+  return (
+    <div className="flex items-center space-x-6 bg-white p-6 rounded-3xl shadow-xl shadow-blue-900/5 border border-slate-100 mt-12 group hover:shadow-2xl transition-all max-w-md">
+      <CPASeal className="h-24 w-24 shrink-0" />
+      <div className="flex flex-col">
+        <h4 className="text-sm font-bold text-blue-900 uppercase tracking-widest mb-1">CPA Certified Firm</h4>
+        <p className="text-[11px] text-slate-500 leading-relaxed font-light">
+          Holding the gold standard in professional accounting services. Licensed, verified, and committed to technical excellence.
+        </p>
+        <div className="flex items-center mt-3 space-x-2">
+          <span className="w-2 h-2 rounded-full bg-green-500"></span>
+          <span className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">Credentialed Professional Status</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const About: React.FC<AboutProps> = ({ isStandalone = true }) => {
   return (
     <section id="about" className={`py-20 md:py-32 ${isStandalone ? 'lg:pt-48 min-h-screen' : 'bg-slate-50/30'} bg-white relative overflow-hidden`}>
@@ -13,15 +73,12 @@ export const About: React.FC<AboutProps> = ({ isStandalone = true }) => {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-center">
           <div className="lg:col-span-6 reveal">
             <div className="relative p-8 md:p-12 lg:p-20 bg-slate-50 rounded-[2.5rem] md:rounded-[4rem] flex flex-col items-center justify-center border border-slate-100 shadow-inner group">
-              {/* Subtle Background Animation */}
               <div className="absolute inset-0 bg-gradient-to-br from-white via-transparent to-blue-50/30 opacity-50"></div>
               
-              {/* Main Visual: Full Corporate Logo */}
               <div className="relative z-10 transition-transform duration-700 group-hover:scale-105">
                 <FullLogo className="h-32 md:h-48 lg:h-72 drop-shadow-sm" />
               </div>
 
-              {/* Floating Accent Elements */}
               <div className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 bg-white p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] shadow-2xl border border-slate-100 hidden sm:block group-hover:-translate-y-2 transition-transform duration-500">
                 <p className="text-2xl md:text-4xl font-serif font-bold text-blue-900 mb-1">360°</p>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-blue-600">Engagement</p>
@@ -29,6 +86,8 @@ export const About: React.FC<AboutProps> = ({ isStandalone = true }) => {
 
               <div className="absolute top-10 left-10 w-24 h-24 bg-blue-500/5 rounded-full blur-2xl animate-pulse"></div>
             </div>
+            
+            <ProfessionalCertification />
           </div>
 
           <div className="lg:col-span-6 reveal">
@@ -41,7 +100,7 @@ export const About: React.FC<AboutProps> = ({ isStandalone = true }) => {
               Ordia Consulting Services (OCS) is not just an accounting firm; we are a strategic partner dedicated to your long-term wealth creation. We leverage a modern, 360-degree model to ensure every facet of your fiscal health is optimized.
             </p>
             <p className="text-slate-500 text-base md:text-lg mb-10 leading-relaxed font-light">
-              From Baltimore to the rest of the nation, our team brings deep technical expertise in complex tax structures, audit assurance, and operational consulting.
+              As a **CPA Certified** firm, we bring the highest level of professional ethics and technical rigor to every engagement. From Baltimore to the rest of the nation, our team delivers deep technical expertise in complex tax structures, audit assurance, and operational consulting.
             </p>
             
             <div className="grid sm:grid-cols-2 gap-8 md:gap-10">

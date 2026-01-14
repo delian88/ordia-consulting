@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { FullLogo } from './Header';
+import { CPASeal } from './About';
 
 interface FooterProps {
   onNavigate: (href: string) => void;
@@ -21,19 +22,12 @@ const WorldAiForceLogo: React.FC<{ className?: string }> = ({ className = "h-8" 
             <stop offset="100%" stopColor="#7a5fff" />
           </linearGradient>
         </defs>
-        {/* Outer Ring */}
         <circle cx="50" cy="50" r="48" fill="none" stroke="#004a8d" strokeWidth="2.5" />
         <circle cx="50" cy="50" r="45" fill="white" />
         <circle cx="50" cy="50" r="44" fill="none" stroke="#004a8d" strokeWidth="1" />
-        
-        {/* Inner Gradient Circle */}
         <circle cx="50" cy="50" r="33" fill="url(#logo-grad)" />
         <path d="M50 17 A33 33 0 0 1 50 83 Z" fill="rgba(255,255,255,0.15)" />
-        
-        {/* White Center Circle */}
         <circle cx="50" cy="50" r="13" fill="white" />
-        
-        {/* Text WORLD A.I FORCE */}
         <path id="top-curve" d="M22,50 a28,28 0 1,1 56,0" fill="none" />
         <path id="bottom-curve" d="M22,50 a28,28 0 1,0 56,0" fill="none" />
         <text className="font-serif" fontSize="6.5" fontWeight="900" fill="#2b4c9b" letterSpacing="0.5">
@@ -42,8 +36,6 @@ const WorldAiForceLogo: React.FC<{ className?: string }> = ({ className = "h-8" 
         <text className="font-serif" fontSize="7.5" fontWeight="900" fill="#2b4c9b" letterSpacing="1">
           <textPath href="#bottom-curve" startOffset="50%" textAnchor="middle" side="right">FORCE</textPath>
         </text>
-        
-        {/* Stylized W */}
         <g transform="translate(42, 45) scale(0.16)">
            <path fill="url(#w-grad)" d="M0 0 L25 60 L50 0 L75 60 L100 0 L85 0 L60 60 L35 0 L15 0 L10 15 L0 0 Z" />
         </g>
@@ -68,9 +60,19 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <div className="mb-6 md:mb-10 scale-75 md:scale-90 -ml-6 md:-ml-4 origin-left">
               <FullLogo className="h-16 md:h-20" light />
             </div>
+            
+            <div className="mb-8 flex items-center space-x-6">
+              <CPASeal className="h-20 w-20" />
+              <div className="flex flex-col">
+                <span className="text-white font-black text-lg tracking-tighter leading-none mb-1">CPA CERTIFIED</span>
+                <span className="text-[10px] text-blue-400 font-bold uppercase tracking-widest leading-none">Registered Professional Advisor</span>
+              </div>
+            </div>
+
             <p className="max-w-xs text-sm leading-relaxed mb-8 md:mb-10 text-slate-400/80">
               OCS delivers personalized financial oversight that moves beyond compliance to proactive 360-degree strategy. Based in Baltimore, serving clients nationwide.
             </p>
+            
             <div className="text-xs space-y-4">
                 <div className="flex items-start space-x-4">
                   <span className="text-blue-400 font-bold">EM:</span>
