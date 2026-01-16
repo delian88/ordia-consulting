@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Service } from '../types';
 
@@ -20,6 +19,38 @@ export const servicesData: Service[] = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17v-2m3 2v-4m3 2v-6m-8 13h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 022 2z" />
       </svg>
     )
+  },
+  {
+    id: "bookkeeping",
+    title: "Bookkeeping Support",
+    description: "Meticulous daily record-keeping and bank reconciliations.",
+    fullDescription: "Solid bookkeeping is the foundation of a successful business. We keep your ledgers clean.",
+    imageUrl: "https://images.unsplash.com/photo-1554224155-169641357599?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Daily Reconciliation", detail: "Matching bank statements to your internal records every day." },
+      { title: "Accounts Payable", detail: "Managing vendor relationships and ensuring timely payments." }
+    ],
+    icon: (
+        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+        </svg>
+      )
+  },
+  {
+    id: "corp-taxes",
+    title: "Corp Business Taxes",
+    description: "Strategic corporate tax planning designed to minimize liability.",
+    fullDescription: "Navigate the complexity of the corporate tax code with strategic planning.",
+    imageUrl: "https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Tax Minimization", detail: "Utilizing all legal credits and deductions to lower your effective rate." },
+      { title: "Strategic Planning", detail: "Multi-year tax strategies for sustainable wealth preservation." }
+    ],
+    icon: (
+        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5" />
+        </svg>
+      )
   },
   {
     id: "hr-staffing",
@@ -86,22 +117,6 @@ export const servicesData: Service[] = [
       )
   },
   {
-    id: "bookkeeping",
-    title: "Bookkeeping Support",
-    description: "Meticulous daily record-keeping and bank reconciliations.",
-    fullDescription: "Solid bookkeeping is the foundation of a successful business. We keep your ledgers clean.",
-    imageUrl: "https://images.unsplash.com/photo-1554224155-169641357599?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "Daily Reconciliation", detail: "Matching bank statements to your internal records every day." },
-      { title: "Accounts Payable", detail: "Managing vendor relationships and ensuring timely payments." }
-    ],
-    icon: (
-        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
-        </svg>
-      )
-  },
-  {
     id: "loans-grants",
     title: "Loans, Grants & LOC",
     description: "Advisory on securing capital through commercial loans and lines of credit.",
@@ -114,22 +129,6 @@ export const servicesData: Service[] = [
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1" />
-        </svg>
-      )
-  },
-  {
-    id: "corp-taxes",
-    title: "Corp Business Taxes",
-    description: "Strategic corporate tax planning designed to minimize liability.",
-    fullDescription: "Navigate the complexity of the corporate tax code with strategic planning.",
-    imageUrl: "https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "Tax Minimization", detail: "Utilizing all legal credits and deductions to lower your effective rate." },
-      { title: "Strategic Planning", detail: "Multi-year tax strategies for sustainable wealth preservation." }
-    ],
-    icon: (
-        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5" />
         </svg>
       )
   },
@@ -241,6 +240,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, isStandalon
                 </p>
                 <div className="pt-6 border-t border-slate-50 flex justify-between items-center relative z-10">
                   <span className="text-[10px] font-bold uppercase tracking-widest text-blue-600">Read More</span>
+                  {/* Fixed viewBox attribute syntax (changed comma to equals sign) */}
                   <svg className="w-5 h-5 text-blue-600 -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
