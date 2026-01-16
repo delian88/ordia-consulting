@@ -69,7 +69,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </div>
             </div>
 
-            <p className="max-w-xs text-sm leading-relaxed mb-8 md:mb-10 text-slate-400/80">
+            <p className="max-w-xs text-sm leading-relaxed mb-8 md:mb-10 text-white/60">
               OCS delivers personalized financial oversight that moves beyond compliance to proactive 360-degree strategy. Based in Baltimore, serving clients nationwide.
             </p>
             
@@ -77,8 +77,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <div className="flex items-start space-x-4">
                   <span className="text-blue-400 font-bold">EM:</span>
                   <div className="space-y-1">
-                    <p className="text-white/90">info@ordiafinances.com</p>
-                    <p className="text-white/80">cfo@ordiafinances.com</p>
+                    <p className="text-white font-medium">info@ordiafinances.com</p>
+                    <p className="text-white font-medium">cfo@ordiafinances.com</p>
                   </div>
                 </div>
                 <div className="pt-6 mt-6 border-t border-white/5">
@@ -86,14 +86,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                     href="https://www.facebook.com/profile.php?id=61586637290266" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-3 text-white/60 hover:text-blue-400 transition-all group"
+                    className="inline-flex items-center space-x-3 text-white/60 hover:text-white transition-all group"
                   >
-                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-white/10 border border-white/10">
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-blue-600 border border-white/10 group-hover:border-blue-600 transition-colors">
                       <svg className="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24">
                         <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
                       </svg>
                     </div>
-                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest">Facebook Page</span>
+                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest">Facebook Official</span>
                   </a>
                 </div>
             </div>
@@ -103,28 +103,28 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <div>
               <h4 className="text-white font-bold text-[10px] uppercase tracking-[0.25em] mb-6 md:mb-10">Advisory</h4>
               <ul className="space-y-3 md:space-y-4 text-[13px] md:text-sm">
-                <li><a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="hover:text-blue-400 transition-colors">Home</a></li>
-                <li><a href="#about" onClick={(e) => handleLinkClick(e, '#about')} className="hover:text-blue-400 transition-colors">About Firm</a></li>
-                <li><a href="#services" onClick={(e) => handleLinkClick(e, '#services')} className="hover:text-blue-400 transition-colors">Specialties</a></li>
-                <li><a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')} className="hover:text-blue-400 transition-colors">Contact</a></li>
+                <li><a href="#home" onClick={(e) => handleLinkClick(e, '#home')} className="hover:text-white transition-colors">Home</a></li>
+                <li><a href="#about" onClick={(e) => handleLinkClick(e, '#about')} className="hover:text-white transition-colors">About Firm</a></li>
+                <li><a href="#services" onClick={(e) => handleLinkClick(e, '#services')} className="hover:text-white transition-colors">Specialties</a></li>
+                <li><a href="#contact" onClick={(e) => handleLinkClick(e, '#contact')} className="text-white font-bold hover:text-blue-400 transition-colors">Contact Us</a></li>
               </ul>
             </div>
             
             <div className="hidden lg:block">
               <h4 className="text-white font-bold text-[10px] uppercase tracking-[0.25em] mb-10">Focus Areas</h4>
               <ul className="space-y-4 text-sm">
-                <li><a href="#" className="hover:text-blue-400 transition-colors">Tax Strategy</a></li>
-                <li><a href="#" className="hover:text-blue-400 transition-colors">Fractional CFO</a></li>
-                <li><a href="#" className="hover:text-blue-400 transition-colors">Audit Support</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Tax Strategy</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Fractional CFO</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Audit Support</a></li>
               </ul>
             </div>
 
             <div className="hidden lg:block">
               <h4 className="text-white font-bold text-[10px] uppercase tracking-[0.25em] mb-10">Resources</h4>
               <ul className="space-y-4 text-sm">
-                <li><a href="#" className="hover:text-blue-400 transition-colors">Partnerships</a></li>
-                <li><a href="#" className="hover:text-blue-400 transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-blue-400 transition-colors">Terms of Use</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Partnerships</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Terms of Use</a></li>
               </ul>
             </div>
           </div>
@@ -132,23 +132,23 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         
         <div className="pt-8 md:pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-10">
           <div className="flex flex-col items-center md:items-start gap-1">
-            <p className="text-[9px] uppercase tracking-[0.2em] font-bold text-slate-500 text-center md:text-left">
+            <p className="text-[9px] uppercase tracking-[0.2em] font-bold text-white/40 text-center md:text-left">
               © {new Date().getFullYear()} Ordia Consulting Services (OCS).
             </p>
-            <div className="flex items-center space-x-2 text-[9px] tracking-[0.2em] uppercase text-slate-600 font-medium">
+            <div className="flex items-center space-x-2 text-[9px] tracking-[0.2em] uppercase text-white/30 font-medium">
               <span>Powered by</span>
-              <a href="https://azariahmg.com/" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400 transition-colors font-bold underline decoration-blue-500/30 underline-offset-4">Azariah Management Group</a>
+              <a href="https://azariahmg.com/" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors font-bold underline decoration-white/20 underline-offset-4">Azariah Management Group</a>
               <span className="mx-1">,</span>
               <span>Sealed by</span>
               <a href="https://worldaiforce.com/" target="_blank" rel="noopener noreferrer" className="group flex items-center transition-all">
-                <WorldAiForceLogo className="h-8 md:h-10 hover:scale-110 transition-transform" />
+                <WorldAiForceLogo className="h-8 md:h-10 hover:scale-110 transition-transform brightness-125" />
               </a>
             </div>
           </div>
-          <div className="flex items-center space-x-6 md:space-x-10 text-[8px] md:text-[9px] uppercase tracking-[0.3em] font-bold text-slate-600">
-            <span className="hover:text-blue-400 cursor-default transition-colors">Integrity</span>
-            <span className="hover:text-blue-400 cursor-default transition-colors">Precision</span>
-            <span className="hover:text-blue-400 cursor-default transition-colors">Impact</span>
+          <div className="flex items-center space-x-6 md:space-x-10 text-[8px] md:text-[9px] uppercase tracking-[0.3em] font-bold text-white/30">
+            <span className="hover:text-white cursor-default transition-colors">Integrity</span>
+            <span className="hover:text-white cursor-default transition-colors">Precision</span>
+            <span className="hover:text-white cursor-default transition-colors">Impact</span>
           </div>
         </div>
       </div>
