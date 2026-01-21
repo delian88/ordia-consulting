@@ -128,9 +128,9 @@ export const servicesData: Service[] = [
     fullDescription: "From start-ups to existing business, at OCS, we provide our clients with access to apply for business loans and lines of credit (LOC) to support their financial needs, business operations, and payroll. We provide consultation, guidance and advice on obtaining appropriate operations loans.",
     imageUrl: "https://images.unsplash.com/photo-1554224156-5654388654a9?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Business Loan Sourcing", detail: "Advising on the best debt instruments to support your specific growth phase." },
-      { title: "Lines of Credit (LOC) Advisory", detail: "Help securing flexible credit lines to manage working capital and payroll." },
-      { title: "Grant Sourcing and Consulting", detail: "Professional guidance through the landscape of available business and operational grants." }
+      { title: "Business Loan Sourcing", detail: "Strategic consultation on obtaining appropriate operations loans to support expansion and liquidity needs." },
+      { title: "Lines of Credit (LOC) Advisory", detail: "Expert guidance on securing lines of credit to support daily business operations and payroll stability." },
+      { title: "Grant Sourcing and Consulting", detail: "Professional advisory on identifying and applying for appropriate grants to fuel business development." }
     ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">

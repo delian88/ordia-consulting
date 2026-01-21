@@ -18,7 +18,7 @@ AREAS OF EXPERTISE:
 - Payroll & 1099 Contract solutions (Reducing administrative time with computerized systems. Includes: Payroll processing and W2’s, 941 Tax form preparations, PTO Tracking and Timesheets, 1099 Contractual payroll)
 - Outsourced Audits & Assurance Support (Objective analysis to control costs and increase efficiency. Includes: Assurance and Advisory Services, Outsourced Audits, Reviews, and Compilation, New Business selection and restructuring, Mergers and Acquisitions, Business succession and Migrations)
 - Human Resources & Staff Augmentation (Developing and implementing efficient HR systems. Includes: Staffing Solutions and Augmentation support, Employee Benefits, 401k, and Pension, New Business Start-ups, Organizational Policies and Procedures, Provide Outsourced CFO Services)
-- Loans, LOC, and Grants (Business loans, lines of credit consultation, grant advisory)
+- Loans, LOC, and Grants (Providing access to apply for business loans and lines of credit (LOC) to support financial needs, business operations, and payroll. Includes: Consultation, guidance and advice on obtaining appropriate operations loans, LOC Advisory, Grant Sourcing)
 - Business Solutions and Development (Strategic/Resource Planning, Financial Operations Management, Business Analysis/Valuation)
 
 Tone: Empathetic, expert, decisive, and professional.
