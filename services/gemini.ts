@@ -17,7 +17,7 @@ AREAS OF EXPERTISE:
 - Bookkeeping Services and Support (Quality services for startups and established enterprises. Includes: Bookkeeping (Monthly/Quarterly/Annual), General Ledger/Trial Balance, Bank Reconciliation, QuickBooks Support, Fiscal Reporting, Fund Accounting, Write-ups/Notes)
 - Tax Preparation Services (Comprehensive planning to minimize liabilities and maximize cash flow. Includes: Corporate/Individual Planning, Tax management Support, Estate/Trust planning, Litigation Support/Forensic Accounting, New Tax Laws Training)
 - Payroll & 1099 Contract solutions (Reducing administrative time with computerized systems. Includes: Payroll processing and W2’s, 941 Tax form preparations, PTO Tracking and Timesheets, 1099 Contractual payroll)
-- Outsourced Audits & Assurance Support (Assurance, Reviews/Compilation, Business Restructuring, M&A, Succession)
+- Outsourced Audits & Assurance Support (Objective analysis to control costs and increase efficiency. Includes: Assurance and Advisory Services, Outsourced Audits, Reviews, and Compilation, New Business selection and restructuring, M&A, Succession)
 - Human Resources & Staff Augmentation (Staffing Solutions, Benefits/401k/Pension, Start-ups, Policies, Outsourced CFO)
 - Loans, LOC, and Grants (Business loans, lines of credit consultation, grant advisory)
 - Business Solutions and Development (Strategic/Resource Planning, Financial Operations Management, Business Analysis/Valuation)

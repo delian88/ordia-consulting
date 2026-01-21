@@ -88,14 +88,14 @@ export const servicesData: Service[] = [
     id: "outsourced-audits",
     title: "Outsourced Audits & Assurance Support",
     description: "Assuring solidity of records and working to produce growth strategies.",
-    fullDescription: "At Ordia Consulting Services, we focus on building close client relationships that add long-term value. This includes assuring the solidity of financial records, evaluating financial procedures and working to produce strategies that help our clients face the myriad challenges of business planning and execution. Our assurance services will improve information quality or its context, meaning more success for your business.",
+    fullDescription: "At Ordia Consulting Services, we focus on building close client relationships that add long-term value. This includes assuring the solidity of financial records, evaluating financial procedures and working to produce strategies that help our clients face the myriad challenges of business planning and execution. Our clients benefit from objective analysis to assist in controlling costs, increasing efficiency, and implementing new technologies and procedures that take advantage of changes in the marketplace, accounting standards, and tax law. Our assurance services will improve information quality or its context, meaning more success for your business.",
     imageUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Assurance and Advisory Services", detail: "High-level review and advisory to provide stakeholder confidence in your financial data." },
-      { title: "Outsourced Audits, Reviews, and Compilation", detail: "Professional verification of accounts through outsourced audits and detailed reviews." },
-      { title: "New Business selection and restructuring", detail: "Strategic guidance on selecting business entities and optimizing corporate structures." },
-      { title: "Mergers and Acquisitions", detail: "Due diligence and financial advisory for successful corporate transitions." },
-      { title: "Business succession and Migrations", detail: "Planning for the future handover of business leadership or migration to new systems." }
+      { title: "Assurance and Advisory Services", detail: "High-level review and advisory to provide stakeholder confidence in your financial data and control costs." },
+      { title: "Outsourced Audits, Reviews, and Compilation", detail: "Professional verification of accounts through outsourced audits, reviews, and formal compilations." },
+      { title: "New Business selection and restructuring", detail: "Strategic guidance on selecting business entities and optimizing corporate structures for efficiency." },
+      { title: "Mergers and Acquisitions", detail: "Due diligence and financial advisory for successful corporate transitions and marketplace shifts." },
+      { title: "Business succession and Migrations", detail: "Planning for the future handover of business leadership or migration to modern financial systems." }
     ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
