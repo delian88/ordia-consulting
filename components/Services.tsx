@@ -94,8 +94,8 @@ export const servicesData: Service[] = [
       { title: "Assurance and Advisory Services", detail: "High-level review and advisory to provide stakeholder confidence in your financial data and control costs." },
       { title: "Outsourced Audits, Reviews, and Compilation", detail: "Professional verification of accounts through outsourced audits, reviews, and formal compilations." },
       { title: "New Business selection and restructuring", detail: "Strategic guidance on selecting business entities and optimizing corporate structures for efficiency." },
-      { title: "Mergers and Acquisitions", detail: "Due diligence and financial advisory for successful corporate transitions and marketplace shifts." },
-      { title: "Business succession and Migrations", detail: "Planning for the future handover of business leadership or migration to modern financial systems." }
+      { title: "Mergers and Acquisitions", detail: "Expert due diligence and financial advisory for successful corporate transitions and marketplace shifts." },
+      { title: "Business succession and Migrations", detail: "Long-term planning for the future handover of business leadership or migration to modern financial systems." }
     ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
