@@ -1,18 +1,19 @@
+
 import React from 'react';
 import { Service } from '../types';
 
 export const servicesData: Service[] = [
   {
     id: "financial-accounting",
-    title: "Financial & Accounting",
+    title: "Financial & Accounting Solutions",
     description: "Precision financial statement preparation and comprehensive accounting oversight.",
-    fullDescription: "Our Financial & Accounting service provides the backbone for your business's fiscal health. We move beyond simple data entry to provide high-level analysis and reporting that helps you understand where every dollar goes and where your growth opportunities lie.",
+    fullDescription: "Our certified professionals possess a wealth of expertise in various domains of accounting and finance. We help you achieve success through rigorous analysis and reporting.",
     imageUrl: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Balance Sheet Management", detail: "Comprehensive tracking of assets, liabilities, and equity to ensure a clear snapshot of your company's net worth at any given time." },
-      { title: "P&L Analysis", detail: "In-depth review of revenue and expenses to identify trends, improve margins, and drive operational efficiency." },
-      { title: "Cash Flow Statements", detail: "Monitoring the movement of funds to ensure your business maintains the liquidity needed for daily operations and strategic investments." },
-      { title: "General Ledger Cleanup", detail: "Systematic reconciliation and adjustment of accounts to ensure your historical data is accurate, compliant, and audit-ready." }
+      { title: "Financial Statement Preparation", detail: "Accurate and compliant reporting of your company's fiscal position." },
+      { title: "Budgets and Cashflow", detail: "Comprehensive solutions for managing daily liquidity and long-term targets." },
+      { title: "Accounting Systems", detail: "Professional setup and integration of modern cloud-based systems." },
+      { title: "Regulatory Reporting", detail: "Ensuring all state and federal reporting requirements are met with precision." }
     ],
     icon: (
       <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -22,13 +23,15 @@ export const servicesData: Service[] = [
   },
   {
     id: "bookkeeping",
-    title: "Bookkeeping Support",
-    description: "Meticulous daily record-keeping and bank reconciliations.",
-    fullDescription: "Solid bookkeeping is the foundation of a successful business. We keep your ledgers clean.",
+    title: "Bookkeeping Services & Support",
+    description: "Meticulous record-keeping to maintain profitability and capitalize on opportunities.",
+    fullDescription: "OCS's bookkeeping services steer you closer to your goals with accurate reporting and support on initial system setup and cost minimization.",
     imageUrl: "https://images.unsplash.com/photo-1554224155-169641357599?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Daily Reconciliation", detail: "Matching bank statements to your internal records every day." },
-      { title: "Accounts Payable", detail: "Managing vendor relationships and ensuring timely payments." }
+      { title: "Bank Reconciliation", detail: "Daily tracking and matching of bank transactions to internal records." },
+      { title: "General Ledger", detail: "Detailed trial balance summaries and maintenance of your primary records." },
+      { title: "QuickBooks Support", detail: "Expert guidance on the industry's leading bookkeeping platform." },
+      { title: "Fund Accounting", detail: "Specialized management for complex fund structures and restricted assets." }
     ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -37,14 +40,16 @@ export const servicesData: Service[] = [
       )
   },
   {
-    id: "corp-taxes",
-    title: "Corp Business Taxes",
-    description: "Strategic corporate tax planning designed to minimize liability.",
-    fullDescription: "Navigate the complexity of the corporate tax code with strategic planning.",
+    id: "tax-prep",
+    title: "Tax Preparation Services",
+    description: "Decisive planning that minimizes liability and maximizes cash flow.",
+    fullDescription: "Our expertise, experience, analysis and thorough research allow us to optimize financial opportunities found in existing and altered tax laws.",
     imageUrl: "https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Tax Minimization", detail: "Utilizing all legal credits and deductions to lower your effective rate." },
-      { title: "Strategic Planning", detail: "Multi-year tax strategies for sustainable wealth preservation." }
+      { title: "Corporate Tax Planning", detail: "Strategic decisions to optimize corporate fiscal structures." },
+      { title: "Individual Tax Planning", detail: "Helping high-net-worth individuals navigate complex personal filings." },
+      { title: "Estate & Trust Planning", detail: "Advising on wealth preservation and legacy management." },
+      { title: "Forensic Accounting", detail: "Litigation support and detailed financial investigation services." }
     ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -53,62 +58,15 @@ export const servicesData: Service[] = [
       )
   },
   {
-    id: "hr-staffing",
-    title: "HR & Staffing",
-    description: "Strategic human resource planning and recruitment support to optimize teams.",
-    fullDescription: "Your people are your greatest asset. We provide expert HR consulting to help you find, hire, and retain the best talent while ensuring you remain compliant with labor laws.",
-    imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "Recruitment Strategy", detail: "Building a pipeline of high-quality candidates tailored to your company culture." },
-      { title: "Compliance Audit", detail: "Ensuring all hiring and management practices align with current state and federal labor laws." }
-    ],
-    icon: (
-        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-        </svg>
-      )
-  },
-  {
-    id: "treasury-risk",
-    title: "Treasury & Risk Support",
-    description: "Advanced liquidity management and comprehensive risk mitigation strategies.",
-    fullDescription: "In an uncertain economy, managing liquidity and mitigating risk is paramount.",
-    imageUrl: "https://images.unsplash.com/photo-1560472355-536de3962603?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "Liquidity Management", detail: "Ensuring you have the cash on hand to meet obligations and seize opportunities." },
-      { title: "Risk Mitigation", detail: "Identifying potential financial threats and implementing safeguards." }
-    ],
-    icon: (
-        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      )
-  },
-  {
-    id: "regulatory-reporting",
-    title: "Regulatory Reporting",
-    description: "Ensuring compliance with state and federal requirements through accurate filings.",
-    fullDescription: "Stay ahead of regulatory changes with our specialized reporting service.",
-    imageUrl: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "SEC & State Filings", detail: "Accurate preparation of all required financial reports for governing bodies." },
-      { title: "Reporting Integrity", detail: "Implementing controls that ensure data accuracy for every submission." }
-    ],
-    icon: (
-        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-        </svg>
-      )
-  },
-  {
     id: "payroll-1099",
-    title: "Payroll & 1099 Contracts",
-    description: "Seamless payroll administration for employees and independent contractors.",
-    fullDescription: "Take the stress out of pay day with automated systems and meticulous oversight.",
+    title: "Payroll & 1099 Contract Solutions",
+    description: "Reduce administrative time through computerized implementation and processing.",
+    fullDescription: "Our payroll services facilitate timely payment, preparation of tax returns, and comprehensive tracking for your entire team.",
     imageUrl: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Automated Disbursement", detail: "Scheduled, reliable payments for your entire workforce." },
-      { title: "Tax Withholding", detail: "Precise calculation and filing of all payroll-related taxes." }
+      { title: "W2 & 941 Processing", detail: "Precise tax form preparation and payroll disbursement." },
+      { title: "PTO Tracking", detail: "Computerized monitoring of time-off and employee timesheets." },
+      { title: "1099 Contractual Payroll", detail: "Managing payments and compliance for independent contractors." }
     ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -117,30 +75,15 @@ export const servicesData: Service[] = [
       )
   },
   {
-    id: "loans-grants",
-    title: "Loans, Grants & LOC",
-    description: "Advisory on securing capital through commercial loans and lines of credit.",
-    fullDescription: "Growth requires capital. We help you find the best terms for your expansion.",
-    imageUrl: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "Capital Sourcing", detail: "Identifying grants and loan programs suited for your industry." },
-      { title: "Application Support", detail: "Preparing professional packages for financial institutions." }
-    ],
-    icon: (
-        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1" />
-        </svg>
-      )
-  },
-  {
-    id: "audit-assurance",
-    title: "Audit & Assurance",
-    description: "Independent verification services for financial confidence.",
-    fullDescription: "Transparency builds trust with investors and governing bodies alike.",
+    id: "outsourced-audits",
+    title: "Outsourced Audits & Assurance",
+    description: "Assuring the solidity of financial records and evaluating procedures.",
+    fullDescription: "At OCS, we build close client relationships that add value through objective analysis, cost control, and implementation of new technologies.",
     imageUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Verification", detail: "Independent audit of your financial records to confirm accuracy." },
-      { title: "Assurance", detail: "Professional confidence that your systems are reliable and valid." }
+      { title: "Reviews & Compilations", detail: "Assurance services that improve information quality for your business." },
+      { title: "Mergers & Acquisitions", detail: "Due diligence and strategic support for corporate transitions." },
+      { title: "Business Restructuring", detail: "Objective analysis to increase efficiency and implement new standards." }
     ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -149,34 +92,53 @@ export const servicesData: Service[] = [
       )
   },
   {
-    id: "start-ups",
-    title: "New Business Start-ups",
-    description: "Full-cycle consulting from registration to system implementation.",
-    fullDescription: "Launch with confidence. We handle the paperwork so you can handle the vision.",
-    imageUrl: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1200",
+    id: "hr-staffing",
+    title: "Human Resources & Staff Augmentation",
+    description: "Streamline administration and gain access to a larger talent pool.",
+    fullDescription: "We provide professional accounting staffing on a full-time, part-time, or project basis. Gain lower labor costs and increased efficiency.",
+    imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Entity Formation", detail: "Guidance on choosing the right legal structure for your goals." },
-      { title: "Initial Setup", detail: "Setting up your accounting systems from day one for success." }
+      { title: "Professional Staffing", detail: "Augmentation support with high-quality Outsourced CPA candidates." },
+      { title: "Employee Benefits", detail: "Management of 401k, pensions, and comprehensive benefits systems." },
+      { title: "Outsourced CFO Services", detail: "Strategic high-level financial leadership for growing firms." }
     ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
         </svg>
       )
   },
   {
-    id: "org-policies",
-    title: "Organization Policies",
-    description: "Development of robust internal controls and governance.",
-    fullDescription: "Sustainable growth requires strong governance and clear operational policies.",
-    imageUrl: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200",
+    id: "loans-grants",
+    title: "Loans, LOC, and Grants",
+    description: "Guidance and advice on obtaining appropriate operations loans and credit.",
+    fullDescription: "We provide our clients with access to apply for business loans and lines of credit (LOC) to support operations and payroll.",
+    imageUrl: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Governance Structure", detail: "Designing frameworks for decision making and accountability." },
-      { title: "Policy Manuals", detail: "Clear documentation of internal procedures and standards." }
+      { title: "Capital Sourcing", detail: "Identifying appropriate operations loans for start-ups and existing firms." },
+      { title: "LOC Support", detail: "Access to lines of credit to support financial needs and payroll." },
+      { title: "Strategic Guidance", detail: "Professional advice on the application process for grants and loans." }
     ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1" />
+        </svg>
+      )
+  },
+  {
+    id: "business-solutions",
+    title: "Business Solutions & Development",
+    description: "Specialized accounting expertise to help grow your business.",
+    fullDescription: "Look to our team for simple solutions to complex challenges. We believe in strategic planning as the core of growth.",
+    imageUrl: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Business Planning", detail: "Strategic and resource planning including business plan preparation." },
+      { title: "Management Support", detail: "Financial operations management and daily development advice." },
+      { title: "Business Analysis", detail: "Improvement studies, rate analysis, and cost evaluations." }
+    ],
+    icon: (
+        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       )
   }
@@ -192,10 +154,10 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, isStandalon
     <section id="services" className={`py-20 md:py-32 ${isStandalone ? 'lg:pt-48 min-h-screen' : 'bg-white'} relative overflow-hidden`}>
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20 reveal">
-          <span className="text-blue-600 font-bold uppercase tracking-[0.25em] text-[10px] mb-4 block">Our 360° Solutions</span>
+          <span className="text-blue-600 font-bold uppercase tracking-[0.25em] text-[10px] mb-4 block">360° Financial Solutions</span>
           <h2 className="text-3xl md:text-5xl font-serif font-bold text-blue-900 mb-6">Expertise That Scales.</h2>
           <p className="text-slate-500 text-base md:text-lg font-light leading-relaxed">
-            Professional accounting and advisory services designed to empower your business growth at every stage.
+            Ordia Consulting Services offers a comprehensive list of financial services designed to meet the diverse needs of our clients.
           </p>
         </div>
 
@@ -206,31 +168,17 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, isStandalon
               onClick={() => onSelectService(service)}
               className="reveal bg-white rounded-[2rem] border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.02)] group hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-500 hover:-translate-y-2 cursor-pointer relative overflow-hidden flex flex-col"
             >
-              {/* Card Image Header */}
               <div className="relative h-56 md:h-64 overflow-hidden bg-slate-100">
                 <img 
                   src={service.imageUrl} 
                   alt={service.title} 
-                  loading="lazy"
-                  referrerPolicy="no-referrer"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    const fallback = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200";
-                    if (target.src !== fallback) {
-                        target.src = fallback;
-                    }
-                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent"></div>
-                
-                {/* Floating Icon */}
                 <div className="absolute -bottom-7 left-8 w-14 h-14 bg-blue-900 text-white rounded-2xl flex items-center justify-center shadow-xl border-4 border-white transition-transform duration-500 group-hover:-translate-y-1">
                   <div className="w-7 h-7">{service.icon}</div>
                 </div>
               </div>
-
-              {/* Card Content */}
               <div className="p-8 pt-12 flex-grow">
                 <h3 className="text-xl md:text-2xl font-serif font-bold text-blue-900 mb-4 group-hover:text-blue-600 transition-colors">
                   {service.title}
@@ -239,9 +187,8 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, isStandalon
                   {service.description}
                 </p>
                 <div className="pt-6 border-t border-slate-50 flex justify-between items-center relative z-10">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-blue-600">Read More</span>
-                  {/* Fixed viewBox attribute syntax (changed comma to equals sign) */}
-                  <svg className="w-5 h-5 text-blue-600 -translate-x-4 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-blue-600">Explore Detail</span>
+                  <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </div>

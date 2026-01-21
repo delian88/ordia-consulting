@@ -7,7 +7,6 @@ interface AboutProps {
 }
 
 export const CPASeal: React.FC<{ className?: string }> = ({ className = "h-32 w-32" }) => {
-  // Generate a precise serrated edge for the seal
   const points = 80;
   const innerRadius = 88;
   const outerRadius = 98;
@@ -28,7 +27,6 @@ export const CPASeal: React.FC<{ className?: string }> = ({ className = "h-32 w-
     <div className={`${className} relative group select-none animate-float`}>
       <svg viewBox="0 0 200 200" className="w-full h-full filter drop-shadow-xl transition-all duration-700 group-hover:scale-105">
         <defs>
-          {/* Advanced Embossing/Engraving Filter */}
           <filter id="engrave" x="-20%" y="-20%" width="140%" height="140%">
             <feGaussianBlur in="SourceAlpha" stdDeviation="1.5" result="blur" />
             <feSpecularLighting in="blur" surfaceScale="5" specularConstant="0.8" specularExponent="15" lightingColor="#ffffff" result="specOut">
@@ -37,35 +35,21 @@ export const CPASeal: React.FC<{ className?: string }> = ({ className = "h-32 w-
             <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut" />
             <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litGraphic" />
           </filter>
-          
           <linearGradient id="sealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stopColor="#87a691" />
             <stop offset="100%" stopColor="#638c73" />
           </linearGradient>
         </defs>
-        
-        {/* The Serrated Base */}
         <path d={d} fill="url(#sealGrad)" />
-        
-        {/* Double Concentric Borders */}
         <circle cx="100" cy="100" r="82" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="1.5" />
-        <circle cx="100" cy="100" r="78" fill="none" stroke="rgba(0,0,0,0.15)" strokeWidth="0.5" />
-        <circle cx="100" cy="100" r="58" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="1.2" />
-        <circle cx="100" cy="100" r="54" fill="none" stroke="rgba(0,0,0,0.1)" strokeWidth="0.5" />
-
-        {/* Top Text: OUTSOURCED CERTIFIED PUBLIC */}
         <path id="curveTop" d="M 30,100 A 70,70 0 0,1 170,100" fill="none" />
-        <text className="font-serif uppercase" fontSize="9" fontWeight="800" fill="rgba(255,255,255,0.85)" letterSpacing="0.1em">
+        <text className="font-serif uppercase" fontSize="8" fontWeight="800" fill="rgba(255,255,255,0.85)" letterSpacing="0.1em">
           <textPath href="#curveTop" startOffset="50%" textAnchor="middle">Outsourced Certified Public</textPath>
         </text>
-
-        {/* Bottom Text: ACCOUNTANT */}
         <path id="curveBottom" d="M 30,100 A 70,70 0 0,0 170,100" fill="none" />
-        <text className="font-serif uppercase" fontSize="11" fontWeight="800" fill="rgba(255,255,255,0.85)" letterSpacing="0.2em">
+        <text className="font-serif uppercase" fontSize="10" fontWeight="800" fill="rgba(255,255,255,0.85)" letterSpacing="0.2em">
           <textPath href="#curveBottom" startOffset="50%" textAnchor="middle">Accountant</textPath>
         </text>
-
-        {/* Center Main Text */}
         <text 
           x="50%" 
           y="50%" 
@@ -77,12 +61,9 @@ export const CPASeal: React.FC<{ className?: string }> = ({ className = "h-32 w-
           className="font-serif" 
           style={{ filter: 'url(#engrave)', letterSpacing: '-0.02em' }}
         >
-          <tspan x="50%" dy="-0.5em" fontSize="12">OUTSOURCED</tspan>
-          <tspan x="50%" dy="1.1em" fontSize="36">CPA</tspan>
+          <tspan x="50%" dy="-0.5em" fontSize="11">OUTSOURCED</tspan>
+          <tspan x="50%" dy="1.1em" fontSize="34">CPA</tspan>
         </text>
-        
-        {/* Subtle Surface Texture Overlay */}
-        <rect width="200" height="200" fill="url(#sealGrad)" opacity="0.1" style={{ mixBlendMode: 'overlay' }} />
       </svg>
     </div>
   );
@@ -97,10 +78,6 @@ const ProfessionalCertification: React.FC = () => {
         <p className="text-[11px] text-slate-500 leading-relaxed font-light">
           Holding the gold standard in professional Outsourced CPA services. Licensed, verified, and committed to technical excellence.
         </p>
-        <div className="flex items-center mt-3 space-x-2">
-          <span className="w-2 h-2 rounded-full bg-green-500"></span>
-          <span className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">Credentialed Outsourced CPA Status</span>
-        </div>
       </div>
     </div>
   );
@@ -113,20 +90,10 @@ export const About: React.FC<AboutProps> = ({ isStandalone = true }) => {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-center">
           <div className="lg:col-span-6 reveal">
             <div className="relative p-8 md:p-12 lg:p-20 bg-slate-50 rounded-[2.5rem] md:rounded-[4rem] flex flex-col items-center justify-center border border-slate-100 shadow-inner group">
-              <div className="absolute inset-0 bg-gradient-to-br from-white via-transparent to-blue-50/30 opacity-50"></div>
-              
               <div className="relative z-10 transition-transform duration-700 group-hover:scale-105">
                 <FullLogo className="h-32 md:h-48 lg:h-72 drop-shadow-sm" />
               </div>
-
-              <div className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 bg-white p-6 md:p-10 rounded-[1.5rem] md:rounded-[2.5rem] shadow-2xl border border-slate-100 hidden sm:block group-hover:-translate-y-2 transition-transform duration-500">
-                <p className="text-2xl md:text-4xl font-serif font-bold text-blue-900 mb-1">360°</p>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-blue-600">Engagement</p>
-              </div>
-
-              <div className="absolute top-10 left-10 w-24 h-24 bg-blue-500/5 rounded-full blur-2xl animate-pulse"></div>
             </div>
-            
             <ProfessionalCertification />
           </div>
 
@@ -140,7 +107,7 @@ export const About: React.FC<AboutProps> = ({ isStandalone = true }) => {
               Ordia Consulting Services (OCS) is not just an Outsourced CPA firm; we are a strategic partner dedicated to your long-term wealth creation. We leverage a modern, 360-degree model to ensure every facet of your fiscal health is optimized.
             </p>
             <p className="text-slate-500 text-base md:text-lg mb-10 leading-relaxed font-light">
-              As an **Outsourced CPA Certified** firm, we bring the highest level of professional ethics and technical rigor to every engagement. From Baltimore to the rest of the nation, our team delivers deep technical expertise in complex tax structures, audit assurance, and operational consulting.
+              As an **Outsourced CPA Certified** firm, we bring the highest level of professional ethics and technical rigor to every engagement. We provide specialized Outsourced CPA expertise to help grow your business.
             </p>
             
             <div className="grid sm:grid-cols-2 gap-8 md:gap-10">
