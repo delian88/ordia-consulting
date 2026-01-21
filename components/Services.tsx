@@ -70,13 +70,13 @@ export const servicesData: Service[] = [
     id: "payroll-1099",
     title: "Payroll & 1099 Contract solutions",
     description: "Reduce administrative time with computerized payroll systems.",
-    fullDescription: "Ordia Consulting Services’ payroll services can help you reduce the time spent on administration through developing and implementing a computerized payroll system that will facilitate processing, timely payment and preparation of tax returns. We provide the following services on our payroll system:",
+    fullDescription: "Ordia Consulting Services’ payroll services can help you reduce the time spent on administration through developing and implementing a computerized payroll system that will facilitate processing, timely payment and preparation of tax returns. We provide the following services on our payroll system.",
     imageUrl: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Payroll processing and W2’s", detail: "End-to-end payroll management including the accurate generation of year-end W2 forms." },
-      { title: "941 Tax form preparations", detail: "Reliable preparation and filing of quarterly federal employer tax returns." },
-      { title: "PTO Tracking and Timesheets", detail: "Integrated tracking of paid time off and digital timesheet management for your workforce." },
-      { title: "1099 Contractual payroll", detail: "Seamless payment and tax reporting for independent contractors and service providers." }
+      { title: "Payroll processing and W2’s", detail: "Comprehensive management of payroll cycles including the accurate generation of year-end W2 forms." },
+      { title: "941 Tax form preparations", detail: "Professional preparation and timely filing of quarterly federal employer tax returns." },
+      { title: "PTO Tracking and Timesheets", detail: "Digital tracking of paid time off and employee timesheets integrated into the payroll workflow." },
+      { title: "1099 Contractual payroll", detail: "Specialized processing and reporting for independent contractors and contractual agreements." }
     ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
