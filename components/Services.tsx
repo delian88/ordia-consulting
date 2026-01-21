@@ -1,160 +1,116 @@
+
 import React from 'react';
 import { Service } from '../types';
 
 export const servicesData: Service[] = [
   {
-    id: "financial-accounting",
-    title: "Financial and Accounting Solutions",
-    description: "Comprehensive list of financial services designed to meet the diverse needs of our clients.",
-    fullDescription: "Ordia Consulting Services offers a comprehensive list of financial services designed to meet the diverse needs of our clients. Our certified professionals possess a wealth of expertise in various domains of accounting and finance, ensuring that we can assist you effectively in achieving your financial goals. You can count on us to help you achieve financial success! We provide our clients and customers with the following financial and accounting services.",
-    imageUrl: "https://images.unsplash.com/photo-1454165833767-1314d3a44f6c?auto=format&fit=crop&q=80&w=1200",
+    id: "construction-accounting",
+    title: "Construction Accounting",
+    description: "Manage WIP schedules and project costs from take-off to completion.",
+    fullDescription: "Are you running your own construction business? OCS will run the numbers, manage your WIP schedules, manage project costs, and track all construction jobs from take-off to completion. Let OCS handle all your construction accounting work including; daily transaction classification and expense tracking, payroll, bill payment and invoicing, business tax planning and preparation, and reporting. OCS will make sure you always have a clear picture of your financial position.",
+    imageUrl: "https://images.unsplash.com/photo-1541888941259-7d341935269f?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Financial Statement Preparation", detail: "Accurate and compliant preparation of all necessary financial statements for internal and external reporting." },
-      { title: "Budgets and Cashflow Solutions", detail: "Developing robust budgeting frameworks to manage and optimize your company's daily liquidity." },
-      { title: "Accounting Systems, Setup and Integration", detail: "End-to-end setup and seamless integration of modern accounting systems tailored to your business workflow." },
-      { title: "Cash flow budgeting and forecasting Analysis", detail: "In-depth analysis and forecasting to predict future cash positions and ensure financial stability." },
-      { title: "Personal financial statements", detail: "Detailed reporting of individual financial positions for high-net-worth planning and wealth management." },
-      { title: "Financial Projections and Forecasts", detail: "Forward-looking financial models to guide long-term strategic growth and investment decisions." },
-      { title: "Regulatory Reporting Services", detail: "Ensuring all industry-specific and government regulatory requirements are satisfied with precision." },
-      { title: "Treasury and Risk Management Support", detail: "Strategic oversight and support for corporate treasury functions and financial risk mitigation." }
+      { title: "Estimating & Pre-Construction", detail: "Expert assistance in job take-offs and initial cost estimations." },
+      { title: "WIP Schedules", detail: "Detailed Work-In-Progress reporting to ensure project billing and costs align." },
+      { title: "Job Costing", detail: "Granular tracking of labor, materials, and overhead for every project phase." },
+      { title: "Change Orders", detail: "Meticulous documentation of scope changes and their financial impact." },
+      { title: "Cost Savings", detail: "Billed at a fixed monthly fee, eliminating billing surprises caused by creeping hourly fees." }
     ],
     icon: (
       <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17v-2m3 2v-4m3 2v-6m-8 13h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 022 2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m12 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
       </svg>
     )
   },
   {
-    id: "bookkeeping",
-    title: "Bookkeeping Services and Support",
-    description: "Quality bookkeeping services for start-ups and established enterprises.",
-    fullDescription: "Ordia Consulting Services provides quality bookkeeping services. From start-ups to established enterprises, businesses rely on accurate and insightful financial information to maintain profitability and capitalize on new opportunities. OCS's accounting and bookkeeping services steer you closer to these goals with accurate record-keeping and reporting as well as support on financial issues such as initial accounting system setup, and cost minimization. Our services include:",
-    imageUrl: "https://images.unsplash.com/photo-1554224155-169641357599?auto=format&fit=crop&q=80&w=1200",
+    id: "mental-health-accounting",
+    title: "Mental Health & Healthcare",
+    description: "Specialized accounting for Therapists, Counselors, and Mental Health practitioners.",
+    fullDescription: "Ordia Consulting Services (OCS) provides accounting services for Mental Health Professionals and practitioners including Therapists, and Counselors. Running and managing a mental health practice means handling complex financials while providing client care. We focus on solving the accounting challenges mental health professionals face, from bookkeeping to tax matters and payroll.",
+    imageUrl: "https://images.unsplash.com/photo-1505751172107-5739a007721d?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Bookkeeping (Monthly, quarterly, or annual)", detail: "Professional maintenance of your financial records on a schedule that fits your business needs." },
-      { title: "General Ledger and Trial Balance Summary", detail: "Ensuring your core financial records are balanced and accurately reflect every transaction." },
-      { title: "Bank Transactions and Reconciliation", detail: "Meticulous matching of bank statements with internal records to ensure 100% accuracy." },
-      { title: "QuickBooks Support", detail: "Expert guidance and technical support for managing your accounts within the QuickBooks ecosystem." },
-      { title: "Fiscal Reporting and Services", detail: "Detailed reporting to provide management with actionable insights into fiscal performance." },
-      { title: "Fund Accounting and Management", detail: "Specialized accounting services for organizations managing complex or restricted funds." },
-      { title: "Bookkeeping Write-up and Notes", detail: "Professional documentation and clarification of ledger entries for complete transparency." }
+      { title: "Tax Filing Support", detail: "Simplifying confusing tax laws for healthcare professionals to ensure accuracy and maximum deductions." },
+      { title: "Cash Flow & Budgeting", detail: "Managing complex revenue streams from insurance payments and client fees." },
+      { title: "Payroll Processing", detail: "Handling payroll for employees or contractors to reduce error risks and stay compliant." },
+      { title: "Real-Time Insights", detail: "Cloud-based solutions giving you access to real-time financial data for informed operations." }
     ],
     icon: (
-        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-        </svg>
-      )
+      <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      </svg>
+    )
   },
   {
-    id: "tax-prep",
-    title: "Tax Preparation Services",
-    description: "Minimize tax liabilities and maximize cash flow with strategic planning.",
-    fullDescription: "At OCS, we guide our clients through a full range of tax planning and preparation decisions with strategies that minimize your tax liabilities, maximize your cash flow and keep you on track to your financial goals. Our expertise, experience, analysis and thorough research allow us to optimize financial opportunities to be found in existing as well as recently altered tax laws. We are knowledgeable and up to date on the tax laws and can make sense of your receipts, bills and notices. Our area of expertise includes,",
-    imageUrl: "https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&q=80&w=1200",
+    id: "non-profit-accounting",
+    title: "Non-Profit Accounting",
+    description: "Timely, accurate information for data-driven fiscal decision-making in mission-led organizations.",
+    fullDescription: "Ordia Consulting Services (OCS) provides accounting services for Non-Profit entities and organizations. We assist each of our nonprofit clients' unique needs: from internal, grant, and board reporting, to forecasting, budgeting, and cash flow management, to creating financial statements and customized dashboards.",
+    imageUrl: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Corporate tax planning and preparation", detail: "Developing sophisticated corporate tax strategies to ensure compliance and minimize burden." },
-      { title: "Individual Tax planning and preparation", detail: "Personalized tax strategy and meticulous filing for individual taxpayers." },
-      { title: "Tax management Services and Support", detail: "Ongoing management of tax-related documentation and proactive advisory." },
-      { title: "Estate and Trust Planning and Advising", detail: "Navigating the complexities of wealth transfer and trust taxation." },
-      { title: "Litigation Support and Forensic Accounting", detail: "Expert financial investigation and support for legal and regulatory disputes." },
-      { title: "New Tax Laws, Certifications, and Training", detail: "Keeping you informed of regulatory changes and providing necessary professional training." }
+      { title: "Grant Management", detail: "Support for grant proposals, ad hoc reports, and grant tracking compliance." },
+      { title: "Audit Preparation", detail: "Preparing organizational records for external audits to ensure maximum transparency." },
+      { title: "Board Meeting Support", detail: "Attendance and training to help boards determine the effective mission accomplishment." },
+      { title: "Monthly rolling forecasting", detail: "Proactive financial planning to adapt to changing non-profit funding environments." }
     ],
     icon: (
-        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-        </svg>
-      )
+      <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+      </svg>
+    )
   },
   {
-    id: "payroll-1099",
-    title: "Payroll & 1099 Contract solutions",
-    description: "Reduce administrative time with computerized payroll systems.",
-    fullDescription: "Ordia Consulting Services’ payroll services can help you reduce the time spent on administration through developing and implementing a computerized payroll system that will facilitate processing, timely payment and preparation of tax returns. We provide the following services on our payroll system.",
-    imageUrl: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "Payroll processing and W2’s", detail: "Comprehensive management of payroll cycles including the accurate generation of year-end W2 forms." },
-      { title: "941 Tax form preparations", detail: "Professional preparation and timely filing of quarterly federal employer tax returns." },
-      { title: "PTO Tracking and Timesheets", detail: "Digital tracking of paid time off and employee timesheets integrated into the payroll workflow." },
-      { title: "1099 Contractual payroll", detail: "Specialized processing and reporting for independent contractors and contractual agreements." }
-    ],
-    icon: (
-        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      )
-  },
-  {
-    id: "outsourced-audits",
-    title: "Outsourced Audits & Assurance Support",
-    description: "Assuring solidity of records and working to produce growth strategies.",
-    fullDescription: "At Ordia Consulting Services, we focus on building close client relationships that add long-term value. This includes assuring the solidity of financial records, evaluating financial procedures and working to produce strategies that help our clients face the myriad challenges of business planning and execution. Our clients benefit from objective analysis to assist in controlling costs, increasing efficiency, and implementing new technologies and procedures that take advantage of changes in the marketplace, accounting standards, and tax law. Our assurance services will improve information quality or its context, meaning more success for your business.",
+    id: "small-business-accounting",
+    title: "General Small Business Accounting",
+    description: "Expert closing, financial statements, and ledger maintenance for growing enterprises.",
+    fullDescription: "By working with Ordia Consulting Services, you get qualified and reliable accounting and bookkeeping without stressing your time or valuable resources. We provide expert services from monthly closings to comprehensive management reports.",
     imageUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Assurance and Advisory Services", detail: "High-level review and advisory to provide stakeholder confidence in your financial data and control costs." },
-      { title: "Outsourced Audits, Reviews, and Compilation", detail: "Professional verification of accounts through outsourced audits, reviews, and formal compilations." },
-      { title: "New Business selection and restructuring", detail: "Strategic guidance on selecting business entities and optimizing corporate structures for efficiency." },
-      { title: "Mergers and Acquisitions", detail: "Expert due diligence and financial advisory for successful corporate transitions and marketplace shifts." },
-      { title: "Business succession and Migrations", detail: "Long-term planning for the future handover of business leadership or migration to modern financial systems." }
+      { title: "Monthly Closings", detail: "Timely financial statement generation including balance sheets and income statements." },
+      { title: "Fixed Asset Tracking", detail: "Precision tracking of depreciation and asset lifecycle management." },
+      { title: "Reconciliations", detail: "Daily point-of-sale, bank, and credit card reconciliations for absolute accuracy." },
+      { title: "Sales Commission Tracking", detail: "Automated tracking and reconciliation of sales representative commissions." }
     ],
     icon: (
-        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-        </svg>
-      )
+      <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    )
   },
   {
-    id: "hr-staffing",
-    title: "Human Resources & Staff Augmentation",
-    description: "Gain lower labor costs and a larger talent pool with our efficient systems.",
-    fullDescription: "Ordia Consulting Services’ our HR services, can help you streamline the time spent on administration through developing and implementing an efficient human resources system. We provide professional accounting staffing services. On a full-time or part-time basis, as well as on a project-specific basis. You will gain when you procure these services from us with lower labor costs, larger talent pool, Internal staff development and increased efficiency. We provide the following services and more.",
-    imageUrl: "https://images.unsplash.com/photo-1521791136364-798a7bc0d262?auto=format&fit=crop&q=80&w=1200",
+    id: "quickbooks-services",
+    title: "QuickBooks Services & Installation",
+    description: "Installation, setup, and personal training to optimize your accounting software.",
+    fullDescription: "QuickBooks can provide useful and timely information in the form of financial statements, reports and graphs. However, it can only provide this information if you purchase the right product and then install, setup and use it properly. We don't just help you use the software, we help you use it more efficiently and more effectively.",
+    imageUrl: "https://images.unsplash.com/photo-1554224155-169641357599?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Staffing Solutions and Augmentation support", detail: "Professional accounting staffing to fill critical technical roles in your organization efficiently." },
-      { title: "Employee Benefits, 401k, and Pension", detail: "Comprehensive management and advisory for employee retirement and sophisticated benefit plans." },
-      { title: "New Business Start-ups", detail: "Tailored HR infrastructure and advisory systems for early-stage companies and entrepreneurs." },
-      { title: "Organizational Policies and Procedures", detail: "Developing the regulatory framework for your team's success through clear and compliant policies." },
-      { title: "Provide Outsourced CFO Services", detail: "High-level strategic financial leadership to guide your business growth and resource allocation." }
+      { title: "Personal Training", detail: "One-on-one or group training at your location to master the software." },
+      { title: "Professional Installation", detail: "Stand-alone or network environment setup, including single- or multi-user modes." },
+      { title: "Easy Step Interview & Setup", detail: "Initial setup of Preferences, Lists, Customers, Vendors, Employees, and Banking." },
+      { title: "Transaction Review", detail: "Expert review of transactions, accounts, and reports to ensure reliable financial info." }
     ],
     icon: (
-        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-        </svg>
-      )
+      <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+      </svg>
+    )
   },
   {
-    id: "loans-grants",
-    title: "Loans, LOC, and Grants",
-    description: "Strategic guidance on obtaining appropriate operations loans and credit.",
-    fullDescription: "From start-ups to existing business, at OCS, we provide our clients with access to apply for business loans and lines of credit (LOC) to support their financial needs, business operations, and payroll. We provide consultation, guidance and advice on obtaining appropriate operations loans.",
-    imageUrl: "https://images.unsplash.com/photo-1554224156-5654388654a9?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "Business Loan Sourcing", detail: "Strategic consultation on obtaining appropriate operations loans to support expansion and liquidity needs." },
-      { title: "Lines of Credit (LOC) Advisory", detail: "Expert guidance on securing lines of credit to support daily business operations and payroll stability." },
-      { title: "Grant Sourcing and Consulting", detail: "Professional advisory on identifying and applying for appropriate grants to fuel business development." }
-    ],
-    icon: (
-        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1" />
-        </svg>
-      )
-  },
-  {
-    id: "business-solutions",
-    title: "Business Solutions and Development",
-    description: "At Ordia Consulting Services, we believe you need specialized accounting expertise to help grow your business. Look to our team of accountants and professionals for simple solutions to complex challenges.",
-    fullDescription: "At Ordia Consulting Services, we believe you need specialized accounting expertise to help grow your business. Look to our team of accountants and professionals for simple solutions to complex challenges. We offer comprehensive solutions for business lifecycle management.",
+    id: "fractional-cfo",
+    title: "Outsourced Fractional CFO",
+    description: "Expert CFO support for strategic planning, profit maximization, and business development.",
+    fullDescription: "If you’re ready to take your business to the next level through personalized, straightforward financial guidance, OCS provides expert part-time CFO and Controller services. We handle everything from risk management to raising capital and operations review.",
     imageUrl: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Business Planning", detail: "Strategic planning, resource planning, and professional business plan preparation for long-term growth." },
-      { title: "Business Management", detail: "Comprehensive support for financial operations management to ensure operational stability." },
-      { title: "Business Analysis", detail: "Data-driven business improvement, rate, and cost studies to optimize your bottom line." },
-      { title: "Business Valuation and Advising", detail: "Expert enterprise evaluation and strategic advisory for sales, mergers, or tax purposes." }
+      { title: "Strategic Business Planning", detail: "Interim CFO support for long-term strategies and business improvement." },
+      { title: "Cash Flow & Risk Management", detail: "In-depth financial analysis, reporting, and proactive risk mitigation." },
+      { title: "Mergers & Acquisitions", detail: "Expert due diligence and strategic guidance during corporate transitions." },
+      { title: "Capital Acquisition", detail: "Guidance on raising capital and optimizing your company's fiscal structure." }
     ],
     icon: (
-        <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-        </svg>
-      )
+      <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+      </svg>
+    )
   }
 ];
 
@@ -169,9 +125,9 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, isStandalon
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20 reveal">
           <span className="text-blue-600 font-bold uppercase tracking-[0.25em] text-[10px] mb-4 block">Our Expertise</span>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-blue-900 mb-6">Strategic Solutions.</h2>
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-blue-900 mb-6">Specialized Industry Solutions.</h2>
           <p className="text-slate-500 text-base md:text-lg font-light leading-relaxed">
-            Ordia Consulting Services offers a comprehensive list of financial services designed to meet the diverse needs of our clients.
+            From Construction to Mental Health, Ordia Consulting Services delivers deep technical expertise tailored to your specific sector's challenges.
           </p>
         </div>
 
@@ -201,7 +157,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, isStandalon
                   {service.description}
                 </p>
                 <div className="pt-6 border-t border-slate-50 flex justify-between items-center relative z-10">
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-blue-600">Explore Detail</span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-blue-600">View Specialty Detail</span>
                   <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>

@@ -69,21 +69,14 @@ export const CPASeal: React.FC<{ className?: string }> = ({ className = "h-32 w-
   );
 };
 
-const ProfessionalCertification: React.FC = () => {
-  return (
-    <div className="flex items-center space-x-6 bg-white p-6 rounded-3xl shadow-xl shadow-blue-900/5 border border-slate-100 mt-12 group hover:shadow-2xl transition-all max-w-md">
-      <CPASeal className="h-24 w-24 shrink-0" />
-      <div className="flex flex-col">
-        <h4 className="text-sm font-bold text-blue-900 uppercase tracking-widest mb-1">Outsourced CPA Certified Firm</h4>
-        <p className="text-[11px] text-slate-500 leading-relaxed font-light">
-          Holding the gold standard in professional Outsourced CPA services. Licensed, verified, and committed to technical excellence.
-        </p>
-      </div>
-    </div>
-  );
-};
-
 export const About: React.FC<AboutProps> = ({ isStandalone = true }) => {
+  const performanceIndustries = [
+    "Governmental Agencies", "Non-Profit Organizations", "Mental Health Clinics",
+    "Construction/Engineering", "Mortgage Banking", "Information Technology",
+    "Finance", "Accounting", "Education", "Transportation", "Food Service",
+    "Insurance", "Energy & Power"
+  ];
+
   return (
     <section id="about" className={`py-20 md:py-32 ${isStandalone ? 'lg:pt-48 min-h-screen' : 'bg-slate-50/30'} bg-white relative overflow-hidden`}>
       <div className="container mx-auto px-6 relative z-10">
@@ -94,7 +87,14 @@ export const About: React.FC<AboutProps> = ({ isStandalone = true }) => {
                 <FullLogo className="h-32 md:h-48 lg:h-72 drop-shadow-sm" />
               </div>
             </div>
-            <ProfessionalCertification />
+            <div className="mt-12 p-8 bg-blue-900 rounded-[2rem] text-white">
+                <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-blue-300 mb-6">Performance Industries</h4>
+                <div className="flex flex-wrap gap-2">
+                    {performanceIndustries.map((industry, i) => (
+                        <span key={i} className="px-3 py-1 bg-white/10 rounded-full text-[10px] font-medium border border-white/5">{industry}</span>
+                    ))}
+                </div>
+            </div>
           </div>
 
           <div className="lg:col-span-6 reveal">
