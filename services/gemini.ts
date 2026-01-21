@@ -17,7 +17,7 @@ AREAS OF EXPERTISE:
 - Tax Preparation Services (Comprehensive planning to minimize liabilities and maximize cash flow. Includes: Corporate/Individual Planning, Tax management Support, Estate/Trust planning, Litigation Support/Forensic Accounting, New Tax Laws Training)
 - Payroll & 1099 Contract solutions (Reducing administrative time with computerized systems. Includes: Payroll processing and W2’s, 941 Tax form preparations, PTO Tracking and Timesheets, 1099 Contractual payroll)
 - Outsourced Audits & Assurance Support (Objective analysis to control costs and increase efficiency. Includes: Assurance and Advisory Services, Outsourced Audits, Reviews, and Compilation, New Business selection and restructuring, Mergers and Acquisitions, Business succession and Migrations)
-- Human Resources & Staff Augmentation (Staffing Solutions, Benefits/401k/Pension, Start-ups, Policies, Outsourced CFO)
+- Human Resources & Staff Augmentation (Developing and implementing efficient HR systems. Includes: Staffing Solutions and Augmentation support, Employee Benefits, 401k, and Pension, New Business Start-ups, Organizational Policies and Procedures, Provide Outsourced CFO Services)
 - Loans, LOC, and Grants (Business loans, lines of credit consultation, grant advisory)
 - Business Solutions and Development (Strategic/Resource Planning, Financial Operations Management, Business Analysis/Valuation)
 

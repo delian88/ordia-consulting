@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Service } from '../types';
 
@@ -107,14 +106,14 @@ export const servicesData: Service[] = [
     id: "hr-staffing",
     title: "Human Resources & Staff Augmentation",
     description: "Gain lower labor costs and a larger talent pool with our efficient systems.",
-    fullDescription: "Ordia Consulting Services’ our HR services, can help you streamline the time spent on administration through developing and implementing an efficient human resources system. We provide professional accounting staffing services on a full-time or part-time basis, as well as on a project-specific basis. You will gain when you procure these services from us with lower labor costs, larger talent pool, Internal staff development and increased efficiency. We provide the following services and more:",
+    fullDescription: "Ordia Consulting Services’ our HR services, can help you streamline the time spent on administration through developing and implementing an efficient human resources system. We provide professional accounting staffing services. On a full-time or part-time basis, as well as on a project-specific basis. You will gain when you procure these services from us with lower labor costs, larger talent pool, Internal staff development and increased efficiency. We provide the following services and more.",
     imageUrl: "https://images.unsplash.com/photo-1521791136364-798a7bc0d262?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Staffing Solutions and Augmentation support", detail: "Professional Outsourced CPA-track staffing to fill critical roles in your organization." },
-      { title: "Employee Benefits, 401k, and Pension", detail: "Comprehensive management and advisory for employee retirement and benefit plans." },
-      { title: "New Business Start-ups", detail: "Tailored HR systems and advisory for early-stage companies and entrepreneurs." },
-      { title: "Organizational Policies and Procedures", detail: "Developing the framework for your team's success through clear policies." },
-      { title: "Provide Outsourced CFO Services", detail: "Strategic financial leadership to guide your business growth without the full-time cost." }
+      { title: "Staffing Solutions and Augmentation support", detail: "Professional accounting staffing to fill critical technical roles in your organization efficiently." },
+      { title: "Employee Benefits, 401k, and Pension", detail: "Comprehensive management and advisory for employee retirement and sophisticated benefit plans." },
+      { title: "New Business Start-ups", detail: "Tailored HR infrastructure and advisory systems for early-stage companies and entrepreneurs." },
+      { title: "Organizational Policies and Procedures", detail: "Developing the regulatory framework for your team's success through clear and compliant policies." },
+      { title: "Provide Outsourced CFO Services", detail: "High-level strategic financial leadership to guide your business growth and resource allocation." }
     ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
