@@ -141,14 +141,14 @@ export const servicesData: Service[] = [
   {
     id: "business-solutions",
     title: "Business Solutions and Development",
-    description: "Specialized accounting expertise to help grow your business.",
-    fullDescription: "At Ordia Consulting Services, we believe you need specialized accounting expertise to help grow your business. Look to our team of accountants and professionals for simple solutions to complex challenges. We provide specialized Outsourced CPA expertise to help grow your business.",
+    description: "At Ordia Consulting Services, we believe you need specialized accounting expertise to help grow your business. Look to our team of accountants and professionals for simple solutions to complex challenges.",
+    fullDescription: "At Ordia Consulting Services, we believe you need specialized accounting expertise to help grow your business. Look to our team of accountants and professionals for simple solutions to complex challenges. We offer comprehensive solutions for business lifecycle management.",
     imageUrl: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Business Planning", detail: "Business plan preparation, strategic, and resource planning for long-term vision." },
-      { title: "Business Management", detail: "Ongoing financial operations management and professional advisory support." },
-      { title: "Business Analysis", detail: "Business improvement, rate, and cost studies to find hidden efficiencies." },
-      { title: "Business Valuation and Advising", detail: "Precise evaluation of company worth for mergers, sales, or tax planning." }
+      { title: "Business Planning", detail: "Strategic planning, resource planning, and professional business plan preparation for long-term growth." },
+      { title: "Business Management", detail: "Comprehensive support for financial operations management to ensure operational stability." },
+      { title: "Business Analysis", detail: "Data-driven business improvement, rate, and cost studies to optimize your bottom line." },
+      { title: "Business Valuation and Advising", detail: "Expert enterprise evaluation and strategic advisory for sales, mergers, or tax purposes." }
     ],
     icon: (
         <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
