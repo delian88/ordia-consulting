@@ -10,9 +10,13 @@ import { Footer } from './components/Footer';
 import { ConsultantChat } from './components/ConsultantChat';
 import { ServiceDetail } from './components/ServiceDetail';
 import { LoadingScreen } from './components/LoadingScreen';
+import { Consulting } from './components/Consulting';
+import { Resources } from './components/Resources';
+import { Careers } from './components/Careers';
+import { News } from './components/News';
 import { Service } from './types';
 
-type View = 'home' | 'about' | 'services' | 'partners' | 'contact' | 'service-detail';
+type View = 'home' | 'about' | 'services' | 'partners' | 'contact' | 'service-detail' | 'consulting' | 'resources' | 'careers' | 'news';
 
 const App: React.FC = () => {
   const [view, setView] = useState<View>('home');
@@ -20,16 +24,13 @@ const App: React.FC = () => {
   const [isAppLoading, setIsAppLoading] = useState(true);
 
   useEffect(() => {
-    // Initial loading simulation
     const timer = setTimeout(() => {
       setIsAppLoading(false);
     }, 2500);
-
     return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
-    // Re-initialize intersection observer for animations whenever the view changes
     if (isAppLoading) return;
 
     const observerOptions = {
@@ -62,7 +63,11 @@ const App: React.FC = () => {
       '#about': 'about',
       '#services': 'services',
       '#partners': 'partners',
-      '#contact': 'contact'
+      '#contact': 'contact',
+      '#consulting': 'consulting',
+      '#resources': 'resources',
+      '#careers': 'careers',
+      '#news': 'news'
     };
 
     const nextView = viewMap[targetView] || 'home';
@@ -89,6 +94,14 @@ const App: React.FC = () => {
         return <Partners isStandalone={true} />;
       case 'services':
         return <Services isStandalone={true} onSelectService={handleSelectService} />;
+      case 'consulting':
+        return <Consulting isStandalone={true} />;
+      case 'resources':
+        return <Resources isStandalone={true} />;
+      case 'careers':
+        return <Careers isStandalone={true} />;
+      case 'news':
+        return <News isStandalone={true} />;
       case 'contact':
         return <Contact isStandalone={true} />;
       case 'service-detail':

@@ -21,7 +21,7 @@ const partners: Partner[] = [
     )
   },
   {
-    name: "Susan L. Allien CPA PA",
+    name: "Susan L. Allien Outsourced CPA PA",
     description: "Expert Tax & Forensic Advisory",
     href: "https://susanallencpa.com/",
     logo: (
@@ -30,7 +30,7 @@ const partners: Partner[] = [
         <div className="flex flex-col items-start">
           <span className="text-lg font-serif font-bold text-slate-800 leading-none tracking-tight">Susan L. Allien</span>
           <div className="flex items-center space-x-2 mt-1">
-            <span className="text-[10px] font-black text-blue-900 uppercase tracking-widest">CPA</span>
+            <span className="text-[10px] font-black text-blue-900 uppercase tracking-widest">Outsourced CPA</span>
             <div className="w-1 h-1 rounded-full bg-blue-500"></div>
             <span className="text-[10px] font-black text-blue-900 uppercase tracking-widest">PA</span>
           </div>
@@ -39,8 +39,8 @@ const partners: Partner[] = [
     )
   },
   {
-    name: "BmK360CPA, PC",
-    description: "Advanced CPA & Strategic Accounting",
+    name: "BmK360 Outsourced CPA, PC",
+    description: "Advanced Outsourced CPA & Strategic Accounting",
     href: "https://bmk360cpa.com/",
     logo: (
       <div className="flex items-center space-x-3">
@@ -52,7 +52,7 @@ const partners: Partner[] = [
         <div className="flex flex-col">
           <div className="flex items-center space-x-1">
              <span className="text-lg font-serif italic font-bold text-blue-900">360°</span>
-             <span className="text-xl font-bold text-slate-800">CPA</span>
+             <span className="text-xl font-bold text-slate-800">Outsourced CPA</span>
           </div>
           <span className="text-[7px] font-black text-[#5e846e] uppercase tracking-[0.3em] -mt-1">PC Certified</span>
         </div>
@@ -103,7 +103,7 @@ export const Partners: React.FC<PartnersProps> = ({ isStandalone = false }) => {
             <span className="text-blue-600 font-bold uppercase tracking-[0.25em] text-[10px] mb-4 block">Strategic Ecosystem</span>
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-blue-900 mb-4">Trusted by Industry Leaders.</h2>
             <p className="text-slate-500 text-sm md:text-base font-light">
-              We collaborate with premier organizations to ensure our clients receive the most comprehensive, high-impact financial oversight possible.
+              We collaborate with premier organizations to ensure our clients receive the most comprehensive, high-impact Outsourced CPA oversight possible.
             </p>
           </div>
           <div className="flex items-center space-x-8 reveal-right">

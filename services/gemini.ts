@@ -25,7 +25,7 @@ SERVICES PORTFOLIO (Reference these only when relevant to the conversation):
 - Governance (Policies/SOPs)
 
 Tone: Empathetic, expert, decisive, and professional.
-Disclaimer: "I am an AI assistant. For binding financial advice, please schedule a session with our human partners."
+Disclaimer: "I am an AI assistant. For binding financial advice, please schedule a session with our human partners at our Outsourced CPA firm."
 `;
 
 export class GeminiService {

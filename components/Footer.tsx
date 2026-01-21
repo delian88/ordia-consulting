@@ -64,13 +64,13 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <div className="mb-8 flex items-center space-x-6">
               <CPASeal className="h-20 w-20" />
               <div className="flex flex-col">
-                <span className="text-white font-black text-lg tracking-tighter leading-none mb-1">CPA CERTIFIED</span>
-                <span className="text-[10px] text-blue-400 font-bold uppercase tracking-widest leading-none">Registered Professional Advisor</span>
+                <span className="text-white font-black text-lg tracking-tighter leading-none mb-1">OUTSOURCED CPA CERTIFIED</span>
+                <span className="text-[10px] text-blue-400 font-bold uppercase tracking-widest leading-none">Registered Outsourced CPA Advisor</span>
               </div>
             </div>
 
             <p className="max-w-xs text-sm leading-relaxed mb-8 md:mb-10 text-white/60">
-              OCS delivers personalized financial oversight that moves beyond compliance to proactive 360-degree strategy. Based in Baltimore, serving clients nationwide.
+              OCS delivers personalized financial oversight that moves beyond compliance to proactive 360-degree Outsourced CPA strategy. Based in Baltimore, serving clients nationwide.
             </p>
             
             <div className="text-xs space-y-4">
@@ -111,20 +111,20 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </div>
             
             <div className="hidden lg:block">
-              <h4 className="text-white font-bold text-[10px] uppercase tracking-[0.25em] mb-10">Focus Areas</h4>
+              <h4 className="text-white font-bold text-[10px] uppercase tracking-[0.25em] mb-10">Intelligence</h4>
               <ul className="space-y-4 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">Tax Strategy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Fractional CFO</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Audit Support</a></li>
+                <li><a href="#consulting" onClick={(e) => handleLinkClick(e, '#consulting')} className="hover:text-white transition-colors">Consulting</a></li>
+                <li><a href="#resources" onClick={(e) => handleLinkClick(e, '#resources')} className="hover:text-white transition-colors">Tax Tools</a></li>
+                <li><a href="#news" onClick={(e) => handleLinkClick(e, '#news')} className="hover:text-white transition-colors">News & Blog</a></li>
               </ul>
             </div>
 
             <div className="hidden lg:block">
-              <h4 className="text-white font-bold text-[10px] uppercase tracking-[0.25em] mb-10">Resources</h4>
+              <h4 className="text-white font-bold text-[10px] uppercase tracking-[0.25em] mb-10">Growth</h4>
               <ul className="space-y-4 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">Partnerships</a></li>
+                <li><a href="#careers" onClick={(e) => handleLinkClick(e, '#careers')} className="hover:text-white transition-colors">Careers</a></li>
+                <li><a href="#partners" onClick={(e) => handleLinkClick(e, '#partners')} className="hover:text-white transition-colors">Partnerships</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Terms of Use</a></li>
               </ul>
             </div>
           </div>

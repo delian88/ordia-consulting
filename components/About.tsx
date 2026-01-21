@@ -53,10 +53,10 @@ export const CPASeal: React.FC<{ className?: string }> = ({ className = "h-32 w-
         <circle cx="100" cy="100" r="58" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="1.2" />
         <circle cx="100" cy="100" r="54" fill="none" stroke="rgba(0,0,0,0.1)" strokeWidth="0.5" />
 
-        {/* Top Text: CERTIFIED PUBLIC */}
+        {/* Top Text: OUTSOURCED CERTIFIED PUBLIC */}
         <path id="curveTop" d="M 30,100 A 70,70 0 0,1 170,100" fill="none" />
-        <text className="font-serif uppercase" fontSize="11" fontWeight="800" fill="rgba(255,255,255,0.85)" letterSpacing="0.15em">
-          <textPath href="#curveTop" startOffset="50%" textAnchor="middle">Certified Public</textPath>
+        <text className="font-serif uppercase" fontSize="9" fontWeight="800" fill="rgba(255,255,255,0.85)" letterSpacing="0.1em">
+          <textPath href="#curveTop" startOffset="50%" textAnchor="middle">Outsourced Certified Public</textPath>
         </text>
 
         {/* Bottom Text: ACCOUNTANT */}
@@ -68,16 +68,17 @@ export const CPASeal: React.FC<{ className?: string }> = ({ className = "h-32 w-
         {/* Center Main Text */}
         <text 
           x="50%" 
-          y="54%" 
+          y="50%" 
           dominantBaseline="middle" 
           textAnchor="middle" 
-          fontSize="48" 
+          fontSize="24" 
           fontWeight="900" 
           fill="rgba(255,255,255,0.95)" 
           className="font-serif" 
-          style={{ filter: 'url(#engrave)', letterSpacing: '-0.05em' }}
+          style={{ filter: 'url(#engrave)', letterSpacing: '-0.02em' }}
         >
-          CPA
+          <tspan x="50%" dy="-0.5em" fontSize="12">OUTSOURCED</tspan>
+          <tspan x="50%" dy="1.1em" fontSize="36">CPA</tspan>
         </text>
         
         {/* Subtle Surface Texture Overlay */}
@@ -92,13 +93,13 @@ const ProfessionalCertification: React.FC = () => {
     <div className="flex items-center space-x-6 bg-white p-6 rounded-3xl shadow-xl shadow-blue-900/5 border border-slate-100 mt-12 group hover:shadow-2xl transition-all max-w-md">
       <CPASeal className="h-24 w-24 shrink-0" />
       <div className="flex flex-col">
-        <h4 className="text-sm font-bold text-blue-900 uppercase tracking-widest mb-1">CPA Certified Firm</h4>
+        <h4 className="text-sm font-bold text-blue-900 uppercase tracking-widest mb-1">Outsourced CPA Certified Firm</h4>
         <p className="text-[11px] text-slate-500 leading-relaxed font-light">
-          Holding the gold standard in professional accounting services. Licensed, verified, and committed to technical excellence.
+          Holding the gold standard in professional Outsourced CPA services. Licensed, verified, and committed to technical excellence.
         </p>
         <div className="flex items-center mt-3 space-x-2">
           <span className="w-2 h-2 rounded-full bg-green-500"></span>
-          <span className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">Credentialed Professional Status</span>
+          <span className="text-[9px] font-bold text-slate-400 uppercase tracking-tighter">Credentialed Outsourced CPA Status</span>
         </div>
       </div>
     </div>
@@ -136,10 +137,10 @@ export const About: React.FC<AboutProps> = ({ isStandalone = true }) => {
               <span className="italic font-normal text-blue-500">For Growth.</span>
             </h2>
             <p className="text-slate-500 text-base md:text-lg mb-6 leading-relaxed font-light">
-              Ordia Consulting Services (OCS) is not just an accounting firm; we are a strategic partner dedicated to your long-term wealth creation. We leverage a modern, 360-degree model to ensure every facet of your fiscal health is optimized.
+              Ordia Consulting Services (OCS) is not just an Outsourced CPA firm; we are a strategic partner dedicated to your long-term wealth creation. We leverage a modern, 360-degree model to ensure every facet of your fiscal health is optimized.
             </p>
             <p className="text-slate-500 text-base md:text-lg mb-10 leading-relaxed font-light">
-              As a **CPA Certified** firm, we bring the highest level of professional ethics and technical rigor to every engagement. From Baltimore to the rest of the nation, our team delivers deep technical expertise in complex tax structures, audit assurance, and operational consulting.
+              As an **Outsourced CPA Certified** firm, we bring the highest level of professional ethics and technical rigor to every engagement. From Baltimore to the rest of the nation, our team delivers deep technical expertise in complex tax structures, audit assurance, and operational consulting.
             </p>
             
             <div className="grid sm:grid-cols-2 gap-8 md:gap-10">
@@ -148,14 +149,14 @@ export const About: React.FC<AboutProps> = ({ isStandalone = true }) => {
                   <svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 </div>
                 <h4 className="text-base md:text-lg font-bold text-blue-900 mb-2 md:mb-3">Maximize Returns</h4>
-                <p className="text-[11px] md:text-xs text-slate-400 leading-relaxed">Our 360° tax planning identifies high-impact opportunities that standard accounting often overlooks.</p>
+                <p className="text-[11px] md:text-xs text-slate-400 leading-relaxed">Our 360° Outsourced CPA tax planning identifies high-impact opportunities that standard accounting often overlooks.</p>
               </div>
               <div className="group">
                 <div className="w-12 h-12 md:w-14 md:h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-4 md:mb-6 group-hover:bg-blue-900 group-hover:text-white transition-all shadow-sm">
                   <svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" /></svg>
                 </div>
                 <h4 className="text-base md:text-lg font-bold text-blue-900 mb-2 md:mb-3">Holistic Oversight</h4>
-                <p className="text-[11px] md:text-xs text-slate-400 leading-relaxed">We manage the full spectrum of your financial life, from bookkeeping to advanced capital structuring.</p>
+                <p className="text-[11px] md:text-xs text-slate-400 leading-relaxed">We manage the full spectrum of your financial life, from bookkeeping to advanced Outsourced CPA capital structuring.</p>
               </div>
             </div>
           </div>
