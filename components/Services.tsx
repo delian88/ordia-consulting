@@ -7,7 +7,7 @@ export const servicesData: Service[] = [
     title: "Financial and Accounting Solutions",
     description: "Comprehensive financial services designed to meet the diverse needs of our clients.",
     fullDescription: "Ordia Consulting Services offers a comprehensive list of financial services designed to meet the diverse needs of our clients. Our certified professionals possess a wealth of expertise in various domains of accounting and finance, ensuring that we can assist you effectively in achieving your financial goals. You can count on us to help you achieve financial success!",
-    imageUrl: "https://images.unsplash.com/photo-1454165833767-1314d3a44f6c?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "Financial Statement Preparation", detail: "Accurate and compliant preparation of all necessary financial statements for internal and external reporting." },
       { title: "Budgets and Cashflow Solutions", detail: "Developing robust budgeting frameworks to manage and optimize your company's daily liquidity." },
@@ -26,7 +26,7 @@ export const servicesData: Service[] = [
     title: "Bookkeeping Services and Support",
     description: "Quality bookkeeping services for start-ups and established enterprises.",
     fullDescription: "Ordia Consulting Services provides quality bookkeeping services. From start-ups to established enterprises, businesses rely on accurate and insightful financial information to maintain profitability and capitalize on new opportunities. Our services steer you closer to these goals with accurate record-keeping and reporting.",
-    imageUrl: "https://images.unsplash.com/photo-1554224155-169641357599?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "General Ledger Maintenance", detail: "Professional maintenance of your financial records on a monthly, quarterly, or annual schedule." },
       { title: "Bank Reconciliation", detail: "Meticulous matching of bank statements with internal records to ensure 100% accuracy." },
@@ -62,7 +62,7 @@ export const servicesData: Service[] = [
     title: "Payroll & 1099 Contract solutions",
     description: "Reduce administrative time with computerized payroll systems.",
     fullDescription: "Ordia Consulting Services’ payroll services can help you reduce the time spent on administration through developing and implementing a computerized payroll system that will facilitate processing and preparation of tax returns.",
-    imageUrl: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1591033594798-33227a05780d?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "Payroll processing and W2’s", detail: "Comprehensive management of payroll cycles including the accurate generation of year-end W2 forms." },
       { title: "941 Tax form preparations", detail: "Professional preparation and timely filing of quarterly federal employer tax returns." },
@@ -80,7 +80,7 @@ export const servicesData: Service[] = [
     title: "Outsourced Audits & Assurance Support",
     description: "Assuring solidity of records and working to produce growth strategies.",
     fullDescription: "We focus on building close client relationships that add long-term value. This includes assuring the solidity of financial records, evaluating financial procedures and working to produce strategies that help our clients face business challenges.",
-    imageUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "Assurance & Advisory", detail: "High-level review and advisory to provide stakeholder confidence in your financial data." },
       { title: "Outsourced Audits", detail: "Professional verification of accounts through outsourced audits, reviews, and formal compilations." },
@@ -98,7 +98,7 @@ export const servicesData: Service[] = [
     title: "Human Resources & Staffing",
     description: "Gain lower labor costs and a larger talent pool with our efficient systems.",
     fullDescription: "Ordia Consulting Services’ HR services can help you streamline the time spent on administration through developing and implementing an efficient human resources system. We provide professional accounting staffing services.",
-    imageUrl: "https://images.unsplash.com/photo-1521791136364-798a7bc0d262?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "Staffing Solutions", detail: "Professional accounting staffing to fill critical technical roles in your organization efficiently." },
       { title: "Employee Benefits", detail: "Comprehensive management and advisory for employee retirement and sophisticated benefit plans." },
@@ -116,7 +116,7 @@ export const servicesData: Service[] = [
     title: "Loans, LOC, and Grants",
     description: "Strategic guidance on obtaining appropriate operations loans and credit.",
     fullDescription: "From start-ups to existing business, at OCS, we provide our clients with access to apply for business loans and lines of credit (LOC) to support their financial needs, business operations, and payroll.",
-    imageUrl: "https://images.unsplash.com/photo-1554224156-5654388654a9?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1550565118-3d1428df492f?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "Loan Sourcing", detail: "Strategic consultation on obtaining appropriate operations loans to support expansion and liquidity needs." },
       { title: "Lines of Credit (LOC)", detail: "Expert guidance on securing lines of credit to support daily business operations and payroll stability." },
@@ -151,7 +151,7 @@ export const servicesData: Service[] = [
     title: "Construction Accounting",
     description: "Manage WIP schedules and project costs from take-off to completion.",
     fullDescription: "OCS will run the numbers, manage your WIP schedules, manage project costs, and track all construction jobs from take-off to completion. Let OCS handle all your construction accounting work including; daily transaction classification and expense tracking, payroll, bill payment and invoicing, and reporting.",
-    imageUrl: "https://images.unsplash.com/photo-1541888941259-7d341935269f?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1503387762-592dea58ef21?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "Estimating & Take-offs", detail: "Expert assistance in job take-offs and initial cost estimations." },
       { title: "WIP Schedules", detail: "Detailed Work-In-Progress reporting to ensure project billing and costs align." },
