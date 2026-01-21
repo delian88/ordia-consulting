@@ -77,17 +77,45 @@ export const About: React.FC<AboutProps> = ({ isStandalone = true }) => {
     "Insurance", "Energy & Power"
   ];
 
+  const whyChooseUs = [
+    {
+      title: "Professionalism",
+      desc: "By combining our expertise and experience, each client receives close personal and professional attention. Our high standards, dedicated service, and specialized staff spell the difference of our outstanding performance in offering financial statements audits, compliance audits, performance audits, taxation, and targeted management consulting services."
+    },
+    {
+      title: "Peace of Mind",
+      desc: "At OCS, we take all the stress out of doing your own accounting and taxes so you can focus on what you do best growing your business."
+    },
+    {
+      title: "Responsive to Clients",
+      desc: "Ordia Consulting is highly responsive to our clients and customers. Organizations who choose our firm rely on competent and insightful advice to enable our clients in all business sectors make reliable and informed financial decisions."
+    },
+    {
+      title: "Proven Expertise and Excellence",
+      desc: "OCS brings many years’ financial services experience, our goal is to provide the highest quality of service to our clients and customers."
+    },
+    {
+      title: "Quality Financial Services",
+      desc: "At OCS we are known for the quality of our service. We want to be your trusted advisor and be available to provide insightful advice to enable our clients to make informed financial decisions."
+    },
+    {
+      title: "Experienced Outsourced CFO",
+      desc: "OCS ensures timely, accurate and clear reports to help you make meaningful decisions. We don’t just give you data; you’ll receive analysis and friendly expert advice to help you make the right decisions for your business."
+    }
+  ];
+
   return (
-    <section id="about" className={`py-20 md:py-32 ${isStandalone ? 'lg:pt-48 min-h-screen' : 'bg-slate-50/30'} bg-white relative overflow-hidden`}>
+    <section id="about" className={`py-20 md:py-32 ${isStandalone ? 'lg:pt-48 min-h-screen' : 'bg-white'} relative overflow-hidden`}>
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-center">
-          <div className="lg:col-span-6 reveal">
-            <div className="relative p-8 md:p-12 lg:p-20 bg-slate-50 rounded-[2.5rem] md:rounded-[4rem] flex flex-col items-center justify-center border border-slate-100 shadow-inner group">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-start mb-24">
+          <div className="lg:col-span-5 reveal sticky top-32">
+            <div className="relative p-8 md:p-12 lg:p-16 bg-slate-50 rounded-[2.5rem] md:rounded-[4rem] flex flex-col items-center justify-center border border-slate-100 shadow-inner group mb-12">
               <div className="relative z-10 transition-transform duration-700 group-hover:scale-105">
-                <FullLogo className="h-32 md:h-48 lg:h-72 drop-shadow-sm" />
+                <FullLogo className="h-32 md:h-48 drop-shadow-sm" />
               </div>
             </div>
-            <div className="mt-12 p-8 bg-blue-900 rounded-[2rem] text-white">
+            
+            <div className="p-8 bg-blue-900 rounded-[2rem] text-white">
                 <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-blue-300 mb-6">Performance Industries</h4>
                 <div className="flex flex-wrap gap-2">
                     {performanceIndustries.map((industry, i) => (
@@ -97,35 +125,52 @@ export const About: React.FC<AboutProps> = ({ isStandalone = true }) => {
             </div>
           </div>
 
-          <div className="lg:col-span-6 reveal">
-            <span className="text-blue-600 font-bold uppercase tracking-[0.25em] text-[10px] mb-6 block">Our Financial Vision</span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-blue-900 mb-8 leading-tight">
-              Proactive Counsel <br />
-              <span className="italic font-normal text-blue-500">For Growth.</span>
+          <div className="lg:col-span-7 reveal">
+            <span className="text-blue-600 font-bold uppercase tracking-[0.25em] text-[10px] mb-6 block border-l-2 border-blue-500 pl-4">About OCS</span>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-blue-900 mb-8 leading-tight">
+              Management, Financial, and <br />
+              <span className="italic font-normal text-blue-500">Tax Consulting Services.</span>
             </h2>
-            <p className="text-slate-500 text-base md:text-lg mb-6 leading-relaxed font-light">
-              Ordia Consulting Services (OCS) is not just an Outsourced CPA firm; we are a strategic partner dedicated to your long-term wealth creation. We leverage a modern, 360-degree model to ensure every facet of your fiscal health is optimized.
-            </p>
-            <p className="text-slate-500 text-base md:text-lg mb-10 leading-relaxed font-light">
-              As an **Outsourced CPA Certified** firm, we bring the highest level of professional ethics and technical rigor to every engagement. We provide specialized Outsourced CPA expertise to help grow your business.
-            </p>
             
-            <div className="grid sm:grid-cols-2 gap-8 md:gap-10">
-              <div className="group">
-                <div className="w-12 h-12 md:w-14 md:h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-4 md:mb-6 group-hover:bg-blue-900 group-hover:text-white transition-all shadow-sm">
-                  <svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                </div>
-                <h4 className="text-base md:text-lg font-bold text-blue-900 mb-2 md:mb-3">Maximize Returns</h4>
-                <p className="text-[11px] md:text-xs text-slate-400 leading-relaxed">Our 360° Outsourced CPA tax planning identifies high-impact opportunities that standard accounting often overlooks.</p>
-              </div>
-              <div className="group">
-                <div className="w-12 h-12 md:w-14 md:h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-4 md:mb-6 group-hover:bg-blue-900 group-hover:text-white transition-all shadow-sm">
-                  <svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" /></svg>
-                </div>
-                <h4 className="text-base md:text-lg font-bold text-blue-900 mb-2 md:mb-3">Holistic Oversight</h4>
-                <p className="text-[11px] md:text-xs text-slate-400 leading-relaxed">We manage the full spectrum of your financial life, from bookkeeping to advanced Outsourced CPA capital structuring.</p>
-              </div>
+            <div className="prose prose-slate max-w-none mb-16">
+              <h3 className="text-xl font-bold text-blue-900 mb-4">What We Do</h3>
+              <p className="text-slate-600 text-base md:text-lg mb-6 leading-relaxed font-light">
+                Ordia Consulting Services (OCS) is a financial services firm that provides expert accounting services to clients in the DMV and all of the United States. We have a diverse team of certified and management professionals including outsourced CPAs and business consultants with advanced degrees serving clients in various regions. We specialize in accounting, bookkeeping, payroll, financial statements, outsourced compiled audits, taxation, and management consulting services. The team has over 20 years of Federal, state, local government, not-for-profit, and for-profit industry experience. Some of our team members have worked directly with these organizations and are subject matter experts in their areas of specialization.
+              </p>
+              <p className="text-slate-600 text-base md:text-lg mb-6 leading-relaxed font-light">
+                Ordia Consulting Services (OCS) highly values family, integrity, and honesty. Ordia Consulting Services (OCS), works closely with our clients, treating them like family and working with them as trusted advisors to provide insightful advice to enable our clients to make informed financial decisions. 
+              </p>
+              <p className="text-slate-600 text-base md:text-lg mb-6 leading-relaxed font-light font-medium italic">
+                Our efforts have provided our clients with tangible results in the form of corrective actions that have remediated internal control issues, improved audit opinions, enhanced management visibility over financial operations, and increased efficiency. 
+              </p>
+              <p className="text-slate-600 text-base md:text-lg mb-6 leading-relaxed font-light">
+                For accounting and bookkeeping services, we find simple solutions to complex accounting issues. For taxes, we work to reduce your tax liability successfully and legally. We go beyond tax compliance and proactively recommend advanced tax-saving strategies to minimize your after-tax income. Our team provides high-quality and efficient services to our clients.
+              </p>
+              <p className="text-slate-600 text-base md:text-lg mb-6 leading-relaxed font-light">
+                Our membership in various professional accounting associations is proof that we are committed to providing quality services to our clients. Our internal quality control system is in accordance with GAAP requirements, which emphasizes the importance of ethics and integrity in every decision. Our firm provides outstanding service to our clients because of our dedication to the underlying principles of professionalism, responsiveness, and quality.
+              </p>
             </div>
+          </div>
+        </div>
+
+        <div className="reveal">
+          <div className="text-center mb-16">
+            <h3 className="text-3xl md:text-4xl font-serif font-bold text-blue-900 mb-4">Why Choose Us</h3>
+            <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {whyChooseUs.map((item, idx) => (
+              <div key={idx} className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 hover:shadow-xl transition-all group">
+                <div className="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center font-serif text-xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                  {item.title.charAt(0)}
+                </div>
+                <h4 className="text-xl font-bold text-blue-900 mb-4">{item.title}</h4>
+                <p className="text-slate-500 text-sm leading-relaxed font-light">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
