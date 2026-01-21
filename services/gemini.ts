@@ -15,7 +15,7 @@ CRITICAL INTERACTION RULES:
 AREAS OF EXPERTISE:
 - Financial and Accounting Solutions (Preparation, Budgets, Accounting Systems Setup/Integration, Cash flow budgeting/forecasting Analysis, Personal financial statements, Financial Projections/Forecasts, Regulatory Reporting, Treasury/Risk Management Support)
 - Bookkeeping Services and Support (Quality services for startups and established enterprises. Includes: Bookkeeping (Monthly/Quarterly/Annual), General Ledger/Trial Balance, Bank Reconciliation, QuickBooks Support, Fiscal Reporting, Fund Accounting, Write-ups/Notes)
-- Tax Preparation Services (Corporate/Individual Planning, Management, Estate/Trust, Litigation Support/Forensic Accounting, New Laws Training)
+- Tax Preparation Services (Comprehensive planning to minimize liabilities and maximize cash flow. Includes: Corporate/Individual Planning, Tax management Support, Estate/Trust planning, Litigation Support/Forensic Accounting, New Tax Laws Training)
 - Payroll & 1099 Contract solutions (W2s, 941s, PTO Tracking, 1099s)
 - Outsourced Audits & Assurance Support (Assurance, Reviews/Compilation, Business Restructuring, M&A, Succession)
 - Human Resources & Staff Augmentation (Staffing Solutions, Benefits/401k/Pension, Start-ups, Policies, Outsourced CFO)

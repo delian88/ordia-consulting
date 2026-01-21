@@ -50,7 +50,7 @@ export const servicesData: Service[] = [
     id: "tax-prep",
     title: "Tax Preparation Services",
     description: "Minimize tax liabilities and maximize cash flow with strategic planning.",
-    fullDescription: "At OCS, we guide our clients through a full range of tax planning and preparation decisions with strategies that minimize your tax liabilities, maximize your cash flow and keep you on track to your financial goals. Our expertise, experience, analysis and thorough research allow us to optimize financial opportunities to be found in existing as well as recently altered tax laws. We are knowledgeable and up to date on the tax laws and can make sense of your receipts, bills and notices. Our area of expertise includes:",
+    fullDescription: "At OCS, we guide our clients through a full range of tax planning and preparation decisions with strategies that minimize your tax liabilities, maximize your cash flow and keep you on track to your financial goals. Our expertise, experience, analysis and thorough research allow us to optimize financial opportunities to be found in existing as well as recently altered tax laws. We are knowledgeable and up to date on the tax laws and can make sense of your receipts, bills and notices. Our area of expertise includes,",
     imageUrl: "https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "Corporate tax planning and preparation", detail: "Developing sophisticated corporate tax strategies to ensure compliance and minimize burden." },
