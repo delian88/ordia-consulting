@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { FullLogo } from './Header';
 
@@ -128,8 +127,8 @@ export const About: React.FC<AboutProps> = ({ isStandalone = true }) => {
           <div className="lg:col-span-7 reveal">
             <span className="text-blue-600 font-bold uppercase tracking-[0.25em] text-[10px] mb-6 block border-l-2 border-blue-500 pl-4">About OCS</span>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-blue-900 mb-8 leading-tight">
-              Management, Financial, and <br />
-              <span className="italic font-normal text-blue-500">Tax Consulting Services.</span>
+              <span className="glass-shine">Management, Financial, and</span> <br />
+              <span className="italic font-normal text-blue-500 glass-shine">Tax Consulting Services.</span>
             </h2>
             
             <div className="prose prose-slate max-w-none mb-16">
@@ -137,17 +136,8 @@ export const About: React.FC<AboutProps> = ({ isStandalone = true }) => {
               <p className="text-slate-600 text-base md:text-lg mb-6 leading-relaxed font-light">
                 Ordia Consulting Services (OCS) is a financial services firm that provides expert accounting services to clients in the DMV and all of the United States. We have a diverse team of certified and management professionals including outsourced CPAs and business consultants with advanced degrees serving clients in various regions. We specialize in accounting, bookkeeping, payroll, financial statements, outsourced compiled audits, taxation, and management consulting services. The team has over 20 years of Federal, state, local government, not-for-profit, and for-profit industry experience. Some of our team members have worked directly with these organizations and are subject matter experts in their areas of specialization.
               </p>
-              <p className="text-slate-600 text-base md:text-lg mb-6 leading-relaxed font-light">
-                Ordia Consulting Services (OCS) highly values family, integrity, and honesty. Ordia Consulting Services (OCS), works closely with our clients, treating them like family and working with them as trusted advisors to provide insightful advice to enable our clients to make informed financial decisions. 
-              </p>
               <p className="text-slate-600 text-base md:text-lg mb-6 leading-relaxed font-light font-medium italic">
                 Our efforts have provided our clients with tangible results in the form of corrective actions that have remediated internal control issues, improved audit opinions, enhanced management visibility over financial operations, and increased efficiency. 
-              </p>
-              <p className="text-slate-600 text-base md:text-lg mb-6 leading-relaxed font-light">
-                For accounting and bookkeeping services, we find simple solutions to complex accounting issues. For taxes, we work to reduce your tax liability successfully and legally. We go beyond tax compliance and proactively recommend advanced tax-saving strategies to minimize your after-tax income. Our team provides high-quality and efficient services to our clients.
-              </p>
-              <p className="text-slate-600 text-base md:text-lg mb-6 leading-relaxed font-light">
-                Our membership in various professional accounting associations is proof that we are committed to providing quality services to our clients. Our internal quality control system is in accordance with GAAP requirements, which emphasizes the importance of ethics and integrity in every decision. Our firm provides outstanding service to our clients because of our dedication to the underlying principles of professionalism, responsiveness, and quality.
               </p>
             </div>
           </div>
@@ -155,7 +145,7 @@ export const About: React.FC<AboutProps> = ({ isStandalone = true }) => {
 
         <div className="reveal">
           <div className="text-center mb-16">
-            <h3 className="text-3xl md:text-4xl font-serif font-bold text-blue-900 mb-4">Why Choose Us</h3>
+            <h3 className="text-3xl md:text-4xl font-serif font-bold text-blue-900 mb-4 glass-shine">Why Choose Us</h3>
             <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
           </div>
           

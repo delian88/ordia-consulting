@@ -240,7 +240,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, isStandalon
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20 reveal">
           <span className="text-blue-600 font-bold uppercase tracking-[0.25em] text-[10px] mb-4 block">Our Expertise</span>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-blue-900 mb-6">Comprehensive Financial Solutions.</h2>
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-blue-900 mb-6 glass-shine">Comprehensive Financial Solutions.</h2>
           <p className="text-slate-500 text-base md:text-lg font-light leading-relaxed">
             From specialized industries to core business accounting, Ordia Consulting Services delivers technical excellence across every fiscal dimension.
           </p>

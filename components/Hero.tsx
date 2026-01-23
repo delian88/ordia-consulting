@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { FullLogo } from './Header';
 
@@ -89,7 +88,7 @@ export const Hero: React.FC = () => {
                   <span className="inline-block text-blue-400 font-bold uppercase tracking-[0.4em] text-[10px] md:text-[11px] mb-6 md:mb-8 bg-white/5 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
                     {slide.tagline}
                   </span>
-                  <h1 className="text-4xl md:text-6xl lg:text-[6.5rem] font-serif font-bold text-white mb-6 md:mb-10 leading-[1.1] md:leading-[1] drop-shadow-2xl">
+                  <h1 className="text-4xl md:text-6xl lg:text-[6.5rem] font-serif font-bold text-white mb-6 md:mb-10 leading-[1.1] md:leading-[1] drop-shadow-2xl glass-shine">
                     {slide.title.split(' ').map((word, i) => (
                       <React.Fragment key={i}>
                         {i === 1 ? <span className="italic font-normal text-blue-400">{word} </span> : word + ' '}

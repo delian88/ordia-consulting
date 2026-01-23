@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -97,6 +96,28 @@
         }
         .link-hover:hover::after {
             width: 100%;
+        }
+
+        /* Glass Shine Effect for Headings */
+        .glass-shine {
+            position: relative;
+            background: linear-gradient(
+                120deg, 
+                currentColor 35%, 
+                rgba(255, 255, 255, 0.8) 50%, 
+                currentColor 65%
+            );
+            background-size: 300% 100%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glass-shine-anim 5s infinite ease-in-out;
+            display: inline-block;
+        }
+
+        @keyframes glass-shine-anim {
+            0% { background-position: 100% 0; }
+            100% { background-position: -100% 0; }
         }
 
         ::-webkit-scrollbar {
