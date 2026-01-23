@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface Partner {
@@ -9,6 +8,8 @@ interface Partner {
 }
 
 const partners: Partner[] = [
+  { name: "Azariah Management Group", href: "https://azariahmg.com/", description: "Digital Transformation & Management" },
+  { name: "World Ai Force", href: "https://worldaiforce.com/", description: "AI Solutions & Technical Innovation" },
   { name: "BMK360CPA", href: "https://www.bmk360cpa.com/", description: "360° Outsourced CPA Strategic Accounting" },
   { name: "SOA Financial Services", href: "https://www.soafinancial.com/", description: "Comprehensive Financial Advisory" },
   { name: "Bryan N Allen CPA", href: "https://www.bnallencpa.com/", description: "Certified Public Accounting Partner" },
@@ -59,7 +60,7 @@ export const Partners: React.FC<PartnersProps> = ({ isStandalone = false }) => {
              </div>
              <div className="w-px h-12 bg-slate-200"></div>
              <div className="flex flex-col items-center">
-                <span className="text-3xl font-bold text-blue-900">22+</span>
+                <span className="text-3xl font-bold text-blue-900">24+</span>
                 <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Strategic Partners</span>
              </div>
           </div>
