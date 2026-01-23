@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -14,9 +13,10 @@ import { Consulting } from './components/Consulting';
 import { Resources } from './components/Resources';
 import { Careers } from './components/Careers';
 import { News } from './components/News';
+import { Industries } from './components/Industries';
 import { Service } from './types';
 
-type View = 'home' | 'about' | 'services' | 'partners' | 'contact' | 'service-detail' | 'consulting' | 'resources' | 'careers' | 'news';
+type View = 'home' | 'about' | 'services' | 'partners' | 'contact' | 'service-detail' | 'consulting' | 'resources' | 'careers' | 'news' | 'industries';
 
 const App: React.FC = () => {
   const [view, setView] = useState<View>('home');
@@ -67,7 +67,8 @@ const App: React.FC = () => {
       '#consulting': 'consulting',
       '#resources': 'resources',
       '#careers': 'careers',
-      '#news': 'news'
+      '#news': 'news',
+      '#industries': 'industries'
     };
 
     const nextView = viewMap[targetView] || 'home';
@@ -94,6 +95,8 @@ const App: React.FC = () => {
         return <Partners isStandalone={true} />;
       case 'services':
         return <Services isStandalone={true} onSelectService={handleSelectService} />;
+      case 'industries':
+        return <Industries isStandalone={true} />;
       case 'consulting':
         return <Consulting isStandalone={true} />;
       case 'resources':
