@@ -12,15 +12,17 @@ import { LoadingScreen } from './components/LoadingScreen';
 import { Consulting } from './components/Consulting';
 import { Resources } from './components/Resources';
 import { Careers } from './components/Careers';
-import { News } from './components/News';
+import { News, NewsPost } from './components/News';
+import { NewsDetail } from './components/NewsDetail';
 import { Industries } from './components/Industries';
 import { Service } from './types';
 
-type View = 'home' | 'about' | 'services' | 'partners' | 'contact' | 'service-detail' | 'consulting' | 'resources' | 'careers' | 'news' | 'industries';
+type View = 'home' | 'about' | 'services' | 'partners' | 'contact' | 'service-detail' | 'consulting' | 'resources' | 'careers' | 'news' | 'news-detail' | 'industries';
 
 const App: React.FC = () => {
   const [view, setView] = useState<View>('home');
   const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const [selectedNews, setSelectedNews] = useState<NewsPost | null>(null);
   const [isAppLoading, setIsAppLoading] = useState(true);
 
   useEffect(() => {
@@ -50,11 +52,16 @@ const App: React.FC = () => {
     revealElements.forEach(el => observer.observe(el));
 
     return () => observer.disconnect();
-  }, [view, selectedService, isAppLoading]);
+  }, [view, selectedService, selectedNews, isAppLoading]);
 
   const handleSelectService = (service: Service) => {
     setSelectedService(service);
     setView('service-detail');
+  };
+
+  const handleSelectNews = (post: NewsPost) => {
+    setSelectedNews(post);
+    setView('news-detail');
   };
 
   const handleNavigate = (targetView: string) => {
@@ -74,6 +81,7 @@ const App: React.FC = () => {
     const nextView = viewMap[targetView] || 'home';
     setView(nextView);
     setSelectedService(null);
+    setSelectedNews(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -104,7 +112,11 @@ const App: React.FC = () => {
       case 'careers':
         return <Careers isStandalone={true} />;
       case 'news':
-        return <News isStandalone={true} />;
+        return <News isStandalone={true} onSelectPost={handleSelectNews} />;
+      case 'news-detail':
+        return selectedNews ? (
+          <NewsDetail post={selectedNews} onBack={() => setView('news')} />
+        ) : <News isStandalone={true} onSelectPost={handleSelectNews} />;
       case 'contact':
         return <Contact isStandalone={true} />;
       case 'service-detail':

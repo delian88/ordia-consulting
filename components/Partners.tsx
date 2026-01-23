@@ -87,8 +87,11 @@ export const Partners: React.FC<PartnersProps> = ({ isStandalone = false }) => {
           </div>
         ) : (
           <div className="mt-12">
-            <div className="text-center mb-10 reveal">
-              <span className="inline-block px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-[10px] font-black uppercase tracking-[0.3em] border border-blue-100">Our Strategic Partnership Network</span>
+            <div className="flex flex-col items-center mb-8 reveal">
+              <span className="bg-blue-900 text-white text-[10px] font-black px-6 py-2 rounded-full uppercase tracking-[0.3em] shadow-lg border-2 border-white/10">
+                Partnership & Industry Network
+              </span>
+              <div className="h-8 w-px bg-gradient-to-b from-blue-900 to-transparent mt-2"></div>
             </div>
             <div className="relative overflow-hidden">
               <div className="flex items-center animate-marquee whitespace-nowrap group">
@@ -118,7 +121,8 @@ export const Partners: React.FC<PartnersProps> = ({ isStandalone = false }) => {
         .animate-marquee {
           display: flex;
           width: fit-content;
-          animation: marquee 40s linear infinite;
+          /* Slower scroll speed as requested */
+          animation: marquee 100s linear infinite;
         }
         .animate-marquee:hover {
           animation-play-state: paused;
