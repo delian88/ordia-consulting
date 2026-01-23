@@ -9,6 +9,21 @@ interface NewsDetailProps {
 export const NewsDetail: React.FC<NewsDetailProps> = ({ post, onBack }) => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Dynamic SEO Metadata Updates
+    const originalTitle = document.title;
+    const metaDesc = document.getElementById('meta-description');
+    const ogTitle = document.getElementById('og-title');
+    const ogDesc = document.getElementById('og-description');
+    
+    document.title = `${post.t} | Ordia Digest`;
+    if (metaDesc) metaDesc.setAttribute('content', post.d);
+    if (ogTitle) ogTitle.setAttribute('content', post.t);
+    if (ogDesc) ogDesc.setAttribute('content', post.d);
+
+    return () => {
+      document.title = originalTitle;
+    };
   }, [post]);
 
   return (

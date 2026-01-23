@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Service, ServiceFeature } from '../types';
 
@@ -50,9 +49,26 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, onBack })
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // Dynamic SEO Metadata Updates
+    const originalTitle = document.title;
+    const metaDesc = document.getElementById('meta-description');
+    const ogTitle = document.getElementById('og-title');
+    const ogDesc = document.getElementById('og-description');
+    
+    document.title = `${service.title} | Ordia Consulting Services`;
+    if (metaDesc) metaDesc.setAttribute('content', service.description);
+    if (ogTitle) ogTitle.setAttribute('content', service.title);
+    if (ogDesc) ogDesc.setAttribute('content', service.description);
+
     const handleScroll = () => setShowSticky(window.scrollY > 400);
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      // Revert title on unmount (App.tsx handles other resets generally)
+      document.title = originalTitle;
+    };
   }, [service]);
 
   const handleContactClick = (e: React.MouseEvent) => {

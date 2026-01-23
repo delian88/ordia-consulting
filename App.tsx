@@ -32,8 +32,21 @@ const App: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // Effect for general scroll reveals and resetting dynamic metadata on general navigation
   useEffect(() => {
     if (isAppLoading) return;
+
+    // Reset Meta for general views (Home, About, etc.)
+    if (!['service-detail', 'news-detail'].includes(view)) {
+      document.title = "Ordia Consulting Services | Professional Financial Solutions";
+      const metaDesc = document.getElementById('meta-description');
+      const ogTitle = document.getElementById('og-title');
+      const ogDesc = document.getElementById('og-description');
+      
+      if (metaDesc) metaDesc.setAttribute('content', "Ordia Consulting Services (OCS) provides expert Outsourced CPA, tax planning, and management consulting solutions.");
+      if (ogTitle) ogTitle.setAttribute('content', "Ordia Consulting Services");
+      if (ogDesc) ogDesc.setAttribute('content', "Professional Financial Solutions & Technical CPA Strategy.");
+    }
 
     const observerOptions = {
       threshold: 0.1,
@@ -52,7 +65,7 @@ const App: React.FC = () => {
     revealElements.forEach(el => observer.observe(el));
 
     return () => observer.disconnect();
-  }, [view, selectedService, selectedNews, isAppLoading]);
+  }, [view, isAppLoading]);
 
   const handleSelectService = (service: Service) => {
     setSelectedService(service);
