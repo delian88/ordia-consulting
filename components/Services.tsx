@@ -7,7 +7,7 @@ export const servicesData: Service[] = [
     title: "Financial and Accounting Solutions",
     description: "Comprehensive financial services designed to meet the diverse needs of our clients.",
     fullDescription: "Ordia Consulting Services offers a comprehensive list of financial services designed to meet the diverse needs of our clients. Our certified professionals possess a wealth of expertise in various domains of accounting and finance, ensuring that we can assist you effectively in achieving your financial goals. You can count on us to help you achieve financial success!",
-    imageUrl: "https://images.unsplash.com/photo-1454165833767-1314d3a44f6c?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "Financial Statement Preparation", detail: "Accurate and compliant preparation of all necessary financial statements for internal and external reporting." },
       { title: "Budgets and Cashflow Solutions", detail: "Developing robust budgeting frameworks to manage and optimize your company's daily liquidity." },
@@ -44,7 +44,7 @@ export const servicesData: Service[] = [
     title: "Tax Preparation Services",
     description: "Minimize tax liabilities and maximize cash flow with strategic planning.",
     fullDescription: "At OCS, we guide our clients through a full range of tax planning and preparation decisions with strategies that minimize your tax liabilities, maximize your cash flow and keep you on track to your financial goals.",
-    imageUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "Corporate Tax Planning", detail: "Developing sophisticated corporate tax strategies to ensure compliance and minimize burden." },
       { title: "Individual Tax Planning", detail: "Personalized tax strategy and meticulous filing for individual taxpayers." },
@@ -62,7 +62,7 @@ export const servicesData: Service[] = [
     title: "Payroll & 1099 Contract solutions",
     description: "Reduce administrative time with computerized payroll systems.",
     fullDescription: "Ordia Consulting Services’ payroll services can help you reduce the time spent on administration through developing and implementing a computerized payroll system that will facilitate processing and preparation of tax returns.",
-    imageUrl: "https://images.unsplash.com/photo-1554224155-169641357599?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1591033594798-33227a05780d?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "Payroll processing and W2’s", detail: "Comprehensive management of payroll cycles including the accurate generation of year-end W2 forms." },
       { title: "941 Tax form preparations", detail: "Professional preparation and timely filing of quarterly federal employer tax returns." },
@@ -116,7 +116,7 @@ export const servicesData: Service[] = [
     title: "Loans, LOC, and Grants",
     description: "Strategic guidance on obtaining appropriate operations loans and credit.",
     fullDescription: "From start-ups to existing business, at OCS, we provide our clients with access to apply for business loans and lines of credit (LOC) to support their financial needs, business operations, and payroll.",
-    imageUrl: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1565514020179-026b92b2d70b?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "Loan Sourcing", detail: "Strategic consultation on obtaining appropriate operations loans to support expansion and liquidity needs." },
       { title: "Lines of Credit (LOC)", detail: "Expert guidance on securing lines of credit to support daily business operations and payroll stability." },
@@ -169,7 +169,7 @@ export const servicesData: Service[] = [
     title: "Mental Health & Healthcare",
     description: "Specialized accounting for Therapists, Counselors, and Mental Health practitioners.",
     fullDescription: "Running and managing a mental health practice means handling complex financials while providing client care. We focus on solving the accounting challenges mental health professionals face, from bookkeeping to tax matters and payroll.",
-    imageUrl: "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1505751172177-51ad18610432?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "Tax Filing Support", detail: "Simplifying confusing tax laws for healthcare professionals to ensure accuracy and maximum deductions." },
       { title: "Cash Flow & Insurance", detail: "Managing complex revenue streams from insurance payments and client fees." },

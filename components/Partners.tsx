@@ -86,19 +86,24 @@ export const Partners: React.FC<PartnersProps> = ({ isStandalone = false }) => {
             ))}
           </div>
         ) : (
-          <div className="relative mt-12 overflow-hidden">
-            <div className="flex items-center animate-marquee whitespace-nowrap group">
-              <div className="flex items-center py-4">
-                {scrollPartners.map((partner, index) => (
-                  <div 
-                    key={index} 
-                    className="flex flex-col items-center justify-center px-12 md:px-24 transition-all duration-500"
-                  >
-                    <span className="text-xl md:text-2xl font-serif font-bold text-slate-400 hover:text-blue-900 transition-colors cursor-default whitespace-nowrap uppercase tracking-tighter">
-                        {partner.name}
-                    </span>
-                  </div>
-                ))}
+          <div className="mt-12">
+            <div className="text-center mb-10 reveal">
+              <span className="inline-block px-4 py-1.5 bg-blue-50 text-blue-700 rounded-full text-[10px] font-black uppercase tracking-[0.3em] border border-blue-100">Our Strategic Partnership Network</span>
+            </div>
+            <div className="relative overflow-hidden">
+              <div className="flex items-center animate-marquee whitespace-nowrap group">
+                <div className="flex items-center py-4">
+                  {scrollPartners.map((partner, index) => (
+                    <div 
+                      key={index} 
+                      className="flex flex-col items-center justify-center px-12 md:px-24 transition-all duration-500"
+                    >
+                      <span className="text-xl md:text-2xl font-serif font-bold text-slate-400 hover:text-blue-900 transition-colors cursor-default whitespace-nowrap uppercase tracking-tighter">
+                          {partner.name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
