@@ -80,7 +80,7 @@ export const servicesData: Service[] = [
     title: "Outsourced Audits & Assurance Support",
     description: "Assuring solidity of records and working to produce growth strategies.",
     fullDescription: "We focus on building close client relationships that add long-term value. This includes assuring the solidity of financial records, evaluating financial procedures and working to produce strategies that help our clients face business challenges.",
-    imageUrl: "https://images.unsplash.com/photo-1454165833767-1314d3a44f6c?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1554224155-11ee21261732?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "Assurance & Advisory", detail: "High-level review and advisory to provide stakeholder confidence in your financial data." },
       { title: "Outsourced Audits", detail: "Professional verification of accounts through outsourced audits, reviews, and formal compilations." },
