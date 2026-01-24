@@ -36,6 +36,13 @@ export const Contact: React.FC<ContactProps> = ({ isStandalone = true }) => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const socialLinks = [
+    { name: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61586637290266', icon: <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /> },
+    { name: 'Google', href: '#', icon: <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" /> }, // Standard placeholder
+    { name: 'Instagram', href: '#', icon: <rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" /><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" /> },
+    { name: 'YouTube', href: '#', icon: <path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 00-1.94 2C1 8.14 1 12 1 12s0 3.86.42 5.58a2.78 2.78 0 001.94 2c1.72.42 8.6.42 8.6.42s6.88 0 8.6-.42a2.78 2.78 0 001.94-2C23 15.86 23 12 23 12s0-3.86-.42-5.58z" /><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" /> }
+  ];
+
   return (
     <section id="contact" className={`py-20 md:py-32 ${isStandalone ? 'lg:pt-48 min-h-screen' : ''} bg-white relative overflow-hidden`}>
       <div className="container mx-auto px-6 relative z-10">
@@ -50,7 +57,7 @@ export const Contact: React.FC<ContactProps> = ({ isStandalone = true }) => {
                 Connect with our advisory team to discover how a 360-degree approach to accounting and tax can transform your business trajectory.
               </p>
 
-              <div className="space-y-8 md:space-y-10 text-blue-900">
+              <div className="space-y-8 md:space-y-10 text-blue-900 mb-16">
                 <div className="flex items-start space-x-6 group">
                   <div className="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center text-blue-600 transition-all group-hover:bg-blue-900 group-hover:text-white border border-blue-100 shrink-0">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
@@ -69,6 +76,25 @@ export const Contact: React.FC<ContactProps> = ({ isStandalone = true }) => {
                     <p className="text-[10px] uppercase tracking-widest font-bold text-blue-400 mb-1">Advisory Email</p>
                     <p className="text-lg md:text-xl font-bold">info@ordiafinances.com</p>
                   </div>
+                </div>
+              </div>
+
+              {/* Added Social Section to Contact Side */}
+              <div className="pt-10 border-t border-slate-100">
+                <p className="text-[10px] uppercase tracking-widest font-bold text-blue-900 mb-6">Follow Our Global Insights</p>
+                <div className="flex space-x-4">
+                  {socialLinks.map((social) => (
+                    <a 
+                      key={social.name}
+                      href={social.href} 
+                      className="w-12 h-12 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-blue-900 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300 shadow-sm"
+                      title={social.name}
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
+                        {social.icon}
+                      </svg>
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
