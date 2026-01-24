@@ -7,14 +7,12 @@ export const servicesData: Service[] = [
     id: "financial-accounting",
     title: "Financial and Accounting Solutions",
     description: "Comprehensive financial services designed to meet the diverse needs of our clients.",
-    fullDescription: "Ordia Consulting Services offers a comprehensive list of financial services designed to meet the diverse needs of our clients. Our certified professionals possess a wealth of expertise in various domains of accounting and finance, ensuring that we can assist you effectively in achieving your financial goals. You can count on us to help you achieve financial success!",
+    fullDescription: "Ordia Consulting Services offers a comprehensive list of financial services designed to meet the diverse needs of our clients. Our certified professionals possess a wealth of expertise in various domains of accounting and finance, ensuring that we can assist you effectively in achieving your financial goals.",
     imageUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Financial Statement Preparation", detail: "Accurate and compliant preparation of all necessary financial statements for internal and external reporting." },
-      { title: "Budgets and Cashflow Solutions", detail: "Developing robust budgeting frameworks to manage and optimize your company's daily liquidity." },
-      { title: "Accounting Systems Setup", detail: "End-to-end setup and seamless integration of modern accounting systems tailored to your business workflow." },
-      { title: "Projections and Forecasts", detail: "Forward-looking financial models to guide long-term strategic growth and investment decisions." },
-      { title: "Regulatory Reporting", detail: "Ensuring all industry-specific and government regulatory requirements are satisfied with precision." }
+      { title: "Financial Statement Preparation", detail: "Accurate and compliant preparation of all necessary financial statements." },
+      { title: "Budgets and Cashflow", detail: "Developing robust budgeting frameworks to manage and optimize daily liquidity." },
+      { title: "Accounting Systems Setup", detail: "End-to-end setup and seamless integration of modern accounting systems." }
     ],
     icon: (
       <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -26,13 +24,12 @@ export const servicesData: Service[] = [
     id: "bookkeeping",
     title: "Bookkeeping Services and Support",
     description: "Quality bookkeeping services for start-ups and established enterprises.",
-    fullDescription: "Ordia Consulting Services provides quality bookkeeping services. From start-ups to established enterprises, businesses rely on accurate and insightful financial information to maintain profitability and capitalize on new opportunities. Our services steer you closer to these goals with accurate record-keeping and reporting.",
+    fullDescription: "Our services steer you closer to profitability with accurate record-keeping and reporting. We handle the technical details so you can focus on growth.",
     imageUrl: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "General Ledger Maintenance", detail: "Professional maintenance of your financial records on a monthly, quarterly, or annual schedule." },
-      { title: "Bank Reconciliation", detail: "Meticulous matching of bank statements with internal records to ensure 100% accuracy." },
-      { title: "QuickBooks Support", detail: "Expert guidance and technical support for managing your accounts within the QuickBooks ecosystem." },
-      { title: "Fund Accounting", detail: "Specialized accounting services for organizations managing complex or restricted funds." }
+      { title: "General Ledger Maintenance", detail: "Professional maintenance of financial records on a consistent schedule." },
+      { title: "Bank Reconciliation", detail: "Meticulous matching of bank statements with internal records for 100% accuracy." },
+      { title: "QuickBooks Support", detail: "Expert guidance for managing accounts within the QuickBooks ecosystem." }
     ],
     icon: (
       <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -44,17 +41,67 @@ export const servicesData: Service[] = [
     id: "tax-prep",
     title: "Tax Preparation Services",
     description: "Minimize tax liabilities and maximize cash flow with strategic planning.",
-    fullDescription: "At OCS, we guide our clients through a full range of tax planning and preparation decisions with strategies that minimize your tax liabilities, maximize your cash flow and keep you on track to your financial goals.",
+    fullDescription: "At OCS, we guide our clients through a full range of tax planning and preparation decisions with strategies that keep you on track to your financial goals.",
     imageUrl: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Corporate Tax Planning", detail: "Developing sophisticated corporate tax strategies to ensure compliance and minimize burden." },
-      { title: "Individual Tax Planning", detail: "Personalized tax strategy and meticulous filing for individual taxpayers." },
-      { title: "Estate and Trust Planning", detail: "Navigating the complexities of wealth transfer and tax-efficient estate management." }
+      { title: "Corporate Tax Planning", detail: "Sophisticated strategies to ensure compliance and minimize tax burden." },
+      { title: "Individual Filing", detail: "Personalized tax strategy and meticulous filing for individual taxpayers." },
+      { title: "Estate & Trust", detail: "Navigating the complexities of wealth transfer and tax-efficient management." }
     ],
-    // Fix: Added missing icon property
     icon: (
       <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2-2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+      </svg>
+    )
+  },
+  {
+    id: "loans-grants",
+    title: "Loans, LOC, and Grants",
+    description: "Sourcing business loans, lines of credit (LOC), and professional grant consulting.",
+    fullDescription: "We assist businesses in securing the capital they need to grow. Whether it's a traditional bank loan, a strategic line of credit, or a competitive grant application, we provide the financial modeling and expertise required for success.",
+    imageUrl: "https://images.unsplash.com/photo-1579621970795-87faff2f9070?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Business Loan Sourcing", detail: "Connecting your business with competitive lending partners and SBA opportunities." },
+      { title: "LOC Management", detail: "Strategic setup of Lines of Credit to ensure operational flexibility." },
+      { title: "Grant Consulting", detail: "Expert assistance in identifying and applying for industry-specific grants." }
+    ],
+    icon: (
+      <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    )
+  },
+  {
+    id: "business-solutions",
+    title: "Business Solutions and Development",
+    description: "Strategic planning, management support, business analysis, and valuation.",
+    fullDescription: "Move beyond standard accounting into strategic business advisory. We help you evaluate your market position, optimize operations, and plan for long-term scalability and exit strategies.",
+    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Strategic Planning", detail: "Comprehensive roadmaps for business expansion and operational efficiency." },
+      { title: "Business Valuation", detail: "Accurate valuation for mergers, acquisitions, or internal equity planning." },
+      { title: "Operations Analysis", detail: "Deep-dive analysis to identify bottlenecks and improve profitability." }
+    ],
+    icon: (
+      <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+      </svg>
+    )
+  },
+  {
+    id: "payroll-compliance",
+    title: "Payroll & 1099 Solutions",
+    description: "Computerized payroll, W2's, 941 preparations, and contractual payroll.",
+    fullDescription: "Ensure your team is paid on time and your compliance is bulletproof. We handle all aspects of payroll processing, tax filings, and contractor management.",
+    imageUrl: "https://images.unsplash.com/photo-1554224155-1119343170ad?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Full-Cycle Payroll", detail: "Timely processing for W2 employees and 1099 contractors." },
+      { title: "Quarterly Filings", detail: "Management of 941 and state-level payroll tax requirements." },
+      { title: "Year-End Reporting", detail: "Seamless preparation and distribution of W2 and 1099 forms." }
+    ],
+    icon: (
+      <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
       </svg>
     )
   }
@@ -65,7 +112,6 @@ interface ServicesProps {
   isStandalone?: boolean;
 }
 
-// Fix: Exported the Services component as required by App.tsx
 export const Services: React.FC<ServicesProps> = ({ onSelectService, isStandalone = false }) => {
   return (
     <section id="services" className={`py-24 ${isStandalone ? 'lg:pt-48 min-h-screen' : 'bg-white'} relative overflow-hidden`}>
