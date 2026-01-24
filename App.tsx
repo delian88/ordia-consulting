@@ -97,7 +97,7 @@ const App: React.FC = () => {
         return (
           <>
             <Hero />
-            <About isStandalone={false} />
+            <About isStandalone={false} onNavigate={handleNavigate} />
             <Industries isStandalone={false} onNavigate={handleNavigate} />
             <Services isStandalone={false} onSelectService={handleSelectService} onNavigate={handleNavigate} />
             <Contact isStandalone={false} />
