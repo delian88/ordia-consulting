@@ -4,6 +4,45 @@ import { Service } from '../types';
 
 export const servicesData: Service[] = [
   {
+    id: "financial-accounting",
+    title: "Financial Accounting",
+    description: "Technical financial statement preparation and regulatory reporting.",
+    fullDescription: "Ordia Consulting Services offers a comprehensive list of financial services designed to meet the diverse needs of our clients. Our certified professionals possess a wealth of expertise in various domains of accounting and finance.",
+    imageUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Financial Statements", detail: "Accurate preparation of balance sheets, P&L, and cash flow statements." },
+      { title: "Budgets & Cashflow", detail: "Developing robust frameworks to manage and optimize daily liquidity." },
+      { title: "Regulatory Reporting", detail: "Ensuring 100% compliance with industry-specific and government regulations." }
+    ],
+    icon: null
+  },
+  {
+    id: "quickbooks-specialist",
+    title: "QuickBooks",
+    description: "Training, professional installation, and transaction review.",
+    fullDescription: "QuickBooks only works if it's setup right. We don't just help you use software; we help you use it more efficiently to drive your business.",
+    imageUrl: "https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "System Setup", detail: "Expert installation on stand-alone or complex multi-user networks." },
+      { title: "User Training", detail: "Customized one-on-one sessions for your specific business workflow." },
+      { title: "Expert Review", detail: "Regular review of transactions to ensure data integrity." }
+    ],
+    icon: null
+  },
+  {
+    id: "tax-prep",
+    title: "Tax Preparation",
+    description: "Minimize tax liabilities and maximize cash flow with strategic planning.",
+    fullDescription: "At OCS, we guide our clients through a full range of tax planning and preparation decisions with strategies that keep you on track to your financial goals.",
+    imageUrl: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Corporate Tax", detail: "Sophisticated strategies to ensure compliance and minimize tax burden." },
+      { title: "Individual Planning", detail: "Personalized strategy and meticulous filing for individual taxpayers." },
+      { title: "Estate & Trust", detail: "Navigating the complexities of wealth transfer and tax-efficient management." }
+    ],
+    icon: null
+  },
+  {
     id: "construction-accounting",
     title: "Construction Accounting",
     description: "Expertise in WIP schedules, Job Take-offs, Estimating, and Job Costing.",
@@ -69,19 +108,6 @@ export const servicesData: Service[] = [
     icon: null
   },
   {
-    id: "financial-accounting",
-    title: "Financial and Accounting Solutions",
-    description: "Technical financial statement preparation and regulatory reporting.",
-    fullDescription: "Ordia Consulting Services offers a comprehensive list of financial services designed to meet the diverse needs of our clients. Our certified professionals possess a wealth of expertise in various domains of accounting and finance.",
-    imageUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "Financial Statements", detail: "Accurate preparation of balance sheets, P&L, and cash flow statements." },
-      { title: "Budgets & Cashflow", detail: "Developing robust frameworks to manage and optimize daily liquidity." },
-      { title: "Regulatory Reporting", detail: "Ensuring 100% compliance with industry-specific and government regulations." }
-    ],
-    icon: null
-  },
-  {
     id: "bookkeeping",
     title: "Bookkeeping Services and Support",
     description: "Quality bookkeeping services for start-ups and established enterprises.",
@@ -91,19 +117,6 @@ export const servicesData: Service[] = [
       { title: "General Ledger", detail: "Professional maintenance of financial records on a consistent schedule." },
       { title: "Bank Reconciliation", detail: "Meticulous matching of bank statements with internal records." },
       { title: "Support Services", detail: "Ongoing technical support to keep your bookkeeping workflows seamless." }
-    ],
-    icon: null
-  },
-  {
-    id: "tax-prep",
-    title: "Tax Preparation Services",
-    description: "Minimize tax liabilities and maximize cash flow with strategic planning.",
-    fullDescription: "At OCS, we guide our clients through a full range of tax planning and preparation decisions with strategies that keep you on track to your financial goals.",
-    imageUrl: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "Corporate Tax", detail: "Sophisticated strategies to ensure compliance and minimize tax burden." },
-      { title: "Individual Planning", detail: "Personalized strategy and meticulous filing for individual taxpayers." },
-      { title: "Estate & Trust", detail: "Navigating the complexities of wealth transfer and tax-efficient management." }
     ],
     icon: null
   },
@@ -143,19 +156,6 @@ export const servicesData: Service[] = [
       { title: "Staff Augmentation", detail: "Providing expert accounting professionals on demand." },
       { title: "HR Systems", detail: "Developing organizational policies that improve efficiency." },
       { title: "Outsourced CFO", detail: "High-level strategic leadership for growing enterprises." }
-    ],
-    icon: null
-  },
-  {
-    id: "quickbooks-specialist",
-    title: "QuickBooks Specialist",
-    description: "Training, professional installation, and transaction review.",
-    fullDescription: "QuickBooks only works if it's setup right. We don't just help you use software; we help you use it more efficiently to drive your business.",
-    imageUrl: "https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "System Setup", detail: "Expert installation on stand-alone or complex multi-user networks." },
-      { title: "User Training", detail: "Customized one-on-one sessions for your specific business workflow." },
-      { title: "Expert Review", detail: "Regular review of transactions to ensure data integrity." }
     ],
     icon: null
   }
