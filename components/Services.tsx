@@ -8,20 +8,20 @@ export const servicesData: Service[] = [
     title: "Construction Accounting",
     description: "Expertise in WIP schedules, Job Take-offs, Estimating, and Job Costing.",
     fullDescription: "OCS provides deep technical expertise for the construction and engineering sectors. We understand the complexities of revenue recognition, Work in Progress (WIP) management, and the critical nature of accurate job costing to maintain profitability on high-stakes projects.",
-    imageUrl: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1503387762-592dee58c460?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "WIP Management", detail: "Sophisticated Work in Progress schedules for accurate revenue recognition." },
       { title: "Job Costing", detail: "Detailed analysis of labor, materials, and overhead on a per-project basis." },
       { title: "Estimation Support", detail: "Technical financial assistance during the bidding and take-off process." }
     ],
-    icon: null // Icons are replaced by images in the UI
+    icon: null
   },
   {
     id: "healthcare-accounting",
     title: "Mental Health & Healthcare",
     description: "Specialized financial management for therapists, counselors, and clinics.",
     fullDescription: "We solve the unique fiscal challenges of the healthcare industry. From managing complex insurance reimbursement cycles to ensuring payroll compliance for medical staff, OCS provides the peace of mind practitioners need to focus on patient care.",
-    imageUrl: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "Insurance Cash Flow", detail: "Optimizing the lifecycle of claims and reimbursements for consistent liquidity." },
       { title: "Medical Payroll", detail: "Compliance-heavy payroll management for specialized medical practices." },
@@ -34,7 +34,7 @@ export const servicesData: Service[] = [
     title: "Non-Profit Accounting",
     description: "Support for boards, grant management, and mission-driven forecasting.",
     fullDescription: "Non-profits require a unique blend of transparency and strategic foresight. OCS assists boards with grant compliance, audit preparation, and developing financial models that align with the organization's mission.",
-    imageUrl: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "Grant Management", detail: "Tracking and reporting for restricted and unrestricted funds to ensure compliance." },
       { title: "Audit Preparation", detail: "Meticulous organization of records to facilitate smooth external audits." },
@@ -47,7 +47,7 @@ export const servicesData: Service[] = [
     title: "Loans, LOC, and Grants",
     description: "Sourcing business loans, lines of credit (LOC), and professional grant consulting.",
     fullDescription: "Capital is the lifeblood of business growth. We assist our clients in sourcing and securing competitive business loans, establishing strategic lines of credit, and navigating the professional grant application process.",
-    imageUrl: "https://images.unsplash.com/photo-1579621970795-87faff2f9070?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "Business Loan Sourcing", detail: "Strategic matching with competitive lending partners and SBA opportunities." },
       { title: "LOC Setup", detail: "Securing Lines of Credit to provide operational flexibility and growth capital." },
@@ -60,7 +60,7 @@ export const servicesData: Service[] = [
     title: "Business Solutions and Development",
     description: "Strategic planning, management support, and business analysis.",
     fullDescription: "OCS goes beyond numbers to provide comprehensive business development. We help you with strategic planning, management consulting, and deep-dive analysis to ensure your business structure supports your long-term vision.",
-    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1454165833767-1314d3a44f6c?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "Strategic Planning", detail: "Developing clear roadmaps for business expansion and operational efficiency." },
       { title: "Management Support", detail: "Professional consulting to optimize internal processes and leadership." },
@@ -167,6 +167,14 @@ interface ServicesProps {
 }
 
 export const Services: React.FC<ServicesProps> = ({ onSelectService, isStandalone = false }) => {
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.target as HTMLImageElement;
+    const fallback = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200";
+    if (target.src !== fallback) {
+      target.src = fallback;
+    }
+  };
+
   return (
     <section id="services" className={`py-24 ${isStandalone ? 'lg:pt-48 min-h-screen' : 'bg-white'} relative overflow-hidden`}>
       <div className="container mx-auto px-6">
@@ -185,10 +193,11 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, isStandalon
               onClick={() => onSelectService(service)}
               className="reveal bg-white rounded-[2.5rem] border border-slate-100 overflow-hidden hover:shadow-2xl hover:shadow-blue-900/10 transition-all group cursor-pointer flex flex-col h-full"
             >
-              <div className="h-56 md:h-64 overflow-hidden relative">
+              <div className="h-56 md:h-64 overflow-hidden relative bg-slate-100">
                 <img 
                   src={service.imageUrl} 
                   alt={service.title} 
+                  onError={handleImageError}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-transparent transition-colors duration-500"></div>
