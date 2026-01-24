@@ -98,19 +98,19 @@ const App: React.FC = () => {
           <>
             <Hero />
             <About isStandalone={false} />
-            <Industries isStandalone={false} />
-            <Services isStandalone={false} onSelectService={handleSelectService} />
+            <Industries isStandalone={false} onNavigate={handleNavigate} />
+            <Services isStandalone={false} onSelectService={handleSelectService} onNavigate={handleNavigate} />
             <Contact isStandalone={false} />
           </>
         );
       case 'about':
         return <About isStandalone={true} />;
       case 'services':
-        return <Services isStandalone={true} onSelectService={handleSelectService} />;
+        return <Services isStandalone={true} onSelectService={handleSelectService} onNavigate={handleNavigate} />;
       case 'industries':
-        return <Industries isStandalone={true} />;
+        return <Industries isStandalone={true} onNavigate={handleNavigate} />;
       case 'resources':
-        return <Resources isStandalone={true} />;
+        return <Resources isStandalone={true} onNavigate={handleNavigate} />;
       case 'news':
         return <News isStandalone={true} onSelectPost={handleSelectNews} />;
       case 'news-detail':

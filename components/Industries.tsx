@@ -46,9 +46,11 @@ const partners = [
 
 const scrollPartners = [...partners, ...partners];
 
-export const Industries: React.FC<{ isStandalone?: boolean }> = () => {
+export const Industries: React.FC<{ isStandalone?: boolean; onNavigate?: (href: string) => void }> = ({ isStandalone = false, onNavigate }) => {
+  const displayIndustries = isStandalone ? industryList : industryList.slice(0, 4);
+
   return (
-    <div className="min-h-screen pt-32 pb-20 bg-white">
+    <div className={`pt-24 pb-20 bg-white ${isStandalone ? 'min-h-screen pt-40' : ''}`}>
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-20 reveal">
           <span className="text-blue-600 font-bold uppercase tracking-[0.25em] text-[10px] mb-4 block">Global Industry Performance</span>
@@ -59,8 +61,8 @@ export const Industries: React.FC<{ isStandalone?: boolean }> = () => {
         </div>
 
         {/* Industry Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto mb-32">
-          {industryList.map((industry, i) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-16">
+          {displayIndustries.map((industry, i) => (
             <div 
               key={i} 
               className="reveal bg-slate-50 p-8 rounded-[2rem] border border-slate-100 hover:shadow-2xl hover:shadow-blue-900/5 transition-all group flex flex-col items-center text-center h-full"
@@ -79,52 +81,68 @@ export const Industries: React.FC<{ isStandalone?: boolean }> = () => {
           ))}
         </div>
 
+        {!isStandalone && onNavigate && (
+          <div className="text-center mb-32 reveal">
+            <button 
+              onClick={() => onNavigate('#industries')}
+              className="inline-flex items-center px-8 py-3 bg-white border-2 border-slate-900 text-slate-900 rounded-full font-bold uppercase tracking-widest text-[10px] hover:bg-slate-900 hover:text-white transition-all active:scale-95 group"
+            >
+              Learn More Industry Insights
+              <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </button>
+          </div>
+        )}
+
         {/* Partnership Integration (Marquee & Grid) */}
-        <div className="pt-24 border-t border-slate-100">
-          <div className="max-w-xl mx-auto text-center mb-16 reveal">
-            <span className="text-blue-600 font-bold uppercase tracking-[0.25em] text-[10px] mb-4 block">Strategic Ecosystem</span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-blue-900 mb-4">Trusted by Leaders.</h2>
-            <p className="text-slate-500 text-sm font-light">
-              We collaborate with premier organizations to ensure our clients receive the most comprehensive, high-impact Outsourced CPA oversight possible.
-            </p>
-          </div>
+        {isStandalone && (
+          <div className="pt-24 border-t border-slate-100">
+            <div className="max-w-xl mx-auto text-center mb-16 reveal">
+              <span className="text-blue-600 font-bold uppercase tracking-[0.25em] text-[10px] mb-4 block">Strategic Ecosystem</span>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-blue-900 mb-4">Trusted by Leaders.</h2>
+              <p className="text-slate-500 text-sm font-light">
+                We collaborate with premier organizations to ensure our clients receive the most comprehensive, high-impact Outsourced CPA oversight possible.
+              </p>
+            </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-20 reveal">
-            {partners.slice(0, 9).map((partner, index) => (
-              <div 
-                key={index} 
-                className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all group"
-              >
-                <div className="flex flex-col">
-                  <span className="text-blue-600 font-bold text-sm md:text-base mb-1">{partner.name}</span>
-                  <span className="text-[10px] text-slate-400 uppercase tracking-widest">{partner.description}</span>
-                  {partner.href !== "#" && (
-                    <a href={partner.href} target="_blank" rel="noopener noreferrer" className="mt-4 text-[9px] font-bold text-blue-400 flex items-center group-hover:text-blue-900 transition-colors">
-                      VISIT PARTNER <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                    </a>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="relative overflow-hidden pt-10 border-t border-slate-50">
-            <div className="flex items-center animate-marquee whitespace-nowrap group">
-              <div className="flex items-center py-8">
-                {scrollPartners.map((partner, index) => (
-                  <div 
-                    key={index} 
-                    className="flex flex-col items-center justify-center px-12 md:px-24 transition-all duration-500"
-                  >
-                    <span className="text-xl md:text-2xl font-serif font-bold text-slate-300 hover:text-blue-900 transition-colors cursor-default whitespace-nowrap uppercase tracking-tighter">
-                        {partner.name}
-                    </span>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-20 reveal">
+              {partners.slice(0, 9).map((partner, index) => (
+                <div 
+                  key={index} 
+                  className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-all group"
+                >
+                  <div className="flex flex-col">
+                    <span className="text-blue-600 font-bold text-sm md:text-base mb-1">{partner.name}</span>
+                    <span className="text-[10px] text-slate-400 uppercase tracking-widest">{partner.description}</span>
+                    {partner.href !== "#" && (
+                      <a href={partner.href} target="_blank" rel="noopener noreferrer" className="mt-4 text-[9px] font-bold text-blue-400 flex items-center group-hover:text-blue-900 transition-colors">
+                        VISIT PARTNER <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                      </a>
+                    )}
                   </div>
-                ))}
+                </div>
+              ))}
+            </div>
+
+            <div className="relative overflow-hidden pt-10 border-t border-slate-50">
+              <div className="flex items-center animate-marquee whitespace-nowrap group">
+                <div className="flex items-center py-8">
+                  {scrollPartners.map((partner, index) => (
+                    <div 
+                      key={index} 
+                      className="flex flex-col items-center justify-center px-12 md:px-24 transition-all duration-500"
+                    >
+                      <span className="text-xl md:text-2xl font-serif font-bold text-slate-300 hover:text-blue-900 transition-colors cursor-default whitespace-nowrap uppercase tracking-tighter">
+                          {partner.name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
 
         <div className="mt-24 reveal bg-blue-900 rounded-[3rem] p-12 text-center text-white relative overflow-hidden">
            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(37,99,235,0.2),transparent_70%)]"></div>

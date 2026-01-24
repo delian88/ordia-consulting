@@ -163,10 +163,13 @@ export const servicesData: Service[] = [
 
 interface ServicesProps {
   onSelectService: (service: Service) => void;
+  onNavigate: (href: string) => void;
   isStandalone?: boolean;
 }
 
-export const Services: React.FC<ServicesProps> = ({ onSelectService, isStandalone = false }) => {
+export const Services: React.FC<ServicesProps> = ({ onSelectService, onNavigate, isStandalone = false }) => {
+  const displayServices = isStandalone ? servicesData : servicesData.slice(0, 3);
+
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     const target = e.target as HTMLImageElement;
     const fallback = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200";
@@ -186,8 +189,8 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, isStandalon
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-24">
-          {servicesData.map((service) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {displayServices.map((service) => (
             <div 
               key={service.id} 
               onClick={() => onSelectService(service)}
@@ -216,7 +219,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, isStandalon
                   {service.description}
                 </p>
                 <div className="mt-auto flex items-center text-[10px] font-bold uppercase tracking-widest text-blue-600 group-hover:text-blue-900">
-                  Explore Details
+                  Learn More
                   <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -226,35 +229,51 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, isStandalon
           ))}
         </div>
 
-        {/* Integrated Consulting Section */}
-        <div className="mt-32 pt-24 border-t border-slate-100">
-           <div className="max-w-4xl mx-auto text-center mb-20 reveal">
-            <span className="text-blue-600 font-bold uppercase tracking-[0.25em] text-[10px] mb-4 block">Part-Time CFO & Controller Services</span>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-blue-900 mb-8 leading-tight">Straightforward <span className="italic font-normal text-blue-500">Financial Guidance.</span></h2>
-            <p className="text-slate-500 text-lg md:text-xl font-light leading-relaxed">
-              OCS provides expert CFO support for every stage of your business lifecycle. If you’re ready to take your business to the next level through personalized guidance, contact us today.
-            </p>
+        {!isStandalone && (
+          <div className="mt-16 text-center reveal">
+            <button 
+              onClick={() => onNavigate('#services')}
+              className="inline-flex items-center px-10 py-4 bg-slate-900 text-white rounded-full font-bold uppercase tracking-widest text-xs hover:bg-blue-600 transition-all shadow-xl active:scale-95 group"
+            >
+              View All Services
+              <svg className="w-4 h-4 ml-3 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
           </div>
+        )}
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              { title: "Strategic Planning", desc: "Business improvement strategies and strategic planning to maximize profits and ensure sustainable growth.", icon: "SP" },
-              { title: "M&A Advisory", desc: "Expert due diligence and strategic support for mergers, acquisitions, and operations review.", icon: "MA" },
-              { title: "Risk Management", desc: "Comprehensive risk management and capital raising strategies to secure your company's future.", icon: "RM" },
-              { title: "Technical Training", desc: "Professional training for your in-house accountants and bookkeepers to elevate internal performance.", icon: "TR" },
-              { title: "Interim Leadership", desc: "Providing stability through Interim CFO or Controller roles during leadership transitions.", icon: "IL" },
-              { title: "Cash Flow Strategy", desc: "Precise financial analysis and reporting to keep your business's liquidity optimized.", icon: "CF" }
-            ].map((item, i) => (
-              <div key={i} className="reveal bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 hover:shadow-2xl hover:shadow-blue-900/5 transition-all group">
-                <div className="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center font-bold text-xl mb-8 group-hover:scale-110 transition-transform">
-                  {item.icon}
+        {/* Integrated Consulting Section - Only on standalone or deeper in home if needed */}
+        {isStandalone && (
+          <div className="mt-32 pt-24 border-t border-slate-100">
+             <div className="max-w-4xl mx-auto text-center mb-20 reveal">
+              <span className="text-blue-600 font-bold uppercase tracking-[0.25em] text-[10px] mb-4 block">Part-Time CFO & Controller Services</span>
+              <h2 className="text-3xl md:text-5xl font-serif font-bold text-blue-900 mb-8 leading-tight">Straightforward <span className="italic font-normal text-blue-500">Financial Guidance.</span></h2>
+              <p className="text-slate-500 text-lg md:text-xl font-light leading-relaxed">
+                OCS provides expert CFO support for every stage of your business lifecycle. If you’re ready to take your business to the next level through personalized guidance, contact us today.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {[
+                { title: "Strategic Planning", desc: "Business improvement strategies and strategic planning to maximize profits and ensure sustainable growth.", icon: "SP" },
+                { title: "M&A Advisory", desc: "Expert due diligence and strategic support for mergers, acquisitions, and operations review.", icon: "MA" },
+                { title: "Risk Management", desc: "Comprehensive risk management and capital raising strategies to secure your company's future.", icon: "RM" },
+                { title: "Technical Training", desc: "Professional training for your in-house accountants and bookkeepers to elevate internal performance.", icon: "TR" },
+                { title: "Interim Leadership", desc: "Providing stability through Interim CFO or Controller roles during leadership transitions.", icon: "IL" },
+                { title: "Cash Flow Strategy", desc: "Precise financial analysis and reporting to keep your business's liquidity optimized.", icon: "CF" }
+              ].map((item, i) => (
+                <div key={i} className="reveal bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100 hover:shadow-2xl hover:shadow-blue-900/5 transition-all group">
+                  <div className="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center font-bold text-xl mb-8 group-hover:scale-110 transition-transform">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-2xl font-serif font-bold text-blue-900 mb-4">{item.title}</h3>
+                  <p className="text-slate-500 text-sm font-light leading-relaxed">{item.desc}</p>
                 </div>
-                <h3 className="text-2xl font-serif font-bold text-blue-900 mb-4">{item.title}</h3>
-                <p className="text-slate-500 text-sm font-light leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
