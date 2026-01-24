@@ -107,8 +107,8 @@ export const About: React.FC<AboutProps> = ({ isStandalone = true }) => {
     <section id="about" className={`py-20 md:py-32 ${isStandalone ? 'lg:pt-48 min-h-screen' : 'bg-white'} relative overflow-hidden`}>
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-24 items-start mb-24">
-          <div className="lg:col-span-5 reveal sticky top-32">
-            <div className="relative p-8 md:p-12 lg:p-16 bg-slate-50 rounded-[2.5rem] md:rounded-[4rem] flex flex-col items-center justify-center border border-slate-100 shadow-inner group mb-12">
+          <div className="lg:col-span-5 reveal lg:sticky lg:top-32">
+            <div className="relative p-8 md:p-12 lg:p-16 bg-slate-50 rounded-[2.5rem] md:rounded-[4rem] flex flex-col items-center justify-center border border-slate-100 shadow-inner group mb-8 lg:mb-12">
               <div className="relative z-10 transition-transform duration-700 group-hover:scale-105">
                 <FullLogo className="h-32 md:h-48 drop-shadow-sm" />
               </div>
@@ -124,7 +124,7 @@ export const About: React.FC<AboutProps> = ({ isStandalone = true }) => {
             </div>
           </div>
 
-          <div className="lg:col-span-7 reveal">
+          <div className="lg:col-span-7 reveal mt-8 lg:mt-0">
             <span className="text-blue-600 font-bold uppercase tracking-[0.25em] text-[10px] mb-6 block border-l-2 border-blue-500 pl-4">About OCS</span>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-blue-900 mb-8 leading-tight">
               <span className="glass-shine">Management, Financial, and</span> <br />
