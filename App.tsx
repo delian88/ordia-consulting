@@ -1,23 +1,21 @@
+
 import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Services } from './components/Services';
 import { About } from './components/About';
-import { Partners } from './components/Partners';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { ConsultantChat } from './components/ConsultantChat';
 import { ServiceDetail } from './components/ServiceDetail';
 import { LoadingScreen } from './components/LoadingScreen';
-import { Consulting } from './components/Consulting';
 import { Resources } from './components/Resources';
-import { Careers } from './components/Careers';
 import { News, NewsPost } from './components/News';
 import { NewsDetail } from './components/NewsDetail';
 import { Industries } from './components/Industries';
 import { Service } from './types';
 
-type View = 'home' | 'about' | 'services' | 'partners' | 'contact' | 'service-detail' | 'consulting' | 'resources' | 'careers' | 'news' | 'news-detail' | 'industries';
+type View = 'home' | 'about' | 'services' | 'contact' | 'service-detail' | 'resources' | 'news' | 'news-detail' | 'industries';
 
 const App: React.FC = () => {
   const [view, setView] = useState<View>('home');
@@ -32,11 +30,9 @@ const App: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // Effect for general scroll reveals and resetting dynamic metadata on general navigation
   useEffect(() => {
     if (isAppLoading) return;
 
-    // Reset Meta for general views (Home, About, etc.)
     if (!['service-detail', 'news-detail'].includes(view)) {
       document.title = "Ordia Consulting Services | Professional Financial Solutions";
       const metaDesc = document.getElementById('meta-description');
@@ -82,11 +78,8 @@ const App: React.FC = () => {
       '#home': 'home',
       '#about': 'about',
       '#services': 'services',
-      '#partners': 'partners',
       '#contact': 'contact',
-      '#consulting': 'consulting',
       '#resources': 'resources',
-      '#careers': 'careers',
       '#news': 'news',
       '#industries': 'industries'
     };
@@ -105,25 +98,19 @@ const App: React.FC = () => {
           <>
             <Hero />
             <About isStandalone={false} />
-            <Partners />
+            <Industries isStandalone={false} />
             <Services isStandalone={false} onSelectService={handleSelectService} />
             <Contact isStandalone={false} />
           </>
         );
       case 'about':
         return <About isStandalone={true} />;
-      case 'partners':
-        return <Partners isStandalone={true} />;
       case 'services':
         return <Services isStandalone={true} onSelectService={handleSelectService} />;
       case 'industries':
         return <Industries isStandalone={true} />;
-      case 'consulting':
-        return <Consulting isStandalone={true} />;
       case 'resources':
         return <Resources isStandalone={true} />;
-      case 'careers':
-        return <Careers isStandalone={true} />;
       case 'news':
         return <News isStandalone={true} onSelectPost={handleSelectNews} />;
       case 'news-detail':

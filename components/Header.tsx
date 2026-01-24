@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 
 const navItems = [
@@ -5,11 +6,8 @@ const navItems = [
   { label: 'About Us', href: '#about' },
   { label: 'Services', href: '#services' },
   { label: 'Industries', href: '#industries' },
-  { label: 'Partnership', href: '#partners' },
-  { label: 'Consulting', href: '#consulting' },
   { label: 'Resources', href: '#resources' },
   { label: 'News', href: '#news' },
-  { label: 'Careers', href: '#careers' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -72,13 +70,13 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
             <FullLogo className={`transition-all duration-500 ${isScrolled ? 'h-9 md:h-11' : 'h-13 md:h-16'}`} />
           </div>
 
-          <nav className="hidden lg:flex items-center space-x-2 xl:space-x-4">
+          <nav className="hidden lg:flex items-center space-x-3 xl:space-x-6">
             {navItems.map((item) => (
               <a 
                 key={item.label}
                 href={item.href}
                 onClick={(e) => handleLinkClick(e, item.href)}
-                className="text-[9px] xl:text-[10px] font-bold uppercase tracking-[0.1em] text-[#003366] hover:text-[#2563eb] transition-colors link-hover whitespace-nowrap"
+                className="text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.1em] text-[#003366] hover:text-[#2563eb] transition-colors link-hover whitespace-nowrap"
               >
                 {item.label}
               </a>
@@ -86,7 +84,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
             <a 
               href="#contact"
               onClick={(e) => handleLinkClick(e, '#contact')}
-              className="px-4 xl:px-5 py-2.5 bg-[#003366] text-white rounded-full text-[9px] xl:text-[10px] font-bold uppercase tracking-widest hover:bg-[#2563eb] transition-all shadow-lg active:scale-95 whitespace-nowrap"
+              className="px-6 xl:px-8 py-3 bg-[#003366] text-white rounded-full text-[10px] xl:text-[11px] font-bold uppercase tracking-widest hover:bg-[#2563eb] transition-all shadow-lg active:scale-95 whitespace-nowrap"
             >
               Consult Now
             </a>

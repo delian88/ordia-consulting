@@ -8,13 +8,6 @@ interface FormState {
   message: string;
 }
 
-interface FormErrors {
-  name?: string;
-  email?: string;
-  service?: string;
-  message?: string;
-}
-
 interface ContactProps {
   isStandalone?: boolean;
 }
@@ -46,7 +39,9 @@ export const Contact: React.FC<ContactProps> = ({ isStandalone = true }) => {
   return (
     <section id="contact" className={`py-20 md:py-32 ${isStandalone ? 'lg:pt-48 min-h-screen' : ''} bg-white relative overflow-hidden`}>
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-6xl mx-auto">
+        
+        {/* Top Section: Standard Contact Form */}
+        <div className="max-w-6xl mx-auto mb-32">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
             <div className="lg:col-span-5 reveal-left">
               <span className="text-blue-600 font-bold uppercase tracking-[0.2em] text-[10px] mb-6 block border-l-2 border-blue-500 pl-4">Direct Engagement</span>
@@ -116,6 +111,59 @@ export const Contact: React.FC<ContactProps> = ({ isStandalone = true }) => {
                     {isSubmitting ? 'Transmitting...' : 'Schedule Free Consultation'}
                   </button>
                 </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Career & HR Section Integrated Below */}
+        <div className="max-w-6xl mx-auto pt-32 border-t border-slate-100">
+           <div className="max-w-4xl mx-auto text-center mb-20 reveal">
+            <span className="text-blue-600 font-bold uppercase tracking-[0.25em] text-[10px] mb-4 block">Human Resources & Staff Augmentation</span>
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-blue-900 mb-8 leading-tight">Gain a <span className="italic font-normal text-blue-500">Competitive Edge.</span></h2>
+            <p className="text-slate-500 text-lg md:text-xl font-light leading-relaxed">
+              OCS streamlines your administration through efficient HR systems and staffing augmentation. We provide professional accounting professionals on a full-time, part-time, or project-specific basis.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div className="reveal-left">
+              <h3 className="text-2xl font-serif font-bold text-blue-900 mb-6">Efficiency for Your Workforce</h3>
+              <div className="space-y-8">
+                {[
+                  { t: "Lower Labor Costs", d: "Reduced overhead through streamlined administration and efficient staffing models tailored to your business." },
+                  { t: "Larger Talent Pool", d: "Access to a broad spectrum of technical accounting expertise and verified CPA-track professionals." },
+                  { t: "Internal Development", d: "Augmenting your current team with expert knowledge that fosters growth and long-term efficiency." }
+                ].map((item, i) => (
+                  <div key={i} className="flex space-x-6">
+                    <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs shrink-0">0{i+1}</div>
+                    <div>
+                      <h4 className="text-blue-900 font-bold mb-1">{item.t}</h4>
+                      <p className="text-slate-500 text-sm font-light">{item.d}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="reveal-right bg-slate-900 p-12 rounded-[3rem] text-white">
+              <h3 className="text-2xl font-serif font-bold mb-8">HR & Staffing Specializations</h3>
+              <div className="space-y-4">
+                {[
+                  "Staffing Solutions & Augmentation support",
+                  "Employee Benefits, 401k, and Pension",
+                  "New Business Start-up HR Support",
+                  "Organizational Policies and Procedures",
+                  "Outsourced CFO Leadership Placement"
+                ].map((job, i) => (
+                  <div key={i} className="p-4 border border-white/10 rounded-2xl flex items-center group">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mr-4 group-hover:scale-150 transition-transform"></div>
+                    <p className="font-bold text-sm text-blue-400">{job}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-12 p-6 bg-white/5 rounded-2xl border border-white/10">
+                <p className="text-white/60 text-xs mb-4">Interested in joining our talent network or procuring staffing support?</p>
+                <p className="text-white font-bold text-sm">hr@ordiafinances.com</p>
               </div>
             </div>
           </div>
