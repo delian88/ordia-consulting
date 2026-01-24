@@ -18,7 +18,7 @@ export const servicesData: Service[] = [
   },
   {
     id: "quickbooks-specialist",
-    title: "QuickBooks",
+    title: "Quick Book",
     description: "Training, professional installation, and transaction review.",
     fullDescription: "QuickBooks only works if it's setup right. We don't just help you use software; we help you use it more efficiently to drive your business.",
     imageUrl: "https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=1200",
@@ -47,7 +47,7 @@ export const servicesData: Service[] = [
     title: "Construction Accounting",
     description: "Expertise in WIP schedules, Job Take-offs, Estimating, and Job Costing.",
     fullDescription: "OCS provides deep technical expertise for the construction and engineering sectors. We understand the complexities of revenue recognition, Work in Progress (WIP) management, and the critical nature of accurate job costing to maintain profitability on high-stakes projects.",
-    imageUrl: "https://images.unsplash.com/photo-1503387762-592dee58c460?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1504307651254-35680f3366d4?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "WIP Management", detail: "Sophisticated Work in Progress schedules for accurate revenue recognition." },
       { title: "Job Costing", detail: "Detailed analysis of labor, materials, and overhead on a per-project basis." },
@@ -235,7 +235,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, onNavigate,
               onClick={() => onNavigate('#services')}
               className="inline-flex items-center px-10 py-4 bg-slate-900 text-white rounded-full font-bold uppercase tracking-widest text-xs hover:bg-blue-600 transition-all shadow-xl active:scale-95 group"
             >
-              View All Services
+              View Full Service Catalog
               <svg className="w-4 h-4 ml-3 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
@@ -268,6 +268,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, onNavigate,
                     {item.icon}
                   </div>
                   <h3 className="text-2xl font-serif font-bold text-blue-900 mb-4">{item.title}</h3>
+                  {/* Fixed: Replaced item.desc || item.detail with item.desc as all objects in the array use 'desc' */}
                   <p className="text-slate-500 text-sm font-light leading-relaxed">{item.desc}</p>
                 </div>
               ))}

@@ -70,7 +70,7 @@ export const Resources: React.FC<{ isStandalone?: boolean; onNavigate?: (href: s
             <p className="text-slate-500 text-sm font-light mb-8">Customized one-on-one or group training sessions designed to help your team master every facet of the software.</p>
             <button 
               onClick={handleAction}
-              className="px-8 py-3 bg-slate-100 text-blue-900 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-blue-100 transition-all"
+              className="px-8 py-3 bg-slate-100 text-blue-900 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-blue-100 transition-all active:scale-95"
             >
               Book Training Session
             </button>
@@ -82,7 +82,7 @@ export const Resources: React.FC<{ isStandalone?: boolean; onNavigate?: (href: s
             <p className="text-slate-500 text-sm font-light mb-8">Ongoing assistance for complex setup, technical operations, and third-party software integration challenges.</p>
             <button 
               onClick={handleAction}
-              className="px-8 py-3 bg-slate-100 text-blue-900 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-blue-100 transition-all"
+              className="px-8 py-3 bg-slate-100 text-blue-900 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-blue-100 transition-all active:scale-95"
             >
               Get Technical Support
             </button>
@@ -94,7 +94,7 @@ export const Resources: React.FC<{ isStandalone?: boolean; onNavigate?: (href: s
             <p className="text-slate-500 text-sm font-light mb-8">Regular professional reviews of transactions and reports to ensure your financial data reflects current reality.</p>
             <button 
               onClick={handleAction}
-              className="px-8 py-3 bg-slate-100 text-blue-900 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-blue-100 transition-all"
+              className="px-8 py-3 bg-slate-100 text-blue-900 rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-blue-100 transition-all active:scale-95"
             >
               Schedule Expert Review
             </button>
