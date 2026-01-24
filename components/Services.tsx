@@ -24,12 +24,12 @@ export const servicesData: Service[] = [
     id: "bookkeeping",
     title: "Bookkeeping Services and Support",
     description: "Quality bookkeeping services for start-ups and established enterprises.",
-    fullDescription: "Our services steer you closer to profitability with accurate record-keeping and reporting. We handle the technical details so you can focus on growth.",
+    fullDescription: "Our services steer you closer to profitability with accurate record-keeping and reporting. We handle the technical details so you can focus on growth and operational success.",
     imageUrl: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "General Ledger Maintenance", detail: "Professional maintenance of financial records on a consistent schedule." },
       { title: "Bank Reconciliation", detail: "Meticulous matching of bank statements with internal records for 100% accuracy." },
-      { title: "QuickBooks Support", detail: "Expert guidance for managing accounts within the QuickBooks ecosystem." }
+      { title: "Fund Accounting", detail: "Specialized accounting for non-profits and organizations managing restricted funds." }
     ],
     icon: (
       <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -41,11 +41,11 @@ export const servicesData: Service[] = [
     id: "tax-prep",
     title: "Tax Preparation Services",
     description: "Minimize tax liabilities and maximize cash flow with strategic planning.",
-    fullDescription: "At OCS, we guide our clients through a full range of tax planning and preparation decisions with strategies that keep you on track to your financial goals.",
+    fullDescription: "At OCS, we guide our clients through a full range of tax planning and preparation decisions with strategies that keep you on track to your financial goals while ensuring total compliance.",
     imageUrl: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Corporate Tax Planning", detail: "Sophisticated strategies to ensure compliance and minimize tax burden." },
-      { title: "Individual Filing", detail: "Personalized tax strategy and meticulous filing for individual taxpayers." },
+      { title: "Corporate Tax Planning", detail: "Sophisticated strategies to ensure compliance and minimize tax burden for businesses." },
+      { title: "Individual Filing", detail: "Personalized tax strategy and meticulous filing for individual taxpayers and high-net-worth clients." },
       { title: "Estate & Trust", detail: "Navigating the complexities of wealth transfer and tax-efficient management." }
     ],
     icon: (
@@ -102,6 +102,57 @@ export const servicesData: Service[] = [
     icon: (
       <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+      </svg>
+    )
+  },
+  {
+    id: "audit-assurance",
+    title: "Outsourced Audits & Assurance",
+    description: "Objective analysis, outsourced audits, and internal control reviews.",
+    fullDescription: "Our efforts provide clients with tangible results through corrective actions that remediate internal control issues and enhance management visibility over financial operations.",
+    imageUrl: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Internal Control Review", detail: "Deep-dive assessment of your financial processes to mitigate risk." },
+      { title: "Compliance Audits", detail: "Ensuring your organization adheres to specific industry or government regulations." },
+      { title: "Assurance Support", detail: "Providing the necessary documentation and confidence for external stakeholders." }
+    ],
+    icon: (
+      <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      </svg>
+    )
+  },
+  {
+    id: "hr-staffing",
+    title: "HR & Staffing Solutions",
+    description: "Professional staffing, policy development, and Outsourced CFO leadership.",
+    fullDescription: "OCS helps streamline the time spent on administration through efficient human resources systems and staffing augmentation for your accounting department.",
+    imageUrl: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Staff Augmentation", detail: "Providing expert accounting professionals on a project or long-term basis." },
+      { title: "Policy Development", detail: "Creating organizational procedures that improve efficiency and legal compliance." },
+      { title: "Outsourced CFO", detail: "High-level strategic leadership without the overhead of a full-time executive." }
+    ],
+    icon: (
+      <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+    )
+  },
+  {
+    id: "quickbooks-specialist",
+    title: "QuickBooks Specialist",
+    description: "Personal training, professional installation, and transaction review.",
+    fullDescription: "QuickBooks only works if it's setup right. We don't just help you use software; we help you use it more efficiently and effectively to drive your business.",
+    imageUrl: "https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "System Installation", detail: "Expert setup on stand-alone computers or complex multi-user networks." },
+      { title: "Personal Training", detail: "One-on-one or group sessions tailored to your business workflow." },
+      { title: "Expert Review", detail: "Monthly or quarterly review of transactions to ensure data integrity." }
+    ],
+    icon: (
+      <svg className="w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
       </svg>
     )
   }
