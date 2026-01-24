@@ -21,7 +21,7 @@ export const servicesData: Service[] = [
     title: "Quick Book",
     description: "Training, professional installation, and transaction review.",
     fullDescription: "QuickBooks only works if it's setup right. We don't just help you use software; we help you use it more efficiently to drive your business.",
-    imageUrl: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1586282391129-76a6df230234?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "System Setup", detail: "Expert installation on stand-alone or complex multi-user networks." },
       { title: "User Training", detail: "Customized one-on-one sessions for your specific business workflow." },
@@ -125,7 +125,7 @@ export const servicesData: Service[] = [
     title: "Bookkeeping Services and Support",
     description: "Quality bookkeeping services for start-ups and established enterprises.",
     fullDescription: "Our services steer you closer to profitability with accurate record-keeping and reporting. We handle the technical details of ledger maintenance so you can focus on growth.",
-    imageUrl: "https://images.unsplash.com/photo-1586282391129-76a6df230234?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "General Ledger", detail: "Professional maintenance of financial records on a consistent schedule." },
       { title: "Bank Reconciliation", detail: "Meticulous matching of bank statements with internal records." },
