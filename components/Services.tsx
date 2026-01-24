@@ -21,7 +21,7 @@ export const servicesData: Service[] = [
     title: "Quick Book",
     description: "Training, professional installation, and transaction review.",
     fullDescription: "QuickBooks only works if it's setup right. We don't just help you use software; we help you use it more efficiently to drive your business.",
-    imageUrl: "https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1586282391129-76a6df230234?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "System Setup", detail: "Expert installation on stand-alone or complex multi-user networks." },
       { title: "User Training", detail: "Customized one-on-one sessions for your specific business workflow." },
@@ -52,6 +52,32 @@ export const servicesData: Service[] = [
       { title: "WIP Management", detail: "Sophisticated Work in Progress schedules for accurate revenue recognition." },
       { title: "Job Costing", detail: "Detailed analysis of labor, materials, and overhead on a per-project basis." },
       { title: "Estimation Support", detail: "Technical financial assistance during the bidding and take-off process." }
+    ],
+    icon: null
+  },
+  {
+    id: "business-solutions",
+    title: "Business Solutions and Development",
+    description: "Strategic planning, management support, and business analysis.",
+    fullDescription: "OCS goes beyond numbers to provide comprehensive business development. We help you with strategic planning, management consulting, and deep-dive analysis to ensure your business structure supports your long-term vision.",
+    imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Strategic Planning", detail: "Developing clear roadmaps for business expansion and operational efficiency." },
+      { title: "Management Support", detail: "Professional consulting to optimize internal processes and leadership." },
+      { title: "Business Analysis", detail: "Data-driven insights into your market position and profitability." }
+    ],
+    icon: null
+  },
+  {
+    id: "payroll-solutions",
+    title: "Payroll & 1099 Solutions",
+    description: "Computerized payroll, W2's, 941 preparations, and contractual payroll.",
+    fullDescription: "Ensure your team is paid on time and your compliance is bulletproof. We handle all aspects of payroll processing, quarterly tax filings, and contractor management.",
+    imageUrl: "https://images.unsplash.com/photo-1554224155-1119343170ad?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Full-Cycle Payroll", detail: "Timely and accurate processing for employees and contractors." },
+      { title: "W2 & 1099", detail: "Seamless end-of-year reporting and form distribution." },
+      { title: "Quarterly 941s", detail: "Handling all necessary government payroll tax preparations." }
     ],
     icon: null
   },
@@ -95,19 +121,6 @@ export const servicesData: Service[] = [
     icon: null
   },
   {
-    id: "business-solutions",
-    title: "Business Solutions and Development",
-    description: "Strategic planning, management support, and business analysis.",
-    fullDescription: "OCS goes beyond numbers to provide comprehensive business development. We help you with strategic planning, management consulting, and deep-dive analysis to ensure your business structure supports your long-term vision.",
-    imageUrl: "https://images.unsplash.com/photo-1454165833767-1314d3a44f6c?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "Strategic Planning", detail: "Developing clear roadmaps for business expansion and operational efficiency." },
-      { title: "Management Support", detail: "Professional consulting to optimize internal processes and leadership." },
-      { title: "Business Analysis", detail: "Data-driven insights into your market position and profitability." }
-    ],
-    icon: null
-  },
-  {
     id: "bookkeeping",
     title: "Bookkeeping Services and Support",
     description: "Quality bookkeeping services for start-ups and established enterprises.",
@@ -117,19 +130,6 @@ export const servicesData: Service[] = [
       { title: "General Ledger", detail: "Professional maintenance of financial records on a consistent schedule." },
       { title: "Bank Reconciliation", detail: "Meticulous matching of bank statements with internal records." },
       { title: "Support Services", detail: "Ongoing technical support to keep your bookkeeping workflows seamless." }
-    ],
-    icon: null
-  },
-  {
-    id: "payroll-solutions",
-    title: "Payroll & 1099 Solutions",
-    description: "Computerized payroll, W2's, 941 preparations, and contractual payroll.",
-    fullDescription: "Ensure your team is paid on time and your compliance is bulletproof. We handle all aspects of payroll processing, quarterly tax filings, and contractor management.",
-    imageUrl: "https://images.unsplash.com/photo-1554224155-1119343170ad?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "Full-Cycle Payroll", detail: "Timely and accurate processing for employees and contractors." },
-      { title: "W2 & 1099", detail: "Seamless end-of-year reporting and form distribution." },
-      { title: "Quarterly 941s", detail: "Handling all necessary government payroll tax preparations." }
     ],
     icon: null
   },
@@ -243,7 +243,6 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, onNavigate,
           </div>
         )}
 
-        {/* Integrated Consulting Section - Only on standalone or deeper in home if needed */}
         {isStandalone && (
           <div className="mt-32 pt-24 border-t border-slate-100">
              <div className="max-w-4xl mx-auto text-center mb-20 reveal">
@@ -268,7 +267,6 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, onNavigate,
                     {item.icon}
                   </div>
                   <h3 className="text-2xl font-serif font-bold text-blue-900 mb-4">{item.title}</h3>
-                  {/* Fixed: Replaced item.desc || item.detail with item.desc as all objects in the array use 'desc' */}
                   <p className="text-slate-500 text-sm font-light leading-relaxed">{item.desc}</p>
                 </div>
               ))}
