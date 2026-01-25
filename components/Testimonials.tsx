@@ -67,9 +67,9 @@ export const Testimonials: React.FC = () => {
           <div className="w-16 md:w-20 h-1 bg-blue-500 mx-auto rounded-full"></div>
         </div>
 
-        <div className="max-w-5xl mx-auto relative px-0 md:px-12">
+        <div className="max-w-6xl mx-auto relative px-0 md:px-12">
           {/* Slider Content */}
-          <div className="overflow-hidden relative min-h-[550px] sm:min-h-[450px] md:min-h-[400px]">
+          <div className="overflow-hidden relative min-h-[580px] sm:min-h-[480px] md:min-h-[500px]">
             {testimonials.map((t, i) => (
               <div 
                 key={i} 
@@ -82,40 +82,42 @@ export const Testimonials: React.FC = () => {
                 }`}
                 style={{ visibility: i === currentIndex ? 'visible' : 'hidden' }}
               >
-                <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 sm:p-8 md:p-14 rounded-[2rem] md:rounded-[3rem] flex flex-col items-center text-center h-full hover:bg-white/10 transition-colors group">
-                  <div className="mb-6 md:mb-10">
-                    <svg className="w-8 h-8 md:w-12 md:h-12 text-blue-500 opacity-40 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 32 32">
+                <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 sm:p-10 md:p-16 rounded-[2rem] md:rounded-[4rem] flex flex-col items-center text-center h-full hover:bg-white/10 transition-colors group">
+                  <div className="mb-6 md:mb-10 shrink-0">
+                    <svg className="w-8 h-8 md:w-14 md:h-14 text-blue-500 opacity-40 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 32 32">
                       <path d="M10 8v8H6c0 4.418 3.582 8 8 8v4c-6.627 0-12-5.373-12-12V8h8zm18 0v8h-4c0 4.418 3.582 8 8 8v4c-6.627 0-12-5.373-12-12V8h8z" />
                     </svg>
                   </div>
                   
-                  <blockquote className="text-blue-50 text-base sm:text-xl md:text-3xl font-serif leading-relaxed mb-8 md:mb-12 italic font-light px-2">
-                    "{t.quote}"
-                  </blockquote>
+                  <div className="flex-grow flex items-center justify-center">
+                    <blockquote className="text-blue-50 text-base sm:text-xl md:text-3xl font-serif leading-relaxed mb-8 md:mb-12 italic font-light px-2 md:px-8">
+                      "{t.quote}"
+                    </blockquote>
+                  </div>
 
-                  <div className="flex flex-col items-center mt-auto">
-                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-blue-500/30 mb-4 shadow-2xl">
+                  <div className="flex flex-col items-center mt-auto shrink-0">
+                    <div className="w-14 h-14 md:w-20 md:h-20 rounded-full overflow-hidden border-2 border-blue-500/30 mb-4 shadow-2xl">
                       <img 
                         src={t.avatar} 
                         alt={t.author} 
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <h4 className="text-white font-bold text-base md:text-lg">{t.author}</h4>
-                    <p className="text-blue-400 text-[9px] md:text-[10px] uppercase tracking-[0.25em] font-bold mt-1">{t.role}</p>
+                    <h4 className="text-white font-bold text-base md:text-xl">{t.author}</h4>
+                    <p className="text-blue-400 text-[9px] md:text-[11px] uppercase tracking-[0.25em] font-bold mt-1">{t.role}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Navigation Arrows - Hidden on very small screens, adjusted for small screens */}
+          {/* Navigation Arrows */}
           <button 
             onClick={prevSlide}
             aria-label="Previous testimonial"
-            className="absolute left-0 top-1/2 -translate-y-1/2 -ml-2 sm:-ml-4 md:-ml-8 w-10 h-10 md:w-14 md:h-14 bg-white/10 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all z-20 group"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -ml-2 sm:-ml-4 md:-ml-12 w-10 h-10 md:w-16 md:h-16 bg-white/10 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all z-20 group"
           >
-            <svg className="w-5 h-5 md:w-6 md:h-6 rotate-180 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 md:w-8 md:h-8 rotate-180 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
@@ -123,22 +125,22 @@ export const Testimonials: React.FC = () => {
           <button 
             onClick={nextSlide}
             aria-label="Next testimonial"
-            className="absolute right-0 top-1/2 -translate-y-1/2 -mr-2 sm:-mr-4 md:-mr-8 w-10 h-10 md:w-14 md:h-14 bg-white/10 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all z-20 group"
+            className="absolute right-0 top-1/2 -translate-y-1/2 -mr-2 sm:-mr-4 md:-mr-12 w-10 h-10 md:w-16 md:h-16 bg-white/10 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all z-20 group"
           >
-            <svg className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 md:w-8 md:h-8 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
 
           {/* Indicators */}
-          <div className="flex justify-center space-x-3 mt-8 md:mt-12">
+          <div className="flex justify-center space-x-3 mt-8 md:mt-16">
             {testimonials.map((_, i) => (
               <button
                 key={i}
                 aria-label={`Go to testimonial ${i + 1}`}
                 onClick={() => setCurrentIndex(i)}
-                className={`h-1 md:h-1.5 transition-all duration-500 rounded-full ${
-                  i === currentIndex ? 'w-8 md:w-10 bg-blue-500' : 'w-2 bg-white/20 hover:bg-white/40'
+                className={`h-1 md:h-2 transition-all duration-500 rounded-full ${
+                  i === currentIndex ? 'w-8 md:w-14 bg-blue-500' : 'w-2 bg-white/20 hover:bg-white/40'
                 }`}
               />
             ))}
