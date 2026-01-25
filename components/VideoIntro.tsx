@@ -1,8 +1,100 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { GoogleGenAI, Modality } from "@google/genai";
+
+// Audio utility: Manual base64 decoding as per guidelines
+function decodeBase64(base64: string) {
+  const binaryString = atob(base64);
+  const len = binaryString.length;
+  const bytes = new Uint8Array(len);
+  for (let i = 0; i < len; i++) {
+    bytes[i] = binaryString.charCodeAt(i);
+  }
+  return bytes;
+}
+
+// Audio utility: Decoding raw PCM data from Gemini TTS
+async function decodeAudioData(
+  data: Uint8Array,
+  ctx: AudioContext,
+  sampleRate: number,
+  numChannels: number,
+): Promise<AudioBuffer> {
+  const dataInt16 = new Int16Array(data.buffer);
+  const frameCount = dataInt16.length / numChannels;
+  const buffer = ctx.createBuffer(numChannels, frameCount, sampleRate);
+
+  for (let channel = 0; channel < numChannels; channel++) {
+    const channelData = buffer.getChannelData(channel);
+    for (let i = 0; i < frameCount; i++) {
+      channelData[i] = dataInt16[i * numChannels + channel] / 32768.0;
+    }
+  }
+  return buffer;
+}
 
 export const VideoIntro: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isVoiceLoading, setIsVoiceLoading] = useState(false);
+  const audioContextRef = useRef<AudioContext | null>(null);
+  const audioSourceRef = useRef<AudioBufferSourceNode | null>(null);
+
+  const startIntro = async () => {
+    setIsPlaying(true);
+    setIsVoiceLoading(true);
+
+    try {
+      // Initialize Audio Context on user gesture
+      if (!audioContextRef.current) {
+        audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });
+      }
+
+      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      
+      const introText = `Welcome to Ordia Consulting Services. At O C S, we believe financial excellence is more than just numbers—it is a three hundred and sixty degree approach to growth. Join us as we bridge the gap between technical accounting and executive strategy. Your journey to strategic oversight starts here.`;
+
+      const response = await ai.models.generateContent({
+        model: "gemini-2.5-flash-preview-tts",
+        contents: [{ parts: [{ text: `Say professionally and clearly: ${introText}` }] }],
+        config: {
+          responseModalities: [Modality.AUDIO],
+          speechConfig: {
+            voiceConfig: {
+              prebuiltVoiceConfig: { voiceName: 'Kore' },
+            },
+          },
+        },
+      });
+
+      const base64Audio = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+      
+      if (base64Audio && audioContextRef.current) {
+        const audioBytes = decodeBase64(base64Audio);
+        const audioBuffer = await decodeAudioData(
+          audioBytes,
+          audioContextRef.current,
+          24000,
+          1
+        );
+
+        const source = audioContextRef.current.createBufferSource();
+        source.buffer = audioBuffer;
+        source.connect(audioContextRef.current.destination);
+        
+        // Handle stop if already playing (safety)
+        if (audioSourceRef.current) {
+          audioSourceRef.current.stop();
+        }
+        
+        audioSourceRef.current = source;
+        source.start();
+      }
+    } catch (error) {
+      console.error("Voiceover failed:", error);
+    } finally {
+      setIsVoiceLoading(false);
+    }
+  };
 
   return (
     <section id="video-intro" className="py-24 bg-[#001a33] relative overflow-hidden">
@@ -48,7 +140,7 @@ export const VideoIntro: React.FC = () => {
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <button 
-                        onClick={() => setIsPlaying(true)}
+                        onClick={startIntro}
                         className="w-20 h-20 md:w-24 md:h-24 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full flex items-center justify-center text-white transition-all hover:scale-110 hover:bg-white hover:text-blue-900 shadow-2xl group/play"
                       >
                         <svg className="w-8 h-8 md:w-10 md:h-10 ml-1 transition-transform group-hover/play:scale-110" fill="currentColor" viewBox="0 0 20 20">
@@ -58,14 +150,23 @@ export const VideoIntro: React.FC = () => {
                     </div>
                   </div>
                 ) : (
-                  <video 
-                    autoPlay 
-                    controls 
-                    className="w-full h-full object-cover"
-                    src="https://player.vimeo.com/external/370331493.hd.mp4?s=3324022830386121852bd770026e6c8f615e478e&profile_id=174"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
+                  <div className="relative w-full h-full">
+                    {isVoiceLoading && (
+                      <div className="absolute top-4 left-4 z-20 flex items-center space-x-2 bg-blue-900/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+                        <div className="w-2 h-2 bg-blue-400 rounded-full animate-ping"></div>
+                        <span className="text-[10px] font-bold text-white uppercase tracking-widest">Generating AI Voiceover...</span>
+                      </div>
+                    )}
+                    <video 
+                      autoPlay 
+                      controls 
+                      muted={false}
+                      className="w-full h-full object-cover"
+                      src="https://player.vimeo.com/external/370331493.hd.mp4?s=3324022830386121852bd770026e6c8f615e478e&profile_id=174"
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
                 )}
                 
                 {/* Visual Accent */}
