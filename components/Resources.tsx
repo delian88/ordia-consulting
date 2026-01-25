@@ -28,7 +28,7 @@ export const Resources: React.FC<{ isStandalone?: boolean; onNavigate?: (href: s
             <h3 className="text-2xl font-serif font-bold text-blue-900 mb-4">Strategic Tax Tools</h3>
             <p className="text-slate-500 text-sm font-light mb-8">Access comprehensive tax planning calculators, federal rate updates, and state-specific compliance tools via our partner network.</p>
             <a 
-              href="https://www.soafinancial.com/" 
+              href="https://www.soafinancial.com/tax-rates" 
               target="_blank" 
               rel="noopener noreferrer"
               className="px-8 py-3 bg-blue-600 text-white rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-blue-900 transition-all shadow-lg"
