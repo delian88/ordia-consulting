@@ -1,5 +1,5 @@
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { GoogleGenAI, Modality } from "@google/genai";
 
 // Audio utility: Manual base64 decoding as per guidelines
@@ -36,8 +36,33 @@ async function decodeAudioData(
 export const VideoIntro: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isVoiceLoading, setIsVoiceLoading] = useState(false);
+  const [currentCaption, setCurrentCaption] = useState("");
   const audioContextRef = useRef<AudioContext | null>(null);
   const audioSourceRef = useRef<AudioBufferSourceNode | null>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const introScript = [
+    { text: "Ordia Consulting Services, or O-C-S, is a premier financial services firm providing expert Outsourced C-P-A and business consulting solutions across the United States.", delay: 0 },
+    { text: "Our team features a diverse group of certified professionals specializing in technical accounting, payroll, and management consulting.", delay: 8000 },
+    { text: "With over twenty years of experience across government, non-profit, and for-profit sectors, we deliver tangible results that remediate internal control issues and enhance management visibility.", delay: 16000 },
+    { text: "From specialized construction accounting and healthcare financial management to comprehensive tax preparation, O-C-S provides the technical excellence your business needs.", delay: 25000 },
+    { text: "Partner with us for a three-hundred and sixty degree approach to your financial strategy. Your success is our mission.", delay: 34000 }
+  ];
+
+  const fullNarration = introScript.map(s => s.text).join(" ");
+
+  useEffect(() => {
+    let captionTimers: number[] = [];
+    if (isPlaying && !isVoiceLoading) {
+      introScript.forEach((item) => {
+        const timer = window.setTimeout(() => {
+          setCurrentCaption(item.text);
+        }, item.delay);
+        captionTimers.push(timer);
+      });
+    }
+    return () => captionTimers.forEach(t => clearTimeout(t));
+  }, [isPlaying, isVoiceLoading]);
 
   const startIntro = async () => {
     setIsPlaying(true);
@@ -51,11 +76,9 @@ export const VideoIntro: React.FC = () => {
 
       const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       
-      const introText = `Welcome to Ordia Consulting Services. At O C S, we believe financial excellence is more than just numbers—it is a three hundred and sixty degree approach to growth. Join us as we bridge the gap between technical accounting and executive strategy. Your journey to strategic oversight starts here.`;
-
       const response = await ai.models.generateContent({
         model: "gemini-2.5-flash-preview-tts",
-        contents: [{ parts: [{ text: `Say professionally and clearly: ${introText}` }] }],
+        contents: [{ parts: [{ text: `Say professionally and clearly: ${fullNarration}` }] }],
         config: {
           responseModalities: [Modality.AUDIO],
           speechConfig: {
@@ -81,13 +104,16 @@ export const VideoIntro: React.FC = () => {
         source.buffer = audioBuffer;
         source.connect(audioContextRef.current.destination);
         
-        // Handle stop if already playing (safety)
         if (audioSourceRef.current) {
           audioSourceRef.current.stop();
         }
         
         audioSourceRef.current = source;
         source.start();
+        
+        if (videoRef.current) {
+          videoRef.current.play();
+        }
       }
     } catch (error) {
       console.error("Voiceover failed:", error);
@@ -106,13 +132,13 @@ export const VideoIntro: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-16 items-center">
           
           <div className="lg:col-span-5 reveal-left">
-            <span className="text-blue-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block border-l-2 border-blue-500 pl-4">The Ordia Vision</span>
+            <span className="text-blue-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block border-l-2 border-blue-500 pl-4">The Ordia Story</span>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-8 leading-tight">
-              Strategic Oversight <br />
-              <span className="italic font-normal text-blue-400">Captured in Motion.</span>
+              A Legacy of <br />
+              <span className="italic font-normal text-blue-400">Technical Excellence.</span>
             </h2>
             <p className="text-slate-400 text-lg font-light leading-relaxed mb-10">
-              At OCS, we believe financial excellence is more than just numbers—it's a 360-degree approach to growth. Watch how we bridge the gap between technical accounting and executive strategy.
+              Discover how Ordia Consulting Services (OCS) provides personalized financial oversight that moves beyond compliance to proactive strategy. Watch our mission in motion.
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
                <button 
@@ -122,7 +148,7 @@ export const VideoIntro: React.FC = () => {
                 }}
                 className="px-8 py-4 bg-blue-600 text-white rounded-full font-bold uppercase tracking-widest text-[10px] hover:bg-white hover:text-blue-900 transition-all shadow-xl active:scale-95"
                >
-                 Start Your Journey
+                 Book a Consultation
                </button>
             </div>
           </div>
@@ -150,46 +176,16 @@ export const VideoIntro: React.FC = () => {
                     </div>
                   </div>
                 ) : (
-                  <div className="relative w-full h-full">
+                  <div className="relative w-full h-full bg-black">
                     {isVoiceLoading && (
-                      <div className="absolute top-4 left-4 z-20 flex items-center space-x-2 bg-blue-900/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
-                        <div className="w-2 h-2 bg-blue-400 rounded-full animate-ping"></div>
-                        <span className="text-[10px] font-bold text-white uppercase tracking-widest">Generating AI Voiceover...</span>
+                      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-[#001a33]/80 backdrop-blur-md">
+                        <div className="w-12 h-12 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mb-4"></div>
+                        <span className="text-xs font-bold text-white uppercase tracking-widest animate-pulse">Initializing AI Narrator...</span>
                       </div>
                     )}
-                    <video 
-                      autoPlay 
-                      controls 
-                      muted={false}
-                      className="w-full h-full object-cover"
-                      src="https://player.vimeo.com/external/370331493.hd.mp4?s=3324022830386121852bd770026e6c8f615e478e&profile_id=174"
-                    >
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-                )}
-                
-                {/* Visual Accent */}
-                <div className="absolute -bottom-1 -left-1 -right-1 h-24 bg-gradient-to-t from-blue-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              </div>
-
-              {/* Floating Badge */}
-              <div className="absolute -bottom-6 -right-6 md:right-10 bg-blue-600 p-6 rounded-3xl shadow-2xl border-4 border-[#001a33] hidden md:block animate-float">
-                <div className="flex items-center space-x-4">
-                  <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-blue-100">Certified Advisory</p>
-                    <p className="text-sm font-bold text-white">Trusted Nationwide</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  );
-};
+                    
+                    {/* Caption Overlay */}
+                    {!isVoiceLoading && currentCaption && (
+                      <div className="absolute bottom-12 left-0 right-0 z-20 flex justify-center px-10 animate-fade-in">
+                        <div className="bg-black/60 backdrop-blur-sm border border-white/10 px-6 py-3 rounded-2xl text-center">
+                          <p className="text-white text-sm md:text-base font-medium leading-
