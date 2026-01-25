@@ -15,6 +15,7 @@ import { NewsDetail } from './components/NewsDetail';
 import { Industries } from './components/Industries';
 import { VideoIntro } from './components/VideoIntro';
 import { Booking } from './components/Booking';
+import { Testimonials } from './components/Testimonials';
 import { Service } from './types';
 
 type View = 'home' | 'about' | 'services' | 'contact' | 'service-detail' | 'resources' | 'news' | 'news-detail' | 'industries' | 'booking';
@@ -104,6 +105,7 @@ const App: React.FC = () => {
             <VideoIntro onNavigate={handleNavigate} />
             <Industries isStandalone={false} onNavigate={handleNavigate} />
             <Services isStandalone={false} onSelectService={handleSelectService} onNavigate={handleNavigate} />
+            <Testimonials />
             <Contact isStandalone={false} />
           </>
         );
