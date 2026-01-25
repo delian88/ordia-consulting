@@ -13,6 +13,7 @@ import { Resources } from './components/Resources';
 import { News, NewsPost } from './components/News';
 import { NewsDetail } from './components/NewsDetail';
 import { Industries } from './components/Industries';
+import { VideoIntro } from './components/VideoIntro';
 import { Service } from './types';
 
 type View = 'home' | 'about' | 'services' | 'contact' | 'service-detail' | 'resources' | 'news' | 'news-detail' | 'industries';
@@ -98,6 +99,7 @@ const App: React.FC = () => {
           <>
             <Hero />
             <About isStandalone={false} onNavigate={handleNavigate} />
+            <VideoIntro />
             <Industries isStandalone={false} onNavigate={handleNavigate} />
             <Services isStandalone={false} onSelectService={handleSelectService} onNavigate={handleNavigate} />
             <Contact isStandalone={false} />
