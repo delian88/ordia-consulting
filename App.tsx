@@ -14,9 +14,10 @@ import { News, NewsPost } from './components/News';
 import { NewsDetail } from './components/NewsDetail';
 import { Industries } from './components/Industries';
 import { VideoIntro } from './components/VideoIntro';
+import { Booking } from './components/Booking';
 import { Service } from './types';
 
-type View = 'home' | 'about' | 'services' | 'contact' | 'service-detail' | 'resources' | 'news' | 'news-detail' | 'industries';
+type View = 'home' | 'about' | 'services' | 'contact' | 'service-detail' | 'resources' | 'news' | 'news-detail' | 'industries' | 'booking';
 
 const App: React.FC = () => {
   const [view, setView] = useState<View>('home');
@@ -82,7 +83,8 @@ const App: React.FC = () => {
       '#contact': 'contact',
       '#resources': 'resources',
       '#news': 'news',
-      '#industries': 'industries'
+      '#industries': 'industries',
+      '#booking': 'booking'
     };
 
     const nextView = viewMap[targetView] || 'home';
@@ -97,9 +99,9 @@ const App: React.FC = () => {
       case 'home':
         return (
           <>
-            <Hero />
+            <Hero onNavigate={handleNavigate} />
             <About isStandalone={false} onNavigate={handleNavigate} />
-            <VideoIntro />
+            <VideoIntro onNavigate={handleNavigate} />
             <Industries isStandalone={false} onNavigate={handleNavigate} />
             <Services isStandalone={false} onSelectService={handleSelectService} onNavigate={handleNavigate} />
             <Contact isStandalone={false} />
@@ -121,15 +123,17 @@ const App: React.FC = () => {
         ) : <News isStandalone={true} onSelectPost={handleSelectNews} />;
       case 'contact':
         return <Contact isStandalone={true} />;
+      case 'booking':
+        return <Booking />;
       case 'service-detail':
         return selectedService ? (
           <ServiceDetail 
             service={selectedService} 
             onBack={() => setView('services')} 
           />
-        ) : <Hero />;
+        ) : <Hero onNavigate={handleNavigate} />;
       default:
-        return <Hero />;
+        return <Hero onNavigate={handleNavigate} />;
     }
   };
 

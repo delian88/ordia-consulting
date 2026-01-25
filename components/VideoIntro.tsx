@@ -33,7 +33,11 @@ async function decodeAudioData(
   return buffer;
 }
 
-export const VideoIntro: React.FC = () => {
+interface VideoIntroProps {
+  onNavigate: (href: string) => void;
+}
+
+export const VideoIntro: React.FC<VideoIntroProps> = ({ onNavigate }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isVoiceLoading, setIsVoiceLoading] = useState(false);
   const [currentCaption, setCurrentCaption] = useState("");
@@ -142,10 +146,7 @@ export const VideoIntro: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
                <button 
-                onClick={() => {
-                  const contact = document.getElementById('contact');
-                  contact?.scrollIntoView({ behavior: 'smooth' });
-                }}
+                onClick={() => onNavigate('#booking')}
                 className="px-8 py-4 bg-blue-600 text-white rounded-full font-bold uppercase tracking-widest text-[10px] hover:bg-white hover:text-blue-900 transition-all shadow-xl active:scale-95"
                >
                  Book a Consultation
@@ -188,4 +189,46 @@ export const VideoIntro: React.FC = () => {
                     {!isVoiceLoading && currentCaption && (
                       <div className="absolute bottom-12 left-0 right-0 z-20 flex justify-center px-10 animate-fade-in">
                         <div className="bg-black/60 backdrop-blur-sm border border-white/10 px-6 py-3 rounded-2xl text-center">
-                          <p className="text-white text-sm md:text-base font-medium leading-
+                          <p className="text-white text-sm md:text-base font-medium leading-relaxed">
+                            {currentCaption}
+                          </p>
+                        </div>
+                      </div>
+                    )}
+
+                    <video 
+                      ref={videoRef}
+                      controls 
+                      muted={false}
+                      className="w-full h-full object-cover"
+                      src="https://player.vimeo.com/external/370331493.hd.mp4?s=3324022830386121852bd770026e6c8f615e478e&profile_id=174"
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                )}
+                
+                {/* Visual Accent */}
+                <div className="absolute -bottom-1 -left-1 -right-1 h-24 bg-gradient-to-t from-blue-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </div>
+
+              {/* Floating Badge */}
+              <div className="absolute -bottom-6 -right-6 md:right-10 bg-blue-600 p-6 rounded-3xl shadow-2xl border-4 border-[#001a33] hidden md:block animate-float">
+                <div className="flex items-center space-x-4">
+                  <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-blue-100">Certified Advisory</p>
+                    <p className="text-sm font-bold text-white">Trusted Nationwide</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+};

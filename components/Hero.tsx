@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { FullLogo } from './Header';
 
@@ -37,7 +38,11 @@ const slides: Slide[] = [
   }
 ];
 
-export const Hero: React.FC = () => {
+interface HeroProps {
+  onNavigate: (href: string) => void;
+}
+
+export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -99,18 +104,18 @@ export const Hero: React.FC = () => {
                     {slide.subtitle}
                   </p>
                   <div className="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-6">
-                    <a
-                      href="#contact"
+                    <button
+                      onClick={() => onNavigate('#booking')}
                       className="px-8 md:px-12 py-4 md:py-5 bg-blue-600 text-white rounded-full font-bold text-xs uppercase tracking-[0.2em] transition-all hover:bg-white hover:text-blue-900 hover:-translate-y-1 shadow-2xl active:scale-95 text-center"
                     >
                       Establish Partnership
-                    </a>
-                    <a
-                      href="#services"
+                    </button>
+                    <button
+                      onClick={() => onNavigate('#services')}
                       className="px-8 md:px-12 py-4 md:py-5 bg-white/5 backdrop-blur-md border border-white/20 text-white rounded-full font-bold text-xs uppercase tracking-[0.2em] transition-all hover:bg-white hover:text-blue-900 group text-center"
                     >
                       View Expertise
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>

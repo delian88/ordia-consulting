@@ -53,7 +53,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, href: string) => {
     e.preventDefault();
     onNavigate(href);
     setMobileMenuOpen(false);
@@ -81,13 +81,12 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
                 {item.label}
               </a>
             ))}
-            <a 
-              href="#contact"
-              onClick={(e) => handleLinkClick(e, '#contact')}
+            <button 
+              onClick={(e) => handleLinkClick(e, '#booking')}
               className="px-6 xl:px-8 py-3 bg-[#003366] text-white rounded-full text-[10px] xl:text-[11px] font-bold uppercase tracking-widest hover:bg-[#2563eb] transition-all shadow-lg active:scale-95 whitespace-nowrap"
             >
               Consult Now
-            </a>
+            </button>
           </nav>
 
           <button 
@@ -122,13 +121,12 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
               </a>
             ))}
           </div>
-          <a 
-            href="#contact"
-            onClick={(e) => handleLinkClick(e, '#contact')}
+          <button 
+            onClick={(e) => handleLinkClick(e, '#booking')}
             className="mt-8 px-10 py-4 bg-[#003366] text-white rounded-full font-bold uppercase tracking-widest text-sm shadow-2xl"
           >
             Book Consultation
-          </a>
+          </button>
         </div>
       )}
     </header>
