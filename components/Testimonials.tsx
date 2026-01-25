@@ -53,23 +53,23 @@ export const Testimonials: React.FC = () => {
   }, [nextSlide]);
 
   return (
-    <section className="py-24 bg-[#001a33] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-[#001a33] relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-500 blur-[120px] rounded-full"></div>
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-600 blur-[120px] rounded-full"></div>
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-500 blur-[80px] md:blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-600 blur-[80px] md:blur-[120px] rounded-full"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center mb-16 md:mb-20 reveal">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="max-w-4xl mx-auto text-center mb-12 md:mb-20 reveal">
           <span className="text-blue-400 font-bold uppercase tracking-[0.25em] text-[10px] mb-4 block">Proven Performance</span>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">Partner <span className="italic font-normal text-blue-400">Success Stories.</span></h2>
-          <div className="w-20 h-1 bg-blue-500 mx-auto rounded-full"></div>
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-white mb-6">Partner <span className="italic font-normal text-blue-400">Success Stories.</span></h2>
+          <div className="w-16 md:w-20 h-1 bg-blue-500 mx-auto rounded-full"></div>
         </div>
 
-        <div className="max-w-5xl mx-auto relative px-4 md:px-12">
+        <div className="max-w-5xl mx-auto relative px-0 md:px-12">
           {/* Slider Content */}
-          <div className="overflow-hidden relative min-h-[400px]">
+          <div className="overflow-hidden relative min-h-[550px] sm:min-h-[450px] md:min-h-[400px]">
             {testimonials.map((t, i) => (
               <div 
                 key={i} 
@@ -82,60 +82,63 @@ export const Testimonials: React.FC = () => {
                 }`}
                 style={{ visibility: i === currentIndex ? 'visible' : 'hidden' }}
               >
-                <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-14 rounded-[3rem] flex flex-col items-center text-center h-full hover:bg-white/10 transition-colors group">
-                  <div className="mb-10">
-                    <svg className="w-12 h-12 text-blue-500 opacity-40 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 32 32">
+                <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 sm:p-8 md:p-14 rounded-[2rem] md:rounded-[3rem] flex flex-col items-center text-center h-full hover:bg-white/10 transition-colors group">
+                  <div className="mb-6 md:mb-10">
+                    <svg className="w-8 h-8 md:w-12 md:h-12 text-blue-500 opacity-40 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 32 32">
                       <path d="M10 8v8H6c0 4.418 3.582 8 8 8v4c-6.627 0-12-5.373-12-12V8h8zm18 0v8h-4c0 4.418 3.582 8 8 8v4c-6.627 0-12-5.373-12-12V8h8z" />
                     </svg>
                   </div>
                   
-                  <blockquote className="text-blue-50 text-xl md:text-3xl font-serif leading-relaxed mb-12 italic font-light">
+                  <blockquote className="text-blue-50 text-base sm:text-xl md:text-3xl font-serif leading-relaxed mb-8 md:mb-12 italic font-light px-2">
                     "{t.quote}"
                   </blockquote>
 
-                  <div className="flex flex-col items-center">
-                    <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-blue-500/30 mb-4 shadow-2xl">
+                  <div className="flex flex-col items-center mt-auto">
+                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-blue-500/30 mb-4 shadow-2xl">
                       <img 
                         src={t.avatar} 
                         alt={t.author} 
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <h4 className="text-white font-bold text-lg">{t.author}</h4>
-                    <p className="text-blue-400 text-[10px] uppercase tracking-[0.25em] font-bold mt-1">{t.role}</p>
+                    <h4 className="text-white font-bold text-base md:text-lg">{t.author}</h4>
+                    <p className="text-blue-400 text-[9px] md:text-[10px] uppercase tracking-[0.25em] font-bold mt-1">{t.role}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Navigation Arrows */}
+          {/* Navigation Arrows - Hidden on very small screens, adjusted for small screens */}
           <button 
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -ml-2 md:-ml-8 w-12 h-12 md:w-14 md:h-14 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all z-20 group"
+            aria-label="Previous testimonial"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -ml-2 sm:-ml-4 md:-ml-8 w-10 h-10 md:w-14 md:h-14 bg-white/10 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all z-20 group"
           >
-            <svg className="w-6 h-6 rotate-180 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 md:w-6 md:h-6 rotate-180 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
           
           <button 
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 -mr-2 md:-mr-8 w-12 h-12 md:w-14 md:h-14 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all z-20 group"
+            aria-label="Next testimonial"
+            className="absolute right-0 top-1/2 -translate-y-1/2 -mr-2 sm:-mr-4 md:-mr-8 w-10 h-10 md:w-14 md:h-14 bg-white/10 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all z-20 group"
           >
-            <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
 
           {/* Indicators */}
-          <div className="flex justify-center space-x-3 mt-12">
+          <div className="flex justify-center space-x-3 mt-8 md:mt-12">
             {testimonials.map((_, i) => (
               <button
                 key={i}
+                aria-label={`Go to testimonial ${i + 1}`}
                 onClick={() => setCurrentIndex(i)}
-                className={`h-1.5 transition-all duration-500 rounded-full ${
-                  i === currentIndex ? 'w-10 bg-blue-500' : 'w-2 bg-white/20 hover:bg-white/40'
+                className={`h-1 md:h-1.5 transition-all duration-500 rounded-full ${
+                  i === currentIndex ? 'w-8 md:w-10 bg-blue-500' : 'w-2 bg-white/20 hover:bg-white/40'
                 }`}
               />
             ))}
