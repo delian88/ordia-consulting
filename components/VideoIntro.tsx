@@ -76,11 +76,6 @@ export const VideoIntro: React.FC<VideoIntroProps> = ({ onNavigate }) => {
   const [currentCaption, setCurrentCaption] = useState("");
   const [currentSceneIdx, setCurrentSceneIdx] = useState(0);
   
-  // AI Video Generation State
-  const [isGeneratingAiVideo, setIsGeneratingAiVideo] = useState(false);
-  const [aiVideoProgress, setAiVideoProgress] = useState("");
-  const [generatedVideoUrl, setGeneratedVideoUrl] = useState<string | null>(null);
-
   const audioContextRef = useRef<AudioContext | null>(null);
   const audioSourceRef = useRef<AudioBufferSourceNode | null>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
@@ -104,63 +99,6 @@ export const VideoIntro: React.FC<VideoIntroProps> = ({ onNavigate }) => {
     }
     return () => timers.forEach(t => clearTimeout(t));
   }, [isPlaying, isVoiceLoading]);
-
-  const handleAiVideoGeneration = async () => {
-    try {
-      // 1. Mandatory API Key check for Veo
-      const hasKey = await (window as any).aistudio.hasSelectedApiKey();
-      if (!hasKey) {
-        await (window as any).aistudio.openSelectKey();
-      }
-
-      setIsGeneratingAiVideo(true);
-      const loadingMessages = [
-        "Analyzing corporate ethos...",
-        "Drafting cinematic storyboard...",
-        "Synthesizing dramatic motion...",
-        "Rendering high-stakes visuals...",
-        "Applying noir grade color correction...",
-        "Finalizing cinematic master..."
-      ];
-      
-      let msgIdx = 0;
-      const progressTimer = setInterval(() => {
-        setAiVideoProgress(loadingMessages[msgIdx % loadingMessages.length]);
-        msgIdx++;
-      }, 5000);
-
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-      let operation = await ai.models.generateVideos({
-        model: 'veo-3.1-fast-generate-preview',
-        prompt: 'A dramatic, cinematic wide shot of a futuristic boardroom in a skyscraper overlooking a stormy Baltimore skyline at night. Glowing digital financial data flows through holographic screens. Highly detailed, 8k, photorealistic, moody lighting, slow cinematic zoom.',
-        config: {
-          numberOfVideos: 1,
-          resolution: '1080p',
-          aspectRatio: '16:9'
-        }
-      });
-
-      while (!operation.done) {
-        await new Promise(resolve => setTimeout(resolve, 10000));
-        operation = await ai.operations.getVideosOperation({operation: operation});
-      }
-
-      clearInterval(progressTimer);
-      const downloadLink = operation.response?.generatedVideos?.[0]?.video?.uri;
-      const videoResponse = await fetch(`${downloadLink}&key=${process.env.API_KEY}`);
-      const blob = await videoResponse.blob();
-      const localUrl = URL.createObjectURL(blob);
-      
-      setGeneratedVideoUrl(localUrl);
-      setIsGeneratingAiVideo(false);
-    } catch (error: any) {
-      console.error("AI Video Error:", error);
-      setIsGeneratingAiVideo(false);
-      if (error?.message?.includes("Requested entity was not found")) {
-        await (window as any).aistudio.openSelectKey();
-      }
-    }
-  };
 
   const startIntro = async () => {
     setIsPlaying(true);
@@ -239,20 +177,6 @@ export const VideoIntro: React.FC<VideoIntroProps> = ({ onNavigate }) => {
                >
                  Book Consultation
                </button>
-               <button 
-                onClick={handleAiVideoGeneration}
-                disabled={isGeneratingAiVideo}
-                className="px-8 py-4 bg-white/5 border border-white/10 text-white rounded-full font-bold uppercase tracking-widest text-[10px] hover:bg-blue-600 transition-all shadow-xl active:scale-95 flex items-center justify-center space-x-2"
-               >
-                 {isGeneratingAiVideo ? (
-                    <span className="animate-pulse">Synthesizing...</span>
-                 ) : (
-                    <>
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM5.884 6.606a1 1 0 10-1.415-1.414l-.707.707a1 1 0 101.414 1.415l.708-.708zM10 11a2 2 0 110-4 2 2 0 010 4zM8 11a2 2 0 114 0 2 2 0 01-4 0zM4.5 10a.5.5 0 01.5.5v1a.5.5 0 01-1 0v-1a.5.5 0 01.5-.5zM15 10a.5.5 0 01.5.5v1a.5.5 0 01-1 0v-1a.5.5 0 01.5-.5zM14.116 6.606a1 1 0 111.415-1.414l.707.707a1 1 0 11-1.414 1.415l-.708-.708zM10 16a1 1 0 100 2v-1a1 1 0 100-1z" /></svg>
-                      <span>Generate Vision</span>
-                    </>
-                 )}
-               </button>
             </div>
           </div>
 
@@ -262,11 +186,12 @@ export const VideoIntro: React.FC<VideoIntroProps> = ({ onNavigate }) => {
               <div className="relative aspect-video rounded-[3rem] overflow-hidden shadow-2xl border border-white/5 bg-black">
                 
                 {/* Intro Screen */}
-                {!isPlaying && !isGeneratingAiVideo && !generatedVideoUrl && (
+                {!isPlaying && (
                   <div className="absolute inset-0 z-40 bg-slate-900 flex flex-col items-center justify-center">
                     <img 
                       src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200" 
                       className="absolute inset-0 w-full h-full object-cover opacity-30" 
+                      alt="Baltimore Skyline"
                     />
                     <button 
                         onClick={startIntro}
@@ -277,34 +202,6 @@ export const VideoIntro: React.FC<VideoIntroProps> = ({ onNavigate }) => {
                         </svg>
                     </button>
                     <p className="mt-6 text-[10px] font-bold text-blue-500 uppercase tracking-widest relative z-50">Play Cinematic Presentation</p>
-                  </div>
-                )}
-
-                {/* AI Generation Screen */}
-                {isGeneratingAiVideo && (
-                  <div className="absolute inset-0 z-50 bg-[#001a33]/95 flex flex-col items-center justify-center text-center p-12">
-                     <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-8"></div>
-                     <h3 className="text-xl font-serif text-white mb-2">Generating Business Vision</h3>
-                     <p className="text-blue-400 font-bold uppercase tracking-widest text-[10px] animate-pulse">{aiVideoProgress}</p>
-                     <p className="mt-8 text-white/30 text-[10px] max-w-xs mx-auto italic">Note: AI synthesis may take up to 2 minutes. Please remain on the line.</p>
-                  </div>
-                )}
-
-                {/* Generated AI Video Display */}
-                {generatedVideoUrl && !isGeneratingAiVideo && (
-                  <div className="absolute inset-0 z-[45]">
-                    <video 
-                      src={generatedVideoUrl} 
-                      className="w-full h-full object-cover" 
-                      controls 
-                      autoPlay 
-                    />
-                    <button 
-                      onClick={() => setGeneratedVideoUrl(null)}
-                      className="absolute top-6 right-6 p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-red-600 transition-all z-50"
-                    >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-                    </button>
                   </div>
                 )}
 
