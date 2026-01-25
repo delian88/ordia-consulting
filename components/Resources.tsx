@@ -42,7 +42,7 @@ export const Resources: React.FC<{ isStandalone?: boolean; onNavigate?: (href: s
             <h3 className="text-2xl font-serif font-bold text-blue-900 mb-4">NAICS Code Directory</h3>
             <p className="text-slate-500 text-sm font-light mb-8">Ensure your business classification is accurate for government contracting and tax purposes with the official NAICS directory.</p>
             <a 
-              href="https://www.bmk360cpa.com/" 
+              href="https://bmk360cpa.com/accounting-and-financial-management-consulting-naics-and-psc" 
               target="_blank" 
               rel="noopener noreferrer"
               className="px-8 py-3 bg-blue-900 text-white rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-blue-600 transition-all shadow-lg"
