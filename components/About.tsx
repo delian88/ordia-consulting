@@ -82,8 +82,8 @@ export const About: React.FC<AboutProps> = ({ isStandalone = true, onNavigate })
           <div className="lg:col-span-7 reveal mt-8 lg:mt-0">
             <span className="text-blue-600 font-bold uppercase tracking-[0.25em] text-[10px] mb-6 block border-l-2 border-blue-500 pl-4 uppercase">About us</span>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-blue-900 mb-4 leading-tight">
-              OCS - Management, Financial, and <br />
-              <span className="italic font-normal text-blue-500">Tax Consulting Services.</span>
+              OCS - Financial, Accounting, <br />
+              Management, and <span className="italic font-normal text-blue-500">Tax Consulting Services.</span>
             </h2>
             
             <div className="prose prose-slate max-w-none mb-10">
