@@ -26,6 +26,14 @@ export const NewsDetail: React.FC<NewsDetailProps> = ({ post, onBack }) => {
     };
   }, [post]);
 
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.target as HTMLImageElement;
+    const fallback = "https://images.unsplash.com/photo-1454165833767-1314d3a44f6c?auto=format&fit=crop&q=80&w=1200";
+    if (target.src !== fallback) {
+      target.src = fallback;
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white pt-32 pb-20 animate-fade-in">
       <div className="container mx-auto px-6">
@@ -51,8 +59,13 @@ export const NewsDetail: React.FC<NewsDetailProps> = ({ post, onBack }) => {
             <h1 className="text-4xl md:text-6xl font-serif font-bold text-blue-900 leading-tight mb-10">
               {post.t}
             </h1>
-            <div className="w-full h-[400px] md:h-[500px] rounded-[3rem] overflow-hidden shadow-2xl mb-16">
-              <img src={post.img} alt={post.t} className="w-full h-full object-cover" />
+            <div className="w-full h-[400px] md:h-[500px] rounded-[3rem] overflow-hidden shadow-2xl mb-16 bg-slate-100">
+              <img 
+                src={post.img} 
+                alt={post.t} 
+                onError={handleImageError}
+                className="w-full h-full object-cover" 
+              />
             </div>
           </div>
 

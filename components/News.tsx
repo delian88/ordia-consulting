@@ -16,7 +16,7 @@ export const newsPosts: NewsPost[] = [
     t: "Navigating 2025 Tax Reform", 
     d: "How the latest regulatory shifts impact mid-market enterprises.", 
     date: "MAY 15, 2024", 
-    img: "https://images.unsplash.com/photo-1454165833767-1314d3a44f6c?auto=format&fit=crop&q=80&w=800",
+    img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200",
     author: "Senior Advisory Team",
     content: [
       "The 2025 landscape for corporate taxation is undergoing its most significant shift in a decade. Mid-market enterprises are currently at a crossroads, balancing traditional compliance with new requirements for digital asset reporting and green energy incentives.",
@@ -29,7 +29,7 @@ export const newsPosts: NewsPost[] = [
     t: "The ROI of Fractional CFOs", 
     d: "Why high-growth start-ups are moving away from full-time hires.", 
     date: "APR 28, 2024", 
-    img: "https://images.unsplash.com/photo-1554224155-169641357599?auto=format&fit=crop&q=80&w=800",
+    img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=1200",
     author: "Growth Strategy Lead",
     content: [
       "For many high-growth startups, the cost of a full-time, seasoned CFO can be prohibitive, often exceeding $250k plus equity. However, the need for high-level financial strategy is non-negotiable.",
@@ -42,7 +42,7 @@ export const newsPosts: NewsPost[] = [
     t: "Cybersecurity in Finance", 
     d: "Protecting your firm's most valuable asset: sensitive financial data.", 
     date: "APR 12, 2024", 
-    img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=800",
+    img: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200",
     author: "Technical Compliance Dept.",
     content: [
       "Data is the new gold, and in the world of finance, it's the target of choice for sophisticated bad actors. As a firm specializing in Outsourced CPA services, we prioritize the integrity of our clients' data above all else.",
@@ -58,6 +58,14 @@ interface NewsProps {
 }
 
 export const News: React.FC<NewsProps> = ({ onSelectPost, isStandalone = true }) => {
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.target as HTMLImageElement;
+    const fallback = "https://images.unsplash.com/photo-1454165833767-1314d3a44f6c?auto=format&fit=crop&q=80&w=1200";
+    if (target.src !== fallback) {
+      target.src = fallback;
+    }
+  };
+
   return (
     <div className={`min-h-screen pt-32 pb-20 ${isStandalone ? 'bg-slate-50/50' : 'bg-white'}`}>
       <div className="container mx-auto px-6">
@@ -74,8 +82,13 @@ export const News: React.FC<NewsProps> = ({ onSelectPost, isStandalone = true })
               onClick={() => onSelectPost(post)}
               className="reveal bg-white rounded-[2.5rem] overflow-hidden border border-slate-100 shadow-xl shadow-blue-900/5 group hover:-translate-y-2 transition-all duration-500 cursor-pointer"
             >
-              <div className="h-56 overflow-hidden">
-                <img src={post.img} alt={post.t} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <div className="h-56 overflow-hidden bg-slate-100">
+                <img 
+                  src={post.img} 
+                  alt={post.t} 
+                  onError={handleImageError}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                />
               </div>
               <div className="p-8">
                 <p className="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-4">{post.date}</p>
