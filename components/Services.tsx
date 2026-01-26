@@ -84,6 +84,21 @@ export const servicesData: Service[] = [
     icon: null
   },
   {
+    id: "hr-staffing-augmentation",
+    title: "Human Resources & Staff Augmentation",
+    description: "Efficient human resources systems and professional accounting staffing services.",
+    fullDescription: "Ordia Consulting Services’ our HR services, can help you streamline the time spent on administration through developing and implementing an efficient human resources system. We provide professional accounting staffing services. On a full-time or part-time basis, as well as on a project-specific basis. You will gain when you procure these services from us with lower labor costs, larger talent pool, Internal staff development and increased efficiency. We provide the following services and more.",
+    imageUrl: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Staffing Solutions and Augmentation support", detail: "Professional placement of accounting experts on full-time, part-time, or project-specific tracks." },
+      { title: "Employee Benefits, 401k, and Pension", detail: "Strategic administration and design of comprehensive employee retirement and benefit plans." },
+      { title: "New Business Start-ups", detail: "Technical HR infrastructure and system setup specifically designed for emerging enterprises." },
+      { title: "Organizational Policies and Procedures", detail: "Developing robust internal frameworks that improve workforce efficiency and legal compliance." },
+      { title: "Provide Outsourced CFO Services", detail: "Strategic high-level financial leadership and leadership placement for growing organizations." }
+    ],
+    icon: null
+  },
+  {
     id: "consulting-management",
     title: "Consulting and Management Services",
     description: "Expert advisory, operations review, and strategic leadership support.",
@@ -93,19 +108,6 @@ export const servicesData: Service[] = [
       { title: "Operations Review", detail: "Deep-dive analysis of your current business processes and workflows." },
       { title: "Strategic Advisory", detail: "Expert guidance on complex business decisions and growth strategy." },
       { title: "Management Support", detail: "Consulting focused on optimizing leadership and internal team performance." }
-    ],
-    icon: null
-  },
-  {
-    id: "hr-staffing-augmentation",
-    title: "Human Resources & Staff Augmentation",
-    description: "Staffing solutions, policy development, and Outsourced CFO leadership.",
-    fullDescription: "OCS helps streamline the time spent on administration through efficient human resources systems and staffing augmentation for your accounting and finance departments.",
-    imageUrl: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "Technical Staffing", detail: "Providing expert accounting professionals on an as-needed basis." },
-      { title: "HR Policy Design", detail: "Developing organizational procedures that improve workforce efficiency." },
-      { title: "Fractional Leadership", detail: "High-level strategic CFO guidance for growing enterprises." }
     ],
     icon: null
   },
