@@ -125,7 +125,7 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, onBack })
               {service.title}
             </h1>
 
-            <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-10 md:mb-12 font-light">
+            <p className="text-lg md:text-xl text-slate-600 leading-relaxed mb-10 md:mb-12 font-light whitespace-pre-line">
               {service.fullDescription}
             </p>
 

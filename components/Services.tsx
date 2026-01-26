@@ -139,7 +139,7 @@ export const servicesData: Service[] = [
     id: "construction-accounting",
     title: "Construction Accounting",
     description: "Are you running your own construction business…OCS will run the numbers, manage your WIP schedules, manage project costs, and track all construction jobs from take-off to completion",
-    fullDescription: "Are you running your own construction business…OCS will run the numbers, manage your WIP schedules, manage project costs, and track all construction jobs from take-off to completion\n\nYou have enough to do running your construction business. Let OCS handle all your construction accounting work including; daily transaction classification and expense tracking, payroll, bill payment and invoicing, business tax planning and preparation, and reporting. OCS will make sure you always have a clear picture of your financial position.\n\nExpertise - We know construction accounting. We know the apps that work best for construction accounting. We can implement these apps for your business to streamline the accounting process. We perform the following construction accounting services:\n\nConfidence - Trust that your back-office accounting work is processed accurately and in a timely manner.\n\nTime savings - Take back all of those hours spent in the back office processing accounting work…and put them toward advancing your business.\n\nCost savings - Billed at a fixed monthly fee, you can eliminate billing surprises caused by creeping hourly fees.",
+    fullDescription: "Are you running your own construction business…OCS will run the numbers, manage your WIP schedules, manage project costs, and track all construction jobs from take-off to completion\n\nYou have enough to do running your construction business. Let OCS handle all your construction accounting work including; daily transaction classification and expense tracking, payroll, bill payment and invoicing, business tax planning and preparation, and reporting. OCS will make sure you always have a clear picture of your financial position.\n\nExpertise - We know construction accounting. We know the apps that work best for construction accounting. We can implement these apps for your business to streamline the accounting process. We perform the following construction accounting services:",
     imageUrl: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "Estimating", detail: "Professional cost estimation and bidding support for construction projects." },
@@ -148,7 +148,10 @@ export const servicesData: Service[] = [
       { title: "WIP Schedules", detail: "Comprehensive management and tracking of Work-in-Progress schedules for accurate revenue recognition." },
       { title: "Job Costing", detail: "Granular tracking of all expenses and labor hours associated with specific projects." },
       { title: "Change Orders", detail: "Diligent accounting for project scope adjustments and extra work billings." },
-      { title: "Completion", detail: "Final project wrap-up, billing reconciliation, and completion reporting." }
+      { title: "Completion", detail: "Final project wrap-up, billing reconciliation, and completion reporting." },
+      { title: "Confidence", detail: "Trust that your back-office accounting work is processed accurately and in a timely manner." },
+      { title: "Time savings", detail: "Take back all of those hours spent in the back office processing accounting work and put them toward advancing your business." },
+      { title: "Cost savings", detail: "Billed at a fixed monthly fee, you can eliminate billing surprises caused by creeping hourly fees." }
     ],
     icon: null
   },
@@ -229,7 +232,7 @@ export const servicesData: Service[] = [
     features: [
       { title: "Strategic Financial Planning", detail: "Developing clear roadmaps for business improvement and profit maximization." },
       { title: "M&A & Valuation Support", detail: "Expert due diligence and advisory for mergers, acquisitions, and business sales." },
-      { title: "Interim Leadership", detail: "Providing stable CFO or Controller leadership during organizational transitions." },
+      { title: "Interim Leadership", detail: "Providing stable CFO or Controller leadership during leadership transitions." },
       { title: "Risk Management Advisory", detail: "Comprehensive analysis to mitigate fiscal risks and secure capital sourcing." }
     ],
     icon: null
