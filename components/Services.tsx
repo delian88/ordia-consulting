@@ -225,13 +225,15 @@ export const servicesData: Service[] = [
   {
     id: "quickbooks-services-installation",
     title: "QuickBooks Services & Installation",
-    description: "Professional setup, personal training, and technical troubleshooting for your accounting software.",
-    fullDescription: "As QuickBooks specialists, OCS helps clients maximize their software investment. We provide professional installation, setup, and ongoing personal training to ensure your team is proficient and your data is accurate.",
+    description: "We don't just help you use the software, we help you use it more efficiently and more effectively.",
+    fullDescription: "QuickBooks can provide useful and timely information in the form of financial statements, reports and graphs. However, it can only provide this information if you purchase the right product and then install, setup and use it properly. We don't just help you use the software, we help you use it more efficiently and more effectively.\n\nOCS offers the following solutions to help meet your QuickBooks needs:",
     imageUrl: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Professional Installation", detail: "Correct technical setup and preferences configuration for your specific business type." },
-      { title: "Personal & Group Training", detail: "Customized training sessions to help your staff master QuickBooks workflows." },
-      { title: "Technical Troubleshooting", detail: "Solving software glitches and integration challenges with third-party apps." }
+      { title: "Personal Training", detail: "We train you personally! Either one-on-one or several individuals within your organization at your company's location." },
+      { title: "QuickBooks Installation", detail: "We install QuickBooks on your stand-alone computer or in a network environment, in either single- or multi-user mode." },
+      { title: "QuickBooks Setup", detail: "We assist new QuickBooks users with initial setup including: Easy Step Interview, Preferences, Lists, Customers, Vendors, Employees, Banking and Reports. We also help experienced users manage their businesses more effectively by improving their current setup. Many users experience problems and lack the ability to generate and track important information as a result of inadequate setup." },
+      { title: "QuickBooks Support", detail: "Our QuickBooks support service can assist you with any installation, setup or operation assistance you might need. In addition, our support is not limited just to the software part of it, but we can also provide accounting and payroll assistance." },
+      { title: "Review", detail: "Our QuickBooks review service helps companies that have the human resources to perform daily accounting and payroll tasks, but need an accounting and payroll expert to review your transactions, accounts and reports. This review ensures that you receive timely, relevant and reliable financial information. We also inform you of any corrections, adjustments or reclassifications necessary to ensure that the financial information you receive reflects the correct financial condition of your business. Reviews may be conducted at any time, but monthly reviews provide you with up-to-date information and feedback about your business." }
     ],
     icon: null
   },
