@@ -138,14 +138,17 @@ export const servicesData: Service[] = [
   {
     id: "construction-accounting",
     title: "Construction Accounting",
-    description: "Specialized WIP schedules, job costing, and estimating support for the construction industry.",
-    fullDescription: "At OCS, we understand the unique financial challenges of the construction and engineering sectors. We provide specialized accounting services including Work in Progress (WIP) schedules, job costing, take-offs, and estimating support to ensure your projects remain profitable.",
+    description: "Are you running your own construction business…OCS will run the numbers, manage your WIP schedules, manage project costs, and track all construction jobs from take-off to completion",
+    fullDescription: "You have enough to do running your construction business. Let OCS handle all your construction accounting work including; daily transaction classification and expense tracking, payroll, bill payment and invoicing, business tax planning and preparation, and reporting. OCS will make sure you always have a clear picture of your financial position. We know construction accounting and the apps that work best to streamline the process. Trust that your back-office accounting work is processed accurately and in a timely manner, allowing you to focus on advancing your business while benefiting from fixed monthly fees that eliminate billing surprises.",
     imageUrl: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "WIP Schedule Management", detail: "Accurate tracking of work-in-progress to reflect true project profitability and billings." },
-      { title: "Job Costing & Analysis", detail: "Detailed breakdown of labor, materials, and overhead for every project phase." },
-      { title: "Estimating & Take-off Support", detail: "Technical assistance in financial projections for upcoming bids and contracts." },
-      { title: "Contractor Compliance", detail: "Ensuring your business meets all bonding and industry-specific financial requirements." }
+      { title: "Estimating", detail: "Professional financial projections and estimating for upcoming construction bids." },
+      { title: "Pre-Construction", detail: "Strategic financial planning and budgeting during the initial project phases." },
+      { title: "Job Take-off’s", detail: "Detailed material and labor requirements analysis for accurate project scope." },
+      { title: "WIP Schedules", detail: "Accurate tracking of work-in-progress to reflect real-time project profitability." },
+      { title: "Job Costing", detail: "Granular tracking of expenses and labor for every specific project phase." },
+      { title: "Change Orders", detail: "Expert financial management of project scope adjustments and extra work billings." },
+      { title: "Completion", detail: "Final project wrap-up, billing reconciliation, and comprehensive reporting." }
     ],
     icon: null
   },
