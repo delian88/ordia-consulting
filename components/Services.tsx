@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Service } from '../types';
 
@@ -84,21 +83,6 @@ export const servicesData: Service[] = [
     icon: null
   },
   {
-    id: "hr-staffing-augmentation",
-    title: "Human Resources & Staff Augmentation",
-    description: "Efficient human resources systems and professional accounting staffing services.",
-    fullDescription: "Ordia Consulting Services’ our HR services, can help you streamline the time spent on administration through developing and implementing an efficient human resources system. We provide professional accounting staffing services. On a full-time or part-time basis, as well as on a project-specific basis. You will gain when you procure these services from us with lower labor costs, larger talent pool, Internal staff development and increased efficiency. We provide the following services and more.",
-    imageUrl: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "Staffing Solutions and Augmentation support", detail: "Professional placement of accounting experts on full-time, part-time, or project-specific tracks." },
-      { title: "Employee Benefits, 401k, and Pension", detail: "Strategic administration and design of comprehensive employee retirement and benefit plans." },
-      { title: "New Business Start-ups", detail: "Technical HR infrastructure and system setup specifically designed for emerging enterprises." },
-      { title: "Organizational Policies and Procedures", detail: "Developing robust internal frameworks that improve workforce efficiency and legal compliance." },
-      { title: "Provide Outsourced CFO Services", detail: "Strategic high-level financial leadership and leadership placement for growing organizations." }
-    ],
-    icon: null
-  },
-  {
     id: "consulting-management",
     title: "Consulting and Management Services",
     description: "Expert advisory, operations review, and strategic leadership support.",
@@ -112,28 +96,42 @@ export const servicesData: Service[] = [
     icon: null
   },
   {
+    id: "hr-staffing-augmentation",
+    title: "Human Resources & Staff Augmentation",
+    description: "Staffing solutions, policy development, and Outsourced CFO leadership.",
+    fullDescription: "OCS helps streamline the time spent on administration through efficient human resources systems and staffing augmentation for your accounting and finance departments.",
+    imageUrl: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Technical Staffing", detail: "Providing expert accounting professionals on an as-needed basis." },
+      { title: "HR Policy Design", detail: "Developing organizational procedures that improve workforce efficiency." },
+      { title: "Fractional Leadership", detail: "High-level strategic CFO guidance for growing enterprises." }
+    ],
+    icon: null
+  },
+  {
     id: "loans-loc-grants",
-    title: "Loans, Credit Lines (LOC), and Grants",
-    description: "Sourcing business loans, establishing credit lines, and grant consulting.",
-    fullDescription: "Capital is the lifeblood of growth. We assist our clients in sourcing competitive business loans, establishing strategic lines of credit (LOC), and navigating professional grant applications.",
+    title: "Loans, LOC, and Grants",
+    description: "Access to apply for business loans and lines of credit (LOC) to support financial needs and operations.",
+    fullDescription: "From start-ups to existing business, at OCS, we provide our clients with access to apply for business loans and lines of credit (LOC) to support their financial needs, business operations, and payroll. We provide consultation, guidance and advice on obtaining appropriate operations loans.",
     imageUrl: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Capital Sourcing", detail: "Identifying and securing competitive business loans and funding sources." },
-      { title: "LOC Establishment", detail: "Setting up flexible lines of credit for operational liquidity." },
-      { title: "Grant Sourcing", detail: "Professional assistance in identifying and applying for business grants." }
+      { title: "Business Loan Access", detail: "Expert assistance in sourcing and applying for competitive business loans for growth." },
+      { title: "LOC Strategic Support", detail: "Guidance on establishing lines of credit to maintain payroll and operational liquidity." },
+      { title: "Operations Consultation", detail: "Professional advice on obtaining and managing the most appropriate operations loans for your sector." }
     ],
     icon: null
   },
   {
     id: "business-solutions-support",
-    title: "Business Solutions and Support",
-    description: "Strategic planning, business analysis, and comprehensive valuation.",
-    fullDescription: "We provide technical solutions that support your business development. From strategic planning to deep-dive financial analysis, OCS ensures your business model is built for long-term success.",
+    title: "Business Solutions and Development",
+    description: "Specialized accounting expertise to help grow your business through strategic solutions.",
+    fullDescription: "At Ordia Consulting Services, we believe you need specialized accounting expertise to help grow your business. Look to our team of accountants and professionals for simple solutions to complex challenges.",
     imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Strategic Planning", detail: "Developing clear roadmaps for business expansion and efficiency." },
-      { title: "Business Analysis", detail: "Data-driven insights into your market position and profitability." },
-      { title: "Valuation Support", detail: "Technical financial assistance in determining business and asset value." }
+      { title: "Business Planning", detail: "Expert assistance with business plan preparation, strategic initiatives, and resource planning." },
+      { title: "Business Management", detail: "Comprehensive financial operations management and professional support." },
+      { title: "Business Analysis", detail: "Deep-dive studies focusing on business improvement, rate optimization, and cost analysis." },
+      { title: "Business Valuation and Advising", detail: "Professional technical assistance in determining business value and strategic advisory." }
     ],
     icon: null
   }
