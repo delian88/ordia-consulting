@@ -1,5 +1,7 @@
 
 import React from 'react';
+import { Partners } from './Partners';
+import { Testimonials } from './Testimonials';
 
 const industryList = [
   { name: "Governmental Agencies", icon: "🏛️", detail: "Assisting local and state entities with compliance, fund accounting, and audit prep." },
@@ -21,7 +23,7 @@ export const Industries: React.FC<{ isStandalone?: boolean; onNavigate?: (href: 
   const displayIndustries = isStandalone ? industryList : industryList.slice(0, 4);
 
   return (
-    <div className={`pt-24 pb-20 bg-white ${isStandalone ? 'min-h-screen pt-40' : ''}`}>
+    <div className={`pt-24 bg-white ${isStandalone ? 'min-h-screen pt-40' : ''}`}>
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center mb-20 reveal">
           <span className="text-blue-600 font-bold uppercase tracking-[0.25em] text-[10px] mb-4 block">Global Industry Performance</span>
@@ -66,7 +68,7 @@ export const Industries: React.FC<{ isStandalone?: boolean; onNavigate?: (href: 
           </div>
         )}
 
-        <div className="mt-24 reveal bg-blue-900 rounded-[3rem] p-12 text-center text-white relative overflow-hidden">
+        <div className="reveal bg-blue-900 rounded-[3rem] p-12 text-center text-white relative overflow-hidden mb-24">
            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(37,99,235,0.2),transparent_70%)]"></div>
            <div className="relative z-10">
              <h2 className="text-3xl font-serif font-bold mb-6">Explore Our Industry Portfolio</h2>
@@ -77,6 +79,18 @@ export const Industries: React.FC<{ isStandalone?: boolean; onNavigate?: (href: 
            </div>
         </div>
       </div>
+      
+      {/* 
+          Integrated Testimonials and Partners Section 
+          We render these only in isStandalone mode to avoid double-rendering on the Home Page 
+          while ensuring the Industry page is fully featured.
+      */}
+      {isStandalone && (
+        <div className="animate-fade-in">
+          <Testimonials />
+          <Partners isStandalone={true} />
+        </div>
+      )}
     </div>
   );
 };
