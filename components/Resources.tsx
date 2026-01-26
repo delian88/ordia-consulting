@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const Resources: React.FC<{ isStandalone?: boolean; onNavigate?: (href: string) => void }> = ({ isStandalone = false, onNavigate }) => {
@@ -37,18 +36,35 @@ export const Resources: React.FC<{ isStandalone?: boolean; onNavigate?: (href: s
             </a>
           </div>
 
-          <div className="reveal bg-white p-10 rounded-[3rem] shadow-xl border-t-4 border-blue-900 flex flex-col items-center text-center">
-            <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-900 mb-8 font-bold">NC</div>
-            <h3 className="text-2xl font-serif font-bold text-blue-900 mb-4">NAICS Code Directory</h3>
-            <p className="text-slate-500 text-sm font-light mb-8">Ensure your business classification is accurate for government contracting and tax purposes with the official NAICS directory.</p>
-            <a 
-              href="https://bmk360cpa.com/accounting-and-financial-management-consulting-naics-and-psc" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="px-8 py-3 bg-blue-900 text-white rounded-full font-bold text-[10px] uppercase tracking-widest hover:bg-blue-600 transition-all shadow-lg"
-            >
-              Search NAICS Codes
-            </a>
+          <div className="reveal bg-white p-8 rounded-[3rem] shadow-xl border-t-4 border-blue-900 flex flex-col items-start text-left">
+            <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center text-blue-900 mb-6 font-bold self-center">NC</div>
+            <h3 className="text-xl font-serif font-bold text-blue-900 mb-4 self-center">NAICS Codes</h3>
+            
+            <div className="w-full space-y-4 text-slate-600">
+              <div>
+                <p className="text-[10px] font-black uppercase tracking-widest text-blue-600 mb-2">NAICS Codes</p>
+                <ul className="text-[11px] space-y-1.5 font-medium leading-tight">
+                  <li className="flex justify-between border-b border-slate-50 pb-1"><span>541211</span> <span className="text-right">Offices of Certified Public Accountants</span></li>
+                  <li className="flex justify-between border-b border-slate-50 pb-1"><span>541219</span> <span className="text-right">Other Accounting Services</span></li>
+                  <li className="flex justify-between border-b border-slate-50 pb-1"><span>541611</span> <span className="text-right">Administrative & General Mgmt Consulting</span></li>
+                  <li className="flex justify-between border-b border-slate-50 pb-1"><span>561611</span> <span className="text-right">Investigation Services</span></li>
+                  <li className="flex justify-between border-b border-slate-50 pb-1"><span>54541</span> <span className="text-right">Litigation Support Services</span></li>
+                  <li className="flex justify-between border-b border-slate-50 pb-1"><span>54121</span> <span className="text-right">Accounting, Tax, Bookkeeping & Payroll</span></li>
+                  <li className="flex justify-between border-b border-slate-50 pb-1"><span>541618</span> <span className="text-right">Other Management Consulting Services</span></li>
+                  <li className="flex justify-between border-b border-slate-50 pb-1"><span>522320</span> <span className="text-right">Processing Financial Transactions</span></li>
+                  <li className="flex justify-between border-b border-slate-50 pb-1"><span>921190</span> <span className="text-right">General Accounting Offices, Government</span></li>
+                </ul>
+              </div>
+
+              <div className="pt-2">
+                <p className="text-[10px] font-black uppercase tracking-widest text-blue-600 mb-2">Product Service Codes</p>
+                <ul className="text-[11px] space-y-1.5 font-medium leading-tight">
+                  <li className="flex justify-between border-b border-slate-50 pb-1"><span>B547</span> <span className="text-right italic">Accounting/Financial Management Analysis</span></li>
+                  <li className="flex justify-between border-b border-slate-50 pb-1"><span>R704</span> <span className="text-right italic">Support – Management: Auditing</span></li>
+                  <li className="flex justify-between border-b border-slate-50 pb-1"><span>R710</span> <span className="text-right italic">Support – Management: Financial</span></li>
+                </ul>
+              </div>
+            </div>
           </div>
 
           {/* Actionable QuickBooks Resources */}

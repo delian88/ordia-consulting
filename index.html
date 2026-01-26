@@ -29,12 +29,22 @@
             --brand-light-blue: #f0f9ff;
             --brand-soft-blue: #eef2ff;
         }
+        html {
+            /* Increase base font size for better readability on modern displays */
+            font-size: 18px;
+        }
+        @media (max-width: 768px) {
+            html {
+                font-size: 16px;
+            }
+        }
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
             background-color: #ffffff;
             color: #1e293b;
             overflow-x: hidden;
+            line-height: 1.6;
         }
         h1, h2, h3, .font-serif {
             font-family: 'Playfair Display', serif;
