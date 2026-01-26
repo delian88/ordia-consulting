@@ -240,14 +240,23 @@ export const servicesData: Service[] = [
   {
     id: "outsourced-fractional-cfo",
     title: "Outsourced Fractional CFO Services",
-    description: "High-level strategic leadership and financial oversight without the cost of a full-time executive.",
-    fullDescription: "Gain access to executive-level financial strategy through OCS's fractional CFO services. We provide high-level leadership, interim support, and strategic planning to help businesses reach the next level of performance.",
+    description: "Personalized, straightforward financial guidance and expert leadership support for every stage of your business lifecycle.",
+    fullDescription: "Ordia Consulting Services provides expert CFO support services. If you’re ready to take your business to the next level through personalized, straightforward financial guidance, contact us and request a free consultation. We will provide all clients with the following services:",
     imageUrl: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Strategic Financial Planning", detail: "Developing clear roadmaps for business improvement and profit maximization." },
-      { title: "M&A & Valuation Support", detail: "Expert due diligence and advisory for mergers, acquisitions, and business sales." },
-      { title: "Interim Leadership", detail: "Providing stable CFO or Controller leadership during leadership transitions." },
-      { title: "Risk Management Advisory", detail: "Comprehensive analysis to mitigate fiscal risks and secure capital sourcing." }
+      { title: "Part-time CFO services", detail: "High-level financial strategy and executive leadership provided on a flexible, part-time basis tailored to your growth phase." },
+      { title: "Interim CFO or Controller", detail: "Maintaining financial stability and continuity during leadership transitions or organizational shifts." },
+      { title: "Strategic business planning", detail: "Developing comprehensive roadmaps to guide your organization toward long-term profitability and success." },
+      { title: "Business improvement strategies", detail: "Identifying inefficiencies and implementing tactical solutions to enhance overall business performance." },
+      { title: "Tax planning to maximize profits", detail: "Proactive strategies designed to minimize tax liabilities and keep more capital within your business." },
+      { title: "Cash flow management", detail: "Optimizing the timing of incoming and outgoing funds to ensure constant operational liquidity." },
+      { title: "Financial analysis and reporting", detail: "In-depth review of financial data to provide actionable insights for executive decision-making." },
+      { title: "Operations review", detail: "Critical analysis of business processes to improve technical workflows and internal controls." },
+      { title: "Mergers and acquisitions", detail: "Strategic financial support and guidance through complex business sales, purchases, or integrations." },
+      { title: "Risk management", detail: "Comprehensive assessment and mitigation of fiscal, operational, and regulatory risks." },
+      { title: "Due diligence", detail: "Meticulous investigation and verification of financial records for potential investments or sales." },
+      { title: "Raising capital", detail: "Expert assistance in preparing for and securing business loans, lines of credit, or investment capital." },
+      { title: "Training for in-house accountants and bookkeepers", detail: "Professional development to elevate the technical proficiency and efficiency of your internal financial team." }
     ],
     icon: null
   }
