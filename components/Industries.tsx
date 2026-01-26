@@ -7,15 +7,15 @@ const industryList = [
   { name: "Governmental Agencies", icon: "🏛️", detail: "Assisting local and state entities with compliance, fund accounting, and audit prep." },
   { name: "Non-Profit Organizations", icon: "🤝", detail: "Mission-driven forecasting, grant management, and board-level financial transparency." },
   { name: "Mental Health Clinics", icon: "🧠", detail: "Solving complex insurance cash flow, payroll compliance, and practice optimization." },
-  { name: "Construction & Engineering", icon: "🏗️", detail: "Specialized WIP schedules, job costing, take-offs, and estimating support." },
+  { name: "Construction/Engineering", icon: "🏗️", detail: "Specialized WIP schedules, job costing, take-offs, and estimating support." },
   { name: "Mortgage Banking", icon: "🏦", detail: "Technical accounting for lending institutions with focus on liquidity and regulation." },
   { name: "Information Technology", icon: "💻", detail: "Supporting high-growth tech firms with R&D credits and fractional CFO strategy." },
-  { name: "Finance & Investment", icon: "📈", detail: "Professional advisory for asset managers and private equity portfolio companies." },
-  { name: "Professional Accounting", icon: "📊", detail: "Collaborative Outsourced CPA solutions for fellow professional services firms." },
-  { name: "Higher Education", icon: "🎓", detail: "Financial modeling and grant tracking for academic institutions and universities." },
-  { name: "Transportation & Logistics", icon: "🚛", detail: "Supply chain financial management and operational efficiency analysis." },
-  { name: "Food Service & Hospitality", icon: "🍽️", detail: "Inventory control, payroll, and margin analysis for restaurants and hotels." },
-  { name: "Insurance Providers", icon: "🛡️", detail: "Regulatory reporting and complex financial statement preparation for the sector." },
+  { name: "Finance", icon: "📈", detail: "Professional advisory for asset managers and private equity portfolio companies." },
+  { name: "Accounting", icon: "📊", detail: "Collaborative Outsourced CPA solutions for fellow professional services firms." },
+  { name: "Education", icon: "🎓", detail: "Financial modeling and grant tracking for academic institutions and universities." },
+  { name: "Transportation", icon: "🚛", detail: "Supply chain financial management and operational efficiency analysis." },
+  { name: "Food Service", icon: "🍽️", detail: "Inventory control, payroll, and margin analysis for restaurants and hospitality." },
+  { name: "Insurance", icon: "🛡️", detail: "Regulatory reporting and complex financial statement preparation for the sector." },
   { name: "Energy & Power", icon: "⚡", detail: "Strategic financial planning for utilities and renewable energy enterprises." }
 ];
 
@@ -80,11 +80,6 @@ export const Industries: React.FC<{ isStandalone?: boolean; onNavigate?: (href: 
         </div>
       </div>
       
-      {/* 
-          Integrated Testimonials and Partners Section 
-          We render these only in isStandalone mode to avoid double-rendering on the Home Page 
-          while ensuring the Industry page is fully featured.
-      */}
       {isStandalone && (
         <div className="animate-fade-in">
           <Testimonials />
