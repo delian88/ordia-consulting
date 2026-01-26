@@ -69,6 +69,21 @@ export const servicesData: Service[] = [
     icon: null
   },
   {
+    id: "outsourced-audits-assurance",
+    title: "Outsourced Audits & Assurance Support",
+    description: "Objective analysis and assurance services to improve information quality and business success.",
+    fullDescription: "At Ordia Consulting Services, we focus on building close client relationships that add long-term value. This includes assuring the solidity of financial records, evaluating financial procedures and working to produce strategies that help our clients face the myriad challenges of business planning and execution. Our clients benefit from objective analysis to assist in controlling costs, increasing efficiency, and implementing new technologies and procedures that take advantage of changes in the marketplace, accounting standards, and tax law. Our assurance services will improve information quality or its context, meaning more success for your business.",
+    imageUrl: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Assurance and Advisory Services", detail: "High-level oversight and strategic guidance to improve the reliability of financial data." },
+      { title: "Outsourced Audits, Reviews, and Compilation", detail: "Professional external analysis of financial statements to ensure accuracy and regulatory compliance." },
+      { title: "New Business selection and restructuring", detail: "Technical advisory on selecting business entities and reorganizing for maximum fiscal efficiency." },
+      { title: "Mergers and Acquisitions", detail: "Due diligence and strategic financial support for complex business integrations and sales." },
+      { title: "Business succession and Migrations", detail: "Strategic planning for ownership transitions and technical data migrations across financial systems." }
+    ],
+    icon: null
+  },
+  {
     id: "consulting-management",
     title: "Consulting and Management Services",
     description: "Expert advisory, operations review, and strategic leadership support.",
@@ -78,19 +93,6 @@ export const servicesData: Service[] = [
       { title: "Operations Review", detail: "Deep-dive analysis of your current business processes and workflows." },
       { title: "Strategic Advisory", detail: "Expert guidance on complex business decisions and growth strategy." },
       { title: "Management Support", detail: "Consulting focused on optimizing leadership and internal team performance." }
-    ],
-    icon: null
-  },
-  {
-    id: "outsourced-audits-assurance",
-    title: "Outsourced Audits and Assurance Support",
-    description: "Objective analysis, internal control reviews, and audit preparation.",
-    fullDescription: "Our audit and assurance services provide clients with tangible results. We conduct objective analyses and remediate internal control issues to enhance management visibility and external trust.",
-    imageUrl: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "Assurance Support", detail: "Providing high-quality oversight for third-party reporting requirements." },
-      { title: "Control Remediation", detail: "Assessment of financial processes to mitigate organizational risk." },
-      { title: "Audit Readiness", detail: "Preparing your organization for seamless external audit procedures." }
     ],
     icon: null
   },
