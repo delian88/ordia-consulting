@@ -6,13 +6,18 @@ export const servicesData: Service[] = [
   {
     id: "financial-accounting-solutions",
     title: "Financial and Accounting Solutions",
-    description: "Technical financial statement preparation, robust budgeting, and regulatory reporting.",
-    fullDescription: "Ordia Consulting Services provides high-level financial oversight. We specialize in the preparation of complex financial statements, the development of operational budgets, and ensuring strict adherence to regulatory reporting standards for diverse enterprises.",
+    description: "Ordia Consulting Services offers a comprehensive list of financial services designed to meet the diverse needs of our clients.",
+    fullDescription: "Ordia Consulting Services offers a comprehensive list of financial services designed to meet the diverse needs of our clients. Our certified professionals possess a wealth of expertise in various domains of accounting and finance, ensuring that we can assist you effectively in achieving your financial goals. You can count on us to help you achieve financial success! We provide our clients and customers with the following financial and accounting services.",
     imageUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Statement Preparation", detail: "Accurate preparation of balance sheets, P&L, and cash flow statements." },
-      { title: "Budgetary Frameworks", detail: "Developing robust financial plans to manage and optimize daily liquidity." },
-      { title: "Regulatory Compliance", detail: "Ensuring 100% compliance with industry-specific and government regulations." }
+      { title: "Financial Statement Preparation", detail: "Meticulous preparation of balance sheets, profit and loss statements, and cash flow reports." },
+      { title: "Budgets and Cashflow Solutions", detail: "Developing robust financial plans to manage and optimize your daily operational liquidity." },
+      { title: "Accounting Systems, Setup and Integration", detail: "Professional implementation and technical integration of enterprise accounting software." },
+      { title: "Cash Flow Budgeting and Forecasting Analysis", detail: "Deep-dive analysis into future cash needs and revenue projections." },
+      { title: "Personal Financial Statements", detail: "Preparation of detailed personal financial records for business owners and high-net-worth individuals." },
+      { title: "Financial Projections and Forecasts", detail: "Strategic financial modeling to predict performance and guide investment decisions." },
+      { title: "Regulatory Reporting Services", detail: "Ensuring 100% compliance with government and industry-specific reporting mandates." },
+      { title: "Treasury and Risk Management Support", detail: "Sophisticated support for managing capital assets and mitigating fiscal risks." }
     ],
     icon: null
   },
