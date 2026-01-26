@@ -189,15 +189,23 @@ export const servicesData: Service[] = [
   },
   {
     id: "general-accounting",
-    title: "General Accounting",
-    description: "Standard fiscal maintenance and reporting to form the backbone of your financial health.",
-    fullDescription: "At OCS, our general accounting services provide the essential foundation for any successful business. We ensure that your day-to-day transactions are recorded with technical precision, providing you with the reliable data needed for informed decision-making.",
+    title: "General Accounting for Small Businesses",
+    description: "Qualified and reliable accounting and bookkeeping without stressing your time or valuable resources.",
+    fullDescription: "By working with Ordia Consulting Services, you get qualified and reliable accounting and bookkeeping without stressing your time or valuable resources. We will provide you the following expert services,",
     imageUrl: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Ledger maintenance", detail: "Accurate maintenance of financial records ensuring a complete and audit-ready trial balance." },
-      { title: "Financial reporting", detail: "Generation of standard financial reports including balance sheets and income statements." },
-      { title: "Account Reconciliations", detail: "Regular verification of account balances to ensure the integrity of your financial data." },
-      { title: "Year-end support", detail: "Professional assistance in closing out fiscal years and preparing for tax season." }
+      { title: "Monthly closings", detail: "Professional month-end closing procedures to ensure all financial activities are recorded accurately." },
+      { title: "Financial statements", detail: "Preparation of detailed balance sheets and income statements for clear fiscal oversight." },
+      { title: "Fixed asset and depreciation tracking", detail: "Diligent management of long-term assets and calculation of depreciation for tax and accounting purposes." },
+      { title: "Journal entry and general ledger maintenance", detail: "Accurate recording of all business transactions and regular maintenance of the general ledger." },
+      { title: "Comprehensive management reports", detail: "Generation of detailed reports providing insights into organizational performance and efficiency." },
+      { title: "Transaction classification, entry and verification", detail: "Meticulous sorting and entry of business expenses and revenues with rigorous verification." },
+      { title: "Daily cash balance tracking", detail: "Real-time monitoring of cash positions to ensure operational liquidity." },
+      { title: "Bank reconciliations", detail: "Regular comparison of internal records with bank statements to eliminate discrepancies." },
+      { title: "Credit card reconciliations", detail: "Verifying credit card statements against internal receipts and records." },
+      { title: "Sales rep commission tracking and reconciliation", detail: "Accurate calculation and verification of commissions based on sales performance." },
+      { title: "Accounts payable and receivable", detail: "Efficient management of outgoing vendor payments and incoming customer revenues." },
+      { title: "Daily point-of-sale reconciliation", detail: "Balancing daily sales records from POS systems with actual cash and digital receipts." }
     ],
     icon: null
   },
