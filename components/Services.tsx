@@ -24,13 +24,17 @@ export const servicesData: Service[] = [
   {
     id: "bookkeeping-services-support",
     title: "Bookkeeping Services and Support",
-    description: "Quality ledger maintenance, bank reconciliations, and software support for enterprises.",
-    fullDescription: "Our services steer you closer to profitability with accurate record-keeping and reporting. We handle the technical details of ledger maintenance and bank reconciliations so you can focus on organizational growth.",
+    description: "Ordia Consulting Services provides quality bookkeeping services to maintain profitability and capitalize on new opportunities.",
+    fullDescription: "Ordia Consulting Services provides quality bookkeeping services. From start-ups to established enterprises, businesses rely on accurate and insightful financial information to maintain profitability and capitalize on new opportunities. OCS's accounting and bookkeeping services steer you closer to these goals with accurate record-keeping and reporting as well as support on financial issues such as initial accounting system setup, and cost minimization.",
     imageUrl: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "General Ledger", detail: "Professional maintenance of financial records on a consistent schedule." },
-      { title: "Bank Reconciliation", detail: "Meticulous matching of bank statements with internal records." },
-      { title: "Operational Support", detail: "Ongoing technical support to keep your bookkeeping workflows seamless." }
+      { title: "Bookkeeping (Monthly, quarterly, or annual)", detail: "Professional record-keeping tailored to your specific reporting cycle and organizational needs." },
+      { title: "General Ledger and Trial Balance Summary", detail: "Accurate maintenance of financial records ensuring a complete and audit-ready trial balance." },
+      { title: "Bank Transactions and Reconciliation", detail: "Meticulous reconciliation of bank statements with internal records to eliminate discrepancies." },
+      { title: "QuickBooks Support", detail: "Expert assistance and software management to ensure your accounting system is technically optimized." },
+      { title: "Fiscal Reporting and Services", detail: "Timely generation of financial reports providing insights into your business's fiscal health." },
+      { title: "Fund Accounting and Management", detail: "Specialized accounting for restricted funds, grants, and non-profit specific requirements." },
+      { title: "Bookkeeping Write-up and Notes", detail: "Professional entry adjustments and detailed documentation for technical financial transparency." }
     ],
     icon: null
   },
