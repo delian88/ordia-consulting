@@ -146,7 +146,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, onNavigate,
           <span className="text-blue-600 font-bold uppercase tracking-[0.25em] text-[10px] mb-4 block border-l-2 border-blue-500 pl-4">Our Technical Expertise</span>
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-blue-900 mb-8 leading-tight">Comprehensive <br /><span className="italic font-normal text-blue-500">Financial Solutions.</span></h2>
           <p className="text-slate-500 text-lg md:text-xl font-light leading-relaxed">
-            Ordia Consulting Services delivers technical excellence across the core pillars of business finance, providing tailored solutions for your unique fiscal challenges.
+            Ordia Consulting Services offers a comprehensive list of financial services designed to meet the diverse needs of our clients.
           </p>
         </div>
 
