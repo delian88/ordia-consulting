@@ -172,13 +172,18 @@ export const servicesData: Service[] = [
     id: "non-profit-accounting",
     title: "Non-Profit Accounting",
     description: "Mission-driven forecasting, grant management, and board-level financial transparency.",
-    fullDescription: "We believe that specialized accounting expertise is vital for non-profit growth. OCS supports non-profit boards with grant management, audit preparation, and mission-driven financial forecasting.",
+    fullDescription: "Ordia Consulting Services (OCS) provides accounting services for Non-Profit entities and organizations. We assist each of our nonprofit clients’ unique accounting and bookkeeping needs: from internal, grant, and board reporting, to forecasting, budgeting, and cash flow management, to creating financial statements and customized dashboards.\n\nPerformance and Reliability\nWe help executive directors and board members determine how effectively and efficiently their organization is accomplishing its mission and provide them with the timely, accurate information needed for data-driven fiscal decision-making.\n\nBoard and Executive Director Support\nOur team adapts to your nonprofit’s needs to provide the perfect financial management solution for board meetings. We can serve as your organization’s bookkeeper, accountant, controller, or Chief Financial Officer (CFO), depending on which services you’re looking for.\n\nOur Core Accounting Services for Nonprofits",
     imageUrl: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Grant Tracking & Management", detail: "Detailed accounting for restricted funds and grant-specific reporting requirements." },
-      { title: "Audit Preparation & Support", detail: "Ensuring your organization is prepared for external audits with clean, transparent records." },
-      { title: "Board-Level Reporting", detail: "Clear, insightful financial reports designed for executive leadership and board transparency." },
-      { title: "Fund Accounting", detail: "Specialized accounting structures to manage multiple revenue streams and designations." }
+      { title: "Policies & procedures", detail: "Developing internal controls and operational guidelines to ensure regulatory compliance and ethical standards." },
+      { title: "Monthly rolling forecasting", detail: "Dynamic financial modeling that adjusts to real-time revenue shifts and program expenses." },
+      { title: "Budgeting, Planning & cash flow forecasting", detail: "Strategic resource allocation and liquidity management to ensure long-term organizational sustainability." },
+      { title: "Grant proposals & ad hoc reports", detail: "Professional financial documentation to support funding applications and donor-specific reporting needs." },
+      { title: "Grant management", detail: "Diligent tracking of restricted funds, ensuring every dollar is used according to donor specifications." },
+      { title: "Audit preparation", detail: "Organizing financial records and supporting schedules to ensure a smooth, transparent external audit process." },
+      { title: "Accounting & month-end close", detail: "Precise recording of transactions and rigorous reconciliation to provide accurate monthly snapshots." },
+      { title: "Financial reporting", detail: "Generation of clear, board-ready statements that translate complex numbers into mission-driven insights." },
+      { title: "Board meeting attendance & training", detail: "Providing executive-level presentation of financials and educational support for board oversight." }
     ],
     icon: null
   },
