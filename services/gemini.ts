@@ -14,6 +14,7 @@ KNOWLEDGE BASE:
 - **Human Resources & Staffing**: Staffing solutions, Employee Benefits, Policy Development, and Outsourced CFO leadership.
 - **Loans, LOC, and Grants**: Sourcing business loans, lines of credit (LOC), and professional grant consulting.
 - **Business Solutions and Development**: Strategic planning, Management support, Business analysis, and Valuation.
+- **General Accounting**: Ledger maintenance, financial reporting, account reconciliations, and year-end support.
 - **Construction Accounting**: Expertise in WIP schedules, Job Take-offs, Estimating, and Job Costing.
 - **Mental Health & Healthcare**: Specialized for therapists and counselors. We solve complex insurance cash flow and payroll compliance.
 - **Non-Profit Accounting**: Support for boards. Grant management, audit preparation, and mission-driven forecasting.

@@ -6,13 +6,132 @@ export const servicesData: Service[] = [
     id: "financial-accounting-solutions",
     title: "Financial and Accounting Solutions",
     description: "Ordia Consulting Services offers a comprehensive list of financial services designed to meet the diverse needs of our clients.",
-    fullDescription: "Ordia Consulting Services offers a comprehensive list of financial services designed to meet the diverse needs of our clients. Our certified professionals possess a wealth of expertise in various domains of accounting and finance, ensuring that we can assist you effectively in achieving your financial goals. You can count on us to help you achieve financial success!",
+    fullDescription: "Ordia Consulting Services offers a comprehensive list of financial services designed to meet the diverse needs of our clients. Our certified professionals possess a wealth of expertise in various domains of accounting and finance, ensuring that we can assist you effectively in achieving your financial goals. You can count on us to help you achieve financial success! We provide our clients and customers with the following financial and accounting services.",
     imageUrl: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "Financial Statement Preparation", detail: "Meticulous preparation of balance sheets, profit and loss statements, and cash flow reports." },
       { title: "Budgets and Cashflow Solutions", detail: "Developing robust financial plans to manage and optimize your daily operational liquidity." },
-      { title: "Accounting Systems Setup", detail: "Professional implementation and technical integration of enterprise accounting software." },
-      { title: "Regulatory Reporting Services", detail: "Ensuring 100% compliance with government and industry-specific reporting mandates." }
+      { title: "Accounting Systems, Setup and Integration", detail: "Professional implementation and technical integration of enterprise accounting software." },
+      { title: "Cash Flow Budgeting and Forecasting Analysis", detail: "Deep-dive analysis into future cash needs and revenue projections." },
+      { title: "Personal Financial Statements", detail: "Preparation of detailed personal financial records for business owners and high-net-worth individuals." },
+      { title: "Financial Projections and Forecasts", detail: "Strategic financial modeling to predict performance and guide investment decisions." },
+      { title: "Regulatory Reporting Services", detail: "Ensuring 100% compliance with government and industry-specific reporting mandates." },
+      { title: "Treasury and Risk Management Support", detail: "Sophisticated support for managing capital assets and mitigating fiscal risks." }
+    ],
+    icon: null
+  },
+  {
+    id: "bookkeeping-services-support",
+    title: "Bookkeeping Services and Support",
+    description: "Ordia Consulting Services provides quality bookkeeping services to maintain profitability and capitalize on new opportunities.",
+    fullDescription: "Ordia Consulting Services provides quality bookkeeping services. From start-ups to established enterprises, businesses rely on accurate and insightful financial information to maintain profitability and capitalize on new opportunities. OCS's accounting and bookkeeping services steer you closer to these goals with accurate record-keeping and reporting as well as support on financial issues such as initial accounting system setup, and cost minimization.",
+    imageUrl: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Bookkeeping (Monthly, quarterly, or annual)", detail: "Professional record-keeping tailored to your specific reporting cycle and organizational needs." },
+      { title: "General Ledger and Trial Balance Summary", detail: "Accurate maintenance of financial records ensuring a complete and audit-ready trial balance." },
+      { title: "Bank Transactions and Reconciliation", detail: "Meticulous reconciliation of bank statements with internal records to eliminate discrepancies." },
+      { title: "QuickBooks Support", detail: "Expert assistance with software workflows, transaction entry, and data integrity." },
+      { title: "Fiscal Reporting and Services", detail: "Timely generation of financial reports providing insights into your business's fiscal health." },
+      { title: "Fund Accounting and Management", detail: "Specialized accounting structures to manage multiple revenue streams and designations." },
+      { title: "Bookkeeping Write-up and Notes", detail: "Detailed explanations and notes to financial data for enhanced internal transparency." }
+    ],
+    icon: null
+  },
+  {
+    id: "corp-business-tax",
+    title: "Tax Preparation Services",
+    description: "Strategic tax planning and preparation decisions to minimize liabilities and maximize cash flow.",
+    fullDescription: "At OCS, we guide our clients through a full range of tax planning and preparation decisions with strategies that minimize your tax liabilities, maximize your cash flow and keep you on track to your financial goals. Our expertise, experience, analysis and thorough research allow us to optimize financial opportunities to be found in existing as well as recently altered tax laws. We are knowledgeable and up to date on the tax laws and can make sense of your receipts, bills and notices.",
+    imageUrl: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Corporate tax planning and preparation", detail: "Comprehensive strategies for business entities to ensure compliance and fiscal optimization." },
+      { title: "Individual Tax planning and preparation", detail: "Personalized tax solutions designed to minimize liabilities for business owners and individuals." },
+      { title: "Tax management Services and Support", detail: "Ongoing advisory to manage tax positions and ensure year-round fiscal preparedness." },
+      { title: "Estate and Trust Planning and Advising", detail: "Technical advisory on managing asset distribution and preserving wealth through trusts." },
+      { title: "Litigation Support and Forensic Accounting", detail: "Expert financial analysis for legal proceedings and investigative accounting needs." },
+      { title: "New Tax Laws, Certifications, and Training", detail: "Education and updates on the latest regulatory changes affecting your industry." }
+    ],
+    icon: null
+  },
+  {
+    id: "payroll-1099-contract",
+    title: "Payroll & 1099 Contract solutions",
+    description: "Computerized payroll systems to facilitate processing, timely payment, and tax preparation.",
+    fullDescription: "Ordia Consulting Services’ payroll services help you reduce administrative time through computerized systems that facilitate processing and timely tax returns.",
+    imageUrl: "https://images.unsplash.com/photo-1554224155-1119343170ad?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Payroll processing and W2’s", detail: "Efficient, accurate payroll cycles and end-of-year tax form generation for all employees." },
+      { title: "941 Tax form preparations", detail: "Professional preparation and filing of quarterly federal tax returns to ensure compliance." },
+      { title: "PTO Tracking and Timesheets", detail: "Systematic management of employee time-off and hours worked for accurate compensation." },
+      { title: "1099 Contractual payroll", detail: "Specialized payment processing and reporting for independent contractors and consultants." }
+    ],
+    icon: null
+  },
+  {
+    id: "outsourced-audits-assurance",
+    title: "Outsourced Audits & Assurance Support",
+    description: "Objective analysis and assurance services to improve information quality and business success.",
+    fullDescription: "At Ordia Consulting Services, we focus on building close client relationships that add long-term value. This includes assuring the solidity of financial records, evaluating financial procedures and working to produce strategies that help our clients face the myriad challenges of business planning and execution. Our assurance services will improve information quality or its context, meaning more success for your business.",
+    imageUrl: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Assurance & Advisory Services", detail: "High-level oversight and strategic guidance to improve the reliability of financial data." },
+      { title: "Outsourced Audits, Reviews, and Compilation", detail: "Professional external analysis of financial statements to ensure accuracy and compliance." },
+      { title: "New Business selection and restructuring", detail: "Strategic advisory on entity choice and organizational restructuring for growth." },
+      { title: "Mergers & Acquisitions", detail: "Due diligence and strategic financial support for complex business integrations and sales." },
+      { title: "Business succession and Migrations", detail: "Planning for leadership transitions and software platform migrations." }
+    ],
+    icon: null
+  },
+  {
+    id: "consulting-management",
+    title: "Consulting and Management Services",
+    description: "Expert advisory, operations review, and strategic leadership support.",
+    fullDescription: "Ordia Consulting provides expert leadership support. Our management consulting focuses on improving operational efficiency, internal controls, and overall organizational performance through technical excellence.",
+    imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Operations Review", detail: "Deep-dive analysis of your current business processes and workflows." },
+      { title: "Strategic Advisory", detail: "Expert guidance on complex business decisions and growth strategy." },
+      { title: "Management Support", detail: "Providing administrative and tactical leadership support to executive teams." }
+    ],
+    icon: null
+  },
+  {
+    id: "hr-staffing-augmentation",
+    title: "Human Resources & Staff Augmentation",
+    description: "Staffing solutions, policy development, and Outsourced CFO leadership placement.",
+    fullDescription: "OCS helps streamline the time spent on administration through efficient human resources systems and staffing augmentation for your accounting and finance departments.",
+    imageUrl: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Technical Staffing", detail: "Providing expert accounting professionals on an as-needed basis." },
+      { title: "HR Policy Design", detail: "Developing organizational procedures that improve workforce efficiency." },
+      { title: "Fractional Leadership Placement", detail: "Identifying and placing expert financial leadership in interim or part-time roles." }
+    ],
+    icon: null
+  },
+  {
+    id: "loans-loc-grants",
+    title: "Loans, LOC, and Grants",
+    description: "Access to apply for business loans and lines of credit (LOC) to support financial needs and operations.",
+    fullDescription: "From start-ups to existing business, at OCS, we provide our clients with access to apply for business loans and lines of credit (LOC) to support their financial needs, business operations, and payroll. We provide consultation, guidance and advice on obtaining appropriate operations loans.",
+    imageUrl: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Business Loan Access", detail: "Expert assistance in sourcing and applying for competitive business loans for growth." },
+      { title: "LOC Strategic Support", detail: "Guidance on establishing lines of credit to maintain payroll and operational liquidity." },
+      { title: "Operations Consultation", detail: "Professional advice on obtaining and managing the most appropriate operations loans for your sector." }
+    ],
+    icon: null
+  },
+  {
+    id: "business-solutions-support",
+    title: "Business Solutions and Development",
+    description: "Specialized accounting expertise to help grow your business through strategic solutions.",
+    fullDescription: "At Ordia Consulting Services, we believe you need specialized accounting expertise to help grow your business. Look to our team of accountants and professionals for simple solutions to complex challenges.",
+    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Business Planning", detail: "Expert assistance with business plan preparation, strategic initiatives, and resource planning." },
+      { title: "Business Management", detail: "Comprehensive financial operations management and professional support." },
+      { title: "Business Analysis", detail: "Deep-dive studies focusing on business improvement, rate optimization, and cost analysis." },
+      { title: "Business Valuation and Advising", detail: "Professional technical assistance in determining business value and strategic advisory." }
     ],
     icon: null
   },
@@ -59,6 +178,20 @@ export const servicesData: Service[] = [
     icon: null
   },
   {
+    id: "general-accounting",
+    title: "General Accounting",
+    description: "Standard fiscal maintenance and reporting to form the backbone of your financial health.",
+    fullDescription: "At OCS, our general accounting services provide the essential foundation for any successful business. We ensure that your day-to-day transactions are recorded with technical precision, providing you with the reliable data needed for informed decision-making.",
+    imageUrl: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=1200",
+    features: [
+      { title: "Ledger maintenance", detail: "Accurate maintenance of financial records ensuring a complete and audit-ready trial balance." },
+      { title: "Financial reporting", detail: "Generation of standard financial reports including balance sheets and income statements." },
+      { title: "Account Reconciliations", detail: "Regular verification of account balances to ensure the integrity of your financial data." },
+      { title: "Year-end support", detail: "Professional assistance in closing out fiscal years and preparing for tax season." }
+    ],
+    icon: null
+  },
+  {
     id: "small-business-accounting",
     title: "Small Business Accounting",
     description: "Dedicated support for startups to establish solid financial foundations and scale.",
@@ -67,8 +200,7 @@ export const servicesData: Service[] = [
     features: [
       { title: "Startup Financial Setup", detail: "Establishing chart of accounts and internal controls for new enterprises." },
       { title: "Cash Flow Management", detail: "Strategic planning to ensure your business maintains the liquidity needed for operations." },
-      { title: "Entity Selection Support", detail: "Advisory on the tax and financial implications of various business structures." },
-      { title: "Growth Benchmarking", detail: "Analyzing your performance against industry standards to guide your expansion." }
+      { title: "Entity Selection Support", detail: "Advisory on the tax and financial implications of various business structures." }
     ],
     icon: null
   },
@@ -81,7 +213,6 @@ export const servicesData: Service[] = [
     features: [
       { title: "Professional Installation", detail: "Correct technical setup and preferences configuration for your specific business type." },
       { title: "Personal & Group Training", detail: "Customized training sessions to help your staff master QuickBooks workflows." },
-      { title: "Transaction Review", detail: "Periodic expert review of entries to ensure data integrity and audit readiness." },
       { title: "Technical Troubleshooting", detail: "Solving software glitches and integration challenges with third-party apps." }
     ],
     icon: null
@@ -97,107 +228,6 @@ export const servicesData: Service[] = [
       { title: "M&A & Valuation Support", detail: "Expert due diligence and advisory for mergers, acquisitions, and business sales." },
       { title: "Interim Leadership", detail: "Providing stable CFO or Controller leadership during organizational transitions." },
       { title: "Risk Management Advisory", detail: "Comprehensive analysis to mitigate fiscal risks and secure capital sourcing." }
-    ],
-    icon: null
-  },
-  {
-    id: "bookkeeping-services-support",
-    title: "Bookkeeping Services and Support",
-    description: "Quality bookkeeping services to maintain profitability and capitalize on new opportunities.",
-    fullDescription: "Ordia Consulting Services provides quality bookkeeping services. From start-ups to established enterprises, businesses rely on accurate and insightful financial information to maintain profitability.",
-    imageUrl: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "General Ledger Maintenance", detail: "Accurate maintenance of financial records ensuring a complete and audit-ready trial balance." },
-      { title: "Bank Reconciliation", detail: "Meticulous reconciliation of bank statements with internal records to eliminate discrepancies." },
-      { title: "Fiscal Reporting", detail: "Timely generation of financial reports providing insights into your business's fiscal health." }
-    ],
-    icon: null
-  },
-  {
-    id: "corp-business-tax",
-    title: "Tax Preparation Services",
-    description: "Strategic tax planning and preparation decisions to minimize liabilities and maximize cash flow.",
-    fullDescription: "At OCS, we guide our clients through a full range of tax planning and preparation decisions with strategies that minimize your tax liabilities and maximize your cash flow.",
-    imageUrl: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "Corporate Tax Planning", detail: "Comprehensive strategies for business entities to ensure compliance and fiscal optimization." },
-      { title: "Individual Tax Solutions", detail: "Personalized tax solutions designed to minimize liabilities for business owners and individuals." },
-      { title: "Estate & Trust Planning", detail: "Technical advisory on managing asset distribution and preserving wealth through trusts." }
-    ],
-    icon: null
-  },
-  {
-    id: "payroll-1099-contract",
-    title: "Payroll & 1099 Contract solutions",
-    description: "Computerized payroll systems to facilitate processing, timely payment, and tax preparation.",
-    fullDescription: "Ordia Consulting Services’ payroll services help you reduce administrative time through computerized systems that facilitate processing and timely tax returns.",
-    imageUrl: "https://images.unsplash.com/photo-1554224155-1119343170ad?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "Payroll Processing", detail: "Efficient, accurate payroll cycles and end-of-year tax form (W2) generation." },
-      { title: "941 Tax Preparation", detail: "Professional preparation and filing of quarterly federal tax returns to ensure compliance." },
-      { title: "1099 Contractual Payroll", detail: "Specialized payment processing and reporting for independent contractors and consultants." }
-    ],
-    icon: null
-  },
-  {
-    id: "outsourced-audits-assurance",
-    title: "Outsourced Audits & Assurance Support",
-    description: "Objective analysis and assurance services to improve information quality and business success.",
-    fullDescription: "We focus on building close client relationships that add long-term value. This includes assuring the solidity of financial records and evaluating financial procedures.",
-    imageUrl: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "Assurance & Advisory", detail: "High-level oversight and strategic guidance to improve the reliability of financial data." },
-      { title: "Outsourced Audits", detail: "Professional external analysis of financial statements to ensure accuracy and compliance." },
-      { title: "Mergers & Acquisitions", detail: "Due diligence and strategic financial support for complex business integrations." }
-    ],
-    icon: null
-  },
-  {
-    id: "consulting-management",
-    title: "Consulting and Management Services",
-    description: "Expert advisory, operations review, and strategic leadership support.",
-    fullDescription: "Our management consulting focuses on improving operational efficiency, internal controls, and overall organizational performance through technical excellence.",
-    imageUrl: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "Operations Review", detail: "Deep-dive analysis of your current business processes and workflows." },
-      { title: "Strategic Advisory", detail: "Expert guidance on complex business decisions and growth strategy." }
-    ],
-    icon: null
-  },
-  {
-    id: "hr-staffing-augmentation",
-    title: "Human Resources & Staff Augmentation",
-    description: "Staffing solutions, policy development, and Outsourced CFO leadership.",
-    fullDescription: "OCS helps streamline administration through efficient human resources systems and staffing augmentation for accounting and finance departments.",
-    imageUrl: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "Technical Staffing", detail: "Providing expert accounting professionals on an as-needed basis." },
-      { title: "HR Policy Design", detail: "Developing organizational procedures that improve workforce efficiency." }
-    ],
-    icon: null
-  },
-  {
-    id: "loans-loc-grants",
-    title: "Loans, LOC, and Grants",
-    description: "Access to apply for business loans and lines of credit (LOC) to support financial needs and operations.",
-    fullDescription: "At OCS, we provide our clients with access to apply for business loans and lines of credit (LOC) to support their financial needs, business operations, and payroll.",
-    imageUrl: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "Business Loan Access", detail: "Expert assistance in sourcing and applying for competitive business loans for growth." },
-      { title: "LOC Strategic Support", detail: "Guidance on establishing lines of credit to maintain payroll and operational liquidity." }
-    ],
-    icon: null
-  },
-  {
-    id: "business-solutions-support",
-    title: "Business Solutions and Development",
-    description: "Specialized accounting expertise to help grow your business through strategic solutions.",
-    fullDescription: "We provide technical solutions that support your business development. From strategic planning to deep-dive financial analysis, OCS ensures your success.",
-    imageUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200",
-    features: [
-      { title: "Business Planning", detail: "Expert assistance with business plan preparation and resource planning." },
-      { title: "Business Analysis", detail: "Data-driven insights into your market position and profitability." },
-      { title: "Business Valuation", detail: "Technical financial assistance in determining business and asset value." }
     ],
     icon: null
   }
