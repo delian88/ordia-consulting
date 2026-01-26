@@ -222,7 +222,7 @@ export const servicesData: Service[] = [
     title: "Outsourced Fractional CFO Services",
     description: "High-level strategic leadership and financial oversight without the cost of a full-time executive.",
     fullDescription: "Gain access to executive-level financial strategy through OCS's fractional CFO services. We provide high-level leadership, interim support, and strategic planning to help businesses reach the next level of performance.",
-    imageUrl: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&q=80&w=1200",
     features: [
       { title: "Strategic Financial Planning", detail: "Developing clear roadmaps for business improvement and profit maximization." },
       { title: "M&A & Valuation Support", detail: "Expert due diligence and advisory for mergers, acquisitions, and business sales." },
