@@ -155,15 +155,16 @@ export const servicesData: Service[] = [
   },
   {
     id: "mental-health-accounting",
-    title: "Mental Health Accounting",
-    description: "Solving complex insurance cash flow and payroll compliance for therapists and counselors.",
-    fullDescription: "OCS provides specialized financial oversight for mental health clinics and private practices. We help practitioners manage complex insurance reimbursements, maintain payroll compliance, and optimize practice cash flow.",
+    title: "Mental Health & Healthcare Accounting",
+    description: "Ordia Consulting Services (OCS) provides accounting services for Mental Health Professionals and practitioners including Therapists, and Counselors.",
+    fullDescription: "Ordia Consulting Services (OCS) provides accounting services for Mental Health Professionals and practitioners including Therapists, and Counselors.\n\nRunning and managing a mental health practice means handling complex financials while providing client care. We focus on solving the accounting challenges mental health professionals’ face, from bookkeeping to tax matters and payroll for all types of mental health professionals across the region.\n\nWhat We Solve",
     imageUrl: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Insurance Billing Reconciliation", detail: "Managing the complexities of provider reimbursements and cash flow timing." },
-      { title: "Provider Payroll Compliance", detail: "Accurate payroll processing for multi-disciplinary clinics and independent contractors." },
-      { title: "Practice Margin Analysis", detail: "Identifying opportunities to improve efficiency and profitability in your clinic." },
-      { title: "HIPAA-Aligned Financials", detail: "Maintaining the highest standards of data security for practice financial records." }
+      { title: "Financial Management Overload", detail: "Balancing patient care and business operations is tough. We handle your practice’s accounting, giving you more time for your clients and less time on paperwork and numbers." },
+      { title: "Tax Filing Support", detail: "Tax laws for mental health professionals can be confusing. We simplify the process, ensuring you file accurately and maximize your deductions. You won’t have to worry about missed deadlines or penalties." },
+      { title: "Cash Flow and Budgeting Challenges", detail: "Managing cash flow is difficult when you have multiple revenue streams, including insurance payments and client fees. We help you stay on top of your practice’s cash flow and avoid financial surprises through clear financial reports." },
+      { title: "Payroll Processing", detail: "Managing payroll for employees or contractors can be time-consuming and complex. We save you time and reduce the risk of errors by handling all payroll processing and keeping you compliant with tax laws." },
+      { title: "Provide Real-Time Financial Insights", detail: "We help our clients Keep track of their financials using new could cloud-based solutions that give you access to real-time financial data, so you can make informed decisions about your business operations future." }
     ],
     icon: null
   },
