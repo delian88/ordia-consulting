@@ -139,16 +139,17 @@ export const servicesData: Service[] = [
     id: "construction-accounting",
     title: "Construction Accounting",
     description: "Are you running your own construction business…OCS will run the numbers, manage your WIP schedules, manage project costs, and track all construction jobs from take-off to completion",
-    fullDescription: "You have enough to do running your construction business. Let OCS handle all your construction accounting work including; daily transaction classification and expense tracking, payroll, bill payment and invoicing, business tax planning and preparation, and reporting. OCS will make sure you always have a clear picture of your financial position. We know construction accounting and the apps that work best to streamline the process. Trust that your back-office accounting work is processed accurately and in a timely manner, allowing you to focus on advancing your business while benefiting from fixed monthly fees that eliminate billing surprises.",
+    fullDescription: "You have enough to do running your construction business. Let OCS handle all your construction accounting work including; daily transaction classification and expense tracking, payroll, bill payment and invoicing, business tax planning and preparation, and reporting. OCS will make sure you always have a clear picture of your financial position. Expertise - We know construction accounting. We know the apps that work best for construction accounting. We can implement these apps for your business to streamline the accounting process. Confidence - Trust that your back-office accounting work is processed accurately and in a timely manner. Time savings - Take back all of those hours spent in the back office processing accounting work…and put them toward advancing your business. Cost savings - Billed at a fixed monthly fee, you can eliminate billing surprises caused by creeping hourly fees.",
     imageUrl: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Estimating", detail: "Professional financial projections and estimating for upcoming construction bids." },
-      { title: "Pre-Construction", detail: "Strategic financial planning and budgeting during the initial project phases." },
-      { title: "Job Take-off’s", detail: "Detailed material and labor requirements analysis for accurate project scope." },
-      { title: "WIP Schedules", detail: "Accurate tracking of work-in-progress to reflect real-time project profitability." },
-      { title: "Job Costing", detail: "Granular tracking of expenses and labor for every specific project phase." },
-      { title: "Change Orders", detail: "Expert financial management of project scope adjustments and extra work billings." },
-      { title: "Completion", detail: "Final project wrap-up, billing reconciliation, and comprehensive reporting." }
+      { title: "Estimating", detail: "Professional financial projections and project estimating services." },
+      { title: "Pre-Construction", detail: "Strategic financial planning during the pre-construction phase." },
+      { title: "Job Take-off’s", detail: "Accurate analysis of material and labor requirements for construction projects." },
+      { title: "WIP Schedules", detail: "Expert management and tracking of Work-in-Progress schedules to ensure accurate reporting." },
+      { title: "Job Costing", detail: "Granular tracking of all project costs to maintain budget integrity and profitability." },
+      { title: "Change Orders", detail: "Diligent tracking and accounting for project change orders and variations." },
+      { title: "Completion", detail: "Final project wrap-up, billing reconciliation, and completion accounting." },
+      { title: "Fixed Monthly Fee", detail: "Cost savings with billed fixed monthly fees, eliminating billing surprises from hourly creeping fees." }
     ],
     icon: null
   },
@@ -247,7 +248,7 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, onNavigate,
 
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     const target = e.target as HTMLImageElement;
-    const fallback = "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200";
+    const fallback = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200";
     if (target.src !== fallback) {
       target.src = fallback;
     }
