@@ -56,14 +56,15 @@ export const servicesData: Service[] = [
   },
   {
     id: "payroll-1099-contract",
-    title: "Payroll & 1099 Contract Services",
-    description: "Computerized payroll, W2's, 941 preparations, and contractual solutions.",
-    fullDescription: "Ensure your team is paid on time and your compliance is bulletproof. We handle all aspects of payroll processing, quarterly tax filings (941s), and comprehensive 1099 contractor management.",
+    title: "Payroll & 1099 Contract solutions",
+    description: "Computerized payroll systems to facilitate processing, timely payment, and tax preparation.",
+    fullDescription: "Ordia Consulting Services’ payroll services can help you reduce the time spent on administration through developing and implementing a computerized payroll system that will facilitate processing, timely payment and preparation of tax returns. We provide the following services on our payroll system.",
     imageUrl: "https://images.unsplash.com/photo-1554224155-1119343170ad?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Full-Cycle Payroll", detail: "Timely and accurate processing for employees and contractors." },
-      { title: "W2 & 1099 Issuance", detail: "Seamless end-of-year reporting and form distribution for all staff." },
-      { title: "Compliance Filing", detail: "Handling all necessary government payroll tax preparations and 941s." }
+      { title: "Payroll processing and W2’s", detail: "Efficient, accurate payroll cycles and end-of-year tax form generation for all employees." },
+      { title: "941 Tax form preparations", detail: "Professional preparation and filing of quarterly federal tax returns to ensure compliance." },
+      { title: "PTO Tracking and Timesheets", detail: "Comprehensive management of employee leave and time records within the computerized system." },
+      { title: "1099 Contractual payroll", detail: "Specialized payment processing and reporting for independent contractors and consultants." }
     ],
     icon: null
   },
