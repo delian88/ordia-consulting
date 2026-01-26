@@ -16,9 +16,10 @@ import { Industries } from './components/Industries';
 import { VideoIntro } from './components/VideoIntro';
 import { Booking } from './components/Booking';
 import { Testimonials } from './components/Testimonials';
+import { Partners } from './components/Partners';
 import { Service } from './types';
 
-type View = 'home' | 'about' | 'services' | 'contact' | 'service-detail' | 'resources' | 'news' | 'news-detail' | 'industries' | 'booking';
+type View = 'home' | 'about' | 'services' | 'contact' | 'service-detail' | 'resources' | 'news' | 'news-detail' | 'industries' | 'booking' | 'partners';
 
 const App: React.FC = () => {
   const [view, setView] = useState<View>('home');
@@ -85,7 +86,8 @@ const App: React.FC = () => {
       '#resources': 'resources',
       '#news': 'news',
       '#industries': 'industries',
-      '#booking': 'booking'
+      '#booking': 'booking',
+      '#partners': 'partners'
     };
 
     const nextView = viewMap[targetView] || 'home';
@@ -104,7 +106,8 @@ const App: React.FC = () => {
             <About isStandalone={false} onNavigate={handleNavigate} />
             <VideoIntro onNavigate={handleNavigate} />
             <Industries isStandalone={false} onNavigate={handleNavigate} />
-            <Services isStandalone={false} onSelectService={handleSelectService} onNavigate={handleNavigate} />
+            <Services isStandalone={true} onSelectService={handleSelectService} onNavigate={handleNavigate} />
+            <Partners isStandalone={false} />
             <Testimonials />
             <Contact isStandalone={false} />
           </>
@@ -119,6 +122,8 @@ const App: React.FC = () => {
         return <Resources isStandalone={true} onNavigate={handleNavigate} />;
       case 'news':
         return <News isStandalone={true} onSelectPost={handleSelectNews} />;
+      case 'partners':
+        return <Partners isStandalone={true} />;
       case 'news-detail':
         return selectedNews ? (
           <NewsDetail post={selectedNews} onBack={() => setView('news')} />

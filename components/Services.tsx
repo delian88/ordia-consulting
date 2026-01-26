@@ -168,7 +168,7 @@ interface ServicesProps {
 }
 
 export const Services: React.FC<ServicesProps> = ({ onSelectService, onNavigate, isStandalone = false }) => {
-  const displayServices = isStandalone ? servicesData : servicesData.slice(0, 3);
+  const displayServices = isStandalone ? servicesData : servicesData;
 
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     const target = e.target as HTMLImageElement;
@@ -228,20 +228,6 @@ export const Services: React.FC<ServicesProps> = ({ onSelectService, onNavigate,
             </div>
           ))}
         </div>
-
-        {!isStandalone && (
-          <div className="mt-16 text-center reveal">
-            <button 
-              onClick={() => onNavigate('#services')}
-              className="inline-flex items-center px-10 py-4 bg-slate-900 text-white rounded-full font-bold uppercase tracking-widest text-xs hover:bg-blue-600 transition-all shadow-xl active:scale-95 group"
-            >
-              View Full Service Catalog
-              <svg className="w-4 h-4 ml-3 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </button>
-          </div>
-        )}
 
         {isStandalone && (
           <div className="mt-32 pt-24 border-t border-slate-100">
