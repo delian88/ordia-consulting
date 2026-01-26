@@ -138,6 +138,12 @@ export const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, onBack })
                 </div>
               </div>
 
+              {service.additionalContent && (
+                <p className="text-lg md:text-xl text-slate-600 leading-relaxed mt-12 md:mt-16 font-light whitespace-pre-line">
+                  {service.additionalContent}
+                </p>
+              )}
+
               <div className="p-8 md:p-10 bg-blue-900 rounded-[2rem] md:rounded-[3rem] text-white relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px] -mr-32 -mt-32 transition-transform duration-1000 group-hover:scale-125"></div>
                 <div className="relative z-10">

@@ -18,6 +18,7 @@ export interface Service {
   title: string;
   description: string;
   fullDescription: string;
+  additionalContent?: string;
   icon: React.ReactNode;
   features: ServiceFeature[];
   imageUrl?: string;
