@@ -119,15 +119,9 @@ export const About: React.FC<AboutProps> = ({ isStandalone = true, onNavigate })
             <div className="p-8 bg-blue-900 rounded-[2rem] text-white">
                 <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-blue-300 mb-6">Performance Industries</h4>
                 <div className="flex flex-wrap gap-2">
-                    {performanceIndustries.slice(0, 8).map((industry, i) => (
-                        <span key={i} className="px-3 py-1 bg-white/10 rounded-full text-[10px] font-medium border border-white/5">{industry}</span>
+                    {performanceIndustries.map((industry, i) => (
+                        <span key={i} className="px-3 py-1 bg-white/10 rounded-full text-[10px] font-medium border border-white/5 whitespace-nowrap">{industry}</span>
                     ))}
-                    {isStandalone && performanceIndustries.slice(8).map((industry, i) => (
-                        <span key={i+8} className="px-3 py-1 bg-white/10 rounded-full text-[10px] font-medium border border-white/5">{industry}</span>
-                    ))}
-                    {!isStandalone && (
-                      <span className="px-3 py-1 bg-blue-600 rounded-full text-[10px] font-bold">+ 5 more</span>
-                    )}
                 </div>
             </div>
           </div>
@@ -144,50 +138,33 @@ export const About: React.FC<AboutProps> = ({ isStandalone = true, onNavigate })
               <p className="text-slate-600 text-base md:text-lg mb-6 leading-relaxed font-light">
                 Ordia Consulting Services (OCS) is a financial services firm providing expert accounting to clients across the United States. We feature a diverse team of certified professionals including outsourced CPAs and business consultants specializing in technical accounting, payroll, and management consulting.
               </p>
-              {!isStandalone && (
-                <div className="mt-8">
-                  <button 
-                    onClick={() => onNavigate?.('#about')}
-                    className="inline-flex items-center px-8 py-3 bg-blue-600 text-white rounded-full font-bold uppercase tracking-widest text-[10px] hover:bg-blue-900 transition-all shadow-xl group"
-                  >
-                    Read Full Story
-                    <svg className="w-4 h-4 ml-3 transition-transform group-hover:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                  </button>
-                </div>
-              )}
-              {isStandalone && (
-                <p className="text-slate-600 text-base md:text-lg mb-6 leading-relaxed font-light font-medium italic">
-                  Our team has over 20 years of experience across Federal, state, and local governments, as well as non-profit and for-profit industries. Our efforts have provided our clients with tangible results in remediated internal control issues and enhanced management visibility.
-                </p>
-              )}
+              <p className="text-slate-600 text-base md:text-lg mb-6 leading-relaxed font-light font-medium italic">
+                Our team has over 20 years of experience across Federal, state, and local governments, as well as non-profit and for-profit industries. Our efforts have provided our clients with tangible results in remediated internal control issues and enhanced management visibility.
+              </p>
             </div>
           </div>
         </div>
 
-        {isStandalone && (
-          <div className="reveal mt-20">
-            <div className="text-center mb-16">
-              <h3 className="text-3xl md:text-4xl font-serif font-bold text-blue-900 mb-4 glass-shine">Why Choose Us</h3>
-              <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {whyChooseUs.map((item, idx) => (
-                <div key={idx} className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 hover:shadow-xl transition-all group">
-                  <div className="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center font-serif text-xl font-bold mb-6 group-hover:scale-110 transition-transform">
-                    {item.title.charAt(0)}
-                  </div>
-                  <h4 className="text-xl font-bold text-blue-900 mb-4">{item.title}</h4>
-                  <p className="text-slate-500 text-sm leading-relaxed font-light">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
+        <div className="reveal mt-20">
+          <div className="text-center mb-16">
+            <h3 className="text-3xl md:text-4xl font-serif font-bold text-blue-900 mb-4 glass-shine">Why Choose Us</h3>
+            <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
           </div>
-        )}
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {whyChooseUs.map((item, idx) => (
+              <div key={idx} className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 hover:shadow-xl transition-all group">
+                <div className="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center font-serif text-xl font-bold mb-6 group-hover:scale-110 transition-transform">
+                  {item.title.charAt(0)}
+                </div>
+                <h4 className="text-xl font-bold text-blue-900 mb-4">{item.title}</h4>
+                <p className="text-slate-500 text-sm leading-relaxed font-light">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
