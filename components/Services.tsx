@@ -49,7 +49,7 @@ export const servicesData: Service[] = [
       { title: "Tax management Services and Support", detail: "Ongoing advisory to manage tax positions and ensure year-round fiscal preparedness." },
       { title: "Estate and Trust Planning and Advising", detail: "Technical advisory on managing asset distribution and preserving wealth through trusts." },
       { title: "Litigation Support and Forensic Accounting", detail: "Expert financial analysis for legal proceedings and investigative accounting needs." },
-      { title: "New Tax Laws, Certifications, and Training", detail: "Education and updates on the latest regulatory changes affecting your industry." }
+      { title: "New Tax laws, Certifications, and Training", detail: "Education and updates on the latest regulatory changes affecting your industry." }
     ],
     icon: null
   },
@@ -139,17 +139,17 @@ export const servicesData: Service[] = [
     id: "construction-accounting",
     title: "Construction Accounting",
     description: "Are you running your own construction business…OCS will run the numbers, manage your WIP schedules, manage project costs, and track all construction jobs from take-off to completion",
-    fullDescription: "You have enough to do running your construction business. Let OCS handle all your construction accounting work including; daily transaction classification and expense tracking, payroll, bill payment and invoicing, business tax planning and preparation, and reporting. OCS will make sure you always have a clear picture of your financial position. Expertise - We know construction accounting. We know the apps that work best for construction accounting. We can implement these apps for your business to streamline the accounting process. Confidence - Trust that your back-office accounting work is processed accurately and in a timely manner. Time savings - Take back all of those hours spent in the back office processing accounting work…and put them toward advancing your business. Cost savings - Billed at a fixed monthly fee, you can eliminate billing surprises caused by creeping hourly fees.",
+    fullDescription: "Are you running your own construction business…OCS will run the numbers, manage your WIP schedules, manage project costs, and track all construction jobs from take-off to completion. You have enough to do running your construction business. Let OCS handle all your construction accounting work including; daily transaction classification and expense tracking, payroll, bill payment and invoicing, business tax planning and preparation, and reporting. OCS will make sure you always have a clear picture of your financial position. Expertise - We know construction accounting. We know the apps that work best for construction accounting. We can implement these apps for your business to streamline the accounting process. Confidence - Trust that your back-office accounting work is processed accurately and in a timely manner. Time savings - Take back all of those hours spent in the back office processing accounting work…and put them toward advancing your business. Cost savings - Billed at a fixed monthly fee, you can eliminate billing surprises caused by creeping hourly fees.",
     imageUrl: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Estimating", detail: "Professional cost estimation and bidding support for construction projects." },
-      { title: "Pre-Construction", detail: "Financial planning and initial setup during the pre-construction phase." },
-      { title: "Job Take-off’s", detail: "Detailed material and labor requirement analysis based on blueprints." },
-      { title: "WIP Schedules", detail: "Comprehensive management and tracking of Work-in-Progress schedules for accurate revenue recognition." },
-      { title: "Job Costing", detail: "Granular tracking of all expenses and labor hours associated with specific projects." },
-      { title: "Change Orders", detail: "Diligent accounting for project scope adjustments and extra work billings." },
-      { title: "Completion", detail: "Final project wrap-up, billing reconciliation, and completion reporting." },
-      { title: "Fixed Monthly Fee", detail: "Predictable cost savings with billed fixed monthly fees, eliminating creeping hourly billing surprises." }
+      { title: "Estimating", detail: "Professional financial projections and project estimating services." },
+      { title: "Pre-Construction", detail: "Strategic financial planning during the pre-construction phase." },
+      { title: "Job Take-off’s", detail: "Accurate analysis of material and labor requirements for construction projects." },
+      { title: "WIP Schedules", detail: "Comprehensive management and tracking of Work-in-Progress schedules to ensure accurate reporting." },
+      { title: "Job Costing", detail: "Granular tracking of all project costs to maintain budget integrity and profitability." },
+      { title: "Change Orders", detail: "Diligent tracking and accounting for project change orders and variations." },
+      { title: "Completion", detail: "Final project wrap-up, billing reconciliation, and completion accounting." },
+      { title: "Fixed Monthly Fee", detail: "Cost savings with billed fixed monthly fees, eliminating billing surprises from hourly creeping fees." }
     ],
     icon: null
   },
