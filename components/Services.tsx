@@ -40,14 +40,17 @@ export const servicesData: Service[] = [
   },
   {
     id: "corp-business-tax",
-    title: "Corp Business Tax Services and Solutions",
-    description: "Strategic corporate tax planning and preparation to minimize liabilities.",
-    fullDescription: "At OCS, we guide our clients through a full range of tax planning and preparation decisions with strategies that minimize liabilities and keep you on track to your long-term financial goals.",
+    title: "Tax Preparation Services",
+    description: "Strategic tax planning and preparation decisions to minimize liabilities and maximize cash flow.",
+    fullDescription: "At OCS, we guide our clients through a full range of tax planning and preparation decisions with strategies that minimize your tax liabilities, maximize your cash flow and keep you on track to your financial goals. Our expertise, experience, analysis and thorough research allow us to optimize financial opportunities to be found in existing as well as recently altered tax laws. We are knowledgeable and up to date on the tax laws and can make sense of your receipts, bills and notices.",
     imageUrl: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=1200",
     features: [
-      { title: "Corporate Planning", detail: "Sophisticated strategies to ensure compliance and minimize tax burden." },
-      { title: "Entity Structuring", detail: "Advising on the most tax-efficient structures for your business growth." },
-      { title: "Meticulous Filing", detail: "Accurate and timely filing for federal, state, and local tax authorities." }
+      { title: "Corporate tax planning and preparation", detail: "Comprehensive strategies for business entities to ensure compliance and fiscal optimization." },
+      { title: "Individual Tax planning and preparation", detail: "Personalized tax solutions designed to minimize liabilities for business owners and individuals." },
+      { title: "Tax management Services and Support", detail: "Proactive management of tax obligations and ongoing support throughout the financial year." },
+      { title: "Estate and Trust Planning and Advising", detail: "Technical advisory on managing asset distribution and preserving wealth through trusts." },
+      { title: "Litigation Support and Forensic Accounting", detail: "Expert financial investigation and documentation support for legal and regulatory proceedings." },
+      { title: "New Tax Laws, Certifications, and Training", detail: "Continuous professional training and updates on the latest regulatory changes and tax law shifts." }
     ],
     icon: null
   },
