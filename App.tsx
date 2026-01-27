@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -17,9 +16,10 @@ import { VideoIntro } from './components/VideoIntro';
 import { Booking } from './components/Booking';
 import { Testimonials } from './components/Testimonials';
 import { Partners } from './components/Partners';
+import { NaicsCodes } from './components/NaicsCodes';
 import { Service } from './types';
 
-type View = 'home' | 'about' | 'services' | 'contact' | 'service-detail' | 'resources' | 'news' | 'news-detail' | 'industries' | 'booking' | 'partners';
+type View = 'home' | 'about' | 'services' | 'contact' | 'service-detail' | 'resources' | 'news' | 'news-detail' | 'industries' | 'booking' | 'partners' | 'naics-codes';
 
 const App: React.FC = () => {
   const [view, setView] = useState<View>('home');
@@ -37,7 +37,7 @@ const App: React.FC = () => {
   useEffect(() => {
     if (isAppLoading) return;
 
-    if (!['service-detail', 'news-detail'].includes(view)) {
+    if (!['service-detail', 'news-detail', 'naics-codes'].includes(view)) {
       document.title = "Ordia Consulting Services | Professional Financial Solutions";
       const metaDesc = document.getElementById('meta-description');
       const ogTitle = document.getElementById('og-title');
@@ -87,7 +87,8 @@ const App: React.FC = () => {
       '#news': 'news',
       '#industries': 'industries',
       '#booking': 'booking',
-      '#partners': 'partners'
+      '#partners': 'partners',
+      '#naics-codes': 'naics-codes'
     };
 
     const nextView = viewMap[targetView] || 'home';
@@ -139,6 +140,8 @@ const App: React.FC = () => {
             onBack={() => setView('services')} 
           />
         ) : <Hero onNavigate={handleNavigate} />;
+      case 'naics-codes':
+        return <NaicsCodes onBack={() => setView('resources')} />;
       default:
         return <Hero onNavigate={handleNavigate} />;
     }

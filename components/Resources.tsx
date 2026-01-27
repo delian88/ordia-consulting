@@ -9,6 +9,12 @@ export const Resources: React.FC<{ isStandalone?: boolean; onNavigate?: (href: s
     }
   };
 
+  const handleNaicsOpen = () => {
+    if (onNavigate) {
+      onNavigate('#naics-codes');
+    }
+  };
+
   return (
     <div className={`pt-32 pb-20 bg-slate-50 ${isStandalone ? 'min-h-screen pt-48' : ''}`}>
       <div className="container mx-auto px-6">
@@ -36,35 +42,20 @@ export const Resources: React.FC<{ isStandalone?: boolean; onNavigate?: (href: s
             </a>
           </div>
 
-          <div className="reveal bg-white p-8 rounded-[3rem] shadow-xl border-t-4 border-blue-900 flex flex-col items-start text-left">
-            <div className="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center text-blue-900 mb-6 font-bold text-lg self-center">NC</div>
-            <h3 className="text-xl font-serif font-bold text-blue-900 mb-4 self-center">NAICS Codes</h3>
+          <div className="reveal bg-white p-10 rounded-[3rem] shadow-xl border-t-4 border-blue-900 flex flex-col items-center text-center group">
+            <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-900 mb-8 font-bold text-lg">NC</div>
+            <h3 className="text-2xl font-serif font-bold text-blue-900 mb-4">NAICS Codes</h3>
+            <p className="text-slate-500 text-sm font-light mb-8">View a complete list of North American Industry Classification System (NAICS) and Product Service Codes relevant to OCS operations.</p>
             
-            <div className="w-full space-y-4 text-slate-700">
-              <div>
-                <p className="text-[11px] font-black uppercase tracking-widest text-blue-600 mb-3 border-b border-blue-100 pb-1">NAICS Codes</p>
-                <ul className="text-[12px] space-y-2 font-medium leading-tight">
-                  <li className="flex gap-3"><span className="font-bold text-blue-900 shrink-0">541211</span> <span>Offices of Certified Public Accountants</span></li>
-                  <li className="flex gap-3"><span className="font-bold text-blue-900 shrink-0">541219</span> <span>Other Accounting Services</span></li>
-                  <li className="flex gap-3"><span className="font-bold text-blue-900 shrink-0">541611</span> <span>Administrative and General Management Consulting Service</span></li>
-                  <li className="flex gap-3"><span className="font-bold text-blue-900 shrink-0">561611</span> <span>Investigation Services</span></li>
-                  <li className="flex gap-3"><span className="font-bold text-blue-900 shrink-0">54541</span> <span>Litigation Support Services</span></li>
-                  <li className="flex gap-3"><span className="font-bold text-blue-900 shrink-0">54121</span> <span>Accounting, Tax Preparation, Bookkeeping, and Payroll Services</span></li>
-                  <li className="flex gap-3"><span className="font-bold text-blue-900 shrink-0">541618</span> <span>Other Management Consulting Services</span></li>
-                  <li className="flex gap-3"><span className="font-bold text-blue-900 shrink-0">522320</span> <span>Processing financial transactions</span></li>
-                  <li className="flex gap-3"><span className="font-bold text-blue-900 shrink-0">921190</span> <span>General Accounting offices, government</span></li>
-                </ul>
-              </div>
-
-              <div className="pt-2">
-                <p className="text-[11px] font-black uppercase tracking-widest text-blue-600 mb-3 border-b border-blue-100 pb-1">Product Service Codes</p>
-                <ul className="text-[12px] space-y-2 font-medium leading-tight">
-                  <li className="flex gap-3"><span className="font-bold text-blue-900 shrink-0">B547</span> <span>Special Studies/Analysis: Accounting/Financial Management</span></li>
-                  <li className="flex gap-3"><span className="font-bold text-blue-900 shrink-0">R704</span> <span>Support – Management: Auditing</span></li>
-                  <li className="flex gap-3"><span className="font-bold text-blue-900 shrink-0">R710</span> <span>Support – Management: Financial</span></li>
-                </ul>
-              </div>
-            </div>
+            <button 
+              onClick={handleNaicsOpen}
+              className="relative overflow-hidden group/btn px-10 py-4 bg-blue-900 text-white rounded-full font-bold text-[10px] uppercase tracking-widest transition-all shadow-xl active:scale-95 hover:shadow-blue-900/40"
+            >
+              <span className="relative z-10">Access NAICS Code</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-400 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></div>
+              {/* Shine effect */}
+              <div className="absolute top-[-100%] left-[-100%] w-1/2 h-[300%] bg-white/20 -rotate-[35deg] transition-all duration-700 group-hover/btn:left-[150%]"></div>
+            </button>
           </div>
 
           {/* Actionable QuickBooks Resources */}
